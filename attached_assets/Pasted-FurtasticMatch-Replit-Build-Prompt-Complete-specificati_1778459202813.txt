@@ -1,0 +1,745 @@
+FurtasticMatch — Replit Build Prompt
+Complete specification for Replit Agent
+
+OVERVIEW
+Build a React (Vite) web application called FurtasticMatch — a dog breed matching quiz and SEO-first media property. The design, UX, page architecture, and all logic decisions are fully specced below. Do not make design decisions — implement exactly what is described.
+Stack:
+	•	React with Vite
+	•	No backend — all data in JSON files
+	•	No user accounts
+	•	Tailwind CSS is NOT used — use a single CSS file with custom properties as specced
+	•	Routing: React Router v6
+	•	Deployment target: Netlify (export as static site via npm run build)
+
+DESIGN SYSTEM — IMPLEMENT EXACTLY
+Colors (CSS custom properties)
+:root {
+  --bg: #FFFBF0;
+  --bg-card: #FFFFFF;
+  --bg-muted: #FFF3D0;
+  --text-primary: #1A1040;
+  --text-secondary: #4A3F7A;
+  --text-muted: #9B8FB5;
+  --cta: #5B3FD9;
+  --cta-shadow: #3A22A8;
+  --accent: #FFBE00;
+  --teal: #3DBFB8;
+  --border: #EDE0FF;
+  --shadow: rgba(26, 16, 64, 0.10);
+}
+Typography
+	•	Display / Headers: Baloo 2 (Google Fonts) — weights 600, 700, 800
+	•	Body / UI: Nunito (Google Fonts) — weights 400, 600, 700, 800
+Card style (apply throughout)
+background: var(--bg-card);
+border: 2px solid var(--border);
+border-radius: 16–20px;
+box-shadow: 4px 4px 0 var(--border);
+Card hover state:
+transform: translate(-2px, -2px);
+box-shadow: 6px 6px 0 var(--border);
+Button — Primary (CTA)
+background: var(--cta);
+color: white;
+border-radius: 10–14px;
+box-shadow: 0 4px 0 var(--cta-shadow);
+font-family: Nunito;
+font-weight: 900;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+Active state: transform: translateY(3px); box-shadow: 0 1px 0 var(--cta-shadow);
+Button — Accent (used in bottom CTA band and wildcard)
+background: var(--accent);
+color: var(--text-primary);
+box-shadow: 0 4px 0 #B07800;
+Button — Outline
+background: transparent;
+border: 2px solid var(--border);
+color: var(--text-secondary);
+
+SITE ARCHITECTURE — 8 ROUTES
+Route
+Component
+Notes
+/
+Home
+Landing page + quiz entry
+/quiz
+Quiz
+Multi-step quiz component
+/results
+Results
+Hash-based results, noindex
+/breeds/:slug
+BreedProfile
+SEO breed pages
+/compare/:slug1-vs-:slug2
+Comparison
+Breed comparison pages
+/breeders
+Breeders
+Waitlist form
+/about
+About
+Required for AdSense
+/contact
+Contact
+Required for AdSense
+Footer links on every page: Privacy Policy, Affiliate Disclosure, About, Contact, For Breeders
+
+PAGE 1: HOME (/)
+Nav
+	•	Logo left: 🐾 FurtasticMatch — "Furtastic" in var(--cta), "Match" in var(--teal), Baloo 2 800
+	•	Paw emoji has a gentle wiggle animation (CSS keyframes, infinite, subtle)
+	•	Right: "Find My Breed" button — primary CTA style
+	•	Sticky, border-bottom: 2px solid var(--border)
+Hero section
+	•	Dotted background pattern: radial-gradient(circle, #EDE0FF 1.5px, transparent 1.5px) at 28px 28px, opacity 0.5
+	•	Badge: Free · 3 Minutes · No Sign-Up — amber border, pulsing dot animation
+	•	H1: "Find Your Perfect Dog in 3 Minutes" — Baloo 2 800, clamp(36px, 8vw, 58px)
+	•	"Perfect" has an amber underline highlight (::after pseudo-element, height 6px, opacity 0.5)
+	•	Subtitle: "Answer 8 fun questions about your lifestyle and we'll match you with the breeds that fit your family best. No fluff, no email required."
+	•	Hero CTA button: large (padding 16px 40px), font-size 17px, includes 🐶 emoji
+	•	Note below CTA: "✦ 40+ breeds · Personalized results · Free forever" — muted color
+Trust bar
+	•	Full width, background: var(--bg-card), border-top/bottom: 2px solid var(--border)
+	•	4 items with emoji + number + label: 🐕 40+ Breeds, 👨‍👩‍👧 12,000+ Families Matched, ⚡ 3 Min Quiz, 🔒 No Sign-Up Required
+Ad Zone 1 (below trust bar)
+	•	Desktop: 728×90 leaderboard
+	•	Mobile: 320×50 responsive
+	•	Mark with HTML comment: <!-- ADSENSE UNIT 1: Home leaderboard -->
+	•	At launch render as placeholder div with dashed border
+How It Works section (desktop: left column in 2-col grid)
+	•	Eyebrow: "How it works" in var(--teal)
+	•	H2: "Three steps to your perfect match 🐾"
+	•	3 step cards in card style:
+	1	🎯 Tell us about your life
+	2	⚡ We run the match
+	3	🎉 Meet your matches
+	•	Each card has emoji, title (Baloo 2 700), description (Nunito 600, 14px)
+	•	Cards hover with lift effect
+Breed chips (below steps)
+	•	Eyebrow: "40+ breeds in our database"
+	•	Grid of breed preview chips — desktop: 6 columns, mobile: 3 columns
+	•	Each chip: card style, breed emoji, breed name (Baloo 2 700, 12px)
+	•	Chips are not links at launch — decorative
+Ad Zone 2 (desktop sidebar, sticky)
+	•	300×250
+	•	Mark: <!-- ADSENSE UNIT 2: Home sidebar -->
+Bottom CTA band
+	•	Full width, background: var(--cta)
+	•	Dotted pattern overlay (white dots, low opacity)
+	•	H2: "Ready to find your perfect match? 🐾" — white, Baloo 2 800
+	•	Subtitle: "Takes 3 minutes. No email required. Share with the whole family."
+	•	Button: amber accent style — "Start the Quiz →"
+Footer
+	•	background: var(--text-primary)
+	•	Logo in white
+	•	Footer links: About, Contact, Privacy Policy, Affiliate Disclosure, For Breeders
+	•	Copyright line
+SEO (implement via React Helmet or Vite's html plugin)
+	•	Title: Dog Breed Quiz — Find Your Perfect Match in 3 Minutes | FurtasticMatch
+	•	Meta description: Not sure which dog breed is right for your family? Take our 3-minute quiz and get personalized recommendations based on your lifestyle, space, and kids.
+	•	Schema: WebApplication
+
+PAGE 2: QUIZ (/quiz)
+Architecture
+	•	Single page, no route change between questions
+	•	State managed in React (useState) — no backend
+	•	8 questions, one per screen
+	•	Slide animation between questions: advance = slide left, back = slide right
+	•	Progress bar at top showing question X of 8, fills with gradient var(--cta) → var(--teal)
+	•	Back button in nav (hidden on Q1, visible Q2+)
+	•	No ads anywhere in quiz flow
+Quiz state object
+{
+  q1_mode: 'none' | 'one' | 'two',
+  q1_breed1: '',
+  q1_breed2: '',
+  who: '',        // family | couple | solo
+  activity: 50,  // 0–100 slider value
+  space: '',      // apartment | house-no-yard | house-yard | rural
+  grooming: 50,  // 0–100 slider value
+  experience: '', // first | some | seasoned
+  size: '',       // small | medium | large | any
+  kids: 65       // 0–100 slider value
+}
+Q1 — Breed consideration
+	•	Title: "Already have a breed in mind?"
+	•	Three tap options:
+	1	🔍 "Nope — help me find one!" → standard flow
+	2	🐕 "Yes, I have one in mind" → show one breed text input below options
+	3	🤷 "I'm deciding between two breeds" → show two breed text inputs below options
+	•	Breed inputs: styled text inputs (not dropdowns for MVP), placeholder text
+	•	Next button disabled until: option selected (and if breed option, at least one breed name entered 2+ chars)
+	•	GA4 event on Q1 submit: quiz_q1_branch with params branch and breed_name
+Q2 — Who's it for
+	•	Emoji: 👨‍👩‍👧
+	•	Title: "Who's the dog for?"
+	•	Tap options with emoji + label + checkmark:
+	◦	👨‍👩‍👧‍👦 Family with kids
+	◦	💑 Couple
+	◦	🙋 Just me
+	•	Next button disabled until selection
+Q3 — Activity (SLIDER)
+	•	Emoji: ⚡
+	•	Title: "How active is your household?"
+	•	Custom slider (NOT native HTML range input — build a custom drag slider)
+	•	Left label: "Binge-watcher" 🛋️ (italic, muted)
+	•	Right label: 🏔️ "Trail runner" (italic, muted)
+	•	Value label above slider updates as user drags:
+	◦	0–20: "Total couch potato"
+	◦	21–40: "Gentle walker"
+	◦	41–60: "Moderately active"
+	◦	61–80: "Very active"
+	◦	81–100: "Trail runner"
+	•	Slider thumb: 26px circle, white with var(--cta) border, box-shadow
+	•	Fill: gradient var(--cta) → var(--teal)
+	•	Default: 50
+	•	Next button always enabled on slider questions
+Q4 — Space
+	•	Emoji: 🏡
+	•	Title: "How much space do you have?"
+	•	4 tap options:
+	◦	🏢 Apartment / small space
+	◦	🏠 House, no yard
+	◦	🌿 House with a yard
+	◦	🌾 Wide open spaces (rural / lots of land)
+	•	Next disabled until selection
+Q5 — Grooming (SLIDER)
+	•	Emoji: ✂️
+	•	Title: "How much grooming time can you give?"
+	•	Left: "Brush? What's that?" 😅
+	•	Right: 💈 "I own a full kit"
+	•	Value labels:
+	◦	0–20: "Minimal — just the basics"
+	◦	21–40: "Occasional brushing is fine"
+	◦	41–60: "Some grooming is fine"
+	◦	61–80: "Regular grooming OK"
+	◦	81–100: "Daily grooming, no problem"
+	•	Default: 50
+Q6 — Experience
+	•	Emoji: 🎓
+	•	Title: "Any experience with dogs?"
+	•	3 options:
+	◦	🌱 First-timer — never owned a dog
+	◦	🙌 Some experience
+	◦	🏆 Seasoned owner — I've done this before
+	•	Next disabled until selection
+Q7 — Size
+	•	Emoji: 📏
+	•	Title: "What size dog fits your life?"
+	•	4 options:
+	◦	🐩 Small (under 25 lbs)
+	◦	🐕 Medium (25–60 lbs)
+	◦	🦮 Large (60+ lbs)
+	◦	🤷 No preference — show me the best match
+	•	Next disabled until selection
+Q8 — Kids (SLIDER)
+	•	Emoji: 👧
+	•	Title: "How important is it that your dog is great with kids?"
+	•	Left: "Not a factor" 😐
+	•	Right: ❤️ "Non-negotiable"
+	•	Value labels:
+	◦	0–20: "Not a factor"
+	◦	21–40: "Slightly important"
+	◦	41–60: "Somewhat important"
+	◦	61–80: "Pretty important"
+	◦	81–100: "Non-negotiable"
+	•	Default: 65
+	•	Final button text: "Find My Matches 🐾"
+	•	On submit: show loading screen, run matching engine, navigate to /results?r=[hash]
+Loading screen (between Q8 submit and results)
+	•	Full screen, background: var(--bg)
+	•	🐾 emoji spinning animation
+	•	Title: "Sniffing out your matches..." (Baloo 2 800)
+	•	Subtitle: "Scoring 40+ breeds against your answers"
+	•	Three bouncing dots in var(--cta), var(--teal), var(--accent) — staggered animation
+	•	Minimum display time: 2 seconds (even if matching engine is instant)
+GA4 events in quiz
+// On quiz page load
+gtag('event', 'quiz_start');
+
+// On every Next button click
+gtag('event', 'quiz_progress', {
+  question_number: currentQ,
+  question_id: questionId,
+  answer_value: answerValue
+});
+
+// On Q1 submit
+gtag('event', 'quiz_q1_branch', {
+  branch: 'none' | 'single_breed' | 'two_breeds',
+  breed_name: breedNames
+});
+
+// On beforeunload if quiz incomplete
+gtag('event', 'quiz_abandon', {
+  last_question_reached: currentQ,
+  questions_answered: currentQ
+});
+
+// On results load
+gtag('event', 'quiz_complete');
+
+MATCHING ENGINE
+Input
+Quiz state object (answers from all 8 questions)
+Logic
+	1	Load breeds.json
+	2	For each breed, calculate a weighted score (0–100):
+function scoreBreed(breed, answers) {
+  let score = 0;
+
+  // Activity match (20% weight)
+  const activityDiff = Math.abs(breed.activity_level * 10 - answers.activity);
+  score += (1 - activityDiff / 100) * 20;
+
+  // Space match (15% weight)
+  const spaceScores = { apartment: 1, 'house-no-yard': 2, 'house-yard': 3, rural: 4 };
+  const spaceDiff = Math.abs(breed.space_required - spaceScores[answers.space]);
+  score += (1 - spaceDiff / 3) * 15;
+
+  // Grooming match (15% weight)
+  const groomingDiff = Math.abs(breed.grooming_needs * 10 - answers.grooming);
+  score += (1 - groomingDiff / 100) * 15;
+
+  // Experience match (15% weight)
+  const expScores = { first: 1, some: 2, seasoned: 3 };
+  const expDiff = Math.abs(breed.experience_required - expScores[answers.experience]);
+  score += (1 - expDiff / 2) * 15;
+
+  // Size match (10% weight)
+  if (answers.size === 'any' || breed.size === answers.size) score += 10;
+
+  // Kids score (15% weight)
+  const kidsImportance = answers.kids / 100;
+  score += breed.good_with_kids * kidsImportance * 15;
+
+  // Who match (10% weight)
+  if (answers.who === 'family' && breed.good_with_kids >= 4) score += 10;
+  else if (answers.who === 'couple' || answers.who === 'solo') score += 5;
+
+  return Math.round(score);
+}
+	3	Sort breeds by score descending
+	4	If Q1 named breeds: boost those breeds by 15 points (ensures they appear in top 3)
+	5	Top 3 = matches. Pick wildcard = 4th highest scoring breed NOT in top 3 that has wildcard_eligible: true
+	6	Encode result as hash: btoa(JSON.stringify([breed1.id, breed2.id, breed3.id, wildcard.id]))
+	7	Navigate to /results?r=[hash]
+
+PAGE 3: RESULTS (/results)
+Critical SEO requirement
+<meta name="robots" content="noindex">
+URL
+/results?r=[base64_encoded_hash] Decode hash on page load to get breed IDs. Render results from breed data.
+Reveal animation sequence
+	1	Page loads with indigo full-screen overlay
+	2	🐾 emoji animates in (scale from 0, rotate)
+	3	Title: "Your matches are ready!" (white, Baloo 2 800)
+	4	Subtitle: "We scored 40+ breeds against your answers"
+	5	Three pulsing dots
+	6	Button: "Reveal My Matches 🐾" — amber accent style
+	7	On button tap: overlay fades out (0.4s)
+	8	Results page fades in
+	9	Cards reveal sequentially with staggered animation:
+	◦	Card 1: delay 100ms
+	◦	Ad zone (mobile): appears with card 1
+	◦	Card 2: delay 500ms
+	◦	Card 3: delay 900ms
+	◦	Wildcard label: delay 1300ms
+	◦	Wildcard card: delay 1400ms
+	◦	Email section: delay 1900ms
+	◦	Share section: delay 2100ms
+Desktop layout
+Two-column grid: main content (1fr) + sidebar (300px), sidebar sticky at top 80px
+Results header
+	•	Eyebrow: "🎉 Your personalized matches" in var(--teal)
+	•	H1: "Here are your perfect breeds" (Baloo 2 800)
+	•	Subtitle: "Based on your lifestyle, space, and family"
+Breed cards (top 3 + wildcard — always 4 cards)
+Each card contains:
+	•	Breed illustration: 76×76px rounded square, gradient background, breed emoji (placeholder until Kittl images are added), border: 2px solid var(--border)
+	•	Rank badge: 🥇 Match #1 / 🥈 Match #2 / 🥉 Match #3 / 🎲 Wildcard Pick
+	•	Breed name: Baloo 2 800, 21px
+	•	Fit badge: "⚡ [score]% fit" — indigo pill for matches, amber for wildcard
+	•	"Why this fits you" text: 2–3 sentences, Nunito 600, 14px, var(--text-secondary)
+	•	Social proof line: "👨‍👩‍👧 [count] families with [profile] got this recommendation" — amber background, amber border, 12px
+	◦	Feature-flagged: SOCIAL_PROOF_ENABLED = false — hide until 500+ completions, flip flag to show
+	•	Breed actions row:
+	◦	"Find a Breeder →" — primary CTA button (full flex-1)
+	◦	"Learn More" — outline button (links to /breeds/[slug])
+Ad zone — between card 1 and card 2 (mobile only):
+<!-- ADSENSE UNIT 3: Results in-content mobile -->
+300×250, mobile only (display: none on desktop)
+Wildcard card styling:
+	•	border-color: var(--accent)
+	•	box-shadow: 4px 4px 0 #FFE070
+	•	Fit badge: amber background, dark text, "✦ Unexpected match"
+	•	"Find a Breeder" button: amber style
+Ad zones — results page
+Desktop: 300×250 sidebar (sticky) — <!-- ADSENSE UNIT 4: Results sidebar -->
+Desktop: 728×90 leaderboard below all cards — <!-- ADSENSE UNIT 5: Results leaderboard -->
+Mobile: sticky bottom 320×50 — <!-- ADSENSE UNIT 6: Results sticky -->
+Sticky bottom ad:
+	•	position: fixed; bottom: 0; left: 0; right: 0; height: 60px
+	•	Close button: minimum 44×44px touch target
+	•	Hidden on desktop
+Minimum 60px vertical clearance between any ad unit and any CTA button — enforce in CSS.
+Email capture
+	•	Icon: 📬
+	•	Title: "Save your results" (Baloo 2 800)
+	•	Subtitle: "Get your matches sent to your inbox — easy to share with your family or revisit later."
+	•	Single email input + "Save" button (same row)
+	•	On submit: POST to Formspree endpoint (inject via env variable VITE_FORMSPREE_ENDPOINT)
+	◦	Include results URL in hidden field
+	◦	Fire GA4 event: gtag('event', 'email_capture')
+	◦	Show success state: "📬 Sent! Check your inbox."
+	•	"No thanks, I'll just share the link" — skip link below form
+Share section
+	•	Label: "Share your results" (muted, uppercase, small)
+	•	2×2 grid of share buttons:
+	◦	📱 Share Results (full width, top — indigo primary style) → navigator.share() with pre-populated text + URL. Desktop fallback: copy link
+	◦	👥 Facebook Groups → window.open('https://www.facebook.com/sharer/sharer.php?u=[encodedURL]')
+	◦	🟠 Copy for Reddit → copies pre-formatted Reddit text to clipboard (see format below)
+	◦	🔗 Copy Link → copies UTM-tagged URL to clipboard
+Reddit copy format:
+Just took this dog breed quiz and got some really solid recommendations:
+
+1. [Breed 1 name] — "[Why it fits you text, first sentence]"
+2. [Breed 2 name] — "[Why it fits you text, first sentence]"
+3. [Breed 3 name] — "[Why it fits you text, first sentence]"
+
+Wildcard: [Wildcard name] — didn't expect this one but the reasoning made total sense.
+
+Took about 3 minutes, no email required, explains WHY each breed fits your situation: [URL]
+UTM conventions:
+	•	Native share: ?r=[hash]&utm_source=share&utm_medium=social&utm_campaign=organic_share
+	•	Facebook: ?r=[hash]&utm_source=share&utm_medium=facebook&utm_campaign=organic_share
+	•	Copy link: ?r=[hash]&utm_source=share&utm_medium=social&utm_campaign=organic_share
+GA4 events on results page
+// On breeder CTA visible in viewport (IntersectionObserver, once per card)
+gtag('event', 'breeder_impression', { breed_name: breed.name, card_slot: slot });
+
+// On breeder CTA click
+gtag('event', 'breeder_click', { breed_name: breed.name, card_slot: slot });
+
+// On share button tap
+gtag('event', 'share_click', { method: 'native_share' | 'facebook' | 'reddit_copy' | 'copy_link' });
+
+// Scroll depth (fire once per threshold)
+gtag('event', 'scroll_depth', { depth: 25 | 50 | 75 | 100, page_type: 'results' });
+Desktop sidebar (results page)
+	•	300×250 ad unit (top)
+	•	Breeder waitlist card below:
+	◦	🐾 icon
+	◦	"Are you a breeder?" (Baloo 2 800)
+	◦	"Get featured in results like these. Join our breeder waitlist."
+	◦	Button → /breeders page
+Affiliate disclosure (bottom of results, above footer)
+FurtasticMatch participates in affiliate programs. We earn a commission if you make a purchase through our breeder links, including as an Amazon Associate, at no extra cost to you.
+
+BREED DATA — breeds.json
+Create /src/data/breeds.json with minimum 30 breeds. Each breed object:
+{
+  "id": "golden-retriever",
+  "slug": "golden-retriever",
+  "name": "Golden Retriever",
+  "emoji": "🐕",
+  "illustration_bg": ["#FFF3D0", "#FFE8A0"],
+  "size": "large",
+  "activity_level": 3,
+  "space_required": 3,
+  "grooming_needs": 3,
+  "experience_required": 1,
+  "good_with_kids": 5,
+  "wildcard_eligible": true,
+  "sponsored": false,
+  "last_updated": "2026-05",
+  "affiliate_link": "",
+  "description": "Patient, friendly, and endlessly forgiving with kids...",
+  "why_it_fits": {
+    "family": "Patient, friendly, and endlessly forgiving with kids — exactly what your family needs.",
+    "couple": "Loyal and affectionate, Goldens thrive with attentive owners who enjoy outdoor time.",
+    "solo": "A devoted companion who matches active solo owners perfectly."
+  },
+  "meta_title": "Golden Retriever — Is This the Right Breed for Your Family? | FurtasticMatch",
+  "meta_description": "Learn everything about Golden Retrievers — temperament, grooming, family fit, and cost. Take our quiz to see if they're right for you.",
+  "breed_page_content": {
+    "intro": "Golden Retrievers are one of the most popular family dogs in America...",
+    "traits": "Friendly, reliable, trustworthy, kind, confident...",
+    "family_fit": "Excellent with children of all ages...",
+    "grooming": "Requires brushing 2-3 times per week...",
+    "activity": "Needs 1-2 hours of exercise daily...",
+    "cost": "Purchase price: $1,500–$3,500. Annual costs: $1,200–$2,500..."
+  }
+}
+Minimum 30 breeds to include: Golden Retriever, Labrador Retriever, Labradoodle, Goldendoodle, Poodle (Standard), Cavalier King Charles Spaniel, Bernese Mountain Dog, Beagle, French Bulldog, Boston Terrier, Corgi (Pembroke Welsh), Shih Tzu, Bichon Frise, Maltese, Havanese, Pomeranian, German Shepherd, Border Collie, Australian Shepherd, Vizsla, Weimaraner, Boxer, Doberman Pinscher, Great Dane, Saint Bernard, Newfoundland, Irish Setter, Cocker Spaniel, Brittany Spaniel, Basenji
+Exclude: All pit bull and pit bull-type breeds.
+
+PAGE 4: BREED PROFILE (/breeds/:slug)
+SEO (unique per page)
+	•	Title: [Breed Name] — Is This the Right Breed for Your Family? | FurtasticMatch
+	•	Meta description: from breed data
+	•	Schema: Article
+	•	H1: breed name
+Template structure
+	1	Hero: Breed name (Baloo 2 800, large) + illustration (emoji in styled box)
+	2	Quiz CTA — sticky on mobile: "Find out if [breed] is right for you →" — indigo button, fixed bottom (above sticky ad if ad present)
+	3	Intro: 150–200 words, from breed_page_content.intro
+	4	Breed traits grid: 4 cards — Size, Energy, Grooming, Kid-Friendly — each with emoji, label, value
+	5	Affiliate disclosure: "FurtasticMatch participates in affiliate programs. We earn a commission if you make a purchase through our links, at no extra cost to you."
+	6	Affiliate link zone: "Find [Breed] Breeders →" — primary CTA linking to breed.affiliate_link (or /find-a-breeder?breed=[slug] as fallback). Fires gtag('event', 'breeder_click', {breed_name, card_slot: 'breed_page'}).
+	7	Content sections: Family Fit, Grooming, Activity, Cost of Ownership — from breed data
+	8	Quiz CTA block: Strong inline CTA — "Still not sure if [breed] is right for you?" + "Take the Quiz →" button
+	9	Email capture: Same component as results page
+	10	Ad zones:
+	◦	Desktop: 300×250 sidebar (sticky) — <!-- ADSENSE UNIT: Breed sidebar -->
+	◦	Desktop: 728×90 leaderboard below content — <!-- ADSENSE UNIT: Breed leaderboard -->
+	◦	Mobile: 320×50 sticky bottom, dismissible (44×44px close button) — <!-- ADSENSE UNIT: Breed sticky -->
+	11	Related breeds: 3 breed chips linking to their profile pages
+	12	Footer
+Scroll depth GA4
+gtag('event', 'scroll_depth', { depth: 25|50|75|100, page_type: 'breed_profile' });
+
+PAGE 5: COMPARISON (/compare/:slug1-vs-:slug2)
+SEO
+	•	Title: [Breed A] vs [Breed B]: Which Is Right for Your Family? | FurtasticMatch
+	•	H1: [Breed A] vs [Breed B]: Which Is Right for Your Family?
+Template structure
+	1	H1 as above
+	2	Side-by-side comparison table: Size, Energy, Grooming, Kid-Friendly, Experience Required, Space Needed — one column per breed
+	3	Prose section: "When to choose [Breed A]" / "When to choose [Breed B]" — 1–2 paragraphs each (write placeholder content)
+	4	Quiz CTA: "Still unsure? Take our quiz to find out which fits your lifestyle" → /quiz
+	5	Affiliate CTAs for both breeds — with disclosure above
+	6	Internal links to both breed profile pages
+	7	Ad zones: same as breed pages
+	8	Footer
+Launch comparison pages (5 pages)
+	1	/compare/labrador-retriever-vs-golden-retriever
+	2	/compare/french-bulldog-vs-boston-terrier
+	3	/compare/beagle-vs-cocker-spaniel
+	4	/compare/poodle-vs-labradoodle
+	5	/compare/german-shepherd-vs-australian-shepherd
+
+PAGE 6: BREEDERS (/breeders)
+SEO
+	•	Title: List Your Breeds on FurtasticMatch | For Breeders
+	•	H1: "Reach Families Searching for Your Breed"
+	•	Indexable (no noindex)
+Content
+	•	Headline: "Reach Families Searching for [Breed Name] Puppies"
+	•	Subhead: "FurtasticMatch connects you with families actively looking for their perfect dog. Get featured in quiz results and breed pages."
+Form (Formspree)
+	•	Endpoint: VITE_FORMSPREE_BREEDER_ENDPOINT (env variable)
+	•	Fields:
+	◦	Breeder/business name (required)
+	◦	Email (required)
+	◦	Phone (optional)
+	◦	Breeds you specialize in (text input, comma-separated — dropdown in Phase 2)
+	◦	Location — State (required)
+	◦	Message (optional textarea)
+	•	Submit button: "Join the Waitlist →" — primary CTA style
+	•	On success: "Thanks for your interest! We'll reach out when sponsored placements are available."
+	•	GA4 on submit: gtag('event', 'breeder_waitlist_signup')
+
+PAGE 7: ABOUT (/about)
+Simple page. Required for AdSense/Mediavine approval.
+	•	H1: "About FurtasticMatch"
+	•	2–3 paragraphs: what the site is, who it's for, the mission (help families find their perfect dog match)
+	•	Include: "FurtasticMatch was built by a team passionate about helping families make the right decision before bringing a dog home."
+	•	No ads on this page
+
+PAGE 8: CONTACT (/contact)
+Simple page. Required for AdSense/Mediavine approval.
+	•	H1: "Contact Us"
+	•	Short intro: "Have a question, feedback, or partnership inquiry? We'd love to hear from you."
+	•	Formspree form: Name, Email, Message, Submit button
+	•	Endpoint: VITE_FORMSPREE_CONTACT_ENDPOINT
+	•	No ads on this page
+
+PAGE 9: FIND A BREEDER (/find-a-breeder)
+Simple bridge page.
+	•	H1: "Find a [Breed] Breeder Near You"
+	•	Breed name pre-populated from URL param: /find-a-breeder?breed=golden-retriever
+	•	Short intro: "We're building our breeder network. In the meantime, here's the best way to find a reputable [breed] breeder."
+	•	Single CTA button: "Search for [Breed] Breeders →" → opens https://www.google.com/search?q=[breed+name]+breeder+near+me in new tab
+	•	GA4 event: gtag('event', 'breeder_click', {breed_name: breed, card_slot: 'find_page'})
+	•	Note: When affiliate network is approved, this page becomes the affiliate redirect — same URL, new destination
+
+GA4 SETUP
+Implementation
+	•	Add GA4 script to index.html via env variable VITE_GA4_MEASUREMENT_ID
+	•	All custom events use gtag('event', ...) — do NOT rely on automatic events
+	•	All parameters use snake_case
+	•	Test all events in GA4 DebugView before declaring complete
+Full event list (13 events)
+Event
+Trigger
+Parameters
+page_view
+Every route change
+standard
+quiz_start
+Quiz page loads
+—
+quiz_q1_branch
+Q1 submitted
+branch, breed_name
+breed_selected
+Breed named in Q1
+breed_name
+quiz_progress
+Next button clicked
+question_number, question_id, answer_value
+quiz_abandon
+beforeunload while quiz active
+last_question_reached
+quiz_complete
+Results page loads
+—
+breeder_impression
+Breeder CTA enters viewport
+breed_name, card_slot
+breeder_click
+Breeder CTA clicked
+breed_name, card_slot
+email_capture
+Formspree submit success
+—
+share_click
+Share button tapped
+method
+scroll_depth
+Scroll threshold passed
+depth, page_type
+breeder_waitlist_signup
+Breeder form submitted
+—
+
+AD ZONES — COMPLETE MAP
+CRITICAL: AdSense Auto-Ads = OFF. Manual units only. All slots Mediavine-compatible sizing. Minimum 60px clearance between ad unit and CTA button. Sticky ad close button: minimum 44×44px touch target.
+Location
+Zone
+Desktop
+Mobile
+HTML Comment
+Home
+Below trust bar
+728×90
+320×50 responsive
+ADSENSE UNIT 1
+Home
+Sidebar
+300×250
+hidden
+ADSENSE UNIT 2
+Results
+In-content (after card 1)
+hidden
+300×250
+ADSENSE UNIT 3
+Results
+Sidebar
+300×250
+hidden
+ADSENSE UNIT 4
+Results
+Leaderboard below cards
+728×90
+hidden
+ADSENSE UNIT 5
+Results
+Sticky bottom
+hidden
+320×50
+ADSENSE UNIT 6
+Breed pages
+Sidebar
+300×250
+hidden
+ADSENSE UNIT 7
+Breed pages
+Leaderboard below content
+728×90
+hidden
+ADSENSE UNIT 8
+Breed pages
+Sticky bottom
+hidden
+320×50
+ADSENSE UNIT 9
+Comparison pages
+Same as breed pages
+same
+same
+ADSENSE UNIT 10
+At launch: render all ad zones as placeholder divs with dashed border and label. Insert actual AdSense code when account is approved.
+
+ENVIRONMENT VARIABLES
+Create .env file:
+VITE_GA4_MEASUREMENT_ID=G-X6FJ7R7PNF
+VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/mlgzarlp
+VITE_FORMSPREE_BREEDER_ENDPOINT=https://formspree.io/f/mlgzaedb
+VITE_FORMSPREE_CONTACT_ENDPOINT=https://formspree.io/f/mgodrevp
+VITE_SOCIAL_PROOF_ENABLED=false
+
+FEATURE FLAGS
+// src/config/flags.js
+export const FLAGS = {
+  SOCIAL_PROOF_ENABLED: import.meta.env.VITE_SOCIAL_PROOF_ENABLED === 'true',
+  SPONSORED_BREEDERS_ENABLED: false, // Phase 2 — hardcoded off
+}
+
+NETLIFY DEPLOYMENT
+Create netlify.toml:
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+COMPLIANCE
+Affiliate disclosure
+	•	On results page: visible above email capture
+	•	On breed pages: directly above affiliate link zone
+	•	On comparison pages: above both affiliate CTAs
+	•	Wording: "FurtasticMatch participates in affiliate programs. We earn a commission if you make a purchase through our breeder links, including as an Amazon Associate, at no extra cost to you."
+Sponsored breeders (Phase 2 — build now, activate later)
+	•	Each breed card has a sponsored boolean from breed data (default: false)
+	•	When sponsored === true AND FLAGS.SPONSORED_BREEDERS_ENABLED === true:
+	◦	Render "Sponsored" badge on breed card (NOT "Featured" — FTC requirement)
+	◦	Subtle visual distinction (e.g., amber border, "Sponsored" label in small text)
+	•	All flags off at launch
+Results page
+	•	<meta name="robots" content="noindex"> — required, do not skip
+
+BUILD CHECKLIST (verify before handoff)
+	•	[ ] All 8 routes working with React Router
+	•	[ ] Quiz flow — all 8 questions, state persists between questions, back button works
+	•	[ ] Custom sliders smooth and continuous (not stepped, not native HTML range)
+	•	[ ] Matching engine produces 3 matches + 1 wildcard from quiz answers
+	•	[ ] Results URL encodes breed IDs, page renders from URL hash
+	•	[ ] Reveal animation sequence fires correctly
+	•	[ ] Card stagger animation works (each card reveals sequentially)
+	•	[ ] Email capture submits to Formspree (test with real endpoint)
+	•	[ ] All 4 share buttons functional
+	•	[ ] GA4 events fire correctly — verify in DebugView
+	•	[ ] Ad zone placeholders in correct positions with HTML comments
+	•	[ ] noindex on results page
+	•	[ ] About and Contact pages exist and are linked from footer
+	•	[ ] /breeders page form submits correctly
+	•	[ ] /find-a-breeder page accepts breed param and links to Google search
+	•	[ ] Netlify config present — npm run build produces deployable /dist
+	•	[ ] .env file documented with placeholder values
+	•	[ ] Mobile-first — test at 375px viewport
+	•	[ ] Sticky ad close button is 44×44px minimum
+	•	[ ] 60px clearance between ads and CTAs
+	•	[ ] No pit bull breeds in breeds.json
+	•	[ ] Social proof feature-flagged off
+	•	[ ] Sponsored badge feature-flagged off
+
+End of build specification. Do not deviate from the design system, page architecture, or logic described above. All design decisions have been made — implement, do not interpret.

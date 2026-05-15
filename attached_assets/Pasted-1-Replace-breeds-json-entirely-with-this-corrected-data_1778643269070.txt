@@ -1,0 +1,69 @@
+1. Replace breeds.json entirely with this corrected data:
+json[
+  {"id":1,"breed_name":"Labrador Retriever","activity_level":4,"space":2,"grooming":2,"experience_level":1,"good_with_kids":5,"size_preference":4,"lifestyle":3},
+  {"id":2,"breed_name":"Golden Retriever","activity_level":4,"space":2,"grooming":3,"experience_level":1,"good_with_kids":5,"size_preference":4,"lifestyle":3},
+  {"id":3,"breed_name":"French Bulldog","activity_level":2,"space":5,"grooming":1,"experience_level":1,"good_with_kids":4,"size_preference":2,"lifestyle":1},
+  {"id":4,"breed_name":"German Shepherd Dog","activity_level":4,"space":2,"grooming":3,"experience_level":3,"good_with_kids":4,"size_preference":4,"lifestyle":4},
+  {"id":5,"breed_name":"Bulldog","activity_level":2,"space":5,"grooming":2,"experience_level":1,"good_with_kids":4,"size_preference":3,"lifestyle":1},
+  {"id":6,"breed_name":"Poodle","activity_level":4,"space":3,"grooming":5,"experience_level":2,"good_with_kids":5,"size_preference":3,"lifestyle":3},
+  {"id":7,"breed_name":"Beagle","activity_level":4,"space":3,"grooming":2,"experience_level":3,"good_with_kids":5,"size_preference":2,"lifestyle":3},
+  {"id":8,"breed_name":"Rottweiler","activity_level":3,"space":2,"grooming":2,"experience_level":5,"good_with_kids":3,"size_preference":5,"lifestyle":4},
+  {"id":9,"breed_name":"German Shorthaired Pointer","activity_level":5,"space":1,"grooming":1,"experience_level":4,"good_with_kids":4,"size_preference":3,"lifestyle":5},
+  {"id":10,"breed_name":"Dachshund","activity_level":3,"space":5,"grooming":2,"experience_level":3,"good_with_kids":3,"size_preference":2,"lifestyle":2},
+  {"id":11,"breed_name":"Pembroke Welsh Corgi","activity_level":4,"space":3,"grooming":3,"experience_level":2,"good_with_kids":4,"size_preference":2,"lifestyle":3},
+  {"id":12,"breed_name":"Australian Shepherd","activity_level":5,"space":1,"grooming":3,"experience_level":4,"good_with_kids":4,"size_preference":3,"lifestyle":5},
+  {"id":13,"breed_name":"Yorkshire Terrier","activity_level":3,"space":5,"grooming":4,"experience_level":1,"good_with_kids":3,"size_preference":1,"lifestyle":2},
+  {"id":14,"breed_name":"Cavalier King Charles Spaniel","activity_level":3,"space":5,"grooming":3,"experience_level":1,"good_with_kids":5,"size_preference":2,"lifestyle":1},
+  {"id":15,"breed_name":"Doberman Pinscher","activity_level":4,"space":2,"grooming":1,"experience_level":5,"good_with_kids":3,"size_preference":4,"lifestyle":4},
+  {"id":16,"breed_name":"Boxer","activity_level":4,"space":2,"grooming":2,"experience_level":2,"good_with_kids":5,"size_preference":4,"lifestyle":3},
+  {"id":17,"breed_name":"Miniature Schnauzer","activity_level":3,"space":5,"grooming":3,"experience_level":1,"good_with_kids":4,"size_preference":2,"lifestyle":2},
+  {"id":18,"breed_name":"Basset Hound","activity_level":1,"space":4,"grooming":2,"experience_level":2,"good_with_kids":4,"size_preference":3,"lifestyle":2},
+  {"id":19,"breed_name":"Great Dane","activity_level":3,"space":2,"grooming":2,"experience_level":4,"good_with_kids":4,"size_preference":5,"lifestyle":3},
+  {"id":20,"breed_name":"Shih Tzu","activity_level":2,"space":5,"grooming":4,"experience_level":1,"good_with_kids":4,"size_preference":2,"lifestyle":1},
+  {"id":21,"breed_name":"Siberian Husky","activity_level":5,"space":1,"grooming":4,"experience_level":4,"good_with_kids":4,"size_preference":3,"lifestyle":5},
+  {"id":22,"breed_name":"Bernese Mountain Dog","activity_level":3,"space":2,"grooming":4,"experience_level":2,"good_with_kids":5,"size_preference":5,"lifestyle":3},
+  {"id":23,"breed_name":"Pomeranian","activity_level":3,"space":5,"grooming":4,"experience_level":1,"good_with_kids":3,"size_preference":1,"lifestyle":2},
+  {"id":24,"breed_name":"Boston Terrier","activity_level":3,"space":5,"grooming":1,"experience_level":1,"good_with_kids":4,"size_preference":2,"lifestyle":1},
+  {"id":25,"breed_name":"Havanese","activity_level":3,"space":5,"grooming":4,"experience_level":1,"good_with_kids":5,"size_preference":2,"lifestyle":2},
+  {"id":26,"breed_name":"Shetland Sheepdog","activity_level":4,"space":3,"grooming":4,"experience_level":2,"good_with_kids":4,"size_preference":2,"lifestyle":3},
+  {"id":27,"breed_name":"Brittany","activity_level":5,"space":1,"grooming":2,"experience_level":4,"good_with_kids":4,"size_preference":3,"lifestyle":5},
+  {"id":28,"breed_name":"Border Collie","activity_level":5,"space":1,"grooming":3,"experience_level":5,"good_with_kids":3,"size_preference":3,"lifestyle":5},
+  {"id":29,"breed_name":"Maltese","activity_level":2,"space":5,"grooming":4,"experience_level":1,"good_with_kids":3,"size_preference":1,"lifestyle":1},
+  {"id":30,"breed_name":"Chihuahua","activity_level":2,"space":5,"grooming":1,"experience_level":2,"good_with_kids":2,"size_preference":1,"lifestyle":1}
+]
+2. Restructure the results page breed match cards.
+Each card currently has a single "Find a Breeder" button. Replace that with the following CTA block:
+Primary CTA (most prominent, filled Electric Indigo button #5B3FD9):
+
+Label: "DNA Test This Breed"
+Link: https://embarkvet.com (affiliate placeholder — will be swapped for real link later)
+Small text below the button: *Affiliate link — we may earn a small commission at no cost to you.
+
+Secondary CTAs (outlined buttons, indigo border, stacked vertically on mobile, 2-column on desktop):
+
+"Find AKC Breeders" → https://marketplace.akc.org/puppies/[breed-slug] (dynamic)
+"Browse on GoodDog" → https://www.gooddog.com/dog-breeds/[breed-slug] (dynamic)
+"Shop [Breed] Essentials" → https://www.chewy.com/s?query=[breed-name] (dynamic, affiliate placeholder)
+
+Grayed-out placeholder CTA (muted style, non-clickable):
+
+Label: "Get Insurance Quote"
+Link: #
+Style: gray outlined button, cursor: not-allowed, opacity 0.5
+Tooltip on hover: "Coming soon"
+
+Keep all existing share buttons and email capture — do not touch those.
+Add a small "Are you a [breed] breeder? Get featured here →" text link below the CTA block that links to /breeders.
+All affiliate links should have UTM parameters: ?utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate
+3. Fix the trust bar.
+Find the text "12,000+ Families Matched" (or similar placeholder number) and replace it with:
+"Free. No sign-up required."
+4. QA the matching engine with these 5 user profiles and report the top 3 results for each:
+
+Studio apartment, works from home, low activity, first-time owner, no kids, wants small dog
+House with yard, runs daily, experienced owner, two young kids, wants large dog
+Senior, retired, small apartment, very low activity, no kids, wants lap dog
+Couple, moderate activity, suburban house, no kids, medium dog, moderate grooming OK
+Single professional, active on weekends, no kids, medium dog, no strong grooming preference
+
+Report the top 3 breeds for each profile before marking complete.

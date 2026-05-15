@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg: #FFFBF0;
+  --bg-card: #FFFFFF;
+  --bg-muted: #FFF3D0;
+  --text-primary: #1A1040;
+  --text-secondary: #4A3F7A;
+  --text-muted: #9B8FB5;
+  --cta: #5B3FD9;
+  --cta-shadow: #3A22A8;
+  --accent: #FFBE00;
+  --teal: #3DBFB8;
+  --border: #EDE0FF;
+  --shadow: rgba(26, 16, 64, 0.10);
+  
+  --font-display: 'Baloo 2', cursive;
+  --font-body: 'Nunito', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 4px 4px 0 var(--border);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--border);
+}
+
+.btn-primary {
+  background: var(--cta);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 0 var(--cta-shadow);
+  font-family: var(--font-body);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--cta-shadow);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 0 #B07800;
+  font-family: var(--font-body);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.btn-accent:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #B07800;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--border);
+  color: var(--text-secondary);
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Ad zone responsive visibility */
+.ad-zone-desktop-only { display: flex; }
+.ad-zone-mobile-only  { display: none; }
+@media (max-width: 768px) {
+  .ad-zone-desktop-only { display: none !important; }
+  .ad-zone-mobile-only  { display: flex !important; }
+}
+
+/* Nav responsive — prevent logo/button overlap */
+@media (max-width: 480px) {
+  .nav-inner { padding: 10px 16px !important; gap: 8px !important; }
+  .nav-logo-text { font-size: 18px !important; }
+  .nav-paw { font-size: 18px !important; }
+  .nav-cta {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+    letter-spacing: 0.02em !important;
+  }
+}
+
+/* Results cards mobile */
+@media (max-width: 768px) {
+  .results-grid { grid-template-columns: 1fr !important; }
+  .results-grid > div { min-width: 0; overflow: hidden; }
+}

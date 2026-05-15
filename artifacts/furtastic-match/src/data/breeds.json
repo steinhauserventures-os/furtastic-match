@@ -1,0 +1,1172 @@
+[
+  {
+    "id": "labrador-retriever",
+    "slug": "labrador-retriever",
+    "name": "Labrador Retriever",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#FFF3D0",
+      "#E8F4FF"
+    ],
+    "size": "large",
+    "activity_level": 4,
+    "space": 2,
+    "grooming": 2,
+    "experience_level": 1,
+    "good_with_kids": 5,
+    "size_preference": 4,
+    "lifestyle": 3,
+    "wildcard_eligible": false,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "America's most popular dog — outgoing, playful, and incredibly easy to train.",
+    "why_it_fits": {
+      "family": "Labs are gentle giants who love kids and thrive in active households.",
+      "couple": "Perfect for active couples who love outdoor adventures and weekend hikes.",
+      "solo": "A loyal companion who keeps you active and socially connected."
+    },
+    "meta_title": "Labrador Retriever — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Labrador Retrievers — temperament, training, family fit, and cost. Take our quiz to find out if a Lab is right for you.",
+    "breed_page_content": {
+      "intro": "The Labrador Retriever has been America's most popular dog breed for over three decades. Outgoing, playful, and remarkably easy to train, Labs adapt to almost any lifestyle — from suburban houses to working ranches.",
+      "traits": "Outgoing, active, gentle, intelligent, trusting. Labs are almost universally friendly and rarely meet a stranger they don't like.",
+      "family_fit": "One of the best family dogs around. Labs are patient with young children, playful with older kids, and loyal to every family member.",
+      "grooming": "Low-maintenance coat needs brushing once a week. They do shed, especially seasonally, but their short coat makes management straightforward.",
+      "activity": "High energy — needs 60-90 minutes of vigorous exercise daily. Without adequate activity they'll find their own entertainment.",
+      "cost": "Purchase price: $1,000–$3,000. Annual costs: $1,000–$2,000.",
+      "fun_fact": "Labs have been the most popular dog breed in the United States for over 30 consecutive years — longer than any other breed in AKC history."
+    }
+  },
+  {
+    "id": "golden-retriever",
+    "slug": "golden-retriever",
+    "name": "Golden Retriever",
+    "emoji": "🐕",
+    "illustration_bg": [
+      "#FFF3D0",
+      "#FFE8A0"
+    ],
+    "size": "large",
+    "activity_level": 4,
+    "space": 2,
+    "grooming": 3,
+    "experience_level": 1,
+    "good_with_kids": 5,
+    "size_preference": 4,
+    "lifestyle": 3,
+    "wildcard_eligible": false,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Patient, friendly, and endlessly forgiving with kids — exactly what most families need.",
+    "why_it_fits": {
+      "family": "Patient, friendly, and endlessly forgiving with kids — exactly what your family needs.",
+      "couple": "Loyal and affectionate, Goldens thrive with attentive owners who enjoy outdoor time.",
+      "solo": "A devoted companion who matches active solo owners perfectly."
+    },
+    "meta_title": "Golden Retriever — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Learn everything about Golden Retrievers — temperament, grooming, family fit, and cost. Take our quiz to see if they're right for you.",
+    "breed_page_content": {
+      "intro": "If Labs are enthusiastic, Goldens are enthusiastic AND emotionally attentive. They are deeply people-oriented — they watch your face, they sense your mood, and they will bring you a toy when you are sad. They are not just good with kids; they are patient in a way that feels almost deliberate.",
+      "traits": "Health watch-outs: cancer is a serious concern — Goldens have one of the highest cancer rates of any breed (approximately 60% die from cancer). Also prone to hip and elbow dysplasia, hypothyroidism, and heart conditions. What trips people up: assuming the gentle temperament means no training needed. Fun fact: three U.S. presidents have owned Golden Retrievers in the White House — Gerald Ford, Ronald Reagan, and Bill Clinton.",
+      "family_fit": "Expect 60–90 minutes a day of vigorous activity — otherwise boredom shows up fast. A home with yard access helps a lot; apartment life usually needs frequent park time. Beginner-friendly with the right basic training and consistency.",
+      "grooming": "Brushing 2–3 times a week and sometimes professional help. Goldens shed significantly year-round and heavily in spring and fall.",
+      "activity": "Expect 60–90 minutes a day of vigorous activity. Goldens were bred to retrieve all day — they have tremendous endurance and love swimming, fetch, and hiking. Without adequate exercise, their enthusiasm turns into destructive chewing and counter-surfing.",
+      "cost": "Purchase price: $1,500–$3,500. Annual costs: $1,200–$2,500 including food, vet care, grooming, and supplies.",
+      "fun_fact": "three U.S. presidents have owned Golden Retrievers in the White House — Gerald Ford, Ronald Reagan, and Bill Clinton."
+    }
+  },
+  {
+    "id": "french-bulldog",
+    "slug": "french-bulldog",
+    "name": "French Bulldog",
+    "emoji": "🐾",
+    "illustration_bg": [
+      "#F8F0FF",
+      "#ECD8FF"
+    ],
+    "size": "small",
+    "activity_level": 2,
+    "space": 5,
+    "grooming": 1,
+    "experience_level": 1,
+    "good_with_kids": 4,
+    "size_preference": 2,
+    "lifestyle": 1,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "The ultimate city dog — compact, charming, and completely content on the couch.",
+    "why_it_fits": {
+      "family": "Adaptable and affectionate, Frenchies are great family dogs in smaller homes and apartments.",
+      "couple": "The perfect urban companion — stylish, low-energy, and deeply devoted.",
+      "solo": "Ideal for solo apartment dwellers who want loyal companionship without high exercise demands."
+    },
+    "meta_title": "French Bulldog — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about French Bulldogs — temperament, health issues, and apartment suitability. Take our quiz to see if a Frenchie is your match.",
+    "breed_page_content": {
+      "intro": "Frenchies are comedians. They have big personalities in small bodies — opinionated, attention-seeking, surprisingly stubborn, and genuinely funny to live with. They bond intensely with their people and are not independent dogs.",
+      "traits": "Health watch-outs: Brachycephalic Obstructive Airway Syndrome (BOAS) affects many Frenchies — severity varies, but some require corrective surgery. Also prone to spinal issues (IVDD), hip dysplasia, and allergies. French Bulldogs cannot reproduce naturally in most cases — their heads are too large to pass through the birth canal, so nearly all litters are delivered by C-section. What trips people up: letting them overheat.",
+      "family_fit": "Plan on about 30–45 minutes of daily walking and some light play. This is one of the better options for apartments and small spaces. Beginner-friendly with the right basic training and consistency — just be aware that stubbornness is baked in.",
+      "grooming": "Grooming is simple: occasional brushing and basic nail and ear care are usually enough. Their facial wrinkles need regular cleaning to prevent skin infections.",
+      "activity": "About 30–45 minutes of gentle daily exercise — short walks and play sessions. Frenchies are heat-sensitive due to their flat faces and should never be overexerted in warm weather. Keep sessions short and always have water available.",
+      "cost": "Purchase price: $3,000–$8,000. Annual costs: $1,500–$3,000+. Significant health costs are common.",
+      "fun_fact": "French Bulldogs cannot reproduce naturally in most cases — their heads are too large to pass through the birth canal, so nearly all litters are delivered by C-section."
+    }
+  },
+  {
+    "id": "german-shepherd",
+    "slug": "german-shepherd",
+    "name": "German Shepherd Dog",
+    "emoji": "🦮",
+    "illustration_bg": [
+      "#FFF4E0",
+      "#F5E0C0"
+    ],
+    "size": "large",
+    "activity_level": 4,
+    "space": 2,
+    "grooming": 3,
+    "experience_level": 3,
+    "good_with_kids": 4,
+    "size_preference": 4,
+    "lifestyle": 4,
+    "wildcard_eligible": false,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Loyal, confident, and capable — the German Shepherd is a working dog at heart.",
+    "why_it_fits": {
+      "family": "Deeply loyal to their family, German Shepherds are protective and great with kids they're raised with.",
+      "couple": "A powerful, intelligent companion for active couples with outdoor lifestyles.",
+      "solo": "Devoted and capable — they bond intensely with their primary person."
+    },
+    "meta_title": "German Shepherd Dog — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about German Shepherd Dogs — temperament, training needs, and family suitability. Take our quiz to see if one fits your lifestyle.",
+    "breed_page_content": {
+      "intro": "German Shepherds are serious dogs. Loyal to a degree that borders on intense — they form powerful bonds with their family and are naturally suspicious of strangers. They are not aggressive by default, but they are watchful and protective.",
+      "traits": "Health watch-outs: Degenerative myelopathy (DM) is a progressive spinal disease common in the breed — DNA testing is available. Also prone to hip and elbow dysplasia, bloat, and exocrine pancreatic insufficiency (EPI). What trips people up: under-socializing puppies. Fun fact: Rin Tin Tin, the German Shepherd who became a Hollywood star in the 1920s, was rescued from a World War I battlefield in France.",
+      "family_fit": "Expect 60–90 minutes a day of vigorous activity — otherwise boredom shows up fast. A home with yard access helps a lot; apartment life usually needs frequent park time. Some experience helps — this breed has predictable challenges you will need to manage, particularly around socialization and consistency.",
+      "grooming": "Brushing 2–3 times a week and sometimes professional help. They shed year-round and heavily twice a year — often called \"German Shedders\" for good reason.",
+      "activity": "Expect 60–90 minutes a day of vigorous activity. German Shepherds need both physical exercise and mental stimulation — obedience training, scent work, and structured play. Without it, they can become anxious, destructive, or reactive. They are one of the most versatile working dogs in the world.",
+      "cost": "Purchase price: $1,500–$3,500. Annual costs: $1,500–$2,500 (training costs can add significantly).",
+      "fun_fact": "Rin Tin Tin, the German Shepherd who became a Hollywood star in the 1920s, was rescued from a World War I battlefield in France."
+    }
+  },
+  {
+    "id": "bulldog",
+    "slug": "bulldog",
+    "name": "Bulldog",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#F5F0FF",
+      "#E8D8FF"
+    ],
+    "size": "medium",
+    "activity_level": 2,
+    "space": 5,
+    "grooming": 2,
+    "experience_level": 1,
+    "good_with_kids": 4,
+    "size_preference": 3,
+    "lifestyle": 1,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Wrinkly, docile, and surprisingly lovable — the Bulldog is a devoted couch companion.",
+    "why_it_fits": {
+      "family": "Gentle and patient, Bulldogs are affectionate family dogs who are especially good with children.",
+      "couple": "The ideal low-key companion for apartment-dwelling couples who want a dog with character.",
+      "solo": "Calm, loyal, and content to spend the day beside you — the perfect solo companion."
+    },
+    "meta_title": "Bulldog — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Bulldogs — temperament, apartment suitability, and family fit. Take our quiz to see if a Bulldog is right for you.",
+    "breed_page_content": {
+      "intro": "Bulldogs are the original couch companion. They are calm, gentle, and surprisingly affectionate for a dog that looks like a bouncer. They are not energetic — a 20-minute walk is plenty and they will sleep the rest of the day.",
+      "traits": "Health watch-outs: brachycephalic airway issues, hip dysplasia, cherry eye, skin fold dermatitis, and joint problems are all common. Bulldogs are one of the most expensive breeds for veterinary care. What trips people up: skipping the skin fold cleaning. Fun fact: Bulldogs are the mascot of the United States Marine Corps and over 40 American universities.",
+      "family_fit": "Plan on about 30–45 minutes of daily walking and some light play. This is one of the better options for apartments and small spaces. Beginner-friendly with the right basic training and consistency.",
+      "grooming": "Weekly brushing plus regular cleaning of skin folds — this is the most important maintenance task. Neglected skin folds can develop painful infections quickly.",
+      "activity": "About 30–45 minutes of gentle daily exercise — short walks and light play. Bulldogs are heat-sensitive and should never be overexerted, especially in warm weather. Keep sessions short and always have water available.",
+      "cost": "Purchase price: $2,000–$5,000. Annual costs: $1,500–$3,000. Health issues are common and can be expensive.",
+      "fun_fact": "Bulldogs are the mascot of the United States Marine Corps and over 40 American universities."
+    }
+  },
+  {
+    "id": "poodle",
+    "slug": "poodle",
+    "name": "Poodle",
+    "emoji": "🐩",
+    "illustration_bg": [
+      "#F5F0FF",
+      "#E8DCFF"
+    ],
+    "size": "medium",
+    "activity_level": 4,
+    "space": 3,
+    "grooming": 5,
+    "experience_level": 2,
+    "good_with_kids": 5,
+    "size_preference": 3,
+    "lifestyle": 3,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Wickedly smart and surprisingly athletic — the Poodle defies all stereotypes.",
+    "why_it_fits": {
+      "family": "Intelligent and gentle, Poodles excel in family environments where they get mental stimulation.",
+      "couple": "Perfect for couples who want a trainable, low-shedding companion for active lives.",
+      "solo": "Highly intelligent solo companions who thrive with consistent training and engagement."
+    },
+    "meta_title": "Poodle — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Learn about Poodles — intelligence, grooming, and family suitability. Take our quiz to see if a Poodle is your perfect match.",
+    "breed_page_content": {
+      "intro": "Standard Poodles are one of the most intelligent breeds alive — and they know it. They are quick, curious, eager to please, and deeply attuned to human emotion. They are athletes disguised as show dogs.",
+      "traits": "Health watch-outs: hip dysplasia, Addison's disease, bloat (GDV), and sebaceous adenitis (skin condition) are the primary concerns. What trips people up: treating them as decorative. Fun fact: Standard Poodles have been used as military dogs, circus performers, truffle hunters, and guide dogs.",
+      "family_fit": "Expect 60–90 minutes a day of vigorous activity — otherwise boredom shows up fast. Apartment living can work if you are disciplined about exercise off-site. Beginner-compatible, but you will do best with a little prep and early coaching to channel their intelligence properly.",
+      "grooming": "This is a high-maintenance coat — daily attention and regular professional grooming every 4–6 weeks are part of ownership. The upside: they are low-shedding, making them more tolerable for allergy sufferers.",
+      "activity": "Expect 60–90 minutes a day of vigorous activity. Standard Poodles need both physical and mental exercise — they were originally bred as water retrievers and have the stamina to match. Swimming, agility, and advanced obedience are ideal outlets.",
+      "cost": "Purchase price: $2,000–$4,000. Annual costs: $1,800–$3,000 (professional grooming is non-negotiable).",
+      "fun_fact": "Standard Poodles have been used as military dogs, circus performers, truffle hunters, and guide dogs."
+    }
+  },
+  {
+    "id": "beagle",
+    "slug": "beagle",
+    "name": "Beagle",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#FFF8E8",
+      "#FFE8C0"
+    ],
+    "size": "small",
+    "activity_level": 4,
+    "space": 3,
+    "grooming": 2,
+    "experience_level": 3,
+    "good_with_kids": 5,
+    "size_preference": 2,
+    "lifestyle": 3,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Merry, curious, and nose-first through life — the Beagle is a classic family companion.",
+    "why_it_fits": {
+      "family": "Sturdy, curious, and great with kids — Beagles bring playful energy to family life.",
+      "couple": "Compact and low-maintenance, Beagles are great for active couples in moderate-sized homes.",
+      "solo": "Independent but affectionate — perfect for solo owners who enjoy an adventurous companion."
+    },
+    "meta_title": "Beagle — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Beagles — temperament, training challenges, and family suitability. Take our quiz to see if a Beagle fits your lifestyle.",
+    "breed_page_content": {
+      "intro": "Beagles are merry, curious, and completely nose-driven. Their entire experience of the world is filtered through scent — when something interesting catches their nose, the rest of the world ceases to exist. They are friendly with everyone — strangers, children, other dogs, cats.",
+      "traits": "Health watch-outs: epilepsy, hypothyroidism, hip dysplasia, and cherry eye. What trips people up: off-leash in unfenced areas. Fun fact: Snoopy, the world's most famous cartoon dog, is a Beagle — creator Charles Schulz chose the breed because he found them the best cartoon dog and had always loved them growing up.",
+      "family_fit": "Expect 60–90 minutes a day of vigorous activity — otherwise boredom shows up fast. Apartment living can work if you are disciplined about exercise off-site. Some experience helps; this breed has predictable challenges you will need to manage, particularly around recall and containment.",
+      "grooming": "Weekly brushing and a quick routine at home to stay ahead of shedding. Their ears need regular cleaning to prevent infections.",
+      "activity": "Expect 60–90 minutes a day of vigorous activity. Beagles are scent hounds built to run — boredom leads quickly to destructive behavior and howling. Always exercise in a securely fenced area; off-leash recall is unreliable once a scent trail takes over.",
+      "cost": "Purchase price: $500–$2,000. Annual costs: $800–$1,500.",
+      "fun_fact": "Snoopy, the world's most famous cartoon dog, is a Beagle — creator Charles Schulz chose the breed because he found them the best cartoon dog and had always loved them growing up."
+    }
+  },
+  {
+    "id": "rottweiler",
+    "slug": "rottweiler",
+    "name": "Rottweiler",
+    "emoji": "🦮",
+    "illustration_bg": [
+      "#1A1040",
+      "#2A2060"
+    ],
+    "size": "xlarge",
+    "activity_level": 3,
+    "space": 2,
+    "grooming": 2,
+    "experience_level": 5,
+    "good_with_kids": 3,
+    "size_preference": 5,
+    "lifestyle": 4,
+    "wildcard_eligible": false,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Powerful, loyal, and deeply devoted — the Rottweiler is a guardian who needs an experienced hand.",
+    "why_it_fits": {
+      "family": "Deeply loyal to their family, but requires careful socialization and experienced ownership with children.",
+      "couple": "A powerful guardian companion for confident, experienced couples with space.",
+      "solo": "The ultimate loyal protector for experienced solo owners who can provide firm, consistent leadership."
+    },
+    "meta_title": "Rottweiler — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Rottweilers — temperament, training requirements, and family suitability. Take our quiz to see if one is right for you.",
+    "breed_page_content": {
+      "intro": "Rottweilers are confident, calm, and deeply loyal — but they are not for everyone. They are naturally aloof with strangers and instinctively protective of their family. A well-bred, well-socialized Rottweiler is stable and controllable.",
+      "traits": "Health watch-outs: hip and elbow dysplasia, heart conditions (subaortic stenosis), osteosarcoma (bone cancer), and bloat are the primary health concerns. What trips people up: skipping obedience training. Fun fact: Rottweilers were nearly extinct by the late 1800s as railroads replaced cart dogs — the breed was revived by dedicated German breeders in the early 1900s.",
+      "family_fit": "You will want roughly 45–60 minutes a day of real exercise (walks plus active play). A home with yard access helps a lot; apartment life usually needs frequent park time. Experienced owners are essential — mistakes can create serious behavior problems at this size and strength.",
+      "grooming": "Weekly brushing and a quick routine at home to stay ahead of shedding. Their short double coat sheds moderately year-round.",
+      "activity": "About 45–60 minutes of daily exercise — walks plus structured work. Rottweilers were bred as droving and carting dogs; they have more endurance than their stocky build suggests. Obedience training and structured exercise are both essential.",
+      "cost": "Purchase price: $1,500–$4,000. Annual costs: $1,500–$2,500 (training investment is essential).",
+      "fun_fact": "Rottweilers were nearly extinct by the late 1800s as railroads replaced cart dogs — the breed was revived by dedicated German breeders in the early 1900s."
+    }
+  },
+  {
+    "id": "german-shorthaired-pointer",
+    "slug": "german-shorthaired-pointer",
+    "name": "German Shorthaired Pointer",
+    "emoji": "🐕",
+    "illustration_bg": [
+      "#FFF8E0",
+      "#FFE8A0"
+    ],
+    "size": "medium",
+    "activity_level": 5,
+    "space": 1,
+    "grooming": 1,
+    "experience_level": 4,
+    "good_with_kids": 4,
+    "size_preference": 3,
+    "lifestyle": 5,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "The ultimate all-purpose sporting dog — athletic, versatile, and built for adventure.",
+    "why_it_fits": {
+      "family": "Energetic and affectionate, GSPs thrive in active families who can match their impressive exercise needs.",
+      "couple": "The perfect adventure partner for outdoorsy couples who run, hike, or hunt.",
+      "solo": "An exceptional companion for highly active solo owners who want a devoted athletic partner."
+    },
+    "meta_title": "German Shorthaired Pointer — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about German Shorthaired Pointers — energy level, exercise needs, and family suitability. Take our quiz to see if one fits your lifestyle.",
+    "breed_page_content": {
+      "intro": "GSPs are high-octane working dogs who happen to live in your house. They are intelligent, enthusiastic, and tireless. They are affectionate with their family and generally good with children, but their energy level is not compatible with sedentary households.",
+      "traits": "Health watch-outs: hip dysplasia, bloat (GDV), and hypothyroidism are the primary concerns. What trips people up: getting one as a first dog because they look sleek and manageable — the energy output is extreme. Fun fact: GSPs have webbed feet — a functional adaptation for water retrieval.",
+      "family_fit": "This breed is your daily workout: 90+ minutes a day plus mental work. They generally need a yard or off-leash running space to really thrive. Experienced owners do best — training and routines need to be steady and confident.",
+      "grooming": "Grooming is simple: occasional brushing and basic nail and ear care are usually enough. Their short, dense coat is very low-maintenance.",
+      "activity": "Plan for 90+ minutes of vigorous exercise daily. GSPs were bred to hunt all day — running, swimming, and covering ground. They need serious outlets: distance running, hunting, agility, or extensive off-leash time in securely fenced spaces. A bored GSP is a destructive GSP.",
+      "cost": "Purchase price: $1,000–$2,500. Annual costs: $1,200–$2,000.",
+      "fun_fact": "GSPs have webbed feet — a functional adaptation for water retrieval."
+    }
+  },
+  {
+    "id": "dachshund",
+    "slug": "dachshund",
+    "name": "Dachshund",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#FFF0E0",
+      "#FFD8B0"
+    ],
+    "size": "small",
+    "activity_level": 3,
+    "space": 5,
+    "grooming": 2,
+    "experience_level": 3,
+    "good_with_kids": 3,
+    "size_preference": 2,
+    "lifestyle": 2,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Bold in spirit, short in stature — the Dachshund is a tenacious little dog with enormous personality.",
+    "why_it_fits": {
+      "family": "Dachshunds are loyal family dogs, though their independence and small size make them better suited for families with older children.",
+      "couple": "A spirited, amusing companion for couples in any size home — they adapt well.",
+      "solo": "Devoted and entertaining — Dachshunds bond closely with their person and love being the center of attention."
+    },
+    "meta_title": "Dachshund — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Dachshunds — temperament, back health, and apartment suitability. Take our quiz to see if one is right for you.",
+    "breed_page_content": {
+      "intro": "Dachshunds are bold, clever, and have no awareness of their size. They have the personality of a much larger dog packed into a very small body — they will bark at a German Shepherd without hesitation. They are loyal to their family but can be suspicious of strangers.",
+      "traits": "Health watch-outs: Intervertebral disc disease (IVDD) is the #1 health concern — the elongated spine is prone to disc herniation, which can cause paralysis. What trips people up: letting them jump freely on and off furniture. Fun fact: Dachshunds were the first official mascot of the Olympics — at the 1972 Munich Games, a Dachshund named Waldi was the mascot and the marathon route was designed in his shape.",
+      "family_fit": "You will want roughly 45–60 minutes a day of real exercise (walks plus active play). This is one of the better options for apartments and small spaces. Some experience helps — this breed has predictable challenges around stubbornness and spinal health you will need to manage.",
+      "grooming": "Weekly brushing and a quick routine at home to stay ahead of shedding. Wire-haired varieties need hand-stripping or professional grooming periodically.",
+      "activity": "About 45–60 minutes of daily exercise — walks plus play. Protect their spine: avoid high-impact jumping on and off furniture, and use ramps where possible. They love to dig and follow scent trails, so a securely fenced yard is ideal.",
+      "cost": "Purchase price: $500–$2,000. Annual costs: $800–$1,500. Back problems (IVDD) can be a significant health cost.",
+      "fun_fact": "Dachshunds were the first official mascot of the Olympics — at the 1972 Munich Games, a Dachshund named Waldi was the mascot and the marathon route was designed in his shape."
+    }
+  },
+  {
+    "id": "pembroke-welsh-corgi",
+    "slug": "pembroke-welsh-corgi",
+    "name": "Pembroke Welsh Corgi",
+    "emoji": "🐾",
+    "illustration_bg": [
+      "#FFF8E0",
+      "#FFE8A0"
+    ],
+    "size": "small",
+    "activity_level": 4,
+    "space": 3,
+    "grooming": 3,
+    "experience_level": 2,
+    "good_with_kids": 4,
+    "size_preference": 2,
+    "lifestyle": 3,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Big personality, little legs — Corgis are herding dogs who think they rule the household.",
+    "why_it_fits": {
+      "family": "Alert, playful, and devoted — Corgis bring energy and personality to family life.",
+      "couple": "Intelligent and active, they're great companions for couples with moderate outdoor activity.",
+      "solo": "Independent yet deeply loyal, Corgis bond intensely with their primary person."
+    },
+    "meta_title": "Pembroke Welsh Corgi — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Pembroke Welsh Corgis — herding instincts, shedding, and family suitability. Take our quiz to see if a Corgi is your match.",
+    "breed_page_content": {
+      "intro": "Corgis are cattle herders in a small package — athletic, bossy, smart, and surprisingly vocal. They have a strong herding instinct that often manifests as nipping at heels — children's heels especially — if not trained out early. They are alert and will bark at anything that moves.",
+      "traits": "Health watch-outs: hip dysplasia, degenerative myelopathy (DM — same progressive spinal disease as German Shepherds), and Von Willebrand's disease (blood clotting disorder). What trips people up: underestimating the exercise need. Fun fact: Queen Elizabeth II owned more than 30 Corgis during her lifetime.",
+      "family_fit": "Expect 60–90 minutes a day of vigorous activity — otherwise boredom shows up fast. Apartment living can work if you are disciplined about exercise off-site. Beginner-compatible, but you will do best with a little prep and early coaching around the herding instincts.",
+      "grooming": "Brushing 2–3 times a week and sometimes professional help. Corgis shed heavily — significantly more than their size suggests.",
+      "activity": "Expect 60–90 minutes a day of vigorous activity. Do not let the short legs fool you — Corgis were built to run alongside cattle all day. They excel at agility, herding trials, and obedience. Without adequate exercise, they become vocal and destructive.",
+      "cost": "Purchase price: $1,500–$3,000. Annual costs: $1,000–$2,000.",
+      "fun_fact": "Queen Elizabeth II owned more than 30 Corgis during her lifetime."
+    }
+  },
+  {
+    "id": "australian-shepherd",
+    "slug": "australian-shepherd",
+    "name": "Australian Shepherd",
+    "emoji": "🐾",
+    "illustration_bg": [
+      "#EBF8FF",
+      "#C8E8FF"
+    ],
+    "size": "medium",
+    "activity_level": 5,
+    "space": 1,
+    "grooming": 3,
+    "experience_level": 4,
+    "good_with_kids": 4,
+    "size_preference": 3,
+    "lifestyle": 5,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Brilliant, athletic, and loyal — the Australian Shepherd lives to work and loves to please.",
+    "why_it_fits": {
+      "family": "High-energy and loyal — Aussies thrive in active families who can provide plenty of exercise and engagement.",
+      "couple": "A perfect adventure partner for active couples who enjoy hiking, running, or dog sports.",
+      "solo": "Devoted and capable — they form incredible bonds with active solo owners."
+    },
+    "meta_title": "Australian Shepherd — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Australian Shepherds — intelligence, exercise needs, and family suitability. Take our quiz to see if one is right for you.",
+    "breed_page_content": {
+      "intro": "Australian Shepherds are brilliant, intense, and completely unsuited to a sedentary life. They are bred to make decisions independently while herding — which means they are smart enough to outsmart their owners if given the chance. They form fierce bonds with their family.",
+      "traits": "Health watch-outs: hip dysplasia, epilepsy, hereditary eye conditions (Collie Eye Anomaly, Progressive Retinal Atrophy), and the MDR1 gene mutation — sensitivity to certain common drugs including some dewormers and anti-nausea medications that can be fatal to affected dogs. Test for MDR1 before any medication. Fun fact: Australian Shepherds are one of the few breeds that commonly have naturally occurring blue eyes, even in dogs who are not merle-colored.",
+      "family_fit": "This breed is your daily workout: 90+ minutes a day plus mental work. They generally need a yard or off-leash running space to really thrive. Experienced owners do best; training and routines need to be steady and confident. If your routine is inconsistent, you will feel it quickly.",
+      "grooming": "Grooming takes a bit more time — brushing 2–3 times a week and sometimes professional help. They shed year-round with heavier seasonal blowouts, so a good deshedding routine saves your furniture.",
+      "activity": "Plan for 90+ minutes of vigorous exercise daily, plus mental enrichment — puzzle feeders, training sessions, and dog sports like agility or frisbee. This breed generally needs a yard or off-leash running space to truly thrive; apartment life is very challenging without serious commitment.",
+      "cost": "Purchase price: $1,000–$2,500. Annual costs: $1,200–$2,000.",
+      "fun_fact": "Australian Shepherds are one of the few breeds that commonly have naturally occurring blue eyes, even in dogs who are not merle-colored."
+    }
+  },
+  {
+    "id": "yorkshire-terrier",
+    "slug": "yorkshire-terrier",
+    "name": "Yorkshire Terrier",
+    "emoji": "🐾",
+    "illustration_bg": [
+      "#F8F0FF",
+      "#E8D0FF"
+    ],
+    "size": "small",
+    "activity_level": 3,
+    "space": 5,
+    "grooming": 4,
+    "experience_level": 1,
+    "good_with_kids": 3,
+    "size_preference": 1,
+    "lifestyle": 2,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Glamorous, bold, and packed with terrier spirit — the Yorkie is a tiny dog with a huge attitude.",
+    "why_it_fits": {
+      "family": "Best with older children who handle them gently — Yorkies are loving but fragile.",
+      "couple": "A stylish, devoted companion for apartment-dwelling couples who enjoy a dog with personality.",
+      "solo": "A fiercely loyal lap dog who makes their solo owner feel like royalty."
+    },
+    "meta_title": "Yorkshire Terrier — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Yorkshire Terriers — grooming, temperament, and apartment suitability. Take our quiz to see if a Yorkie is right for you.",
+    "breed_page_content": {
+      "intro": "Yorkies are terriers first and lap dogs second — which surprises many owners. They are feisty, bold, and have no concept of their small size. They will challenge dogs ten times their size without hesitation.",
+      "traits": "Health watch-outs: tracheal collapse, dental disease (small mouths, crowded teeth), hypoglycemia in puppies, Legg-Calve-Perthes disease (hip joint degeneration), and luxating patella are the primary concerns. What trips people up: skipping training because they are small. Fun fact: a Yorkie named Smoky served as a therapy dog in World War II, accompanying Corporal Bill Wynne through 150 air raids and 12 combat missions.",
+      "family_fit": "You will want roughly 45–60 minutes a day of real exercise (walks plus active play). This is one of the better options for apartments and small spaces. Beginner-friendly with the right basic training and consistency — just do not skip training because they are small.",
+      "grooming": "Expect a meaningful grooming commitment: frequent brushing and regular professional grooming sessions. Their silky coat grows continuously and mats easily. Many owners keep their Yorkie in a shorter pet trim.",
+      "activity": "About 45–60 minutes of daily exercise — walks plus active play. Yorkies are terriers with real energy and curiosity; they enjoy exploring and benefit from structured daily movement. They can get meaningful exercise indoors but need outdoor time too.",
+      "cost": "Purchase price: $1,500–$4,000. Annual costs: $1,200–$2,000 (grooming is a significant ongoing cost).",
+      "fun_fact": "a Yorkie named Smoky served as a therapy dog in World War II, accompanying Corporal Bill Wynne through 150 air raids and 12 combat missions."
+    }
+  },
+  {
+    "id": "cavalier-king-charles-spaniel",
+    "slug": "cavalier-king-charles-spaniel",
+    "name": "Cavalier King Charles Spaniel",
+    "emoji": "🐕",
+    "illustration_bg": [
+      "#FFF0F5",
+      "#FFD6E8"
+    ],
+    "size": "small",
+    "activity_level": 3,
+    "space": 5,
+    "grooming": 3,
+    "experience_level": 1,
+    "good_with_kids": 5,
+    "size_preference": 2,
+    "lifestyle": 1,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Silky-eared and sweet-natured, the Cavalier is the ultimate lap dog for apartment dwellers.",
+    "why_it_fits": {
+      "family": "Gentle and sweet, Cavaliers are wonderful with children who understand gentle handling.",
+      "couple": "Perfect for apartment-dwelling couples who want a cuddly, low-maintenance companion.",
+      "solo": "The ideal companion for solo owners — they live to be near their person."
+    },
+    "meta_title": "Cavalier King Charles Spaniel — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Cavalier King Charles Spaniels — temperament, health, and apartment suitability. Take our quiz to see if this is your match.",
+    "breed_page_content": {
+      "intro": "Cavaliers are the definitive companion dog — gentle, affectionate, and completely oriented toward their people. They are not demanding or high-energy. They are good with everyone: children, strangers, elderly people, other dogs, cats.",
+      "traits": "Health watch-outs: Mitral valve disease (MVD) affects nearly all Cavaliers by age 10 — it is a progressive, ultimately fatal heart condition. Also prone to Syringomyelia (SM), a painful neurological condition caused by skull malformation. What trips people up: buying from a breeder who has not tested both parents for MVD and SM. Fun fact: King Charles II issued a royal decree allowing Cavaliers access to any public building in England — a rule that technically remains on the books in the UK Parliament today.",
+      "family_fit": "You will want roughly 45–60 minutes a day of real exercise (walks plus active play). This is one of the better options for apartments and small spaces. Beginner-friendly with the right basic training and consistency.",
+      "grooming": "Brushing 2–3 times a week and sometimes professional help to maintain the silky coat. Their long ears need regular cleaning to prevent infections.",
+      "activity": "About 45–60 minutes of daily exercise — walks plus play. Cavaliers are adaptable: they can match the energy level of their household. They do well in apartments but genuinely enjoy outdoor time. Do not overexert in heat.",
+      "cost": "Purchase price: $2,000–$4,500. Annual costs: $1,200–$2,000. Health issues can add significantly to costs.",
+      "fun_fact": "King Charles II issued a royal decree allowing Cavaliers access to any public building in England — a rule that technically remains on the books in the UK Parliament today."
+    }
+  },
+  {
+    "id": "doberman-pinscher",
+    "slug": "doberman-pinscher",
+    "name": "Doberman Pinscher",
+    "emoji": "🦮",
+    "illustration_bg": [
+      "#1A1040",
+      "#2A2060"
+    ],
+    "size": "large",
+    "activity_level": 4,
+    "space": 2,
+    "grooming": 1,
+    "experience_level": 5,
+    "good_with_kids": 3,
+    "size_preference": 4,
+    "lifestyle": 4,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Sleek, powerful, and intensely loyal — the Doberman is a guardian in an athlete's body.",
+    "why_it_fits": {
+      "family": "Loyal protectors of their family — Dobermans bond deeply and are gentle with children they know.",
+      "couple": "A powerful, devoted companion for confident couples who can meet significant exercise needs.",
+      "solo": "The ultimate loyal companion for experienced solo owners who want a devoted guardian."
+    },
+    "meta_title": "Doberman Pinscher — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Doberman Pinschers — temperament, training needs, and family suitability. Take our quiz to see if one is right for you.",
+    "breed_page_content": {
+      "intro": "Dobermans are elegant, intelligent, and deeply loyal — often described as velcro dogs in a guard dog's body. They bond intensely with their family and are surprisingly sensitive despite their imposing appearance. They are naturally protective without being aggressive when properly bred and socialized, and they are one of the most trainable breeds alive.",
+      "traits": "Health watch-outs: Dilated cardiomyopathy (DCM) is a serious, often fatal heart condition affecting a high percentage of Dobermans — cardiac screening annually after age 3 is strongly recommended. Also prone to Von Willebrand's disease (bleeding disorder) and wobbler syndrome. What trips people up: treating the sensitivity as weakness. Fun fact: Dobermans served as the official War Dog of the United States Marine Corps in World War II.",
+      "family_fit": "Expect 60–90 minutes a day of vigorous activity — otherwise boredom shows up fast. A home with yard access helps a lot; apartment life usually needs frequent park time. Experienced owners are essential — mistakes can create serious behavior problems if the dog's needs are not met.",
+      "grooming": "Grooming is simple: occasional brushing and basic nail and ear care are usually enough. Their short coat is very low-maintenance.",
+      "activity": "Expect 60–90 minutes a day of vigorous activity. Dobermans are working dogs who thrive with a job — obedience, protection sports, agility. Without adequate exercise and mental stimulation, they can become anxious or destructive. They mature around age 2.",
+      "cost": "Purchase price: $1,500–$3,500. Annual costs: $1,500–$2,500 (training investment recommended).",
+      "fun_fact": "Dobermans served as the official War Dog of the United States Marine Corps in World War II."
+    }
+  },
+  {
+    "id": "boxer",
+    "slug": "boxer",
+    "name": "Boxer",
+    "emoji": "🐕",
+    "illustration_bg": [
+      "#FFF4E0",
+      "#FFE0B0"
+    ],
+    "size": "large",
+    "activity_level": 4,
+    "space": 2,
+    "grooming": 2,
+    "experience_level": 2,
+    "good_with_kids": 5,
+    "size_preference": 4,
+    "lifestyle": 3,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Playful, loyal, and endlessly patient — Boxers are perpetual puppies who love their families.",
+    "why_it_fits": {
+      "family": "Boxers are famously wonderful with children — patient, playful, and naturally protective.",
+      "couple": "A loyal, athletic companion for active couples with moderate outdoor activity.",
+      "solo": "Devoted and entertaining — Boxers have personality to spare for their primary person."
+    },
+    "meta_title": "Boxer — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Boxers — temperament, family suitability, and exercise needs. Take our quiz to see if a Boxer is your perfect match.",
+    "breed_page_content": {
+      "intro": "Boxers are perpetual puppies — exuberant, playful, and physically expressive in a way that involves their entire body. They are deeply affectionate with family and famously good with children. They seem to genuinely enjoy the chaos of family life.",
+      "traits": "Health watch-outs: Boxers have the highest cancer rate of any breed — particularly mast cell tumors, lymphoma, and brain tumors. Also prone to heart conditions and brachycephalic issues. What trips people up: underestimating the exercise need in young dogs. Fun fact: the name Boxer likely derives from the breed's habit of standing on hind legs and boxing with their front paws during play.",
+      "family_fit": "Expect 60–90 minutes a day of vigorous activity — otherwise boredom shows up fast. A home with yard access helps a lot, though apartment life can work with serious exercise commitment. Beginner-compatible, but you will do best with a little prep and early coaching.",
+      "grooming": "Weekly brushing and a quick routine at home to stay ahead of shedding. Their short coat is low-maintenance, but they can drool.",
+      "activity": "Expect 60–90 minutes a day of vigorous activity. Young Boxers are particularly energetic and can be destructive without adequate exercise. They love to run, play fetch, and roughhouse — and they do not fully mature until around age 3.",
+      "cost": "Purchase price: $1,000–$2,500. Annual costs: $1,200–$2,000. Health issues can be significant.",
+      "fun_fact": "the name Boxer likely derives from the breed's habit of standing on hind legs and boxing with their front paws during play."
+    }
+  },
+  {
+    "id": "miniature-schnauzer",
+    "slug": "miniature-schnauzer",
+    "name": "Miniature Schnauzer",
+    "emoji": "🐕",
+    "illustration_bg": [
+      "#F5F5F5",
+      "#E8E8E8"
+    ],
+    "size": "small",
+    "activity_level": 3,
+    "space": 5,
+    "grooming": 3,
+    "experience_level": 1,
+    "good_with_kids": 4,
+    "size_preference": 2,
+    "lifestyle": 2,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Spirited, smart, and surprisingly low-shedding — the Mini Schnauzer is the ideal apartment terrier.",
+    "why_it_fits": {
+      "family": "Friendly and adaptable, Miniature Schnauzers are great family dogs in any size home.",
+      "couple": "An intelligent, low-shedding companion for couples who want a dog with character and trainability.",
+      "solo": "A devoted, alert companion who'll keep solo owners company and entertained."
+    },
+    "meta_title": "Miniature Schnauzer — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Miniature Schnauzers — temperament, low-shedding coat, and apartment suitability. Take our quiz to find your match.",
+    "breed_page_content": {
+      "intro": "Miniature Schnauzers are sturdy, spirited, and smart — more terrier in personality than their non-terrier classification suggests. They are friendly and adaptable, doing well in cities or suburbs, with families or singles. They are alert and will bark to announce arrivals — and departures, and passing cars, and wind.",
+      "traits": "Health watch-outs: pancreatitis is unusually common in the breed — high-fat foods should be strictly avoided. Also prone to bladder stones, hyperlipidemia, and cataracts. What trips people up: high-fat table scraps. Fun fact: Miniature Schnauzers are the only small breed in the terrier group that does not have British origins — they are entirely German, developed independently from British terrier lines.",
+      "family_fit": "You will want roughly 45–60 minutes a day of real exercise (walks plus active play). This is one of the better options for apartments and small spaces. Beginner-friendly with the right basic training and consistency — just be ready to manage the barking.",
+      "grooming": "Brushing 2–3 times a week plus professional grooming every 6–8 weeks. Their distinctive beard and eyebrows require regular trimming.",
+      "activity": "About 45–60 minutes of daily exercise — walks plus structured play. Miniature Schnauzers are energetic for their size and do best with consistent daily activity. They enjoy obedience training and are one of the more responsive small breeds.",
+      "cost": "Purchase price: $1,000–$2,500. Annual costs: $1,000–$1,800.",
+      "fun_fact": "Miniature Schnauzers are the only small breed in the terrier group that does not have British origins — they are entirely German, developed independently from British terrier lines."
+    }
+  },
+  {
+    "id": "basset-hound",
+    "slug": "basset-hound",
+    "name": "Basset Hound",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#FFF8E8",
+      "#FFE8C0"
+    ],
+    "size": "medium",
+    "activity_level": 1,
+    "space": 4,
+    "grooming": 2,
+    "experience_level": 2,
+    "good_with_kids": 4,
+    "size_preference": 3,
+    "lifestyle": 2,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Droopy-eared and deliberate — the Basset Hound is a laid-back charmer with a nose for mischief.",
+    "why_it_fits": {
+      "family": "Gentle and patient, Basset Hounds are great with children and other pets — as long as you accept the occasional howl.",
+      "couple": "A low-key, affectionate companion for couples who prefer leisurely walks over high-intensity activities.",
+      "solo": "A calm, steady presence who's perfectly happy to keep a relaxed solo owner company."
+    },
+    "meta_title": "Basset Hound — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Basset Hounds — temperament, exercise needs, and family suitability. Take our quiz to see if one is right for you.",
+    "breed_page_content": {
+      "intro": "Basset Hounds are gentle, patient, and extraordinarily laid-back — until their nose catches something interesting, at which point a laser focus takes over. They are friendly with everyone and rarely show aggression. They are pack dogs who enjoy company.",
+      "traits": "Health watch-outs: Intervertebral disc disease (IVDD) due to the elongated spine. What trips people up: overfeeding. Fun fact: the name \"Basset\" comes from the French word \"bas\" meaning \"low\" — referring to the breed's proximity to the ground.",
+      "family_fit": "Plan on about 30–45 minutes of daily walking and some light play. This is one of the better options for apartments and small spaces. Beginner-compatible, but you will do best with a little prep and early coaching — especially around recall, since their nose will always compete with your voice.",
+      "grooming": "Weekly brushing and a quick routine at home to stay ahead of shedding. Their long ears need regular cleaning to prevent infections — that is the most important grooming task.",
+      "activity": "About 30–45 minutes of daily walking and light play is all they need. Do not let the low energy fool you — Bassets need consistent movement to avoid obesity, which is their biggest quality-of-life threat.",
+      "cost": "Purchase price: $800–$1,800. Annual costs: $1,000–$1,800.",
+      "fun_fact": "the name \"Basset\" comes from the French word \"bas\" meaning \"low\" — referring to the breed's proximity to the ground."
+    }
+  },
+  {
+    "id": "great-dane",
+    "slug": "great-dane",
+    "name": "Great Dane",
+    "emoji": "🦮",
+    "illustration_bg": [
+      "#F8F8FF",
+      "#EBEBFF"
+    ],
+    "size": "xlarge",
+    "activity_level": 3,
+    "space": 2,
+    "grooming": 2,
+    "experience_level": 4,
+    "good_with_kids": 4,
+    "size_preference": 5,
+    "lifestyle": 3,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "A gentle giant who doesn't know their own size — the Great Dane is a giant lap dog at heart.",
+    "why_it_fits": {
+      "family": "Gentle and patient, Great Danes are friendly family dogs — though their size requires supervision with young children.",
+      "couple": "A magnificent, low-energy companion for couples with space who want a striking, gentle dog.",
+      "solo": "Calm and devoted — Great Danes bond closely with their primary person."
+    },
+    "meta_title": "Great Dane — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Great Danes — size, temperament, and family suitability. Take our quiz to see if a gentle giant is right for you.",
+    "breed_page_content": {
+      "intro": "Great Danes are the gentle giant — a cliché that is accurate. They are calm, patient, and affectionate, with a sweet temperament that belies their size. They are good with children though supervision is needed simply due to the size differential — a wagging Great Dane tail at coffee table height is a legitimate hazard.",
+      "traits": "Health watch-outs: Bloat (GDV) is the most serious and immediate health concern — Great Danes have one of the highest bloat rates of any breed and it can be fatal within hours. Discuss prophylactic gastropexy with your vet. Also prone to dilated cardiomyopathy and hip dysplasia. What trips people up: not discussing prophylactic gastropexy with the vet. Fun fact: the tallest dog ever recorded was a Great Dane named Zeus, who stood 44 inches at the shoulder and 7 feet 4 inches on his hind legs.",
+      "family_fit": "You will want roughly 45–60 minutes a day of real exercise (walks plus active play). A home with yard access helps a lot; apartment life usually needs frequent park time. Experienced owners do best — training and routines need to be steady and confident at this size.",
+      "grooming": "Weekly brushing and a quick routine at home to stay ahead of shedding. Their short coat is low-maintenance, but they drool — sometimes significantly.",
+      "activity": "About 45–60 minutes of daily exercise — walks plus play. Great Danes do not need as much exercise as their size suggests, but they must move daily. Avoid strenuous exercise in the first two years while bones and joints are still developing.",
+      "cost": "Purchase price: $1,500–$3,500. Annual costs: $2,000–$4,000 (food and vet costs scale significantly with their size).",
+      "fun_fact": "the tallest dog ever recorded was a Great Dane named Zeus, who stood 44 inches at the shoulder and 7 feet 4 inches on his hind legs."
+    }
+  },
+  {
+    "id": "shih-tzu",
+    "slug": "shih-tzu",
+    "name": "Shih Tzu",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#FFF0F8",
+      "#FFD8F0"
+    ],
+    "size": "small",
+    "activity_level": 2,
+    "space": 5,
+    "grooming": 4,
+    "experience_level": 1,
+    "good_with_kids": 4,
+    "size_preference": 2,
+    "lifestyle": 1,
+    "wildcard_eligible": false,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "A living work of art — the Shih Tzu lives for love and asks little in return.",
+    "why_it_fits": {
+      "family": "Gentle and affectionate, Shih Tzus are great with children who handle them carefully.",
+      "couple": "The perfect lap dog for apartment couples who want a devoted, low-energy companion.",
+      "solo": "Deeply attached to their owner — they're happiest when spending the day with you."
+    },
+    "meta_title": "Shih Tzu — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Shih Tzus — grooming requirements, temperament, and apartment suitability. Take our quiz to see if one is right for you.",
+    "breed_page_content": {
+      "intro": "Shih Tzus were bred for one purpose — to be companions — and they excel at it with a thousand years of practice behind them. They are affectionate, outgoing, and adaptable. They are not demanding in terms of exercise but are demanding in terms of attention.",
+      "traits": "Health watch-outs: brachycephalic airway issues, hip dysplasia, eye conditions (prominent eyes are prone to injury and ulcers), and renal dysplasia are the primary concerns. What trips people up: letting the eyes go unmonitored. Fun fact: for centuries, Shih Tzus were exclusively owned by Chinese royalty and were never sold, traded, or given to outsiders.",
+      "family_fit": "Plan on about 30–45 minutes of daily walking and some light play. This is one of the better options for apartments and small spaces. Beginner-friendly with the right basic training and consistency.",
+      "grooming": "Expect a meaningful grooming commitment: frequent brushing and regular professional grooming sessions. Many owners keep their Shih Tzu in a shorter pet trim. Eye area and facial hair need daily attention.",
+      "activity": "About 30–45 minutes of daily walking and light play. Shih Tzus are not built for strenuous exercise — their flat faces make intense activity risky in heat. Short, consistent walks and indoor play keep them happy.",
+      "cost": "Purchase price: $1,500–$3,500. Annual costs: $1,200–$2,500 (grooming is a significant ongoing cost).",
+      "fun_fact": "for centuries, Shih Tzus were exclusively owned by Chinese royalty and were never sold, traded, or given to outsiders."
+    }
+  },
+  {
+    "id": "siberian-husky",
+    "slug": "siberian-husky",
+    "name": "Siberian Husky",
+    "emoji": "🐺",
+    "illustration_bg": [
+      "#EBF8FF",
+      "#C8E8FF"
+    ],
+    "size": "medium",
+    "activity_level": 5,
+    "space": 1,
+    "grooming": 4,
+    "experience_level": 4,
+    "good_with_kids": 4,
+    "size_preference": 3,
+    "lifestyle": 5,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Striking, vocal, and built for endurance — the Siberian Husky demands an active outdoor lifestyle.",
+    "why_it_fits": {
+      "family": "Friendly and playful with children, Huskies thrive in active families who can commit to their intense exercise needs.",
+      "couple": "A breathtaking adventure companion for outdoorsy couples who run, hike, or explore year-round.",
+      "solo": "The ultimate athletic partner for highly active solo owners who welcome a dog that keeps up on any trail."
+    },
+    "meta_title": "Siberian Husky — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Siberian Huskies — energy level, escape artistry, and family suitability. Take our quiz to see if one is right for you.",
+    "breed_page_content": {
+      "intro": "Huskies are free-spirited, mischievous, and built for adventure. They are friendly — almost indiscriminately so, which makes them poor guard dogs. They are pack-oriented and do well with other dogs.",
+      "traits": "Health watch-outs: hip dysplasia, hereditary eye conditions (Progressive Retinal Atrophy, cataracts), and hypothyroidism are the primary concerns. What trips people up: underestimating the containment challenge — Huskies can jump, dig, and squeeze through gaps most owners do not anticipate. Fun fact: Balto, the Siberian Husky who led the final leg of the 1925 serum run to Nome, delivering diphtheria antitoxin to save the town, has a statue in Central Park, New York.",
+      "family_fit": "This breed is your daily workout: 90+ minutes a day plus mental work. They generally need a yard or off-leash running space to really thrive. Experienced owners do best — training and routines need to be steady and confident, and containment must be taken seriously.",
+      "grooming": "Expect a meaningful grooming commitment: frequent brushing and professional grooming sessions, especially during seasonal coat blowouts. They shed heavily twice a year — an undercoat rake is essential.",
+      "activity": "Plan for 90+ minutes of vigorous exercise daily. Huskies were bred to run 100 miles a day in Arctic conditions — recreational jogging is not sufficient. They need serious outlets: running, sledding, or extensive off-leash time in securely fenced spaces. They are escape artists.",
+      "cost": "Purchase price: $800–$2,500. Annual costs: $1,200–$2,000.",
+      "fun_fact": "Balto, the Siberian Husky who led the final leg of the 1925 serum run to Nome, delivering diphtheria antitoxin to save the town, has a statue in Central Park, New York."
+    }
+  },
+  {
+    "id": "bernese-mountain-dog",
+    "slug": "bernese-mountain-dog",
+    "name": "Bernese Mountain Dog",
+    "emoji": "🦮",
+    "illustration_bg": [
+      "#F0F8FF",
+      "#D0E8FF"
+    ],
+    "size": "xlarge",
+    "activity_level": 3,
+    "space": 2,
+    "grooming": 4,
+    "experience_level": 2,
+    "good_with_kids": 5,
+    "size_preference": 5,
+    "lifestyle": 3,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Calm, gentle, and majestic — the Bernese is a gentle giant who adores family life.",
+    "why_it_fits": {
+      "family": "Calm and patient, Berners are wonderful family dogs who are naturally gentle with children.",
+      "couple": "A majestic, laid-back companion for couples with space and a love of the outdoors.",
+      "solo": "A loyal, calming presence for solo owners who appreciate a quieter, devoted companion."
+    },
+    "meta_title": "Bernese Mountain Dog — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Bernese Mountain Dogs — temperament, shedding, and family fit. Take our quiz to see if a Berner belongs in your home.",
+    "breed_page_content": {
+      "intro": "Bernese Mountain Dogs are gentle, affectionate, and calm — large dogs with a sweet, patient temperament. They are excellent with children and form strong family bonds. They are not hyperactive but they are not couch potatoes either — they need daily exercise to stay happy and healthy.",
+      "traits": "Health watch-outs: cancer is the leading cause of death — approximately 50% of Berners die from cancer, giving them one of the shortest lifespans of any large breed (7–10 years). What trips people up: not being emotionally prepared for the short lifespan. Fun fact: Bernese Mountain Dogs nearly went extinct in the early 1900s as farm mechanization reduced the need for draft dogs.",
+      "family_fit": "You will want roughly 45–60 minutes a day of real exercise (walks plus active play). A home with yard access helps a lot — apartment life usually needs frequent park time. Beginner-compatible, but you will do best with a little prep and early coaching.",
+      "grooming": "Expect a meaningful grooming commitment: frequent brushing and professional grooming sessions. The thick double coat sheds heavily, with major blowouts in spring and fall.",
+      "activity": "Roughly 45–60 minutes a day of real exercise — walks plus active play. Berners are working dogs at heart and enjoy having a job; they excel at carting, hiking, and obedience. Avoid overexertion in heat due to their thick double coat.",
+      "cost": "Purchase price: $2,000–$4,000. Annual costs: $1,500–$2,500. Sadly prone to health issues that can add significant vet costs.",
+      "fun_fact": "Bernese Mountain Dogs nearly went extinct in the early 1900s as farm mechanization reduced the need for draft dogs."
+    }
+  },
+  {
+    "id": "pomeranian",
+    "slug": "pomeranian",
+    "name": "Pomeranian",
+    "emoji": "🐾",
+    "illustration_bg": [
+      "#FFF0E0",
+      "#FFD8B0"
+    ],
+    "size": "small",
+    "activity_level": 3,
+    "space": 5,
+    "grooming": 4,
+    "experience_level": 1,
+    "good_with_kids": 3,
+    "size_preference": 1,
+    "lifestyle": 2,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "A lion in a teddy bear's body — alert, vivacious, and surprisingly bold.",
+    "why_it_fits": {
+      "family": "Best with older children — Pomeranians can be snappy if handled roughly but are loving with respectful kids.",
+      "couple": "A spirited, glamorous companion for active couples in any size home.",
+      "solo": "Bold and devoted — Poms form deep bonds with their primary person."
+    },
+    "meta_title": "Pomeranian — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Pomeranians — temperament, grooming, and family suitability. Take our quiz to see if one is right for you.",
+    "breed_page_content": {
+      "intro": "Pomeranians are bold, curious, and have the self-image of a much larger dog. They are lively and playful, form strong bonds with their person, and are alert to everything happening around them. They can be reserved with strangers.",
+      "traits": "Health watch-outs: luxating patella (kneecap displacement) is very common. Also prone to tracheal collapse, dental disease, and Alopecia X (black skin disease, a coat and hormonal disorder). What trips people up: not managing the fragility — Poms can be injured by falls from furniture or rough handling. Fun fact: two Pomeranians survived the sinking of the Titanic — both were carried off in lifeboats by their owners.",
+      "family_fit": "You will want roughly 45–60 minutes a day of real exercise (walks plus active play). This is one of the better options for apartments and small spaces. Beginner-friendly with the right basic training and consistency.",
+      "grooming": "Expect a meaningful grooming commitment: frequent brushing and professional grooming sessions. Their double coat requires consistent brushing to prevent mats and manage shedding.",
+      "activity": "About 45–60 minutes of daily exercise — walks plus indoor play. Pomeranians are energetic for their size and enjoy structured activity. They are highly trainable and excel in tricks and obedience for a toy breed.",
+      "cost": "Purchase price: $1,500–$4,000. Annual costs: $1,000–$1,800.",
+      "fun_fact": "two Pomeranians survived the sinking of the Titanic — both were carried off in lifeboats by their owners."
+    }
+  },
+  {
+    "id": "boston-terrier",
+    "slug": "boston-terrier",
+    "name": "Boston Terrier",
+    "emoji": "🐕",
+    "illustration_bg": [
+      "#F0F0F0",
+      "#E0E0E0"
+    ],
+    "size": "small",
+    "activity_level": 3,
+    "space": 5,
+    "grooming": 1,
+    "experience_level": 1,
+    "good_with_kids": 4,
+    "size_preference": 2,
+    "lifestyle": 1,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "The American Gentleman — polite, bright, and perfectly sized for city life.",
+    "why_it_fits": {
+      "family": "Gentle and playful, Boston Terriers adapt beautifully to family life in smaller spaces.",
+      "couple": "Smart and sociable, they're great company for apartment-dwelling couples.",
+      "solo": "Compact, loving, and low-maintenance — the ideal solo companion."
+    },
+    "meta_title": "Boston Terrier — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Boston Terriers — temperament, apartment suitability, and family fit. Take our quiz to find your perfect breed.",
+    "breed_page_content": {
+      "intro": "Boston Terriers are the American Gentleman — tuxedo-patterned, lively, and genuinely funny. They are adaptable, friendly, and relatively easy to train. They are good with children and other pets.",
+      "traits": "Health watch-outs: brachycephalic airway issues, luxating patella, eye conditions (prominent eyes prone to injury), and hereditary deafness in dogs with excessive white markings. What trips people up: overexerting them in heat. Fun fact: the Boston Terrier is the official state dog of Massachusetts and the mascot of Boston University.",
+      "family_fit": "You will want roughly 45–60 minutes a day of real exercise (walks plus active play). This is one of the better options for apartments and small spaces. Beginner-friendly with the right basic training and consistency.",
+      "grooming": "Grooming is simple: occasional brushing and basic nail and ear care are usually enough. Their short coat is easy to maintain.",
+      "activity": "About 45–60 minutes a day of exercise — walks plus play sessions. Boston Terriers are enthusiastic but not relentless; they can adapt well to apartment life as long as they get consistent daily movement. Avoid intense exercise in heat due to their flat face.",
+      "cost": "Purchase price: $1,000–$2,500. Annual costs: $1,000–$1,800.",
+      "fun_fact": "the Boston Terrier is the official state dog of Massachusetts and the mascot of Boston University."
+    }
+  },
+  {
+    "id": "havanese",
+    "slug": "havanese",
+    "name": "Havanese",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#FFF8F0",
+      "#FFE8D0"
+    ],
+    "size": "small",
+    "activity_level": 3,
+    "space": 5,
+    "grooming": 4,
+    "experience_level": 1,
+    "good_with_kids": 5,
+    "size_preference": 2,
+    "lifestyle": 2,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Cuba's national dog — silky, social, and born for apartment living.",
+    "why_it_fits": {
+      "family": "Sociable and gentle with kids, the Havanese adapts beautifully to busy family households.",
+      "couple": "A charming, low-exercise companion who thrives on attention and affection.",
+      "solo": "The Havanese forms strong bonds with their person and can develop separation anxiety if left alone too often."
+    },
+    "meta_title": "Havanese — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about the Havanese — temperament, grooming, and apartment suitability. Take our quiz to find your perfect match.",
+    "breed_page_content": {
+      "intro": "Havanese are cheerful, social, and genuinely people-oriented. They are not one-person dogs — they love everyone equally and distribute their affection generously. They are gentle enough for elderly owners and playful enough for children.",
+      "traits": "Health watch-outs: generally a healthy breed. Luxating patella, cataracts, and Legg-Calve-Perthes disease are the most common concerns. What trips people up: letting the coat go unbrushed. Fun fact: Ernest Hemingway owned several Havanese during his time in Cuba.",
+      "family_fit": "You will want roughly 45–60 minutes a day of real exercise (walks plus active play). This is one of the better options for apartments and small spaces. Beginner-friendly with the right basic training and consistency.",
+      "grooming": "Expect a meaningful grooming commitment: frequent brushing and professional grooming sessions. Their silky coat grows long and requires regular maintenance. Many owners opt for a shorter pet trim to reduce upkeep.",
+      "activity": "About 45–60 minutes of daily exercise — walks plus indoor play. Havanese are adaptable and can get meaningful exercise indoors, making them excellent apartment dogs. They enjoy learning tricks and respond well to positive training.",
+      "cost": "Purchase price: $1,500–$3,500. Annual costs: $1,200–$2,000.",
+      "fun_fact": "Ernest Hemingway owned several Havanese during his time in Cuba."
+    }
+  },
+  {
+    "id": "shetland-sheepdog",
+    "slug": "shetland-sheepdog",
+    "name": "Shetland Sheepdog",
+    "emoji": "🐕",
+    "illustration_bg": [
+      "#FFF0F0",
+      "#FFD8D8"
+    ],
+    "size": "small",
+    "activity_level": 4,
+    "space": 3,
+    "grooming": 4,
+    "experience_level": 2,
+    "good_with_kids": 4,
+    "size_preference": 2,
+    "lifestyle": 3,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "The miniature Collie — brilliant, agile, and deeply devoted to their family.",
+    "why_it_fits": {
+      "family": "Loyal and gentle, Shelties are wonderful family dogs who thrive on involvement with their people.",
+      "couple": "An intelligent, agile companion for active couples who enjoy training and outdoor activities.",
+      "solo": "A devoted, responsive partner who bonds deeply and loves learning new things with their owner."
+    },
+    "meta_title": "Shetland Sheepdog — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Shetland Sheepdogs — intelligence, grooming, and family suitability. Take our quiz to see if a Sheltie is your match.",
+    "breed_page_content": {
+      "intro": "Shelties are exceptionally intelligent, sensitive, and devoted to their family. They are one of the most trainable breeds — they excel at obedience, agility, and herding. They are reserved with strangers — not aggressive, just cautious — and form intensely loyal bonds with their people.",
+      "traits": "Health watch-outs: Collie Eye Anomaly (CEA), Progressive Retinal Atrophy, hip dysplasia, and the MDR1 gene mutation (drug sensitivity, same as Aussies and Border Collies). What trips people up: insufficient mental stimulation. Fun fact: Shelties consistently rank in the top 5 most intelligent dog breeds.",
+      "family_fit": "Expect 60–90 minutes a day of vigorous activity — otherwise boredom shows up fast. Apartment living can work if you are disciplined about exercise off-site. Beginner-compatible, but you will do best with consistent training and structure.",
+      "grooming": "Expect a meaningful grooming commitment: frequent brushing and professional grooming sessions. Their double coat requires regular brushing to prevent mats, with heavy shedding twice a year.",
+      "activity": "Expect 60–90 minutes a day of vigorous activity. Shelties are working dogs with the stamina to match — they excel at agility, obedience, and herding trials. Mental stimulation is as important as physical exercise; a bored Sheltie is a noisy, anxious Sheltie.",
+      "cost": "Purchase price: $1,000–$2,500. Annual costs: $1,000–$1,800.",
+      "fun_fact": "Shelties consistently rank in the top 5 most intelligent dog breeds."
+    }
+  },
+  {
+    "id": "brittany",
+    "slug": "brittany",
+    "name": "Brittany",
+    "emoji": "🐕",
+    "illustration_bg": [
+      "#FFF8F0",
+      "#FFE8C8"
+    ],
+    "size": "medium",
+    "activity_level": 5,
+    "space": 1,
+    "grooming": 2,
+    "experience_level": 4,
+    "good_with_kids": 4,
+    "size_preference": 3,
+    "lifestyle": 5,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Athletic, gentle, and versatile — the Brittany is a compact sporting dog with inexhaustible energy.",
+    "why_it_fits": {
+      "family": "Sweet-natured and energetic — Brittanys are great family dogs for highly active households.",
+      "couple": "An athletic, affectionate companion for outdoor-oriented couples who run, hike, or hunt.",
+      "solo": "An enthusiastic exercise partner who bonds deeply with their active solo owner."
+    },
+    "meta_title": "Brittany — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Brittanys — temperament, exercise needs, and family suitability. Take our quiz to see if one is right for you.",
+    "breed_page_content": {
+      "intro": "Brittanys are enthusiastic, sensitive, and built for the field. They are gentle and affectionate with their family — more soft in temperament than many sporting breeds. They are eager to please and respond exceptionally well to positive training.",
+      "traits": "Health watch-outs: hip dysplasia, epilepsy, and hypothyroidism. What trips people up: getting one as a manageable medium-sized dog. Brittanys are compact but the energy output is that of a much larger working breed. Fun fact: Brittanys are the only pointing breed that is naturally tailless (or very short-tailed) — a trait that appears spontaneously in the breed and has been preserved through selective breeding.",
+      "family_fit": "This breed is your daily workout: 90+ minutes a day plus mental work. They generally need a yard or off-leash running space to really thrive. Experienced owners do best; training and routines need to be steady and confident.",
+      "grooming": "Weekly brushing and a quick routine at home to stay ahead of shedding. Their medium-length coat is relatively low-maintenance compared to other sporting breeds.",
+      "activity": "Plan for 90+ minutes of vigorous exercise daily. Brittanys are hunting dogs with tremendous stamina — they can run all day. Without adequate outlets, they become anxious and destructive. Field sports, agility, and distance running are ideal.",
+      "cost": "Purchase price: $800–$2,000. Annual costs: $1,000–$1,800.",
+      "fun_fact": "Brittanys are the only pointing breed that is naturally tailless (or very short-tailed) — a trait that appears spontaneously in the breed and has been preserved through selective breeding."
+    }
+  },
+  {
+    "id": "border-collie",
+    "slug": "border-collie",
+    "name": "Border Collie",
+    "emoji": "🐕",
+    "illustration_bg": [
+      "#F0F8FF",
+      "#D8ECFF"
+    ],
+    "size": "medium",
+    "activity_level": 5,
+    "space": 1,
+    "grooming": 3,
+    "experience_level": 5,
+    "good_with_kids": 3,
+    "size_preference": 3,
+    "lifestyle": 5,
+    "wildcard_eligible": false,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "The most intelligent dog breed alive — but only for owners who can match their intensity.",
+    "why_it_fits": {
+      "family": "Best for active families with space who can provide significant exercise and mental stimulation.",
+      "couple": "Ideal for athletic, outdoor-oriented couples who want a brilliant companion for their adventures.",
+      "solo": "The ultimate partner for active solo owners — they'll run, hike, and train alongside you."
+    },
+    "meta_title": "Border Collie — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Border Collies — intelligence, exercise needs, and family suitability. Take our quiz to see if one is right for you.",
+    "breed_page_content": {
+      "intro": "Border Collies are widely considered the most intelligent dog breed alive. This is not an uncomplicated gift. The intelligence that makes them extraordinary working dogs makes them genuinely difficult pets in the wrong hands.",
+      "traits": "Health watch-outs: Collie Eye Anomaly (CEA), Progressive Retinal Atrophy, hip dysplasia, epilepsy, and the MDR1 gene mutation. What trips people up: getting one because they are beautiful or smart. The intelligence is not an asset in a pet context — it is a demand. Fun fact: Chaser, a Border Collie owned by retired psychology professor John Pilley, learned the names of over 1,000 objects — the largest tested vocabulary of any non-human animal.",
+      "family_fit": "This breed is your daily workout: 90+ minutes a day plus mental work. They generally need a yard or off-leash running space to really thrive. Experienced owners are essential — mistakes can create serious behavior problems if the dog's needs are not met.",
+      "grooming": "Brushing 2–3 times a week and sometimes professional help. They shed year-round with heavier seasonal shedding.",
+      "activity": "Plan for 90+ minutes of vigorous exercise daily, plus substantial mental enrichment. Border Collies need a job. Without adequate stimulation they will invent one — usually something destructive. Dog sports like agility, flyball, and herding trials are ideal outlets.",
+      "cost": "Purchase price: $800–$2,500. Annual costs: $1,200–$2,000 (plus investment in training and mental enrichment).",
+      "fun_fact": "Chaser, a Border Collie owned by retired psychology professor John Pilley, learned the names of over 1,000 objects — the largest tested vocabulary of any non-human animal."
+    }
+  },
+  {
+    "id": "maltese",
+    "slug": "maltese",
+    "name": "Maltese",
+    "emoji": "🐕",
+    "illustration_bg": [
+      "#FAFAFA",
+      "#F5F5FF"
+    ],
+    "size": "small",
+    "activity_level": 2,
+    "space": 5,
+    "grooming": 4,
+    "experience_level": 1,
+    "good_with_kids": 3,
+    "size_preference": 1,
+    "lifestyle": 1,
+    "wildcard_eligible": false,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "Ancient, elegant, and fiercely devoted — the Maltese is a tiny dog with a huge personality.",
+    "why_it_fits": {
+      "family": "Best with older children due to their delicate size — they're loving companions in calmer households.",
+      "couple": "An elegant, low-exercise companion for couples who want a devoted lap dog.",
+      "solo": "Devoted and attentive — the Maltese lives to be your constant companion."
+    },
+    "meta_title": "Maltese — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about the Maltese — temperament, grooming, and family suitability. Take our quiz to see if one is right for you.",
+    "breed_page_content": {
+      "intro": "Maltese are gentle, playful, and deeply affectionate. They are fearless for their size — a common toy breed trait — and have a lively, engaging personality. They bond intensely with their person and thrive on companionship.",
+      "traits": "Health watch-outs: luxating patella, dental disease (small mouths with crowded teeth), hypoglycemia in puppies, and tracheal collapse are the primary concerns. What trips people up: not addressing tear staining proactively. Fun fact: Maltese have been found in the tombs of ancient Egyptians who believed the dogs had healing powers.",
+      "family_fit": "Plan on about 30–45 minutes of daily walking and some light play. This is one of the better options for apartments and small spaces. Beginner-friendly with the right basic training and consistency.",
+      "grooming": "Expect a meaningful grooming commitment: frequent brushing and regular professional grooming sessions. The long white coat mats easily if not maintained. Many owners keep their Maltese in a shorter pet trim.",
+      "activity": "About 30–45 minutes of daily walking and light play. Maltese can get meaningful exercise indoors, making them excellent apartment dogs. They enjoy learning tricks and are surprisingly quick learners.",
+      "cost": "Purchase price: $1,500–$4,000. Annual costs: $1,000–$2,000.",
+      "fun_fact": "Maltese have been found in the tombs of ancient Egyptians who believed the dogs had healing powers."
+    }
+  },
+  {
+    "id": "chihuahua",
+    "slug": "chihuahua",
+    "name": "Chihuahua",
+    "emoji": "🐾",
+    "illustration_bg": [
+      "#FFF0F8",
+      "#FFD8EC"
+    ],
+    "size": "small",
+    "activity_level": 2,
+    "space": 5,
+    "grooming": 1,
+    "experience_level": 2,
+    "good_with_kids": 2,
+    "size_preference": 1,
+    "lifestyle": 1,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "The world's smallest breed, but personality-wise one of the biggest — fiercely loyal to their person.",
+    "why_it_fits": {
+      "family": "Better with adults or older children — their tiny size and assertive personality don't mix well with rough-housing toddlers.",
+      "couple": "The ultimate purse dog — portable, low-cost, and utterly devoted to their couple.",
+      "solo": "A fiercely loyal one-person dog who will devotedly follow their solo owner everywhere."
+    },
+    "meta_title": "Chihuahua — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Everything about Chihuahuas — temperament, apartment suitability, and family fit. Take our quiz to see if one is right for you.",
+    "breed_page_content": {
+      "intro": "Chihuahuas are fiercely loyal, sassy, and bold to a degree that is either charming or alarming depending on the situation. They typically bond most intensely with one person and are suspicious of everyone else. They are alert, intelligent, and surprisingly trainable when properly motivated.",
+      "traits": "Health watch-outs: luxating patella, tracheal collapse, dental disease (severe — small mouth, all the teeth of a larger dog), hypoglycemia, and hydrocephalus in some apple-head lines. What trips people up: skipping socialization. Fun fact: the Chihuahua is the smallest breed in the world but has the largest brain-to-body-size ratio of any dog breed.",
+      "family_fit": "Plan on about 30–45 minutes of daily walking and some light play. This is one of the better options for apartments and small spaces. Some experience helps — this breed has predictable challenges around socialization and small-dog syndrome that you will need to manage proactively.",
+      "grooming": "Grooming is simple: occasional brushing and basic nail and ear care are usually enough for smooth-coats. Long-coat Chihuahuas need brushing a few times per week.",
+      "activity": "About 30–45 minutes of daily walking and light play. Chihuahuas are small but need real exercise — without it they become anxious and yappy. They can get significant exercise indoors but benefit from daily outdoor time.",
+      "cost": "Purchase price: $500–$2,500. Annual costs: $600–$1,200 (one of the least expensive breeds to keep).",
+      "fun_fact": "the Chihuahua is the smallest breed in the world but has the largest brain-to-body-size ratio of any dog breed."
+    }
+  }
+]
