@@ -42,6 +42,7 @@ export interface Breed {
     grooming: string;
     activity: string;
     cost: string;
+    fun_fact?: string;
   };
 }
 
