@@ -1,6 +1,5 @@
 [build]
-  base    = "../../"
-  command = "pnpm --filter @workspace/furtastic-match run build"
+  command = "cd ../.. && pnpm --filter @workspace/furtastic-match run build"
   publish = "artifacts/furtastic-match/dist/public"
 
 [build.environment]
