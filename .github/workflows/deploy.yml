@@ -45,7 +45,7 @@ jobs:
         run: |
           rsync -avz --delete \
             -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
-            artifacts/furtastic-match/dist/ \
+            artifacts/furtastic-match/dist/public/ \
             root@187.127.251.150:/var/www/furtasticmatch.com/
 
       - name: Cleanup
