@@ -1,6 +1,15 @@
 import { useState } from 'react';
 import { trackEvent } from '../lib/analytics';
 
+// Extend Window interface for Formspree
+declare global {
+  interface Window {
+    formspree?: {
+      submit: (formId: string, data: Record<string, any>) => Promise<any>;
+    };
+  }
+}
+
 export default function EmailCapture() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -11,15 +20,17 @@ export default function EmailCapture() {
     if (!email) return;
 
     try {
-      await fetch(import.meta.env.VITE_FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, url: window.location.href }),
-      });
+      // Use Formspree Ajax library with form ID mlgzarlp (Results Email Capture)
+      if (window.formspree) {
+        await window.formspree.submit('mlgzarlp', {
+          email,
+          url: window.location.href,
+        });
+      }
       setSubmitted(true);
       trackEvent('email_capture');
     } catch (error) {
-      console.error(error);
+      console.error('Email capture error:', error);
     }
   };
 
