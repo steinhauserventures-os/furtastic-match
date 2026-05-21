@@ -9,9 +9,29 @@ export default function Contact() {
     document.title = "Contact FurtasticMatch | Get in Touch";
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message'),
+    };
+
+    try {
+      await fetch('https://formspree.io/f/mgodrevp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Contact form error:', error);
+    }
   };
 
   return (
@@ -35,15 +55,15 @@ export default function Contact() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <div>
                 <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Name</label>
-                <input type="text" required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
+                <input name="name" type="text" required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Email</label>
-                <input type="email" required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
+                <input name="email" type="email" required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Message</label>
-                <textarea rows={5} required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }}></textarea>
+                <textarea name="message" rows={5} required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }}></textarea>
               </div>
               <button type="submit" className="btn-primary" style={{ padding: '16px', justifyContent: 'center', marginTop: '8px' }}>Send Message →</button>
             </div>

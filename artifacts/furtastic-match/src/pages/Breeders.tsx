@@ -5,13 +5,31 @@ import Footer from '../components/Footer';
 export default function Breeders() {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      breeder_name: formData.get('breeder_name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      breeds: formData.get('breeds'),
+      state: formData.get('state'),
+      message: formData.get('message'),
+    };
+
     try {
-      // Simulate form submission to VITE_FORMSPREE_BREEDER_ENDPOINT
+      await fetch('https://formspree.io/f/mlgzaedb', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
       setSubmitted(true);
-    } catch (e) {
-      console.error(e);
+    } catch (error) {
+      console.error('Breeder waitlist error:', error);
     }
   };
 
@@ -37,27 +55,27 @@ export default function Breeders() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <div>
                 <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Breeder/Business Name *</label>
-                <input type="text" required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
+                <input name="breeder_name" type="text" required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Email *</label>
-                <input type="email" required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
+                <input name="email" type="email" required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Phone</label>
-                <input type="tel" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
+                <input name="phone" type="tel" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Breeds you specialize in (comma-separated)</label>
-                <input type="text" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
+                <input name="breeds" type="text" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>State *</label>
-                <input type="text" required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
+                <input name="state" type="text" required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Message</label>
-                <textarea rows={4} style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }}></textarea>
+                <textarea name="message" rows={4} style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }}></textarea>
               </div>
               <button type="submit" className="btn-primary" style={{ padding: '16px', justifyContent: 'center', marginTop: '8px' }}>Join the Waitlist →</button>
             </div>
