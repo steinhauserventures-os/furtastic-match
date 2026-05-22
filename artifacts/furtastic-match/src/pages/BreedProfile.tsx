@@ -36,8 +36,30 @@ export default function BreedProfile() {
   const groomingLabels = ['Minimal', 'Low', 'Moderate', 'High', 'Very High', 'Daily'];
   const kidsLabels = ['Poor', 'Fair', 'Good', 'Very Good', 'Excellent', 'Exceptional'];
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": breed.meta_title,
+    "description": breed.meta_description,
+    "image": `https://furtasticmatch.com/breeds/${breed.slug}.png`,
+    "author": {
+      "@type": "Organization",
+      "name": "FurtasticMatch"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "FurtasticMatch",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://furtasticmatch.com/opengraph.jpg"
+      }
+    },
+    "dateModified": breed.last_updated
+  };
+
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Nav />
       
       <main style={{ flex: 1, maxWidth: '1200px', margin: '0 auto', width: '100%', padding: '40px 24px', display: 'grid', gridTemplateColumns: '1fr auto', gap: '60px' }} className="breed-grid">

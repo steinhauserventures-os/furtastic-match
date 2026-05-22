@@ -6,8 +6,19 @@ import breedsData from '../data/breeds.json';
 import BreedImage from '../components/BreedImage';
 
 export default function Home() {
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FurtasticMatch",
+    "url": "https://furtasticmatch.com",
+    "logo": "https://furtasticmatch.com/opengraph.jpg",
+    "description": "Free dog breed matching quiz that helps families find the right breed and connect with reputable breeders.",
+    "sameAs": []
+  };
+
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       <Nav />
       
       {/* Hero */}
