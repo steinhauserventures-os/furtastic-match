@@ -239,9 +239,8 @@ Form now has 10 fields as specified:
 ### Pre-Merge Checklist
 - [x] Run `pnpm run typecheck` - ✅ PASSED
 - [x] Run `pnpm run build` (furtastic-match) - ✅ PASSED
-- [x] All commits pushed to tech-sweep-20260522 branch
-- [ ] Create PR from tech-sweep-20260522 → main
-- [ ] Merge PR (build passes for main artifact)
+- [x] All commits pushed to tech-sweep-20260522 branch - ✅ PUSHED
+- [ ] Create PR from tech-sweep-20260522 → main - ⚠️ GH CLI NOT AUTHENTICATED
 
 ### Build Results
 - **Typecheck:** ✅ All projects pass
@@ -250,8 +249,99 @@ Form now has 10 fields as specified:
 
 **Note:** The mockup-sandbox failure is unrelated to this PR. The main site (furtastic-match) builds successfully. The workspace-level build fails due to mockup-sandbox, but this is a pre-existing issue not introduced by this sweep.
 
+### PR Creation
+**Branch pushed:** `tech-sweep-20260522`  
+**GitHub PR URL:** https://github.com/steinhauserventures-os/furtastic-match/pull/new/tech-sweep-20260522
+
+**Recommended PR Title:**
+```
+Technical Sweep: SEO, Compliance, Forms, and E-E-A-T (7 work items)
+```
+
+**Recommended PR Body:**
+```markdown
+## Technical Sweep - May 22, 2026
+
+This PR completes a comprehensive 7-item technical sweep covering SEO, compliance, form enhancements, and content credibility.
+
+### 📋 Work Items Completed
+
+#### 1. ✅ Fix Placeholder Metadata
+- Replaced Replit boilerplate with production metadata
+- Title: "FurtasticMatch — Find Your Right Dog Breed + a Reputable Breeder"
+- Description: 154 chars, optimized for search and social
+- Added og:image, og:url, twitter:image
+
+#### 2. ✅ SEO 12-Point Punch List
+- Created sitemap.xml with 40 pages
+- Updated robots.txt with sitemap reference
+- Added JSON-LD schema (Organization on home, Article on breed pages)
+- Fixed all images to include alt text (auto-generated from breed slug)
+- Verified unique titles, h1 hierarchy, internal quiz CTAs
+
+#### 3. ✅ Compliance Scaffold Pages
+- Created /terms page with comprehensive Terms of Service
+- Verified all pages exist with real content: /privacy, /about, /contact, /affiliate-disclosure
+
+#### 4. ✅ E-E-A-T Author Byline + Bio
+- Created AuthorByline component on breed pages
+- Created /about/author/editorial-team bio page
+- Placeholder content flagged for Chuck to replace with real attribution
+
+#### 5. ✅ Breeder Form - 10 Fields + E.164 Mask
+- Expanded from 6 to 10 fields (7 required, 3 optional)
+- Added: name, city, kennel_name, website, social
+- Implemented E.164 phone formatting: +1 (555) 555-5555
+- Real-time masking with regex validation
+
+#### 6. ✅ Results-Email Path Verification
+- Traced flow: EmailCapture → Formspree mlgzarlp
+- Documented dependency on Formspree autoresponder config
+- Flagged for Chuck to verify email delivery
+
+#### 7. ✅ This PR
+- 8 commits total
+- Build verified: typecheck ✅, furtastic-match build ✅
+- No breaking changes
+
+---
+
+### 🔧 Technical Details
+
+**Commits (8 total):**
+1. `398b0ab` - Fix placeholder metadata
+2. `ad9fd2e` - Add SEO infrastructure (sitemap, robots, schema, alt text)
+3. `9b4f07b` - Add Terms of Service page
+4. `8cca6d7` - Add E-E-A-T author byline
+5. `c58db3f` - Expand breeder form to 10 fields with E.164 mask
+6. `5174f28` - Document results-email verification path
+7. `8e88b58` - Complete audit documentation
+8. `0623e80` - Document build verification results
+
+**Build Status:**
+- Typecheck: PASSED
+- FurtasticMatch build: PASSED (371KB bundle)
+- Mockup-sandbox: Pre-existing PORT env issue (unrelated)
+
+---
+
+### ⚠️ Flags for Chuck
+
+1. **Email delivery verification** - Check Formspree form mlgzarlp autoresponder config
+2. **Author placeholder** - Replace Editorial Team with real attribution
+3. **Legal review** - Terms/Privacy should be reviewed by counsel
+4. **Optional: WebP conversion** - Consider converting breed PNGs to WebP
+
+---
+
+### 📄 Full Audit
+See `audit/FM-AUDIT-tech-sweep-20260522.md` for complete documentation.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+```
+
 ### Status
-🔄 READY FOR PR
+✅ READY FOR MANUAL PR CREATION (gh CLI not authenticated)
 
 ---
 
