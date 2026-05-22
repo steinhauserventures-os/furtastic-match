@@ -61,8 +61,33 @@ This audit documents all changes, findings, and blockers encountered during the 
 
 ## Item 6: Results-Email Path Verification
 
+### Path Traced
+**Component:** `EmailCapture.tsx` (used on Results page and breed profile pages)
+
+**Flow:**
+1. User completes quiz → lands on Results page
+2. Results page renders `<EmailCapture />` component
+3. User enters email in "Save your results" form
+4. Frontend POSTs to Formspree endpoint: `https://formspree.io/f/mlgzarlp`
+5. Payload: `{ email: "user@example.com", url: window.location.href }`
+6. Formspree receives submission
+7. **Email delivery depends on Formspree autoresponder configuration** (not visible in codebase)
+
+**Technology:** Direct Formspree integration (no Zapier, Brevo, or SendGrid visible in code)
+
+**Finding:** The codebase only captures the email and URL. Actual email sending to the user depends on whether Formspree form `mlgzarlp` is configured with an autoresponder in the Formspree dashboard. This configuration is external and not visible in the repository.
+
+**Action Required:** Chuck must verify in Formspree dashboard:
+- Is form `mlgzarlp` configured with an autoresponder?
+- Does the autoresponder send quiz results to the submitted email?
+- Test email delivery with chuckstein17@gmail.com
+
+**Risk:** Form says "Check your inbox" but if Formspree autoresponder is not configured, users receive nothing.
+
 ### Status
-⏳ PENDING
+⚠️ DOCUMENTED - NEEDS MANUAL VERIFICATION BY CHUCK
+
+**No modifications made** (per instructions: do not modify if working, and cannot verify without Formspree dashboard access)
 
 ---
 
