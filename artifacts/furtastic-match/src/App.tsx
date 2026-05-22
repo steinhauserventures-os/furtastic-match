@@ -10,6 +10,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import FindABreeder from './pages/FindABreeder';
 import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 import AffiliateDisclosure from './pages/AffiliateDisclosure';
 import NotFound from './pages/NotFound';
 
@@ -29,6 +30,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/find-a-breeder" element={<FindABreeder />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
         <Route path="/affiliate-disclosure" element={<AffiliateDisclosure />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
