@@ -4,6 +4,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import AdZone from '../components/AdZone';
 import EmailCapture from '../components/EmailCapture';
+import AuthorByline from '../components/AuthorByline';
 import { getBreedBySlug } from '../lib/matchingEngine';
 import BreedImage from '../components/BreedImage';
 
@@ -77,6 +78,8 @@ export default function BreedProfile() {
           <p style={{ fontSize: '18px', lineHeight: 1.7, color: 'var(--text-secondary)' }}>
             {breed.breed_page_content.intro}
           </p>
+
+          <AuthorByline updatedDate={breed.last_updated} />
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '16px' }}>
             {[
