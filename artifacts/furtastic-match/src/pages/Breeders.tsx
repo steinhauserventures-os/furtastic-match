@@ -5,16 +5,41 @@ import Footer from '../components/Footer';
 export default function Breeders() {
   const [submitted, setSubmitted] = useState(false);
 
+  const formatPhoneNumber = (value: string) => {
+    // Remove all non-digits
+    const digits = value.replace(/\D/g, '');
+
+    // Apply E.164 US format: +1 (XXX) XXX-XXXX
+    if (digits.length === 0) return '';
+    if (digits.length <= 1) return `+${digits}`;
+    if (digits.length <= 4) return `+${digits.slice(0, 1)} (${digits.slice(1)}`;
+    if (digits.length <= 7) return `+${digits.slice(0, 1)} (${digits.slice(1, 4)}) ${digits.slice(4)}`;
+    return `+${digits.slice(0, 1)} (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7, 11)}`;
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatPhoneNumber(e.target.value);
+    e.target.value = formatted;
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
+
+    // Strip formatting from phone before submission (keep only digits)
+    const rawPhone = (formData.get('phone') as string || '').replace(/\D/g, '');
+
     const data = {
-      breeder_name: formData.get('breeder_name'),
+      name: formData.get('name'),
       email: formData.get('email'),
-      phone: formData.get('phone'),
+      phone: rawPhone,
       breeds: formData.get('breeds'),
+      city: formData.get('city'),
       state: formData.get('state'),
+      kennel_name: formData.get('kennel_name'),
+      website: formData.get('website'),
+      social: formData.get('social'),
       message: formData.get('message'),
     };
 
@@ -53,30 +78,63 @@ export default function Breeders() {
         ) : (
           <form className="card" style={{ padding: '32px' }} onSubmit={handleSubmit}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              {/* Required Fields (7) */}
               <div>
-                <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Breeder/Business Name *</label>
-                <input name="breeder_name" type="text" required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
+                <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Your Name *</label>
+                <input name="name" type="text" required placeholder="First and last name" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Email *</label>
-                <input name="email" type="email" required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
+                <input name="email" type="email" required placeholder="you@example.com" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
               </div>
               <div>
-                <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Phone</label>
-                <input name="phone" type="tel" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
+                <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Phone *</label>
+                <input
+                  name="phone"
+                  type="tel"
+                  required
+                  placeholder="+1 (555) 555-5555"
+                  pattern="^\+1 \(\d{3}\) \d{3}-\d{4}$"
+                  title="Phone must be in format: +1 (555) 555-5555"
+                  onChange={handlePhoneChange}
+                  style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }}
+                />
+                <p style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>Format: +1 (555) 555-5555</p>
               </div>
               <div>
-                <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Breeds you specialize in (comma-separated)</label>
-                <input name="breeds" type="text" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
+                <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Breed(s) You Specialize In *</label>
+                <input name="breeds" type="text" required placeholder="e.g., Labrador Retriever, Golden Retriever" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
+              </div>
+              <div>
+                <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>City *</label>
+                <input name="city" type="text" required placeholder="City name" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>State *</label>
-                <input name="state" type="text" required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
+                <input name="state" type="text" required placeholder="e.g., CA, TX, NY" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
               </div>
               <div>
-                <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Message</label>
-                <textarea name="message" rows={4} style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }}></textarea>
+                <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Kennel/Business Name *</label>
+                <input name="kennel_name" type="text" required placeholder="Your kennel or business name" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
               </div>
+
+              {/* Optional Fields (3) */}
+              <div style={{ borderTop: '1px solid var(--border)', paddingTop: '20px', marginTop: '8px' }}>
+                <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '16px', fontStyle: 'italic' }}>Optional Information</p>
+              </div>
+              <div>
+                <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Website</label>
+                <input name="website" type="url" placeholder="https://yourwebsite.com" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
+              </div>
+              <div>
+                <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Social Media Profile</label>
+                <input name="social" type="text" placeholder="Instagram, Facebook, or other profile URL" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
+              </div>
+              <div>
+                <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Additional Information</label>
+                <textarea name="message" rows={4} placeholder="Tell us about your breeding program, certifications, or anything else..." style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }}></textarea>
+              </div>
+
               <button type="submit" className="btn-primary" style={{ padding: '16px', justifyContent: 'center', marginTop: '8px' }}>Join the Waitlist →</button>
             </div>
           </form>
