@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { PenLine } from 'lucide-react';
+import Icon from './Icon';
 
 interface AuthorBylineProps {
   updatedDate?: string;
@@ -23,10 +25,9 @@ export default function AuthorByline({ updatedDate }: AuthorBylineProps) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        fontSize: '24px',
         flexShrink: 0
       }}>
-        ✍️
+        <Icon icon={PenLine} size={22} color="white" />
       </div>
       <div style={{ flex: 1 }}>
         <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '14px' }}>

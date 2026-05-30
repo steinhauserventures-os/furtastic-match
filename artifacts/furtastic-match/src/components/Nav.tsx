@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
+import { PawPrint } from 'lucide-react';
+import Icon, { BRAND_PURPLE } from './Icon';
 
 export default function Nav() {
   return (
     <nav style={{ position: 'sticky', top: 0, borderBottom: '2px solid var(--border)', background: 'var(--bg-card)', zIndex: 100 }}>
       <div className="nav-inner" style={{ padding: '12px 24px', maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px' }}>
         <Link to="/" data-testid="link-home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
-          <span className="nav-paw" style={{ fontSize: '24px', display: 'inline-block', animation: 'wiggle 2s infinite ease-in-out' }}>🐾</span>
+          <span className="nav-paw" style={{ display: 'inline-flex', animation: 'wiggle 2s infinite ease-in-out' }}><Icon icon={PawPrint} size={26} color={BRAND_PURPLE} /></span>
           <span className="nav-logo-text" style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '24px' }}>
             <span style={{ color: 'var(--cta)' }}>Furtastic</span>
             <span style={{ color: 'var(--teal)' }}>Match</span>

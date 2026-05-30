@@ -1,6 +1,8 @@
 import { useSearchParams } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import Icon from '../components/Icon';
 import { getBreedBySlug } from '../lib/matchingEngine';
 import { trackEvent } from '../lib/analytics';
 
@@ -26,7 +28,7 @@ export default function FindABreeder() {
           We are currently building our network of verified breeders. In the meantime, you can search locally to find reputable breeders in your area.
         </p>
         <button onClick={handleSearch} className="btn-primary" style={{ padding: '16px 32px', fontSize: '18px' }}>
-          Search for {breedName} Breeders →
+          Search for {breedName} Breeders <Icon icon={ArrowRight} size={18} />
         </button>
       </main>
       <Footer />

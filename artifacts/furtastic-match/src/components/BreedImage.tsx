@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Dog } from 'lucide-react';
+import Icon, { BRAND_PURPLE } from './Icon';
 
 interface BreedImageProps {
   slug: string;
@@ -8,14 +10,15 @@ interface BreedImageProps {
   alt?: string;
 }
 
-export default function BreedImage({ slug, emoji, emojiFontSize = '32px', style, alt }: BreedImageProps) {
+export default function BreedImage({ slug, emojiFontSize = '32px', style, alt }: BreedImageProps) {
   const [failed, setFailed] = useState(false);
 
   // Generate alt text from slug if not provided
   const altText = alt || slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
+  // Fallback when the breed photo is missing: a neutral brand dog mark.
   if (failed) {
-    return <span style={{ fontSize: emojiFontSize, lineHeight: 1 }}>{emoji}</span>;
+    return <Icon icon={Dog} size={parseInt(emojiFontSize, 10) || 32} color={BRAND_PURPLE} aria-hidden={false} aria-label={altText} />;
   }
 
   return (

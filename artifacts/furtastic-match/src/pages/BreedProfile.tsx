@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Ruler, Zap, Scissors, Baby, PawPrint, ArrowRight } from 'lucide-react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import AdZone from '../components/AdZone';
 import EmailCapture from '../components/EmailCapture';
 import AuthorByline from '../components/AuthorByline';
+import Icon, { BRAND_PURPLE } from '../components/Icon';
 import { getBreedBySlug } from '../lib/matchingEngine';
 import BreedImage from '../components/BreedImage';
 
@@ -83,13 +85,13 @@ export default function BreedProfile() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '16px' }}>
             {[
-              { l: 'Size', v: breed.size.charAt(0).toUpperCase() + breed.size.slice(1), e: '📏' },
-              { l: 'Energy', v: activityLabels[breed.activity_level], e: '⚡' },
-              { l: 'Grooming', v: groomingLabels[breed.grooming], e: '✂️' },
-              { l: 'Kid-Friendly', v: kidsLabels[breed.good_with_kids], e: '👧' }
+              { l: 'Size', v: breed.size.charAt(0).toUpperCase() + breed.size.slice(1), icon: Ruler },
+              { l: 'Energy', v: activityLabels[breed.activity_level], icon: Zap },
+              { l: 'Grooming', v: groomingLabels[breed.grooming], icon: Scissors },
+              { l: 'Kid-Friendly', v: kidsLabels[breed.good_with_kids], icon: Baby }
             ].map(t => (
               <div key={t.l} className="card" style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <div style={{ fontSize: '24px' }}>{t.e}</div>
+                <div style={{ display: 'flex' }}><Icon icon={t.icon} size={24} color={BRAND_PURPLE} /></div>
                 <div style={{ color: 'var(--text-muted)', fontSize: '12px', textTransform: 'uppercase', fontWeight: 700 }}>{t.l}</div>
                 <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '16px' }}>{t.v}</div>
               </div>
@@ -101,7 +103,7 @@ export default function BreedProfile() {
               FurtasticMatch participates in affiliate programs. We earn a commission if you make a purchase through our breeder links.
             </p>
             <a href={breed.affiliate_link || `/find-a-breeder?breed=${breed.slug}`} className="btn-primary" style={{ padding: '16px 32px', fontSize: '16px', textDecoration: 'none' }}>
-              Find {breed.name} Breeders →
+              Find {breed.name} Breeders <Icon icon={ArrowRight} size={18} />
             </a>
           </div>
 
@@ -124,7 +126,7 @@ export default function BreedProfile() {
             </div>
             {breed.breed_page_content.fun_fact && (
               <div style={{ background: '#FFF8E0', border: '2px solid #FFBE00', borderRadius: '14px', padding: '20px 24px', display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                <span style={{ fontSize: '24px', flexShrink: 0 }}>🐾</span>
+                <span style={{ flexShrink: 0, display: 'flex' }}><Icon icon={PawPrint} size={24} color="#B07800" /></span>
                 <div>
                   <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '13px', color: '#B07800', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '6px' }}>Fun Fact</div>
                   <p style={{ color: '#7A5500', lineHeight: 1.6, margin: 0 }}>{breed.breed_page_content.fun_fact}</p>
@@ -135,7 +137,7 @@ export default function BreedProfile() {
 
           <div style={{ background: 'var(--cta)', color: 'white', padding: '40px 24px', borderRadius: '18px', textAlign: 'center' }}>
             <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '28px', fontWeight: 800, marginBottom: '16px' }}>Still not sure if a {breed.name} is right for you?</h3>
-            <Link to="/quiz" className="btn-accent" style={{ padding: '14px 32px', textDecoration: 'none', display: 'inline-block' }}>Take the Quiz →</Link>
+            <Link to="/quiz" className="btn-accent" style={{ padding: '14px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>Take the Quiz <Icon icon={ArrowRight} size={18} /></Link>
           </div>
 
           <EmailCapture />
@@ -152,7 +154,7 @@ export default function BreedProfile() {
 
       <div className="md:hidden" style={{ position: 'fixed', bottom: 0, left: 0, right: 0, background: 'var(--bg-card)', padding: '16px', borderTop: '1px solid var(--border)', zIndex: 50, display: 'flex', gap: '8px' }}>
         <Link to="/quiz" className="btn-primary" style={{ flex: 1, padding: '16px', justifyContent: 'center', textDecoration: 'none', fontSize: '16px' }}>
-          Find out if it's a match →
+          Find out if it's a match <Icon icon={ArrowRight} size={18} />
         </Link>
       </div>
 

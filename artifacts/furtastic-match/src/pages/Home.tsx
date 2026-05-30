@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
+import { Dog, Sparkles, PawPrint, Check, Zap, Target, PartyPopper, ArrowRight } from 'lucide-react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import AdZone from '../components/AdZone';
+import Icon, { BRAND_PURPLE } from '../components/Icon';
 import breedsData from '../data/breeds.json';
 import BreedImage from '../components/BreedImage';
 
@@ -57,11 +59,11 @@ export default function Home() {
           </p>
           
           <Link to="/quiz" data-testid="link-hero-quiz" className="btn-primary" style={{ padding: '16px 40px', fontSize: '17px', textDecoration: 'none' }}>
-            Find My Perfect Breed 🐶
+            Find My Perfect Breed <Icon icon={Dog} size={20} />
           </Link>
-          
+
           <p style={{ marginTop: '16px', fontSize: '14px', color: 'var(--text-muted)' }}>
-            ✦ 30 breeds · Personalized results · Free forever
+            <Icon icon={Sparkles} size={14} style={{ verticalAlign: '-0.125em', marginRight: '4px' }} />30 breeds · Personalized results · Free forever
           </p>
         </div>
       </section>
@@ -70,13 +72,13 @@ export default function Home() {
       <section style={{ background: 'var(--bg-card)', borderTop: '2px solid var(--border)', borderBottom: '2px solid var(--border)', padding: '20px 24px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', justifyContent: 'center', gap: '48px', flexWrap: 'wrap' }}>
           {[
-            { e: '🐕', n: '30', l: 'Breeds' },
-            { e: '✅', n: '', l: 'Free. No sign-up required.' },
-            { e: '⚡', n: '3 Min', l: 'Quiz' },
-            { e: '🎯', n: '', l: '100% Personalized' }
+            { icon: Dog, n: '30', l: 'Breeds' },
+            { icon: Check, n: '', l: 'Free. No sign-up required.' },
+            { icon: Zap, n: '3 Min', l: 'Quiz' },
+            { icon: Target, n: '', l: '100% Personalized' }
           ].map((t, i) => (
             <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
-              <div style={{ fontSize: '24px' }}>{t.e}</div>
+              <div style={{ display: 'flex' }}><Icon icon={t.icon} size={26} color={BRAND_PURPLE} /></div>
               {t.n && <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--cta)', fontSize: '18px' }}>{t.n}</div>}
               <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>{t.l}</div>
             </div>
@@ -94,17 +96,17 @@ export default function Home() {
           {/* How It Works */}
           <section>
             <div style={{ color: 'var(--teal)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '8px' }}>How it works</div>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '32px', marginBottom: '32px' }}>Three steps to your perfect match 🐾</h2>
-            
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '32px', marginBottom: '32px' }}>Three steps to your perfect match <Icon icon={PawPrint} size={28} color={BRAND_PURPLE} style={{ verticalAlign: '-0.15em' }} /></h2>
+
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
               {[
-                { i: 1, e: '🎯', t: 'Tell us about your life', d: 'Answer 8 quick questions about your space, family, and lifestyle' },
-                { i: 2, e: '⚡', t: 'We run the match', d: 'Our algorithm scores 30 breeds against your answers in seconds' },
-                { i: 3, e: '🎉', t: 'Meet your matches', d: 'Get your top 3 matches plus a wildcard breed you might not expect' }
+                { i: 1, icon: Target, t: 'Tell us about your life', d: 'Answer 8 quick questions about your space, family, and lifestyle' },
+                { i: 2, icon: Zap, t: 'We run the match', d: 'Our algorithm scores 30 breeds against your answers in seconds' },
+                { i: 3, icon: PartyPopper, t: 'Meet your matches', d: 'Get your top 3 matches plus a wildcard breed you might not expect' }
               ].map((s) => (
                 <div key={s.i} className="card" style={{ padding: '24px', position: 'relative' }}>
                   <div style={{ width: '28px', height: '28px', background: 'var(--cta)', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px', fontWeight: 800, position: 'absolute', top: '-14px', left: '24px' }}>{s.i}</div>
-                  <div style={{ fontSize: '32px', marginBottom: '16px', marginTop: '8px' }}>{s.e}</div>
+                  <div style={{ marginBottom: '16px', marginTop: '8px' }}><Icon icon={s.icon} size={32} color={BRAND_PURPLE} /></div>
                   <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '20px', marginBottom: '8px' }}>{s.t}</h3>
                   <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.5 }}>{s.d}</p>
                 </div>
@@ -156,13 +158,13 @@ export default function Home() {
         }}></div>
         <div style={{ position: 'relative', zIndex: 1 }}>
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(28px, 5vw, 42px)', marginBottom: '16px' }}>
-            Ready to find your perfect match? 🐾
+            Ready to find your perfect match? <Icon icon={PawPrint} size={32} color="white" style={{ verticalAlign: '-0.15em' }} />
           </h2>
           <p style={{ opacity: 0.85, fontSize: '17px', marginBottom: '32px' }}>
             Takes 3 minutes. No email required. Share with the whole family.
           </p>
-          <Link to="/quiz" data-testid="link-bottom-quiz" className="btn-accent" style={{ padding: '14px 36px', fontSize: '16px', display: 'inline-block', textDecoration: 'none' }}>
-            Start the Quiz →
+          <Link to="/quiz" data-testid="link-bottom-quiz" className="btn-accent" style={{ padding: '14px 36px', fontSize: '16px', display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
+            Start the Quiz <Icon icon={ArrowRight} size={18} />
           </Link>
         </div>
       </section>

@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { PenLine } from 'lucide-react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import Icon from '../components/Icon';
 
 export default function AuthorProfile() {
   const { slug } = useParams();
@@ -52,10 +54,9 @@ export default function AuthorProfile() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '64px',
               margin: '0 auto 24px'
             }}>
-              ✍️
+              <Icon icon={PenLine} size={56} color="white" />
             </div>
             <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(32px, 5vw, 42px)', marginBottom: '8px' }}>
               {author.name}

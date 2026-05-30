@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Mail, MailCheck } from 'lucide-react';
+import Icon from './Icon';
 import { trackEvent } from '../lib/analytics';
 
 export default function EmailCapture() {
@@ -35,12 +37,12 @@ export default function EmailCapture() {
   return (
     <div className="card" style={{ padding: '24px', margin: '32px 0', textAlign: 'center' }}>
       {submitted ? (
-        <div data-testid="display-email-success" style={{ color: 'var(--teal)', fontWeight: 700, fontSize: '18px' }}>
-          📬 Sent! Check your inbox.
+        <div data-testid="display-email-success" style={{ color: 'var(--teal)', fontWeight: 700, fontSize: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+          <Icon icon={MailCheck} size={20} /> Sent! Check your inbox.
         </div>
       ) : (
         <>
-          <div style={{ fontSize: '32px', marginBottom: '8px' }}>📬</div>
+          <div style={{ marginBottom: '8px', display: 'flex', justifyContent: 'center' }}><Icon icon={Mail} size={32} color="var(--cta)" /></div>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', margin: '0 0 8px 0', color: 'var(--text-primary)' }}>Save your results</h3>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '16px', fontSize: '15px' }}>
             Enter your email to save these matches or share them with family.
