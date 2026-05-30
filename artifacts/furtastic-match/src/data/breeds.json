@@ -1168,5 +1168,395 @@
       "cost": "Purchase price: $500–$2,500. Annual costs: $600–$1,200 (one of the least expensive breeds to keep).",
       "fun_fact": "the Chihuahua is the smallest breed in the world but has the largest brain-to-body-size ratio of any dog breed."
     }
+  },
+  {
+    "id": "labradoodle",
+    "slug": "labradoodle",
+    "name": "Labradoodle",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#FFF3D0",
+      "#F0E8FF"
+    ],
+    "size": "large",
+    "activity_level": 4,
+    "space": 2,
+    "grooming": 4,
+    "experience_level": 2,
+    "good_with_kids": 5,
+    "size_preference": 4,
+    "lifestyle": 4,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "The original doodle — a smart, friendly Lab–Poodle cross with a low-shedding coat and a love of activity.",
+    "why_it_fits": {
+      "family": "Patient, playful, and eager to please — a Labradoodle slots into a busy family that can give it real exercise.",
+      "couple": "Great for an active couple who want a trainable adventure buddy for hikes, runs, and weekends outdoors.",
+      "solo": "A devoted, highly trainable companion that keeps a solo owner moving and rarely leaves your side."
+    },
+    "meta_title": "Labradoodle: Is This the Right Dog for Your Family? | FurtasticMatch",
+    "meta_description": "Is a Labradoodle right for your family? Honest guide to the Lab–Poodle cross — temperament, low-shed coat, exercise needs, health, and cost.",
+    "breed_page_content": {
+      "intro": "As a mixed breed, individual Labradoodles can vary more than purebreds — coat type, energy, and size depend on which parent's genes dominate and the dog's generation (F1, F1b, F2). The traits below reflect F1b-typical dogs, which are the most predictable and most commonly bred. The Labradoodle pairs the Labrador's friendly, trainable nature with the Poodle's low-shedding coat. Originally bred in Australia as a hypoallergenic guide dog, it kicked off the entire doodle movement — and remains one of the most popular crosses for active families.",
+      "traits": "Friendly, intelligent, energetic, and people-oriented. F1b Labradoodles inherit strong Lab drive and Poodle smarts, making them quick to train but in need of a real outlet for their energy.",
+      "family_fit": "Excellent with kids of all ages — affectionate and tolerant. Their size and energy mean supervision around toddlers, but the temperament is reliably gentle.",
+      "grooming": "The wavy-to-curly F1b coat sheds little but needs regular work: brushing several times a week to prevent matting, plus professional grooming every 6–8 weeks.",
+      "activity": "High energy — plan on 60–90 minutes of vigorous activity daily plus mental work. Under-exercised Labradoodles get restless and inventive.",
+      "cost": "Purchase price: $1,500–$3,500. Annual costs: $1,500–$2,500.",
+      "fun_fact": "The Labradoodle was originally developed in Australia in the 1980s as a hypoallergenic guide dog — the breed that kicked off the entire doodle movement."
+    }
+  },
+  {
+    "id": "goldendoodle",
+    "slug": "goldendoodle",
+    "name": "Goldendoodle",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#FFF3D0",
+      "#FFE8C0"
+    ],
+    "size": "large",
+    "activity_level": 4,
+    "space": 2,
+    "grooming": 4,
+    "experience_level": 2,
+    "good_with_kids": 5,
+    "size_preference": 4,
+    "lifestyle": 4,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "A sunny, sociable Golden Retriever–Poodle cross that comes in everything from mini to standard sizes.",
+    "why_it_fits": {
+      "family": "One of the most family-friendly doodles — gentle, social, and endlessly patient with children.",
+      "couple": "A cheerful, trainable companion for a couple who want an outgoing dog for outings and travel.",
+      "solo": "Affectionate and people-focused — a Goldendoodle thrives with an owner who's around and active."
+    },
+    "meta_title": "Goldendoodle: Is This the Right Dog for Your Family? | FurtasticMatch",
+    "meta_description": "Is a Goldendoodle right for your family? Honest guide to the Golden–Poodle cross — temperament, low-shed coat, size range, exercise, health, and cost.",
+    "breed_page_content": {
+      "intro": "As a mixed breed, individual Goldendoodles can vary more than purebreds — coat type, energy, and size depend on which parent's genes dominate and the dog's generation (F1, F1b, F2). The traits below reflect F1b-typical dogs, which are the most predictable and most commonly bred. The Goldendoodle blends the Golden Retriever's warmth with the Poodle's brains and low-shedding coat. It comes in a wider size range than almost any other cross, from 15-pound minis to 75-pound standards, all sharing the same friendly, trainable temperament.",
+      "traits": "Outgoing, gentle, intelligent, and eager to please. Goldendoodles are social to the core and bond hard to their people, which makes them a joy to train and prone to missing you when you're gone.",
+      "family_fit": "Excellent. Tolerant and affectionate with kids, and friendly with other pets. Standards are big enough to need supervision with toddlers; the temperament itself is soft.",
+      "grooming": "The wavy F1b coat sheds little but mats easily — brush several times a week and book professional grooming every 6–8 weeks.",
+      "activity": "High energy — 60–90 minutes of daily activity plus mental stimulation keeps a Goldendoodle balanced. Mini lines need a bit less than standards.",
+      "cost": "Purchase price: $1,500–$4,000. Annual costs: $1,500–$2,500.",
+      "fun_fact": "Goldendoodles come in a wider size range than almost any other \"breed\" — from 15-pound minis to 80-pound standards — all from the same cross."
+    }
+  },
+  {
+    "id": "cavapoo",
+    "slug": "cavapoo",
+    "name": "Cavapoo",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#FFF0F5",
+      "#F0E8FF"
+    ],
+    "size": "small",
+    "activity_level": 3,
+    "space": 5,
+    "grooming": 4,
+    "experience_level": 1,
+    "good_with_kids": 5,
+    "size_preference": 2,
+    "lifestyle": 3,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "A small, gentle Cavalier–Poodle cross — affectionate, adaptable, and one of the fastest-growing designer breeds.",
+    "why_it_fits": {
+      "family": "Gentle enough for young children and small enough for any home — a sweet, easygoing first family dog.",
+      "couple": "An affectionate, low-drama companion that's happy with walks and cuddles in equal measure.",
+      "solo": "A devoted lap dog that adapts to apartment life and loves being wherever you are."
+    },
+    "meta_title": "Cavapoo: Is This the Right Dog for Your Family? | FurtasticMatch",
+    "meta_description": "Is a Cavapoo right for you? Honest guide to the Cavalier–Poodle cross — gentle temperament, low-shed coat, apartment fit, the cardiac health to watch, and cost.",
+    "breed_page_content": {
+      "intro": "As a mixed breed, individual Cavapoos can vary more than purebreds — coat type, energy, and size depend on which parent's genes dominate and the dog's generation (F1, F1b, F2). The traits below reflect F1b-typical dogs, which are the most predictable and most commonly bred. The Cavapoo combines the Cavalier King Charles Spaniel's famously sweet temperament with the Poodle's low-shedding coat. Small, gentle, and adaptable, it has become one of the fastest-growing designer breeds in the US and UK.",
+      "traits": "Gentle, affectionate, sociable, and people-oriented. Cavapoos are mild-mannered and trainable, with none of the high drive of the sporting doodles — a true companion dog.",
+      "family_fit": "Excellent, including with young children — gentle and patient by nature. As with any small dog, supervise play with toddlers to protect the dog.",
+      "grooming": "The soft, low-shedding coat needs brushing several times a week to avoid mats, plus professional grooming every 6–8 weeks. Keep the ears clean and dry.",
+      "activity": "Moderate — about 30–45 minutes a day across walks and play is plenty. Happy to match a quiet routine or a more active one.",
+      "cost": "Purchase price: $1,500–$3,500. Annual costs: $1,000–$1,800.",
+      "fun_fact": "The Cavalier parent's friendly temperament combined with the Poodle's low-shedding coat has made Cavapoos one of the fastest-growing designer breeds in the US and UK."
+    }
+  },
+  {
+    "id": "cockapoo",
+    "slug": "cockapoo",
+    "name": "Cockapoo",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#FFF6E0",
+      "#F0E8FF"
+    ],
+    "size": "small",
+    "activity_level": 4,
+    "space": 4,
+    "grooming": 4,
+    "experience_level": 2,
+    "good_with_kids": 4,
+    "size_preference": 2,
+    "lifestyle": 3,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "One of the original designer breeds — a happy, affectionate Cocker Spaniel–Poodle cross that's been bred since the 1960s.",
+    "why_it_fits": {
+      "family": "Friendly, playful, and adaptable — a Cockapoo fits family life and is sturdy enough for active kids.",
+      "couple": "An upbeat, trainable companion that's equally up for a walk or a night on the couch.",
+      "solo": "Affectionate and adaptable, especially the smaller varieties — a great apartment-friendly sidekick."
+    },
+    "meta_title": "Cockapoo: Is This the Right Dog for Your Family? | FurtasticMatch",
+    "meta_description": "Is a Cockapoo right for you? Honest guide to the Cocker Spaniel–Poodle cross — temperament, low-shed coat, exercise needs, health, and cost.",
+    "breed_page_content": {
+      "intro": "As a mixed breed, individual Cockapoos can vary more than purebreds — coat type, energy, and size depend on which parent's genes dominate and the dog's generation (F1, F1b, F2). The traits below reflect F1b-typical dogs, which are the most predictable and most commonly bred. The Cockapoo is one of the oldest designer breeds, intentionally bred since the 1960s — decades before the modern doodle craze. It pairs the Cocker Spaniel's affectionate nature with the Poodle's low-shedding coat in a compact, friendly package.",
+      "traits": "Cheerful, affectionate, intelligent, and eager to please. Cockapoos are people-loving and trainable, with a playful streak that makes them fun without being demanding.",
+      "family_fit": "Very good — friendly and playful with kids and other pets. A sensible choice for first-time owners who want an adaptable small dog.",
+      "grooming": "The low-shedding coat needs brushing several times a week and professional grooming every 6–8 weeks. Clean the ears regularly to head off infections.",
+      "activity": "Moderate to high — 30–60 minutes a day of walks and play. Smaller varieties need a bit less; all enjoy a game and a puzzle.",
+      "cost": "Purchase price: $1,000–$2,500. Annual costs: $1,000–$1,800.",
+      "fun_fact": "The Cockapoo is one of the oldest designer breeds — they've been intentionally bred since the 1960s, predating the modern doodle craze by decades."
+    }
+  },
+  {
+    "id": "bernedoodle",
+    "slug": "bernedoodle",
+    "name": "Bernedoodle",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#F0E8FF",
+      "#E8DCFF"
+    ],
+    "size": "large",
+    "activity_level": 3,
+    "space": 2,
+    "grooming": 4,
+    "experience_level": 2,
+    "good_with_kids": 5,
+    "size_preference": 4,
+    "lifestyle": 3,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "A gentle Bernese Mountain Dog–Poodle cross prized for a calmer temperament and a much longer lifespan than the purebred Berner.",
+    "why_it_fits": {
+      "family": "Gentle, affectionate, and patient — a Bernedoodle brings Berner sweetness with Poodle trainability to family life.",
+      "couple": "A calm, devoted companion for a couple with the space and time for a larger dog.",
+      "solo": "Loyal and people-focused — best for a solo owner with room to spare and a flexible schedule."
+    },
+    "meta_title": "Bernedoodle: Is This the Right Dog for Your Family? | FurtasticMatch",
+    "meta_description": "Is a Bernedoodle right for your family? Honest guide to the Bernese–Poodle cross — gentle temperament, lower-shed coat, longer lifespan, health, and cost.",
+    "breed_page_content": {
+      "intro": "As a mixed breed, individual Bernedoodles can vary more than purebreds — coat type, energy, and size depend on which parent's genes dominate and the dog's generation (F1, F1b, F2). The traits below reflect F1b-typical dogs, which are the most predictable and most commonly bred. The Bernedoodle crosses the gentle, devoted Bernese Mountain Dog with the Poodle. One of the main reasons the cross exists is the Berner's tragically short lifespan — the Poodle's genes significantly extend it, while keeping the Berner's calm, affectionate temperament.",
+      "traits": "Gentle, affectionate, and loyal, with a calmer energy than most doodles. Highly trainable, though some inherit a touch of Berner stubbornness.",
+      "family_fit": "Excellent — the Berner's gentleness plus the Poodle's trainability makes a patient, kid-friendly dog. Standards are large, so supervise with toddlers.",
+      "grooming": "The wavy, low-to-moderate-shedding coat needs brushing several times a week and professional grooming every 6–8 weeks to prevent mats.",
+      "activity": "Moderate — 30–60 minutes a day suits most. Lower-key than the sporting doodles, but standards still need real daily exercise and space.",
+      "cost": "Purchase price: $2,500–$5,000. Annual costs: $1,800–$3,000.",
+      "fun_fact": "One of the primary motivations for breeding Bernedoodles was the Bernese Mountain Dog's tragically short lifespan — the Poodle cross significantly extends it."
+    }
+  },
+  {
+    "id": "cocker-spaniel",
+    "slug": "cocker-spaniel",
+    "name": "Cocker Spaniel",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#FFF6E0",
+      "#F5E0C0"
+    ],
+    "size": "small",
+    "activity_level": 3,
+    "space": 3,
+    "grooming": 4,
+    "experience_level": 2,
+    "good_with_kids": 4,
+    "size_preference": 2,
+    "lifestyle": 3,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "A gentle, eager-to-please sporting dog with a silky coat — and a Disney-famous face.",
+    "why_it_fits": {
+      "family": "Gentle and affectionate with children — a classic, mild-mannered family companion.",
+      "couple": "A sweet, sociable dog that's happy with daily walks and plenty of togetherness.",
+      "solo": "Devoted and people-oriented — a loving companion for an owner who's around often."
+    },
+    "meta_title": "Cocker Spaniel — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Is an American Cocker Spaniel right for you? Honest guide to temperament, grooming, family fit, the health to watch, and what they cost.",
+    "breed_page_content": {
+      "intro": "The American Cocker Spaniel is a gentle, affectionate sporting dog wrapped in one of the most beautiful silky coats in the dog world. Eager to please and people-oriented, it has been a family favorite for generations.",
+      "traits": "Gentle, sweet-natured, eager to please, and sociable. Cockers bond closely with their families and respond well to kind, consistent training.",
+      "family_fit": "Very good with children — patient and soft-tempered. Their sensitivity means they do best in calm households with gentle handling.",
+      "grooming": "The silky coat is high-maintenance: brush several times a week and budget for professional grooming every 6–8 weeks. Those long, floppy ears need regular cleaning to prevent infection.",
+      "activity": "Moderate — about 45–60 minutes a day of walks and play. They have sporting-dog roots and enjoy a good romp, but adapt well to a steady routine.",
+      "cost": "Purchase price: $800–$2,000. Annual costs: $1,000–$2,000.",
+      "fun_fact": "The American Cocker Spaniel was the most popular breed in the US for 16 consecutive years from 1936 to 1952 — and was immortalized as Lady in Disney's Lady and the Tramp."
+    }
+  },
+  {
+    "id": "bichon-frise",
+    "slug": "bichon-frise",
+    "name": "Bichon Frise",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#FFFDF5",
+      "#F0E8FF"
+    ],
+    "size": "small",
+    "activity_level": 3,
+    "space": 5,
+    "grooming": 4,
+    "experience_level": 2,
+    "good_with_kids": 4,
+    "size_preference": 1,
+    "lifestyle": 3,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "A cheerful, cotton-ball companion with a low-shedding coat and a flair for charming everyone it meets.",
+    "why_it_fits": {
+      "family": "Playful, friendly, and small — a happy little companion that's great with gentle kids.",
+      "couple": "A sociable, cheerful dog that fits apartments and loves being part of everything.",
+      "solo": "Affectionate and adaptable — an ideal small companion for an owner who wants a buddy at home."
+    },
+    "meta_title": "Bichon Frise — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Is a Bichon Frise right for you? Honest guide to the cheerful, low-shedding companion breed — temperament, grooming, apartment fit, health, and cost.",
+    "breed_page_content": {
+      "intro": "The Bichon Frise is a small, cheerful companion dog with a soft, low-shedding coat and an irresistibly upbeat personality. Bred for centuries to charm — first European royalty, later circus crowds — the Bichon lives to be near its people.",
+      "traits": "Cheerful, friendly, playful, and trainable. Bichons are sociable and crave company, thriving on attention and gentle, reward-based training.",
+      "family_fit": "Very good — friendly and playful with children and other pets. Their small size means supervision with toddlers, but the temperament is consistently sweet.",
+      "grooming": "High-maintenance. The continuously growing, low-shedding coat needs brushing several times a week and professional grooming every 4–6 weeks to prevent matting.",
+      "activity": "Moderate — a couple of short walks and some indoor play, around 30 minutes a day, keeps a Bichon content. No yard required.",
+      "cost": "Purchase price: $700–$2,000. Annual costs: $1,000–$1,800.",
+      "fun_fact": "Bichons were favorites of French royalty in the 16th century and became circus performers in the 19th century — their trainability and crowd-pleasing personality made them naturals."
+    }
+  },
+  {
+    "id": "samoyed",
+    "slug": "samoyed",
+    "name": "Samoyed",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#FFFDF5",
+      "#E8F4FF"
+    ],
+    "size": "medium",
+    "activity_level": 4,
+    "space": 1,
+    "grooming": 4,
+    "experience_level": 4,
+    "good_with_kids": 4,
+    "size_preference": 3,
+    "lifestyle": 4,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "The smiling sled dog of Siberia — gentle, playful, and famous for a fluffy white coat that sheds spectacularly.",
+    "why_it_fits": {
+      "family": "Gentle and playful with kids — a friendly fluffball for an active family that can handle the coat and the energy.",
+      "couple": "A spirited, affectionate companion for an active couple who love the outdoors and cooler climates.",
+      "solo": "Loyal and social — best for a solo owner committed to daily exercise and a lot of brushing."
+    },
+    "meta_title": "Samoyed — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Is a Samoyed right for you? Honest guide to the smiling Siberian sled dog — gentle temperament, heavy shedding, exercise needs, health, and cost.",
+    "breed_page_content": {
+      "intro": "The Samoyed is a gentle, playful working breed from Siberia, instantly recognizable by its bright white coat and the upturned \"Sammy smile.\" Bred to herd reindeer and pull sleds, it's affectionate and friendly — and a serious commitment in coat care and exercise.",
+      "traits": "Friendly, gentle, playful, and social, with an independent streak. Samoyeds are not naturally eager to please, so training takes patience and consistency.",
+      "family_fit": "Very good — gentle and playful with children, and generally social with other dogs. Their energy and size suit active families over quiet ones.",
+      "grooming": "Demanding. The thick double coat sheds heavily year-round and blows out seasonally; brush several times a week, daily during coat changes. Never shave the coat.",
+      "activity": "High — 60+ minutes of daily exercise plus mental work. Samoyeds don't tolerate heat well, so keep activity to cooler parts of the day in warm weather.",
+      "cost": "Purchase price: $1,000–$3,000. Annual costs: $1,500–$2,500.",
+      "fun_fact": "Samoyeds were originally used by the Samoyedic people of Siberia to herd reindeer and pull sleds — the same dogs that accompanied polar expeditions in the early 1900s."
+    }
+  },
+  {
+    "id": "weimaraner",
+    "slug": "weimaraner",
+    "name": "Weimaraner",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#EFEFF2",
+      "#DCDCE4"
+    ],
+    "size": "large",
+    "activity_level": 5,
+    "space": 1,
+    "grooming": 1,
+    "experience_level": 4,
+    "good_with_kids": 3,
+    "size_preference": 4,
+    "lifestyle": 5,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "The sleek \"Gray Ghost\" — a striking, high-octane hunting dog that needs an active home and a real job.",
+    "why_it_fits": {
+      "family": "Best for active families with older kids — affectionate but far too energetic and bouncy for toddlers.",
+      "couple": "A superb partner for an athletic couple who run, hike, and want a dog that can keep up all day.",
+      "solo": "For a committed, active owner only — Weimaraners bond intensely and don't do well left alone or under-exercised."
+    },
+    "meta_title": "Weimaraner — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Is a Weimaraner right for you? Honest guide to the high-energy \"Gray Ghost\" — temperament, exercise demands, the health to watch, and what they cost.",
+    "breed_page_content": {
+      "intro": "The Weimaraner — nicknamed the \"Gray Ghost\" for its silvery coat and ghostly stare — is a fast, athletic hunting breed bred for German nobility. Intensely loyal and almost limitlessly energetic, it's a spectacular dog for the right active home and a poor fit for everyone else.",
+      "traits": "Energetic, intelligent, loyal, and headstrong. Weimaraners attach hard to their people, can be prone to separation anxiety, and need both physical and mental work to stay balanced.",
+      "family_fit": "Good with older, active kids who can handle a big, bouncy dog; too much energy for toddlers. Early training and socialization are essential.",
+      "grooming": "Easy — the short, sleek coat needs little more than a weekly brush and the occasional bath. Minimal shedding for a dog this size.",
+      "activity": "Very high — 90+ minutes of vigorous daily exercise plus mental challenges. A bored, under-exercised Weimaraner is destructive and anxious.",
+      "cost": "Purchase price: $700–$1,700. Annual costs: $1,200–$2,200.",
+      "fun_fact": "Weimaraners were called \"the Gray Ghost\" and were originally bred exclusively for German nobility — ownership outside the aristocracy was prohibited for decades."
+    }
+  },
+  {
+    "id": "vizsla",
+    "slug": "vizsla",
+    "name": "Vizsla",
+    "emoji": "🐶",
+    "illustration_bg": [
+      "#FFEFE0",
+      "#F5D8B8"
+    ],
+    "size": "medium",
+    "activity_level": 5,
+    "space": 1,
+    "grooming": 1,
+    "experience_level": 3,
+    "good_with_kids": 4,
+    "size_preference": 3,
+    "lifestyle": 5,
+    "wildcard_eligible": true,
+    "sponsored": false,
+    "last_updated": "2026-05",
+    "affiliate_link": "",
+    "description": "A rust-gold Hungarian pointer — affectionate, intensely athletic, and one of the most trainable sporting breeds.",
+    "why_it_fits": {
+      "family": "Excellent with active families — affectionate and playful, but needs hard daily exercise to be calm indoors.",
+      "couple": "A dream dog for an athletic couple who want a trainable, velcro companion for runs and hikes.",
+      "solo": "Great for an active solo owner who can meet the exercise needs — Vizslas crave company and hate being alone."
+    },
+    "meta_title": "Vizsla — Is This the Right Breed for Your Family? | FurtasticMatch",
+    "meta_description": "Is a Vizsla right for you? Honest guide to the affectionate Hungarian pointer — temperament, exercise demands, the health to watch, and what they cost.",
+    "breed_page_content": {
+      "intro": "The Vizsla is a sleek, rust-gold Hungarian pointer prized for its affection and athleticism. One of the most trainable sporting breeds, it's also a true \"velcro dog\" that wants to be at your side — and needs serious daily exercise to thrive.",
+      "traits": "Affectionate, energetic, intelligent, and highly trainable. Vizslas bond intensely and dislike being alone, so they fit homes where someone is around much of the day.",
+      "family_fit": "Excellent with active families — gentle and playful with kids. Plenty of exercise is the key to a calm, well-mannered dog indoors.",
+      "grooming": "Easy — the short, rust-gold coat needs only an occasional brush and bath. Light shedding and no doggy odor to speak of.",
+      "activity": "Very high — 60–90+ minutes of vigorous daily exercise plus mental work. An under-exercised Vizsla becomes anxious and destructive fast.",
+      "cost": "Purchase price: $1,000–$2,000. Annual costs: $1,200–$2,200.",
+      "fun_fact": "The Vizsla nearly went extinct after World War II — dedicated Hungarian breeders smuggled dogs across borders to preserve the breed."
+    }
   }
 ]
