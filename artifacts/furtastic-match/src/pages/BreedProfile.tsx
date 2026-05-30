@@ -4,6 +4,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import AdZone from '../components/AdZone';
 import EmailCapture from '../components/EmailCapture';
+import AuthorByline from '../components/AuthorByline';
 import { getBreedBySlug } from '../lib/matchingEngine';
 import BreedImage from '../components/BreedImage';
 
@@ -36,8 +37,30 @@ export default function BreedProfile() {
   const groomingLabels = ['Minimal', 'Low', 'Moderate', 'High', 'Very High', 'Daily'];
   const kidsLabels = ['Poor', 'Fair', 'Good', 'Very Good', 'Excellent', 'Exceptional'];
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": breed.meta_title,
+    "description": breed.meta_description,
+    "image": `https://furtasticmatch.com/breeds/${breed.slug}.png`,
+    "author": {
+      "@type": "Organization",
+      "name": "FurtasticMatch"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "FurtasticMatch",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://furtasticmatch.com/opengraph.jpg"
+      }
+    },
+    "dateModified": breed.last_updated
+  };
+
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Nav />
       
       <main style={{ flex: 1, maxWidth: '1200px', margin: '0 auto', width: '100%', padding: '40px 24px', display: 'grid', gridTemplateColumns: '1fr auto', gap: '60px' }} className="breed-grid">
@@ -55,6 +78,8 @@ export default function BreedProfile() {
           <p style={{ fontSize: '18px', lineHeight: 1.7, color: 'var(--text-secondary)' }}>
             {breed.breed_page_content.intro}
           </p>
+
+          <AuthorByline updatedDate={breed.last_updated} />
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '16px' }}>
             {[

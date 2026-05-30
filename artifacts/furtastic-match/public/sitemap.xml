@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home -->
+  <url>
+    <loc>https://furtasticmatch.com/</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Quiz -->
+  <url>
+    <loc>https://furtasticmatch.com/quiz</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Results -->
+  <url>
+    <loc>https://furtasticmatch.com/results</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Breeder Pages -->
+  <url>
+    <loc>https://furtasticmatch.com/breeders</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/find-a-breeder</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Static Pages -->
+  <url>
+    <loc>https://furtasticmatch.com/about</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/contact</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/privacy</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/terms</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/affiliate-disclosure</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Breed Profile Pages -->
+  <url>
+    <loc>https://furtasticmatch.com/breeds/labrador-retriever</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/golden-retriever</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/french-bulldog</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/german-shepherd</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/bulldog</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/poodle</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/beagle</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/rottweiler</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/german-shorthaired-pointer</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/dachshund</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/pembroke-welsh-corgi</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/australian-shepherd</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/yorkshire-terrier</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/cavalier-king-charles-spaniel</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/doberman-pinscher</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/boxer</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/miniature-schnauzer</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/basset-hound</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/great-dane</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/shih-tzu</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/siberian-husky</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/bernese-mountain-dog</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/pomeranian</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/boston-terrier</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/havanese</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/shetland-sheepdog</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/brittany</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/border-collie</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/maltese</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/breeds/chihuahua</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+</urlset>
