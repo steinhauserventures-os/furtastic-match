@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import Icon from '../components/Icon';
 
 export default function Breeders() {
   const [submitted, setSubmitted] = useState(false);
@@ -71,7 +73,7 @@ export default function Breeders() {
 
         {submitted ? (
           <div className="card" style={{ padding: '40px', textAlign: 'center', background: '#F0FFF4', borderColor: '#3DBFB8' }}>
-            <div style={{ fontSize: '48px', marginBottom: '16px' }}>✨</div>
+            <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'center' }}><Icon icon={CheckCircle2} size={48} color="#3DBFB8" /></div>
             <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '8px' }}>Thanks for your interest!</h3>
             <p style={{ color: 'var(--text-secondary)' }}>We'll reach out when sponsored placements are available.</p>
           </div>
@@ -135,7 +137,7 @@ export default function Breeders() {
                 <textarea name="message" rows={4} placeholder="Tell us about your breeding program, certifications, or anything else..." style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }}></textarea>
               </div>
 
-              <button type="submit" className="btn-primary" style={{ padding: '16px', justifyContent: 'center', marginTop: '8px' }}>Join the Waitlist →</button>
+              <button type="submit" className="btn-primary" style={{ padding: '16px', justifyContent: 'center', marginTop: '8px' }}>Join the Waitlist <Icon icon={ArrowRight} size={18} /></button>
             </div>
           </form>
         )}

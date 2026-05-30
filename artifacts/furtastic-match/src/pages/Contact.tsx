@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { ArrowRight } from 'lucide-react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import Icon from '../components/Icon';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -65,7 +67,7 @@ export default function Contact() {
                 <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Message</label>
                 <textarea name="message" rows={5} required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }}></textarea>
               </div>
-              <button type="submit" className="btn-primary" style={{ padding: '16px', justifyContent: 'center', marginTop: '8px' }}>Send Message →</button>
+              <button type="submit" className="btn-primary" style={{ padding: '16px', justifyContent: 'center', marginTop: '8px' }}>Send Message <Icon icon={ArrowRight} size={18} /></button>
             </div>
           </form>
         )}

@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Dog, ArrowRight } from 'lucide-react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import AdZone from '../components/AdZone';
+import Icon, { BRAND_PURPLE } from '../components/Icon';
 import { getBreedBySlug } from '../lib/matchingEngine';
 
 export default function Comparison() {
@@ -29,11 +31,11 @@ export default function Comparison() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '48px' }}>
           <div className="card" style={{ padding: '24px', textAlign: 'center' }}>
-            <div style={{ fontSize: '48px', marginBottom: '16px' }}>{breedA.emoji}</div>
+            <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'center' }}><Icon icon={Dog} size={48} color={BRAND_PURPLE} /></div>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '24px' }}>{breedA.name}</h2>
           </div>
           <div className="card" style={{ padding: '24px', textAlign: 'center' }}>
-            <div style={{ fontSize: '48px', marginBottom: '16px' }}>{breedB.emoji}</div>
+            <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'center' }}><Icon icon={Dog} size={48} color={BRAND_PURPLE} /></div>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '24px' }}>{breedB.name}</h2>
           </div>
         </div>
@@ -73,7 +75,7 @@ export default function Comparison() {
         <div style={{ background: 'var(--bg-card)', padding: '32px', borderRadius: '18px', textAlign: 'center', border: '2px solid var(--border)', marginBottom: '48px' }}>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, marginBottom: '16px' }}>Still unsure?</h3>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '24px' }}>Take our 3-minute quiz to see which breed scores higher for your specific lifestyle.</p>
-          <Link to="/quiz" className="btn-primary" style={{ padding: '14px 32px', textDecoration: 'none', display: 'inline-block' }}>Take the Quiz →</Link>
+          <Link to="/quiz" className="btn-primary" style={{ padding: '14px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>Take the Quiz <Icon icon={ArrowRight} size={18} /></Link>
         </div>
 
         <AdZone width={728} height={90} id="ADSENSE UNIT 8" desktopOnly />

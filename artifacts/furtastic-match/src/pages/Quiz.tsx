@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {
+  PawPrint, ArrowLeft, ArrowRight, HelpCircle, Search, Dog, Scale, Users, Heart, User,
+  Zap, Sofa, Mountain, Home as HomeIcon, Building2, Trees, Wheat, Scissors, Frown,
+  Sparkles, GraduationCap, Sprout, ThumbsUp, Trophy, Ruler, Shuffle, Baby, Meh,
+} from 'lucide-react';
+import Icon, { BRAND_PURPLE } from '../components/Icon';
 import CustomSlider from '../components/CustomSlider';
 import { trackEvent } from '../lib/analytics';
 import { runMatchingEngine, encodeResults, QuizAnswers } from '../lib/matchingEngine';
@@ -59,7 +65,7 @@ export default function Quiz() {
   if (showLoading) {
     return (
       <div style={{ position: 'fixed', inset: 0, background: 'var(--bg)', zIndex: 1000, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ fontSize: '64px', animation: 'spin 2s linear infinite', marginBottom: '24px' }}>🐾</div>
+        <div style={{ animation: 'spin 2s linear infinite', marginBottom: '24px', display: 'flex' }}><Icon icon={PawPrint} size={64} color={BRAND_PURPLE} /></div>
         <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '32px', color: 'var(--text-primary)', marginBottom: '8px' }}>Sniffing out your matches...</h2>
         <p style={{ color: 'var(--text-secondary)', marginBottom: '32px' }}>Scoring 30 breeds against your answers</p>
         <div style={{ display: 'flex', gap: '12px' }}>
@@ -82,7 +88,7 @@ export default function Quiz() {
       {/* Quiz Nav */}
       <div style={{ padding: '16px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {currentQ > 1 ? (
-          <button onClick={handleBack} className="btn-outline" style={{ padding: '8px 16px', fontSize: '14px' }}>← Back</button>
+          <button onClick={handleBack} className="btn-outline" style={{ padding: '8px 16px', fontSize: '14px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}><Icon icon={ArrowLeft} size={16} /> Back</button>
         ) : <div />}
         <div style={{ textAlign: 'right', fontSize: '13px', color: 'var(--text-muted)' }}>Question {currentQ} of 8</div>
       </div>
@@ -97,14 +103,14 @@ export default function Quiz() {
           
           {currentQ === 1 && (
             <div className="q-slide">
-              <div style={{ fontSize: '56px', textAlign: 'center', marginBottom: '16px' }}>🤔</div>
+              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={HelpCircle} size={56} color={BRAND_PURPLE} /></div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '26px', textAlign: 'center', marginBottom: '32px' }}>Already have a breed in mind?</h2>
-              
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
                 {[
-                  { id: 'none', label: '🔍 Nope — help me find one!' },
-                  { id: 'one', label: '🐕 Yes, I have one in mind' },
-                  { id: 'two', label: '🤷 I\'m deciding between two breeds' }
+                  { id: 'none', icon: Search, label: 'Nope — help me find one!' },
+                  { id: 'one', icon: Dog, label: 'Yes, I have one in mind' },
+                  { id: 'two', icon: Scale, label: 'I\'m deciding between two breeds' }
                 ].map(opt => (
                   <div 
                     key={opt.id} 
@@ -117,7 +123,7 @@ export default function Quiz() {
                     }}
                     onClick={() => setAnswers({...answers, q1_mode: opt.id as any})}
                   >
-                    {opt.label}
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}><Icon icon={opt.icon} size={20} color={BRAND_PURPLE} />{opt.label}</span>
                   </div>
                 ))}
               </div>
@@ -156,21 +162,21 @@ export default function Quiz() {
                 onClick={handleNext}
                 disabled={answers.q1_mode === 'none' ? false : answers.q1_mode === 'one' ? answers.q1_breed1.length < 2 : answers.q1_breed1.length < 2 || answers.q1_breed2.length < 2}
               >
-                Next →
+                Next <Icon icon={ArrowRight} size={18} />
               </button>
             </div>
           )}
 
           {currentQ === 2 && (
             <div className="q-slide">
-              <div style={{ fontSize: '56px', textAlign: 'center', marginBottom: '16px' }}>👨‍👩‍👧</div>
+              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={Users} size={56} color={BRAND_PURPLE} /></div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '26px', textAlign: 'center', marginBottom: '32px' }}>Who's the dog for?</h2>
-              
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
                 {[
-                  { id: 'family', label: '👨‍👩‍👧‍👦 Family with kids' },
-                  { id: 'couple', label: '💑 Couple' },
-                  { id: 'solo', label: '🙋 Just me' }
+                  { id: 'family', icon: Users, label: 'Family with kids' },
+                  { id: 'couple', icon: Heart, label: 'Couple' },
+                  { id: 'solo', icon: User, label: 'Just me' }
                 ].map(opt => (
                   <div 
                     key={opt.id} 
@@ -183,18 +189,18 @@ export default function Quiz() {
                     }}
                     onClick={() => setAnswers({...answers, who: opt.id})}
                   >
-                    {opt.label}
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}><Icon icon={opt.icon} size={20} color={BRAND_PURPLE} />{opt.label}</span>
                   </div>
                 ))}
               </div>
               
-              <button className="btn-primary" style={{ width: '100%', padding: '16px', justifyContent: 'center' }} onClick={handleNext} disabled={!answers.who}>Next →</button>
+              <button className="btn-primary" style={{ width: '100%', padding: '16px', justifyContent: 'center' }} onClick={handleNext} disabled={!answers.who}>Next <Icon icon={ArrowRight} size={18} /></button>
             </div>
           )}
 
           {currentQ === 3 && (
             <div className="q-slide">
-              <div style={{ fontSize: '56px', textAlign: 'center', marginBottom: '16px' }}>⚡</div>
+              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={Zap} size={56} color={BRAND_PURPLE} /></div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '26px', textAlign: 'center', marginBottom: '32px' }}>How active is your household?</h2>
               
               <div style={{ textAlign: 'center', fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--cta)', fontSize: '18px', marginBottom: '24px', minHeight: '28px' }}>
@@ -207,25 +213,25 @@ export default function Quiz() {
               <CustomSlider value={answers.activity} onChange={v => setAnswers({...answers, activity: v})} />
               
               <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '16px', color: 'var(--text-muted)', fontSize: '13px', fontStyle: 'italic' }}>
-                <span>🛋️ Binge-watcher</span>
-                <span>🏔️ Trail runner</span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><Icon icon={Sofa} size={14} /> Binge-watcher</span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>Trail runner <Icon icon={Mountain} size={14} /></span>
               </div>
               
-              <button className="btn-primary" style={{ width: '100%', padding: '16px', justifyContent: 'center', marginTop: '48px' }} onClick={handleNext}>Next →</button>
+              <button className="btn-primary" style={{ width: '100%', padding: '16px', justifyContent: 'center', marginTop: '48px' }} onClick={handleNext}>Next <Icon icon={ArrowRight} size={18} /></button>
             </div>
           )}
 
           {currentQ === 4 && (
             <div className="q-slide">
-              <div style={{ fontSize: '56px', textAlign: 'center', marginBottom: '16px' }}>🏡</div>
+              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={HomeIcon} size={56} color={BRAND_PURPLE} /></div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '26px', textAlign: 'center', marginBottom: '32px' }}>How much space do you have?</h2>
-              
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
                 {[
-                  { id: 'apartment', label: '🏢 Apartment / small space' },
-                  { id: 'house-no-yard', label: '🏠 House, no yard' },
-                  { id: 'house-yard', label: '🌿 House with a yard' },
-                  { id: 'rural', label: '🌾 Wide open spaces (rural)' }
+                  { id: 'apartment', icon: Building2, label: 'Apartment / small space' },
+                  { id: 'house-no-yard', icon: HomeIcon, label: 'House, no yard' },
+                  { id: 'house-yard', icon: Trees, label: 'House with a yard' },
+                  { id: 'rural', icon: Wheat, label: 'Wide open spaces (rural)' }
                 ].map(opt => (
                   <div 
                     key={opt.id} 
@@ -238,18 +244,18 @@ export default function Quiz() {
                     }}
                     onClick={() => setAnswers({...answers, space: opt.id})}
                   >
-                    {opt.label}
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}><Icon icon={opt.icon} size={20} color={BRAND_PURPLE} />{opt.label}</span>
                   </div>
                 ))}
               </div>
               
-              <button className="btn-primary" style={{ width: '100%', padding: '16px', justifyContent: 'center' }} onClick={handleNext} disabled={!answers.space}>Next →</button>
+              <button className="btn-primary" style={{ width: '100%', padding: '16px', justifyContent: 'center' }} onClick={handleNext} disabled={!answers.space}>Next <Icon icon={ArrowRight} size={18} /></button>
             </div>
           )}
 
           {currentQ === 5 && (
             <div className="q-slide">
-              <div style={{ fontSize: '56px', textAlign: 'center', marginBottom: '16px' }}>✂️</div>
+              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={Scissors} size={56} color={BRAND_PURPLE} /></div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '26px', textAlign: 'center', marginBottom: '32px' }}>How much grooming time can you give?</h2>
               
               <div style={{ textAlign: 'center', fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--cta)', fontSize: '18px', marginBottom: '24px', minHeight: '28px' }}>
@@ -262,24 +268,24 @@ export default function Quiz() {
               <CustomSlider value={answers.grooming} onChange={v => setAnswers({...answers, grooming: v})} />
               
               <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '16px', color: 'var(--text-muted)', fontSize: '13px', fontStyle: 'italic' }}>
-                <span>😅 Brush? What's that?</span>
-                <span>💈 I own a full kit</span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><Icon icon={Frown} size={14} /> Brush? What's that?</span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>I own a full kit <Icon icon={Sparkles} size={14} /></span>
               </div>
               
-              <button className="btn-primary" style={{ width: '100%', padding: '16px', justifyContent: 'center', marginTop: '48px' }} onClick={handleNext}>Next →</button>
+              <button className="btn-primary" style={{ width: '100%', padding: '16px', justifyContent: 'center', marginTop: '48px' }} onClick={handleNext}>Next <Icon icon={ArrowRight} size={18} /></button>
             </div>
           )}
 
           {currentQ === 6 && (
             <div className="q-slide">
-              <div style={{ fontSize: '56px', textAlign: 'center', marginBottom: '16px' }}>🎓</div>
+              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={GraduationCap} size={56} color={BRAND_PURPLE} /></div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '26px', textAlign: 'center', marginBottom: '32px' }}>Any experience with dogs?</h2>
-              
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
                 {[
-                  { id: 'first', label: '🌱 First-timer — never owned a dog' },
-                  { id: 'some', label: '🙌 Some experience' },
-                  { id: 'seasoned', label: '🏆 Seasoned owner — I\'ve done this before' }
+                  { id: 'first', icon: Sprout, label: 'First-timer — never owned a dog' },
+                  { id: 'some', icon: ThumbsUp, label: 'Some experience' },
+                  { id: 'seasoned', icon: Trophy, label: 'Seasoned owner — I\'ve done this before' }
                 ].map(opt => (
                   <div 
                     key={opt.id} 
@@ -292,26 +298,26 @@ export default function Quiz() {
                     }}
                     onClick={() => setAnswers({...answers, experience: opt.id})}
                   >
-                    {opt.label}
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}><Icon icon={opt.icon} size={20} color={BRAND_PURPLE} />{opt.label}</span>
                   </div>
                 ))}
               </div>
               
-              <button className="btn-primary" style={{ width: '100%', padding: '16px', justifyContent: 'center' }} onClick={handleNext} disabled={!answers.experience}>Next →</button>
+              <button className="btn-primary" style={{ width: '100%', padding: '16px', justifyContent: 'center' }} onClick={handleNext} disabled={!answers.experience}>Next <Icon icon={ArrowRight} size={18} /></button>
             </div>
           )}
 
           {currentQ === 7 && (
             <div className="q-slide">
-              <div style={{ fontSize: '56px', textAlign: 'center', marginBottom: '16px' }}>📏</div>
+              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={Ruler} size={56} color={BRAND_PURPLE} /></div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '26px', textAlign: 'center', marginBottom: '32px' }}>What size dog fits your life?</h2>
-              
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
                 {[
-                  { id: 'small', label: '🐩 Small (under 25 lbs)' },
-                  { id: 'medium', label: '🐕 Medium (25–60 lbs)' },
-                  { id: 'large', label: '🦮 Large (60+ lbs)' },
-                  { id: 'any', label: '🤷 No preference — show me the best match' }
+                  { id: 'small', icon: Dog, label: 'Small (under 25 lbs)' },
+                  { id: 'medium', icon: Dog, label: 'Medium (25–60 lbs)' },
+                  { id: 'large', icon: Dog, label: 'Large (60+ lbs)' },
+                  { id: 'any', icon: Shuffle, label: 'No preference — show me the best match' }
                 ].map(opt => (
                   <div 
                     key={opt.id} 
@@ -324,18 +330,18 @@ export default function Quiz() {
                     }}
                     onClick={() => setAnswers({...answers, size: opt.id})}
                   >
-                    {opt.label}
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}><Icon icon={opt.icon} size={20} color={BRAND_PURPLE} />{opt.label}</span>
                   </div>
                 ))}
               </div>
               
-              <button className="btn-primary" style={{ width: '100%', padding: '16px', justifyContent: 'center' }} onClick={handleNext} disabled={!answers.size}>Next →</button>
+              <button className="btn-primary" style={{ width: '100%', padding: '16px', justifyContent: 'center' }} onClick={handleNext} disabled={!answers.size}>Next <Icon icon={ArrowRight} size={18} /></button>
             </div>
           )}
 
           {currentQ === 8 && (
             <div className="q-slide">
-              <div style={{ fontSize: '56px', textAlign: 'center', marginBottom: '16px' }}>👧</div>
+              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={Baby} size={56} color={BRAND_PURPLE} /></div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '26px', textAlign: 'center', marginBottom: '32px' }}>How important is it that your dog is great with kids?</h2>
               
               <div style={{ textAlign: 'center', fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--cta)', fontSize: '18px', marginBottom: '24px', minHeight: '28px' }}>
@@ -348,11 +354,11 @@ export default function Quiz() {
               <CustomSlider value={answers.kids} onChange={v => setAnswers({...answers, kids: v})} />
               
               <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '16px', color: 'var(--text-muted)', fontSize: '13px', fontStyle: 'italic' }}>
-                <span>😐 Not a factor</span>
-                <span>❤️ Non-negotiable</span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><Icon icon={Meh} size={14} /> Not a factor</span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>Non-negotiable <Icon icon={Heart} size={14} /></span>
               </div>
               
-              <button className="btn-primary" style={{ width: '100%', padding: '16px', justifyContent: 'center', marginTop: '48px' }} onClick={handleNext}>Find My Matches 🐾</button>
+              <button className="btn-primary" style={{ width: '100%', padding: '16px', justifyContent: 'center', marginTop: '48px' }} onClick={handleNext}>Find My Matches <Icon icon={PawPrint} size={18} /></button>
             </div>
           )}
 

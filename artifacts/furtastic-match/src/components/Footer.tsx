@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
+import { PawPrint } from 'lucide-react';
+import Icon from './Icon';
 
 export default function Footer() {
   return (
     <footer style={{ background: 'var(--text-primary)', color: 'white', padding: '48px 24px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'center' }}>
         <Link to="/" data-testid="link-footer-home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', color: 'white' }}>
-          <span style={{ fontSize: '24px', filter: 'brightness(0) invert(1)' }}>🐾</span>
+          <Icon icon={PawPrint} size={24} color="white" />
           <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '24px' }}>FurtasticMatch</span>
         </Link>
         
