@@ -227,7 +227,7 @@ export const breedContent: Record<string, BreedLongForm> = {
       {
         h2: 'Health and lifespan — the honest version',
         body: [
-          `This is the section that matters most. French Bulldogs are a brachycephalic (flat-faced) breed, and many have some degree of Brachycephalic Obstructive Airway Syndrome — narrowed nostrils and airways that make breathing, exercise, and heat regulation hard. Corrective airway surgery is common. They're also prone to spinal disease (IVDD), allergies and skin-fold infections, and eye problems.`,
+          `This is the section that matters most. French Bulldogs are a brachycephalic (flat-faced) breed, and many have some degree of Brachycephalic Obstructive Airway Syndrome — narrowed nostrils and airways that make breathing, exercise, and heat regulation hard. Corrective airway surgery is an option for affected dogs; how often it's needed varies considerably by individual and by breeding. They're also prone to spinal disease (IVDD), allergies and skin-fold infections, and eye problems.`,
           `A huge share of Frenchies are born by C-section because the puppies' heads are too large for natural birth — which is part of why they're expensive. Lifespan runs roughly 10 to 12 years, but quality of life depends heavily on breeding. Buy only from a breeder who prioritizes open nostrils, sound airways, and health-tested parents over color and "rare" markings.`,
         ],
       },
@@ -303,7 +303,7 @@ export const breedContent: Record<string, BreedLongForm> = {
       {
         h2: 'Health and lifespan — the honest version',
         body: [
-          `This is the part to take seriously. Cavaliers have a high incidence of mitral valve disease, a heart condition that affects a majority of the breed by older age and is the leading cause of death. They're also predisposed to syringomyelia, a painful neurological condition linked to skull shape. Both are major reasons to buy only from breeders who follow heart and MRI screening protocols for their breeding dogs.`,
+          `This is the part to take seriously. Cavaliers have a high incidence of mitral valve disease, a heart condition that research shows affects close to 100% of the breed by age 10 — and is the leading cause of death. They're also predisposed to syringomyelia, a painful neurological condition linked to skull shape. Both are major reasons to buy only from breeders who follow heart and MRI screening protocols for their breeding dogs.`,
           `Beyond those, watch for hip dysplasia, patellar luxation, and eye conditions. Lifespan is typically 9 to 14 years and depends heavily on the breeding behind the dog. A breeder who can show cardiologist clearances on the parents — not just a vet's once-over — is worth waiting and paying for.`,
         ],
       },
