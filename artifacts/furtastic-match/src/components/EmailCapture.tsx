@@ -22,6 +22,7 @@ export default function EmailCapture() {
         },
         body: JSON.stringify({
           email,
+          source: 'quiz',
           url: window.location.href,
         }),
       });
