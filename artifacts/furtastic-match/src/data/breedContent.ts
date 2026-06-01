@@ -303,7 +303,7 @@ export const breedContent: Record<string, BreedLongForm> = {
       {
         h2: 'Health and lifespan — the honest version',
         body: [
-          `This is the part to take seriously. Cavaliers have a high incidence of mitral valve disease, a heart condition that research shows affects close to 100% of the breed by age 10 — and is the leading cause of death. They're also predisposed to syringomyelia, a painful neurological condition linked to skull shape. Both are major reasons to buy only from breeders who follow heart and MRI screening protocols for their breeding dogs.`,
+          `This is the part to take seriously. Cavaliers have a high incidence of mitral valve disease, a heart condition that studies suggest affects the vast majority of the breed by age 10 — and is the leading cause of death. They're also predisposed to syringomyelia, a painful neurological condition linked to skull shape. Both are major reasons to buy only from breeders who follow heart and MRI screening protocols for their breeding dogs.`,
           `Beyond those, watch for hip dysplasia, patellar luxation, and eye conditions. Lifespan is typically 9 to 14 years and depends heavily on the breeding behind the dog. A breeder who can show cardiologist clearances on the parents — not just a vet's once-over — is worth waiting and paying for.`,
         ],
       },
