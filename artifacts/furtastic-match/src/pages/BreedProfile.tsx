@@ -4,6 +4,7 @@ import { Ruler, Zap, Scissors, Baby, PawPrint, ArrowRight } from 'lucide-react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import AdZone from '../components/AdZone';
+import AffiliateCard from '../components/AffiliateCard';
 import EmailCapture from '../components/EmailCapture';
 import AuthorByline from '../components/AuthorByline';
 import Icon, { BRAND_PURPLE } from '../components/Icon';
@@ -141,12 +142,19 @@ export default function BreedProfile() {
           </div>
 
           <EmailCapture />
-          
+
+          {/* Mobile-only affiliate card — sidebar version is hidden below md */}
+          <div className="md:hidden">
+            <AffiliateCard breedName={breed.name} />
+          </div>
+
           <AdZone width={728} height={90} id="ADSENSE UNIT 8" desktopOnly />
 
         </div>
 
         <div className="hidden md:flex flex-col gap-6" style={{ width: '300px', position: 'sticky', top: '100px', alignSelf: 'start' }}>
+          {/* Reserved ad slot (ADSENSE UNIT 7) — holding Nexbie affiliate card until AdSense goes live */}
+          <AffiliateCard breedName={breed.name} />
           <AdZone width={300} height={250} id="ADSENSE UNIT 7" desktopOnly />
         </div>
 
