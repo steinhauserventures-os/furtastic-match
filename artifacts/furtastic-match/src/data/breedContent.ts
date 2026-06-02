@@ -266,7 +266,7 @@ export const breedContent: Record<string, BreedLongForm> = {
   'cavalier-king-charles-spaniel': {
     metaTitle: 'Cavalier King Charles Spaniel: Family Fit & Care (2026) | FurtasticMatch',
     metaDescription:
-      'Is a Cavalier King Charles Spaniel right for you? Honest guide to their gentle temperament, modest exercise needs, the breed\'s heart and neurological risks, and costs.',
+      "Is a Cavalier King Charles Spaniel right for you? Honest guide to their gentle temperament, modest exercise needs, the breed's heart and neurological risks, and costs.",
     intro: [
       `If you want a small dog with the soul of a spaniel and the manners of a lapdog, the Cavalier King Charles Spaniel is hard to beat. They're gentle, sweet-natured, and adaptable — equally happy curled on the couch or trotting along on a walk. Few breeds are this universally easy to get along with.`,
       `The hard part of owning a Cavalier isn't the temperament; it's the health. The breed carries serious, well-documented genetic risks, and a responsible purchase means understanding them up front. Done right, a Cavalier is one of the most affectionate companions you can bring home.`,
@@ -418,7 +418,7 @@ export const breedContent: Record<string, BreedLongForm> = {
   'bernese-mountain-dog': {
     metaTitle: 'Bernese Mountain Dog: Family Fit, Temperament & Care (2026) | FurtasticMatch',
     metaDescription:
-      'Considering a Bernese Mountain Dog? Honest guide to their gentle nature, moderate exercise needs, the breed\'s heartbreaking health reality, and what they cost.',
+      "Considering a Bernese Mountain Dog? Honest guide to their gentle nature, moderate exercise needs, the breed's heartbreaking health reality, and what they cost.",
     intro: [
       `The Bernese Mountain Dog is one of the most beloved large breeds for an obvious reason: they're gentle, patient, affectionate, and genuinely beautiful. Berners are the kind of dogs families fall for on sight — calm, devoted, and big enough to lean against.`,
       `They also carry the heaviest health burden of any breed on this list. The Bernese Mountain Dog has a notoriously short average lifespan and an exceptionally high cancer rate. For the right family that goes in with open eyes, a Berner is a wonderful choice. For anyone who can't emotionally or financially absorb that reality, it's better to know up front.`,
@@ -639,6 +639,310 @@ export const breedContent: Record<string, BreedLongForm> = {
       {
         q: 'Can Bulldogs handle hot weather?',
         a: `Poorly. They overheat fast and can't cool themselves efficiently. Hot climates require serious management: AC, early/late walks only, and year-round vigilance. Heat-related illness is a real risk, not a minor footnote.`,
+      },
+    ],
+  },
+
+  'poodle': {
+    metaTitle: 'Poodle: Family Fit, Temperament & Care (2026) | FurtasticMatch',
+    metaDescription:
+      'Is a Poodle right for your family? Honest guide to temperament, intelligence, grooming requirements, health, and real costs — and how to know if a Poodle fits your home.',
+    intro: [
+      `The Standard Poodle is one of the most intelligent breeds in existence — and they know it. Originally bred as water retrievers in Germany, they're athletic, quick to learn, and deeply attuned to human emotion. The poodle haircut you've seen in show rings exists for a practical reason: hunters trimmed the coat to reduce drag in water while protecting joints in cold temperatures. There's a working dog under all that styling.`,
+      `Poodles come in three sizes — Standard (45–70 lbs), Miniature (15–20 lbs), and Toy (4–6 lbs) — and the personality scales fairly consistently across them. What changes is the exercise requirement and some of the health risks. This guide focuses on the Standard, with notes where the smaller sizes diverge meaningfully.`,
+    ],
+    sections: [
+      {
+        h2: 'Is a Poodle right for your family?',
+        body: [
+          `Poodles are an excellent choice for families who want an intelligent, trainable, and relatively low-shedding large dog. They're gentle with children, usually get along well with other pets, and adapt to both active and quieter households as long as their mental needs are met. They do well with first-time owners who are willing to do the early work — the intelligence that makes them easy to train also means they'll learn bad habits just as fast.`,
+          `The honest catch is twofold: the grooming commitment is real and ongoing, and this is a dog that genuinely needs to be challenged. A bored Poodle finds its own entertainment, and it's usually not the kind you want. Give a Standard Poodle a job — obedience, agility, nose work, retrieval — and you'll see the breed at its best.`,
+        ],
+      },
+      {
+        h2: 'Temperament: what living with a Poodle is actually like',
+        body: [
+          `Expect a curious, alert, and emotionally perceptive dog that reads people well. Poodles are enthusiastic learners and respond beautifully to positive reinforcement — they're one of the most successful breeds in competitive obedience, agility, and therapy work for good reason. They can be reserved with strangers at first but rarely aggressive.`,
+          `What trips people up is treating a Poodle as a decorative or low-key companion. They want to participate in everything, and they'll let you know when they're understimulated. A Standard Poodle with nothing to do will become vocal, restless, and occasionally destructive. Channel the intelligence and you have one of the most rewarding companion dogs alive.`,
+        ],
+      },
+      {
+        h2: 'Exercise and energy needs',
+        body: [
+          `Plan for 60 to 90 minutes of vigorous activity a day — not a stroll around the neighborhood. Standard Poodles were built for endurance in the field, and they have the stamina to match. Swimming, fetch, agility courses, and off-leash running in a secured area are all ideal outlets. Without consistent output, their energy turns inward.`,
+          `Mental exercise matters as much as physical. Puzzle feeders, advanced obedience work, and scent games tire a Poodle out efficiently. Many owners find that a solid 20-minute training session does as much to settle the dog as a 40-minute run. Aim for both: a physically and mentally exercised Poodle is a calm, happy housemate.`,
+        ],
+      },
+      {
+        h2: 'Grooming and shedding',
+        body: [
+          `The Poodle's coat is the defining ownership commitment. The good news: Poodles shed very little, which makes them more tolerable for allergy sufferers than most breeds. The trade-off is that the continuously-growing curls mat quickly without maintenance. Plan on daily brushing at home and professional grooming every 4 to 6 weeks. Skipping either leads to painful matting that often requires a full shave-down.`,
+          `There's no getting around the grooming cost — it's part of Poodle ownership. Budget $60–$120 per grooming visit, depending on size and your location. Many owners learn basic maintenance cuts at home to reduce salon frequency, but the coat still needs professional shaping several times a year. Factor this into your annual budget before committing.`,
+        ],
+      },
+      {
+        h2: 'Health and lifespan — the honest version',
+        body: [
+          `Standard Poodles generally live 12 to 15 years, above average for a large breed. The health concerns to know: hip dysplasia is the most common structural issue; Addison's disease (adrenal insufficiency) appears more frequently in Poodles than most breeds and can be hard to diagnose but very manageable once identified; bloat (GDV) is a life-threatening stomach emergency that large, deep-chested breeds face, and Poodles are included; sebaceous adenitis, a skin condition that damages hair follicles, is also Poodle-specific.`,
+          `A responsible breeder will screen for hips, eyes, and ideally carry out DNA testing for known genetic issues. Pet insurance is particularly worth having for this breed given the Addison's risk — the disease requires lifelong management once diagnosed, and its symptoms are easily confused with other conditions, leading to an expensive diagnostic process before the answer is found.`,
+        ],
+      },
+      {
+        h2: 'What a Poodle actually costs',
+        body: [
+          `Expect $2,000 to $4,000 for a Standard Poodle puppy from a health-testing breeder. Miniature and Toy prices vary similarly. The breed's popularity and the rise of Poodle-mix demand (Goldendoodle, Labradoodle, etc.) have pushed prices up in recent years, so be skeptical of steep discounts.`,
+          `Annual ongoing costs run $1,800 to $3,000 for a Standard, with professional grooming being the line item that surprises people most. Food for a large, active dog, routine vet care, and the occasional health issue round it out. This is not a cheap breed to keep well, but the longevity and temperament tend to make the investment feel worthwhile to devoted owners.`,
+        ],
+      },
+    ],
+    comparisons: [
+      { slug: 'poodle-vs-golden-retriever', label: 'Poodle vs. Golden Retriever' },
+      { slug: 'poodle-vs-labradoodle', label: 'Poodle vs. Labradoodle' },
+    ],
+    faqs: [
+      {
+        q: 'Are Poodles good for people with allergies?',
+        a: `They're one of the better choices for allergy sufferers. Poodles shed very little and produce less dander than most breeds. No dog is truly hypoallergenic, but a Poodle is as close as you'll find in a larger breed.`,
+      },
+      {
+        q: 'How much grooming does a Poodle really need?',
+        a: `More than most people expect. Daily brushing at home and professional grooming every 4–6 weeks are the realistic baseline. The coat mats quickly without maintenance, and matting is painful for the dog and expensive to fix.`,
+      },
+      {
+        q: 'Are Poodles good for first-time owners?',
+        a: `Yes, with the right preparation. Their intelligence and eagerness to please make training rewarding. First-timers who struggle are usually those who underestimate the grooming cost or the mental stimulation requirement.`,
+      },
+      {
+        q: 'What sizes do Poodles come in?',
+        a: `Three: Standard (45–70 lbs), Miniature (15–20 lbs), and Toy (4–6 lbs). Personality is consistent across sizes; exercise needs and some health risks scale with size.`,
+      },
+    ],
+  },
+
+  'dachshund': {
+    metaTitle: 'Dachshund: Family Fit, Temperament & Care (2026) | FurtasticMatch',
+    metaDescription:
+      'Thinking about a Dachshund? Honest guide to temperament, back health (IVDD), apartment suitability, and real ownership costs — including what most owners get wrong.',
+    intro: [
+      `The Dachshund packs an enormous personality into a very small frame. Originally bred in Germany to hunt badgers — the name translates literally to "badger dog" — they have the tenacity, independence, and nose of a working scent hound. A Dachshund will follow a scent trail with complete focus, bark at a dog three times its size without hesitation, and then spend the evening burrowed under a blanket like nothing happened.`,
+      `They come in two sizes (Standard, 16–32 lbs, and Miniature, under 11 lbs) and three coat types (smooth, long, and wire-haired), and the personality stays consistently bold across all of them. What also stays consistent is the breed's defining health challenge: that elongated spine is the trade-off for the shape, and it's something every prospective owner needs to understand before bringing one home.`,
+    ],
+    sections: [
+      {
+        h2: 'Is a Dachshund right for your family?',
+        body: [
+          `Dachshunds adapt well to apartments and small homes, bond deeply to their people, and can thrive in a wide range of living situations as long as their back health is actively protected. They're better suited to families with older children — their small size and bold temperament don't always mix well with rough-housing toddlers, and they can be quick to snap if they feel cornered or startled.`,
+          `They do best with owners who appreciate a dog with opinions. This is not a breed that does whatever you want simply because you asked. They were bred to work independently, following a scent into a burrow without any handler guidance, and that self-sufficiency hasn't gone anywhere. If you want an effortlessly obedient dog, a Dachshund will frustrate you. If you find the stubbornness charming, you'll find the rest of the package delightful.`,
+        ],
+      },
+      {
+        h2: 'Temperament: what living with a Dachshund is actually like',
+        body: [
+          `Expect a loyal, amusing, and occasionally exasperating companion. Dachshunds bond intensely — often most deeply to one person in the household — and will follow that person everywhere. They're alert and bark readily, which makes them effective little watchdogs but sometimes challenging in apartment buildings. Most are curious and playful; many remain puppy-like in energy well into middle age.`,
+          `The independence that defines the breed shows up in training. Dachshunds learn quickly when they want to, and drag their feet when they don't. Short, food-driven sessions with clear rewards work best; long, repetitive drills lead to creative disengagement. Housetraining can take longer than with more biddable breeds — patience and consistency matter more than any particular method.`,
+        ],
+      },
+      {
+        h2: 'Exercise and energy needs',
+        body: [
+          `Plan for 45 to 60 minutes of daily exercise — two solid walks and some active play. Their short legs are deceiving; Dachshunds have real stamina and enjoy longer outings when their back allows it. They also love to dig and follow scent trails, so a securely fenced yard is an asset. Keep them on leash near streets — a Dachshund with its nose down to a scent has no interest in traffic.`,
+          `The spinal health caveat shapes every exercise decision. Avoid high-impact activities that stress the back: jumping on and off furniture, steep stairs, and being carried and dropped. Ramps or steps to couches and beds are a worthwhile investment. These are not restrictions that significantly limit a Dachshund's life — they just shift how you manage the day-to-day.`,
+        ],
+      },
+      {
+        h2: 'Grooming and shedding',
+        body: [
+          `Grooming needs vary by coat type. Smooth-coated Dachshunds are among the easiest breeds to maintain: occasional brushing, a bath when needed, and basic nail and ear care. Long-coated varieties need brushing several times a week to prevent tangles, with extra attention to feathering around the ears and paws. Wire-haired coats need periodic hand-stripping or professional grooming to maintain texture — usually twice a year.`,
+          `Shedding is moderate across all coat types. Smooth coats shed steadily but the short hairs are less noticeable on furniture than long-coat varieties. Ears need regular checking regardless of coat type — the long, floppy ears don't allow much airflow, and moisture can lead to infections if left unattended.`,
+        ],
+      },
+      {
+        h2: 'Health and lifespan — the honest version',
+        body: [
+          `Dachshunds are one of the longest-lived dog breeds, typically reaching 12 to 16 years. The health conversation starts and ends with intervertebral disc disease (IVDD). The elongated spine and shortened legs that define the breed create structural vulnerability in the discs between the vertebrae. Disc herniation can range from mild pain to sudden paralysis. Studies suggest a significant percentage of Dachshunds will experience some degree of disc disease in their lifetime.`,
+          `IVDD is not a reason to avoid the breed, but it is a reason to manage the dog's life thoughtfully — weight control, ramp access, avoiding high-impact jumping — and to know the warning signs: reluctance to climb stairs, crying when picked up, dragging a leg. Surgery is an option for severe cases and is most successful when caught early. Beyond IVDD, watch for patellar luxation, dental disease (smaller mouths concentrate the same number of teeth), and obesity, which dramatically worsens spinal outcomes.`,
+        ],
+      },
+      {
+        h2: 'What a Dachshund actually costs',
+        body: [
+          `Puppy prices run $500 to $2,000 from a reputable breeder, with miniatures often priced higher than standards due to demand. Dachshunds show up in shelters and breed-specific rescues with some frequency, so adoption is a realistic option for those open to an adult dog.`,
+          `Annual costs typically run $800 to $1,500 — one of the more affordable purebred options. The wildcard is IVDD: conservative treatment (rest, anti-inflammatories) can be managed without major expense, but surgery, if needed, runs $3,000 to $8,000 or more depending on location and severity. Pet insurance, bought before a disc episode becomes a pre-existing condition, is widely recommended for this breed.`,
+        ],
+      },
+    ],
+    comparisons: [
+      { slug: 'dachshund-vs-beagle', label: 'Dachshund vs. Beagle' },
+      { slug: 'dachshund-vs-chihuahua', label: 'Dachshund vs. Chihuahua' },
+    ],
+    faqs: [
+      {
+        q: 'Are Dachshunds good apartment dogs?',
+        a: `Yes — they're small, relatively low-exercise, and adaptable to small spaces. The caveat is the barking; Dachshunds are vocal and alert, which can be an issue in thin-walled apartments without training.`,
+      },
+      {
+        q: 'What is IVDD and how serious is it?',
+        a: `Intervertebral disc disease is the breed's primary health risk. The elongated spine is vulnerable to disc herniation, which can cause pain or paralysis. Managing lifestyle (weight, no jumping) reduces risk significantly; surgery is available for severe cases.`,
+      },
+      {
+        q: 'Are Dachshunds good with kids?',
+        a: `Better with older children who know how to handle a small dog carefully. Their size and assertive personality don't always mix well with young toddlers, and they can snap if startled or handled roughly.`,
+      },
+      {
+        q: 'How long do Dachshunds live?',
+        a: `Typically 12–16 years, making them one of the longest-lived breeds. Keeping a Dachshund lean and limiting high-impact jumping are the two things most likely to extend both lifespan and quality of life.`,
+      },
+    ],
+  },
+
+  'siberian-husky': {
+    metaTitle: 'Siberian Husky: Family Fit, Temperament & Care (2026) | FurtasticMatch',
+    metaDescription:
+      'Considering a Siberian Husky? Honest guide to their intense exercise needs, escape artistry, vocal nature, shedding, and whether a Husky actually fits your life.',
+    intro: [
+      `The Siberian Husky is one of the most visually striking breeds alive — and one of the most mismatched to the average owner's expectations. They were developed by the Chukchi people of northeastern Asia to pull light sleds over long distances in Arctic conditions, covering 100 miles a day in brutal cold. The dog you bring home still has that engine. The sled just isn't attached anymore.`,
+      `Huskies are free-spirited, vocal, and genuinely beautiful to live with when the conditions are right. Those conditions require more than most people signing up for a photogenic dog are prepared to provide. If you can meet them honestly, a Husky is a remarkable companion. If you can't, the mismatch becomes apparent quickly.`,
+    ],
+    sections: [
+      {
+        h2: 'Is a Siberian Husky right for your family?',
+        body: [
+          `Huskies are friendly, pack-oriented dogs that do well with children and are typically social with other dogs — they were bred to work in groups and don't carry a strong territorial instinct. For active families with outdoor lifestyles, secure yards, and the time to exercise a high-drive working dog daily, the fit can be excellent.`,
+          `The fit breaks down under several common conditions: a busy family that can't commit to 90+ minutes of vigorous exercise every day; a yard without serious fencing (Huskies jump, dig, and find gaps); and owners who want a quiet, easy-going dog. A bored, under-exercised Husky does not idle patiently — it digs, escapes, and vocalizes. They're also one of the worst choices as a guard dog; they're indiscriminately friendly to strangers, which surprises owners expecting some protection from an imposing-looking dog.`,
+        ],
+      },
+      {
+        h2: 'Temperament: what living with a Husky is actually like',
+        body: [
+          `Expect a mischievous, independent, and deeply social dog that is more interested in doing things with you than for you. Huskies are not naturally obedient — they were bred for endurance and directional compliance, not the close-following biddability of herding or gun dogs. They learn commands but apply them selectively, and they have a comedian's gift for finding loopholes.`,
+          `The vocalization is real and notable. Huskies howl, talk back, and narrate their feelings. Some owners love this; others find it impossible. They rarely bark much, but the howling carries — a consideration in neighborhoods with close quarters. They're also notably good at finding ways out of enclosures, so any yard needs to be audit-tested before a Husky is trusted in it unsupervised.`,
+        ],
+      },
+      {
+        h2: 'Exercise and energy needs',
+        body: [
+          `This is the non-negotiable: 90 minutes to 2 hours of vigorous exercise daily, every day. Not a brisk walk — running, hiking, cycling alongside, skijoring, or extended off-leash time in a very secure space. Huskies were built for sustained effort in cold conditions, and recreational exercise barely registers.`,
+          `Mental stimulation helps but doesn't replace physical output. Puzzle feeders and training games take the edge off slightly, but a Husky that hasn't had a real run is a Husky that will find a way to make its energy your problem. Cold weather suits them perfectly; summer heat is a real management challenge — exercise early or late, never in the midday heat, and provide shade and water constantly. Huskies don't always know when to stop when they're having fun.`,
+        ],
+      },
+      {
+        h2: 'Grooming and shedding',
+        body: [
+          `The double coat is thick, weather-resistant, and sheds significantly — steadily year-round and heavily twice a year during seasonal coat blowouts. During blow-out periods (typically spring and fall), the undercoat comes out in dramatic quantities; daily brushing with an undercoat rake is the only way to manage it without the coat matting against the skin.`,
+          `The rest of the year, brushing two to three times a week keeps the coat in good condition and reduces the ambient fur level in your home. Professional grooming a few times a year helps during blowouts. One thing not to do: shave a Husky. The double coat protects against both cold and summer heat; shaving disrupts the coat structure and can slow regrowth, often permanently.`,
+        ],
+      },
+      {
+        h2: 'Health and lifespan — the honest version',
+        body: [
+          `Siberian Huskies are generally a robust breed, living 12 to 14 years. The primary health concerns: hip dysplasia, though less prevalent than in many large breeds; hereditary eye conditions, particularly progressive retinal atrophy (PRA) and hereditary cataracts — both can lead to blindness and are well-documented in the breed; and hypothyroidism, a manageable but lifelong condition. BAER testing for hearing and CERF eye exams on breeding dogs are standard in responsible programs.`,
+          `Beyond genetic health, the main Husky-specific risk is behavioral: an under-exercised or under-supervised Husky is an escape risk, and an escaped Husky can cover serious ground quickly. The combination of high prey drive and a tendency to run when stimulated means traffic is a genuine danger. Solid recall training and reliable containment matter more for this breed than almost any other.`,
+        ],
+      },
+      {
+        h2: 'What a Siberian Husky actually costs',
+        body: [
+          `Puppy prices run $800 to $2,500 from a reputable breeder, with sled-line dogs priced differently from show-line. Huskies appear in shelters and Husky-specific rescues with real frequency — the gap between expectations and reality produces a lot of surrenders — so adoption is very much an option.`,
+          `Annual costs typically run $1,200 to $2,000: food for an active medium-to-large dog, vet care, and the ongoing grooming supplies. The bigger cost is lifestyle: a Husky requires serious time investment. If you're factoring the value of your hours, the real cost of ownership for this breed is high.`,
+        ],
+      },
+    ],
+    comparisons: [
+      { slug: 'siberian-husky-vs-alaskan-malamute', label: 'Siberian Husky vs. Alaskan Malamute' },
+      { slug: 'siberian-husky-vs-german-shepherd', label: 'Siberian Husky vs. German Shepherd' },
+    ],
+    faqs: [
+      {
+        q: 'Are Siberian Huskies good family dogs?',
+        a: `With the right family, yes. They're affectionate, social, and good with children and other dogs. The challenge is the exercise requirement and containment needs — families that can meet both consistently tend to love the breed.`,
+      },
+      {
+        q: 'Why do Huskies escape so much?',
+        a: `They were bred to run, and given the opportunity, they will. They can jump, dig, and find gaps in fencing that other breeds ignore. Any enclosure needs to be specifically Husky-proofed — standard 4-foot fences are not sufficient.`,
+      },
+      {
+        q: 'Do Huskies shed a lot?',
+        a: `Yes, heavily — year-round, with two major seasonal blowouts. Brushing 2–3 times a week helps, and during blowouts, daily grooming is necessary to manage the coat and prevent matting.`,
+      },
+      {
+        q: 'Can a Husky live in a warm climate?',
+        a: `They can adapt, but it requires active management — avoiding midday exercise, providing shade and cool water, and watching carefully for overheating. Hot, humid climates are genuinely harder on the breed than cold ones.`,
+      },
+    ],
+  },
+
+  'chihuahua': {
+    metaTitle: 'Chihuahua: Family Fit, Temperament & Care (2026) | FurtasticMatch',
+    metaDescription:
+      'Is a Chihuahua right for you? Honest guide to their fierce loyalty, dental health, apartment suitability, and what most owners get wrong about this tiny but demanding breed.',
+    intro: [
+      `The Chihuahua is the world's smallest dog breed and, pound for pound, one of the most opinionated. They were developed in Mexico and are the oldest dog breed native to North America. They're bold, intensely loyal, and entirely unaware of their size — a Chihuahua will challenge a dog twenty times its weight with the same confidence a Rottweiler might.`,
+      `They're also one of the longest-lived breeds, commonly reaching 14 to 16 years, and one of the least expensive to keep. For the right owner, they're an exceptional companion — portable, devoted, low-maintenance on exercise, and fully content in the smallest apartment. Understanding what the right owner actually looks like is the work this guide is meant to do.`,
+    ],
+    sections: [
+      {
+        h2: 'Is a Chihuahua right for your family?',
+        body: [
+          `Chihuahuas thrive as companion dogs for adults and households with older, careful children. Their tiny size makes them vulnerable to the kind of rough handling that most kids under eight apply without malice, and many Chihuahuas respond to feeling threatened by snapping. That's not a character flaw — it's self-preservation at four pounds — but it means households with young children need to be thoughtful about supervision.`,
+          `They're one of the best options for apartment dwellers, single-person households, and anyone whose lifestyle involves a lot of travel or small living spaces. A Chihuahua is genuinely portable, doesn't need significant outdoor exercise, and bonds so intensely that they often prefer being carried to walking. They do poorly when left alone all day — separation anxiety is common and runs deep in the breed.`,
+        ],
+      },
+      {
+        h2: 'Temperament: what living with a Chihuahua is actually like',
+        body: [
+          `Expect a dog that functions as a one-person shadow. Most Chihuahuas bond with intense loyalty to one primary person and are territorial, suspicious, or indifferent to everyone else. They're alert to everything and bark readily — which makes them surprisingly effective little watchdogs but can be an ongoing management challenge in multi-unit housing.`,
+          `Socialization is the most important early investment. A Chihuahua that isn't exposed to a variety of people, environments, and other animals as a puppy defaults to fear-based reactivity as an adult. This is the behavior pattern most associated with the breed — the snappy, trembling Chihuahua — and it's almost entirely preventable with consistent early exposure. Well-socialized Chihuahuas are confident, outgoing, and charming.`,
+        ],
+      },
+      {
+        h2: 'Exercise and energy needs',
+        body: [
+          `Daily exercise needs are modest: 30 to 45 minutes of walking and play covers most Chihuahuas comfortably. Much of this can happen indoors — chasing a toy through an apartment is real exercise for a four-pound dog. That said, daily outdoor time is important for mental stimulation and socialization, and skipping it leads to excess energy expressed as anxiety and barking.`,
+          `Despite their size, Chihuahuas enjoy and benefit from real training. They're intelligent and can learn a large vocabulary of commands, do well in trick training, and sometimes surprise owners in formal obedience competition. Training also gives a Chihuahua a framework for confident behavior in situations that might otherwise trigger fearfulness — a well-trained Chihuahua is a markedly calmer Chihuahua.`,
+        ],
+      },
+      {
+        h2: 'Grooming and shedding',
+        body: [
+          `Grooming varies by coat type. Smooth-coated Chihuahuas are extremely low-maintenance: occasional brushing, a bath every few weeks, and regular nail and ear checks. Long-coated varieties need brushing two to three times a week to prevent tangles, with attention to the feathering around the ears and legs where mats develop first.`,
+          `The grooming item most owners underestimate is dental care. Chihuahuas have the same number of teeth as much larger dogs crowded into a very small jaw, which leads to early periodontal disease in a high percentage of the breed. Daily tooth brushing is genuinely recommended, not just aspirationally. Annual dental cleanings under anesthesia are common and add real cost to ownership. This is the preventive care that has the highest return on investment with this breed.`,
+        ],
+      },
+      {
+        h2: 'Health and lifespan — the honest version',
+        body: [
+          `Chihuahuas are one of the longest-lived breeds — 14 to 16 years is common, with some reaching 18 or beyond. The health conditions most specific to the breed: dental disease (as above — significant and largely preventable with maintenance); luxating patella, where the kneecap slips out of position and causes a characteristic skipping gait; tracheal collapse, a condition where the airway weakens and collapses, which is worsened by collar pressure (harnesses are strongly recommended); and hypoglycemia in young puppies and very small adults, which requires monitored feeding schedules.`,
+          `A molera — a soft spot on the skull that doesn't fully close — is present in some Chihuahuas and is normal for the breed, though it means the head needs extra protection. Most adult Chihuahuas with a molera live normal lives. Overall, the breed's health profile is better than most at advanced age; the main management items are dental care and protecting a small body in a world built for larger animals.`,
+        ],
+      },
+      {
+        h2: 'What a Chihuahua actually costs',
+        body: [
+          `Puppy prices run $500 to $2,500 from a reputable breeder. "Teacup" or extremely small Chihuahuas are not a recognized type and often carry amplified health problems — very small individuals are generally more fragile, not more desirable. Chihuahuas are among the most surrendered dogs in shelters, particularly in the Southwest, so rescue is a realistic and worthwhile option.`,
+          `Annual costs are among the lowest of any breed: $600 to $1,200. They eat very little, rarely need professional grooming, and have modest exercise requirements. The recurring costs to plan for are dental cleanings and, in some individuals, ongoing care for luxating patella or tracheal issues. Overall, the Chihuahua is genuinely one of the most affordable purebred options to own responsibly.`,
+        ],
+      },
+    ],
+    comparisons: [
+      { slug: 'chihuahua-vs-yorkshire-terrier', label: 'Chihuahua vs. Yorkshire Terrier' },
+      { slug: 'chihuahua-vs-dachshund', label: 'Chihuahua vs. Dachshund' },
+    ],
+    faqs: [
+      {
+        q: 'Are Chihuahuas good apartment dogs?',
+        a: `They're one of the best apartment breeds — small, low-exercise, and content in tight spaces. The main apartment challenge is the barking; alert and vocal by nature, they need training and socialization to avoid becoming a noise issue in close quarters.`,
+      },
+      {
+        q: 'Why are Chihuahuas so aggressive?',
+        a: `Most "aggressive" Chihuahuas are under-socialized and acting out of fear. A Chihuahua exposed early and consistently to different people, environments, and animals grows into a confident, friendly dog. The behavior is largely preventable — it's not a fixed breed trait.`,
+      },
+      {
+        q: 'How long do Chihuahuas live?',
+        a: `Typically 14–16 years, making them one of the longest-lived breeds. Managing dental health, using a harness instead of a collar, and keeping them at a healthy weight are the most impactful things you can do for their longevity.`,
+      },
+      {
+        q: 'Are Chihuahuas good with other dogs?',
+        a: `With proper socialization, yes — many Chihuahuas live happily with other dogs, including much larger ones. Without early socialization, they tend to be reactive and territorial, particularly around unfamiliar dogs they encounter on leash.`,
       },
     ],
   },
