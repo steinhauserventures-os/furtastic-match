@@ -9,19 +9,22 @@ import EmailCapture from '../components/EmailCapture';
 import AuthorByline from '../components/AuthorByline';
 import Icon, { BRAND_PURPLE } from '../components/Icon';
 import { getBreedBySlug } from '../lib/matchingEngine';
+import { breedContent } from '../data/breedContent';
 import BreedImage from '../components/BreedImage';
 
 export default function BreedProfile() {
   const { slug } = useParams();
   const breed = getBreedBySlug(slug || '');
+  // Long-form SEO content for high-intent breeds (falls back to short content).
+  const lf = breed ? breedContent[breed.slug] : undefined;
 
   useEffect(() => {
     if (breed) {
-      document.title = breed.meta_title;
+      document.title = lf?.metaTitle || breed.meta_title;
       const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.setAttribute('content', breed.meta_description);
+      if (metaDesc) metaDesc.setAttribute('content', lf?.metaDescription || breed.meta_description);
     }
-  }, [breed]);
+  }, [breed, lf]);
 
   if (!breed) {
     return (
@@ -61,9 +64,20 @@ export default function BreedProfile() {
     "dateModified": breed.last_updated
   };
 
+  const faqSchema = lf ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": lf.faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a },
+    })),
+  } : null;
+
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
       <Nav />
       
       <main style={{ flex: 1, maxWidth: '1200px', margin: '0 auto', width: '100%', padding: '40px 24px', display: 'grid', gridTemplateColumns: '1fr auto', gap: '60px' }} className="breed-grid">
@@ -78,9 +92,17 @@ export default function BreedProfile() {
             </h1>
           </div>
 
-          <p style={{ fontSize: '18px', lineHeight: 1.7, color: 'var(--text-secondary)' }}>
-            {breed.breed_page_content.intro}
-          </p>
+          {lf ? (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {lf.intro.map((para, i) => (
+                <p key={i} style={{ fontSize: '18px', lineHeight: 1.7, color: 'var(--text-secondary)' }}>{para}</p>
+              ))}
+            </div>
+          ) : (
+            <p style={{ fontSize: '18px', lineHeight: 1.7, color: 'var(--text-secondary)' }}>
+              {breed.breed_page_content.intro}
+            </p>
+          )}
 
           <AuthorByline updatedDate={breed.last_updated} />
 
@@ -108,6 +130,50 @@ export default function BreedProfile() {
             </a>
           </div>
 
+          {lf ? (
+            <div className="content-section" style={{ display: 'flex', flexDirection: 'column', gap: '36px' }}>
+              {lf.sections.map((sec, i) => (
+                <div key={i}>
+                  <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '26px', fontWeight: 700, marginBottom: '14px' }}>{sec.h2}</h2>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                    {sec.body.map((para, j) => (
+                      <p key={j} style={{ color: 'var(--text-secondary)', lineHeight: 1.7, fontSize: '16px', margin: 0 }}>{para}</p>
+                    ))}
+                  </div>
+                  {i === 1 && (
+                    <div style={{ marginTop: '32px' }}>
+                      <AdZone width={728} height={90} id="ADSENSE UNIT 9" desktopOnly />
+                    </div>
+                  )}
+                </div>
+              ))}
+
+              {lf.comparisons.length > 0 && (
+                <div>
+                  <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '26px', fontWeight: 700, marginBottom: '14px' }}>Compare the {breed.name} with similar breeds</h2>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    {lf.comparisons.map(c => (
+                      <Link key={c.slug} to={`/compare/${c.slug}`} style={{ color: 'var(--cta)', fontWeight: 700, textDecoration: 'none', fontSize: '16px' }}>
+                        {c.label} →
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <div>
+                <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '26px', fontWeight: 700, marginBottom: '14px' }}>Frequently asked questions</h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                  {lf.faqs.map((f, i) => (
+                    <div key={i}>
+                      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '17px', fontWeight: 700, marginBottom: '6px' }}>{f.q}</h3>
+                      <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, fontSize: '16px', margin: 0 }}>{f.a}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
           <div className="content-section" style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             <div>
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, marginBottom: '12px' }}>Family Fit</h3>
@@ -135,6 +201,7 @@ export default function BreedProfile() {
               </div>
             )}
           </div>
+          )}
 
           <div style={{ background: 'var(--cta)', color: 'white', padding: '40px 24px', borderRadius: '18px', textAlign: 'center' }}>
             <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '28px', fontWeight: 800, marginBottom: '16px' }}>Still not sure if a {breed.name} is right for you?</h3>
