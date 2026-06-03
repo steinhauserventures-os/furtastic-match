@@ -1,21 +1,25 @@
 import { useState, useEffect, Fragment } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
-import { PawPrint, PartyPopper, Medal, Zap, Dna, Award, ShoppingCart, ArrowRight, Dices, Sparkles, Share2, Link2 } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
+import { PawPrint, PartyPopper, Share2, Link2 } from 'lucide-react';
 import { FaFacebook, FaReddit } from 'react-icons/fa';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import AdZone from '../components/AdZone';
 import EmailCapture from '../components/EmailCapture';
-import Icon, { BRAND_PURPLE } from '../components/Icon';
+import AffiliateCard from '../components/AffiliateCard';
+import MatchCard from '../components/MatchCard';
+import Icon from '../components/Icon';
 import { trackEvent } from '../lib/analytics';
-import { decodeResults, getBreedById, Breed } from '../lib/matchingEngine';
-import BreedImage from '../components/BreedImage';
+import { decodeResults, getBreedById, Breed, QuizAnswers } from '../lib/matchingEngine';
 
 export default function Results() {
   const [searchParams] = useSearchParams();
   const [matches, setMatches] = useState<Breed[]>([]);
   const [wildcard, setWildcard] = useState<Breed | null>(null);
   const [revealed, setRevealed] = useState(false);
+  // Quiz answers (from sessionStorage) power the per-card "why this matched you" block.
+  // Null on a shared link / new device — cards fall back to non-personalized copy.
+  const [answers, setAnswers] = useState<QuizAnswers | null>(null);
 
   useEffect(() => {
     // Inject noindex
@@ -27,6 +31,19 @@ export default function Results() {
     trackEvent('quiz_complete_view');
 
     const hash = searchParams.get('r');
+
+    // Only use stored answers if they belong to THIS result (hash match), so
+    // personalization never bleeds onto a shared link opened in the same tab.
+    try {
+      const raw = sessionStorage.getItem('fm_quiz_answers');
+      if (raw) {
+        const stored = JSON.parse(raw) as { hash: string; answers: QuizAnswers };
+        if (stored.hash === hash) setAnswers(stored.answers);
+      }
+    } catch {
+      // unparseable / unavailable — leave answers null, cards degrade gracefully
+    }
+
     if (hash) {
       const { matchIds, wildcardId } = decodeResults(hash);
       const m = matchIds.map(id => getBreedById(id)).filter(Boolean) as Breed[];
@@ -93,148 +110,27 @@ export default function Results() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginTop: '16px' }}>
             {matches.map((breed, i) => (
               <Fragment key={breed.id}>
-                <div className="card" style={{ padding: '24px', animation: revealed ? `fadeInUp 0.5s ease both ${(i*400)+100}ms` : 'none', maxWidth: '100%', overflow: 'hidden' }}>
-                  <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start', marginBottom: '16px' }}>
-                    <div style={{ width: '76px', height: '76px', borderRadius: '12px', background: `linear-gradient(135deg, ${breed.illustration_bg[0]}, ${breed.illustration_bg[1]})`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '32px', flexShrink: 0, overflow: 'hidden' }}>
-                      <BreedImage slug={breed.slug} emoji={breed.emoji} />
-                    </div>
-                    <div>
-                      <div style={{ fontSize: '14px', marginBottom: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}><Icon icon={Medal} size={16} color={i === 0 ? '#E0A800' : i === 1 ? '#9B8FB5' : '#B07800'} /> Match #{i + 1}</div>
-                      <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '24px', lineHeight: 1.1, marginBottom: '8px' }}>{breed.name}</h2>
-                      <span style={{ background: 'var(--cta)', color: 'white', borderRadius: '20px', padding: '4px 12px', fontSize: '12px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '4px' }}><Icon icon={Zap} size={12} /> {95 - i*8}% fit</span>
-                    </div>
-                  </div>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.6, marginBottom: '24px' }}>
-                    {breed.why_it_fits.family}
-                  </p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                      <a
-                        href={`https://marketplace.akc.org/puppies/${breed.slug}?utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate`}
-                        target="_blank" rel="noopener noreferrer"
-                        className="btn-outline"
-                        style={{ padding: '10px 8px', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}
-                      >
-                        <Icon icon={Award} size={16} /> Find AKC Breeders
-                      </a>
-                      <a
-                        href={`https://www.gooddog.com/breeds/${breed.slug}?utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate`}
-                        target="_blank" rel="noopener noreferrer"
-                        className="btn-outline"
-                        style={{ padding: '10px 8px', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}
-                      >
-                        <Icon icon={PawPrint} size={16} /> Browse on GoodDog
-                      </a>
-                      <a
-                        href={`https://www.chewy.com/s?query=${encodeURIComponent(breed.name)}&utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate`}
-                        target="_blank" rel="noopener noreferrer"
-                        className="btn-outline"
-                        style={{ padding: '10px 8px', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', gridColumn: '1 / -1' }}
-                      >
-                        <Icon icon={ShoppingCart} size={16} /> Shop {breed.name} Essentials
-                      </a>
-                    </div>
-                    <a
-                      href="https://embarkvet.com?utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate"
-                      target="_blank" rel="noopener noreferrer"
-                      onClick={() => trackEvent('breeder_click', { breed: breed.name, cta: 'dna_test' })}
-                      className="btn-primary"
-                      style={{ display: 'flex', justifyContent: 'center', padding: '12px 16px', textDecoration: 'none' }}
-                    >
-                      <Icon icon={Dna} size={18} /> Test Your Future Pup's DNA
-                    </a>
-                    <p style={{ fontSize: '11px', color: 'var(--text-muted)', textAlign: 'center', fontStyle: 'italic', margin: 0 }}>
-                      Affiliate link — we may earn a small commission at no cost to you.
-                    </p>
-                    <p style={{ fontSize: '13px', color: 'var(--text-muted)', textAlign: 'center', margin: 0 }}>
-                      Are you a {breed.name} breeder?{' '}
-                      <Link to="/breeders" style={{ color: 'var(--cta)', textDecoration: 'none', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                        Get featured here <Icon icon={ArrowRight} size={14} />
-                      </Link>
-                    </p>
-                    <Link
-                      to={`/breeds/${breed.slug}`}
-                      className="btn-outline"
-                      style={{ padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', fontSize: '13px' }}
-                    >
-                      Learn More About {breed.name}
-                    </Link>
-                  </div>
-                </div>
+                <MatchCard
+                  breed={breed}
+                  rank={i}
+                  fitPercent={95 - i * 8}
+                  revealed={revealed}
+                  animationDelayMs={i * 400 + 100}
+                  answers={answers}
+                />
                 {i === 0 && <AdZone width={300} height={250} id="ADSENSE UNIT 3" mobileOnly />}
               </Fragment>
             ))}
 
             {wildcard && (
-              <div className="card" style={{ padding: '24px', borderColor: 'var(--accent)', boxShadow: '4px 4px 0 #FFE070', animation: revealed ? `fadeInUp 0.5s ease both 1400ms` : 'none' }}>
-                <div style={{ color: '#B07800', fontWeight: 800, fontSize: '14px', marginBottom: '16px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}><Icon icon={Dices} size={16} /> Wildcard Pick</div>
-                <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start', marginBottom: '16px' }}>
-                  <div style={{ width: '76px', height: '76px', borderRadius: '12px', background: `linear-gradient(135deg, ${wildcard.illustration_bg[0]}, ${wildcard.illustration_bg[1]})`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '32px', flexShrink: 0, overflow: 'hidden' }}>
-                    <BreedImage slug={wildcard.slug} emoji={wildcard.emoji} />
-                  </div>
-                  <div>
-                    <span style={{ background: '#FFF8E0', color: '#B07800', borderRadius: '4px', padding: '2px 8px', fontSize: '11px', fontWeight: 700, marginBottom: '4px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}><Icon icon={Sparkles} size={11} /> Unexpected match</span>
-                    <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '24px', lineHeight: 1.1, marginBottom: '8px' }}>{wildcard.name}</h2>
-                    <span style={{ background: 'var(--accent)', color: 'var(--text-primary)', borderRadius: '20px', padding: '4px 12px', fontSize: '12px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '4px' }}><Icon icon={Zap} size={12} /> 82% fit</span>
-                  </div>
-                </div>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.6, marginBottom: '24px' }}>
-                  {wildcard.why_it_fits.family}
-                </p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                    <a
-                      href={`https://marketplace.akc.org/puppies/${wildcard.slug}?utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate`}
-                      target="_blank" rel="noopener noreferrer"
-                      className="btn-outline"
-                      style={{ padding: '10px 8px', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}
-                    >
-                      <Icon icon={Award} size={16} /> Find AKC Breeders
-                    </a>
-                    <a
-                      href={`https://www.gooddog.com/breeds/${wildcard.slug}?utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate`}
-                      target="_blank" rel="noopener noreferrer"
-                      className="btn-outline"
-                      style={{ padding: '10px 8px', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}
-                    >
-                      <Icon icon={PawPrint} size={16} /> Browse on GoodDog
-                    </a>
-                    <a
-                      href={`https://www.chewy.com/s?query=${encodeURIComponent(wildcard.name)}&utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate`}
-                      target="_blank" rel="noopener noreferrer"
-                      className="btn-outline"
-                      style={{ padding: '10px 8px', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', gridColumn: '1 / -1' }}
-                    >
-                      <Icon icon={ShoppingCart} size={16} /> Shop {wildcard.name} Essentials
-                    </a>
-                  </div>
-                  <a
-                    href="https://embarkvet.com?utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate"
-                    target="_blank" rel="noopener noreferrer"
-                    onClick={() => trackEvent('breeder_click', { breed: wildcard.name, cta: 'dna_test' })}
-                    className="btn-accent"
-                    style={{ display: 'flex', justifyContent: 'center', padding: '12px 16px', textDecoration: 'none' }}
-                  >
-                    <Icon icon={Dna} size={18} /> Test Your Future Pup's DNA
-                  </a>
-                  <p style={{ fontSize: '11px', color: 'var(--text-muted)', textAlign: 'center', fontStyle: 'italic', margin: 0 }}>
-                    Affiliate link — we may earn a small commission at no cost to you.
-                  </p>
-                  <p style={{ fontSize: '13px', color: 'var(--text-muted)', textAlign: 'center', margin: 0 }}>
-                    Are you a {wildcard.name} breeder?{' '}
-                    <Link to="/breeders" style={{ color: 'var(--cta)', textDecoration: 'none', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                      Get featured here <Icon icon={ArrowRight} size={14} />
-                    </Link>
-                  </p>
-                  <Link
-                    to={`/breeds/${wildcard.slug}`}
-                    className="btn-outline"
-                    style={{ padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', fontSize: '13px' }}
-                  >
-                    Learn More About {wildcard.name}
-                  </Link>
-                </div>
-              </div>
+              <MatchCard
+                breed={wildcard}
+                isWildcard
+                fitPercent={82}
+                revealed={revealed}
+                animationDelayMs={1400}
+                answers={answers}
+              />
             )}
 
             <AdZone width={728} height={90} id="ADSENSE UNIT 5" desktopOnly />
@@ -245,6 +141,10 @@ export default function Results() {
               FurtasticMatch participates in affiliate programs. We earn a commission if you make a purchase through our breeder links, including as an Amazon Associate, at no extra cost to you.
             </p>
             <EmailCapture />
+          </div>
+
+          <div style={{ animation: revealed ? `fadeInUp 0.5s ease both 2000ms` : 'none' }}>
+            <AffiliateCard breedName={matches[0].name} variant="results" />
           </div>
 
           <div style={{ animation: revealed ? `fadeInUp 0.5s ease both 2100ms` : 'none', background: 'var(--bg-card)', padding: '24px', borderRadius: '18px', border: '2px solid var(--border)' }}>
@@ -259,14 +159,10 @@ export default function Results() {
 
         </div>
 
+        {/* Generic "Are you a breeder?" sidebar widget removed — the per-card,
+            breed-specific BreederIntentCTA is stronger. AdZone slot retained. */}
         <div className="hidden md:flex flex-col gap-6" style={{ width: '300px', position: 'sticky', top: '100px', alignSelf: 'start' }}>
           <AdZone width={300} height={250} id="ADSENSE UNIT 4" desktopOnly />
-          <div className="card" style={{ padding: '24px' }}>
-            <div style={{ marginBottom: '8px', display: 'flex' }}><Icon icon={PawPrint} size={24} color={BRAND_PURPLE} /></div>
-            <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '18px', marginBottom: '8px' }}>Are you a breeder?</h3>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '14px', marginBottom: '16px' }}>Reach families specifically searching for your breed.</p>
-            <Link to="/breeders" className="btn-outline" style={{ display: 'block', textAlign: 'center', padding: '8px', textDecoration: 'none', fontSize: '14px' }}>Learn More</Link>
-          </div>
         </div>
 
       </main>

@@ -3,6 +3,9 @@ import Icon from './Icon';
 
 interface AffiliateCardProps {
   breedName: string;
+  // 'profile' = breed-profile page (owner already has the dog).
+  // 'results' = quiz results page (prospective owner, still choosing a breed).
+  variant?: 'profile' | 'results';
 }
 
 // Nexbie (Awin) custom pet portrait affiliate — placed in the reserved breed-profile
@@ -10,7 +13,24 @@ interface AffiliateCardProps {
 const NEXBIE_AFFILIATE_URL =
   'https://www.awin1.com/cread.php?awinmid=125856&awinaffid=2897167&ued=https%3A%2F%2Fnexbie.com%2Fproducts%2Fcustom-pet-painting';
 
-export default function AffiliateCard({ breedName }: AffiliateCardProps) {
+// Copy is context-dependent: a breed-profile visitor likely owns the dog, while a
+// results visitor is still choosing one and has no pet/photo yet — so the results
+// pitch is forward-looking rather than "turn their photo into a portrait."
+const COPY = {
+  profile: {
+    heading: (breedName: string) => `Celebrate Your New ${breedName}`,
+    sub: 'Turn their photo into a gallery-worthy custom pet portrait',
+    cta: 'Shop Custom Portraits',
+  },
+  results: {
+    heading: (breedName: string) => `Picture Your Future ${breedName}`,
+    sub: 'When your new best friend comes home, turn their first photo into a gallery-worthy custom portrait',
+    cta: 'Browse Pet Portraits',
+  },
+} as const;
+
+export default function AffiliateCard({ breedName, variant = 'profile' }: AffiliateCardProps) {
+  const copy = COPY[variant];
   return (
     <div
       className="card"
@@ -43,7 +63,7 @@ export default function AffiliateCard({ breedName }: AffiliateCardProps) {
           margin: 0,
         }}
       >
-        Celebrate Your New {breedName}
+        {copy.heading(breedName)}
       </h3>
       <p
         style={{
@@ -53,7 +73,7 @@ export default function AffiliateCard({ breedName }: AffiliateCardProps) {
           margin: 0,
         }}
       >
-        Turn their photo into a gallery-worthy custom pet portrait
+        {copy.sub}
       </p>
       <a
         href={NEXBIE_AFFILIATE_URL}
@@ -70,7 +90,7 @@ export default function AffiliateCard({ breedName }: AffiliateCardProps) {
           gap: '8px',
         }}
       >
-        Shop Custom Portraits <Icon icon={ArrowRight} size={18} />
+        {copy.cta} <Icon icon={ArrowRight} size={18} />
       </a>
     </div>
   );

@@ -84,12 +84,32 @@ function fuzzyMatchBreed(input: string, breed: Breed): boolean {
 }
 
 // Scoring scale: all breed fields are 1-5.
+// ----- Shared answer→scale mappings (single source of truth for scoring AND explainMatch) -----
+// Space — breed.space: 1=needs lots of outdoor space, 5=fine in apartment.
+const SPACE_SCORES: Record<string, number> = {
+  apartment: 5,
+  'house-no-yard': 4,
+  'house-yard': 2,
+  rural: 1,
+};
+// Experience — breed.experience_level: 1=beginner, 5=expert needed.
+const EXP_SCORES: Record<string, number> = { first: 1, some: 3, seasoned: 5 };
+// Size — breed.size_preference: 1=tiny, 5=very large.
+const SIZE_RANGES: Record<string, [number, number]> = {
+  small: [1, 2],
+  medium: [2, 4],
+  large: [3, 5],
+  any: [1, 5],
+};
+// 0-100 slider (activity, grooming) → 1-5 breed scale.
+const sliderToScale = (v: number) => Math.max(1, Math.min(5, Math.round((v * 4) / 100) + 1));
+
 // Max possible score = 20 + 10 + 15 + 10 + 15 + 10 + 10 + 10 = 100
 function scoreBreed(breed: Breed, answers: QuizAnswers): number {
   let score = 0;
 
   // Activity (20 pts) — 0-100 slider → 1-5 breed scale
-  const userActivity = Math.max(1, Math.min(5, Math.round(answers.activity * 4 / 100) + 1));
+  const userActivity = sliderToScale(answers.activity);
   const activityDiff = Math.abs(breed.activity_level - userActivity);
   score += (1 - activityDiff / 4) * 20;
 
@@ -97,39 +117,23 @@ function scoreBreed(breed: Breed, answers: QuizAnswers): number {
   const lifestyleDiff = Math.abs(breed.lifestyle - userActivity);
   score += (1 - lifestyleDiff / 4) * 10;
 
-  // Space (15 pts) — breed.space: 1=needs lots of outdoor space, 5=fine in apartment
-  // Quiz: apartment→5, house-no-yard→4, house-yard→2, rural→1
-  const spaceScores: Record<string, number> = {
-    apartment: 5,
-    'house-no-yard': 4,
-    'house-yard': 2,
-    rural: 1,
-  };
-  const userSpace = spaceScores[answers.space] ?? 3;
+  // Space (15 pts)
+  const userSpace = SPACE_SCORES[answers.space] ?? 3;
   const spaceDiff = Math.abs(breed.space - userSpace);
   score += (1 - spaceDiff / 4) * 15;
 
   // Grooming (10 pts) — 0-100 slider → 1-5 breed scale
-  const userGrooming = Math.max(1, Math.min(5, Math.round(answers.grooming * 4 / 100) + 1));
+  const userGrooming = sliderToScale(answers.grooming);
   const groomingDiff = Math.abs(breed.grooming - userGrooming);
   score += (1 - groomingDiff / 4) * 10;
 
-  // Experience (15 pts) — breed.experience_level: 1=beginner, 5=expert needed
-  // Quiz: first→1, some→3, seasoned→5
-  const expScores: Record<string, number> = { first: 1, some: 3, seasoned: 5 };
-  const userExp = expScores[answers.experience] ?? 1;
+  // Experience (15 pts)
+  const userExp = EXP_SCORES[answers.experience] ?? 1;
   const expDiff = Math.abs(breed.experience_level - userExp);
   score += (1 - expDiff / 4) * 15;
 
-  // Size preference (10 pts) — breed.size_preference: 1=tiny, 5=very large
-  // Quiz: small→[1,2], medium→[2,4], large→[3,5], any→[1,5]
-  const sizeRanges: Record<string, [number, number]> = {
-    small: [1, 2],
-    medium: [2, 4],
-    large: [3, 5],
-    any: [1, 5],
-  };
-  const [minS, maxS] = sizeRanges[answers.size] ?? [1, 5];
+  // Size preference (10 pts)
+  const [minS, maxS] = SIZE_RANGES[answers.size] ?? [1, 5];
   if (breed.size_preference >= minS && breed.size_preference <= maxS) {
     score += 10;
   } else {
@@ -154,6 +158,87 @@ function scoreBreed(breed: Breed, answers: QuizAnswers): number {
   }
 
   return Math.round(score);
+}
+
+// ----- Personalization for the results page -----
+// Display labels keyed off the same answer values the quiz stores.
+const ACTIVITY_LABEL = ['', 'laid-back', 'easygoing', 'moderately active', 'very active', 'high-energy'];
+const GROOMING_LABEL = ['', 'minimal', 'low', 'moderate', 'regular', 'high'];
+const SPACE_LABEL: Record<string, string> = {
+  apartment: 'apartment or small space',
+  'house-no-yard': 'home',
+  'house-yard': 'house with a yard',
+  rural: 'wide-open space',
+};
+const SIZE_LABEL: Record<string, string> = {
+  small: 'small',
+  medium: 'medium-sized',
+  large: 'large',
+  any: '',
+};
+
+export interface MatchExplanation {
+  // who-appropriate authored sentence (family / couple / solo)
+  blurb: string;
+  // up to 3 reflective reasons tying the user's answers to this breed
+  reasons: string[];
+}
+
+// Builds the "why this matched you" content. Reuses the SAME scale mappings as
+// scoreBreed, and only surfaces an axis as a "reason" when the breed actually
+// aligns with the user's answer (diff ≤ 1, or in-range for size) — so a reason
+// is never a claim the matching engine wouldn't itself make.
+export function explainMatch(breed: Breed, answers: QuizAnswers): MatchExplanation {
+  const blurb =
+    answers.who === 'couple' ? breed.why_it_fits.couple :
+    answers.who === 'solo' ? breed.why_it_fits.solo :
+    breed.why_it_fits.family;
+
+  const candidates: { diff: number; text: string }[] = [];
+
+  // Activity
+  const ua = sliderToScale(answers.activity);
+  const aDiff = Math.abs(breed.activity_level - ua);
+  if (aDiff <= 1) candidates.push({ diff: aDiff, text: `Energy level fits your ${ACTIVITY_LABEL[ua]} household.` });
+
+  // Space
+  if (answers.space in SPACE_SCORES) {
+    const sDiff = Math.abs(breed.space - SPACE_SCORES[answers.space]);
+    if (sDiff <= 1) candidates.push({ diff: sDiff, text: `Well-suited to your ${SPACE_LABEL[answers.space]}.` });
+  }
+
+  // Grooming
+  const ug = sliderToScale(answers.grooming);
+  const gDiff = Math.abs(breed.grooming - ug);
+  if (gDiff <= 1) candidates.push({ diff: gDiff, text: `Grooming needs line up with the ${GROOMING_LABEL[ug]} upkeep you picked.` });
+
+  // Experience
+  if (answers.experience in EXP_SCORES) {
+    const eDiff = Math.abs(breed.experience_level - EXP_SCORES[answers.experience]);
+    if (eDiff <= 1) {
+      const text =
+        answers.experience === 'first' ? 'Beginner-friendly — a solid pick for a first-time owner.' :
+        answers.experience === 'seasoned' ? 'Rewarding for an experienced owner like you.' :
+        'A good fit for your level of dog experience.';
+      candidates.push({ diff: eDiff, text });
+    }
+  }
+
+  // Size
+  if (answers.size !== 'any' && answers.size in SIZE_RANGES) {
+    const [minS, maxS] = SIZE_RANGES[answers.size];
+    if (breed.size_preference >= minS && breed.size_preference <= maxS) {
+      candidates.push({ diff: 0, text: `Lands right in your preferred ${SIZE_LABEL[answers.size]} size range.` });
+    }
+  }
+
+  // Kids — only when the user said it matters and the breed is genuinely strong with kids
+  if (answers.kids >= 60 && breed.good_with_kids >= 4) {
+    candidates.push({ diff: 5 - breed.good_with_kids, text: 'Known for being great with kids — which you told us matters.' });
+  }
+
+  candidates.sort((a, b) => a.diff - b.diff);
+  return { blurb, reasons: candidates.slice(0, 3).map((c) => c.text) };
 }
 
 export function runMatchingEngine(answers: QuizAnswers): MatchResult {
