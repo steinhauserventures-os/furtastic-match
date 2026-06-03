@@ -51,9 +51,19 @@ export default function Quiz() {
       
       const result = runMatchingEngine(answers);
       const hash = encodeResults(
-        result.matches.map(m => m.id), 
+        result.matches.map(m => m.id),
         result.wildcard?.id ?? null
       );
+      // Persist answers for the results page's "why this matched you" personalization.
+      // sessionStorage (not the URL) — personalization is for the just-finished-quiz
+      // view and is meaningless on a link shared to someone who didn't take the quiz.
+      // Scope to this result `hash` so the answers can only personalize THESE breeds
+      // (guards against stale answers being applied to a shared link opened later).
+      try {
+        sessionStorage.setItem('fm_quiz_answers', JSON.stringify({ hash, answers }));
+      } catch {
+        // sessionStorage unavailable (private mode quota etc.) — results page falls back gracefully
+      }
       navigate(`/results?r=${hash}`);
     }
   };
