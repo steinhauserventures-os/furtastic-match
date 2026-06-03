@@ -15,3 +15,4 @@ jobs:
           echo "Push to main recorded."
           echo "VPS polls GitHub every 30s and deploys automatically."
           echo "Check deploy status: journalctl -u deploy-poll -n 20 on srv1616197"
+          echo "Deploy triggered at: $(date -u)"
