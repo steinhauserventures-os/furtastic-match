@@ -5,19 +5,13 @@ on:
     branches:
       - main
   workflow_dispatch:
-    inputs:
-      reason:
-        description: 'Reason for manual deploy (optional)'
-        required: false
-        default: 'Manual trigger'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Trigger VPS deploy webhook
+      - name: Deploy via VPS polling
         run: |
-          curl -f -X POST https://furtasticmatch.com/deploy \
-            -H "x-deploy-secret: ${{ secrets.DEPLOY_WEBHOOK_SECRET }}" \
-            --max-time 300
+          echo "Push to main recorded."
+          echo "VPS polls GitHub every 30s and deploys automatically."
+          echo "Check deploy status: journalctl -u deploy-poll -n 20 on srv1616197"
