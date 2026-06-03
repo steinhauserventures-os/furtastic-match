@@ -108,18 +108,6 @@ export default function Results() {
                     {breed.why_it_fits.family}
                   </p>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    <a
-                      href="https://embarkvet.com?utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate"
-                      target="_blank" rel="noopener noreferrer"
-                      onClick={() => trackEvent('breeder_click', { breed: breed.name, cta: 'dna_test' })}
-                      className="btn-primary"
-                      style={{ display: 'flex', justifyContent: 'center', padding: '12px 16px', textDecoration: 'none' }}
-                    >
-                      <Icon icon={Dna} size={18} /> Test Your Future Pup's DNA
-                    </a>
-                    <p style={{ fontSize: '11px', color: 'var(--text-muted)', textAlign: 'center', fontStyle: 'italic', margin: 0 }}>
-                      Affiliate link — we may earn a small commission at no cost to you.
-                    </p>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
                       <a
                         href={`https://marketplace.akc.org/puppies/${breed.slug}?utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate`}
@@ -146,10 +134,22 @@ export default function Results() {
                         <Icon icon={ShoppingCart} size={16} /> Shop {breed.name} Essentials
                       </a>
                     </div>
+                    <a
+                      href="https://embarkvet.com?utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate"
+                      target="_blank" rel="noopener noreferrer"
+                      onClick={() => trackEvent('breeder_click', { breed: breed.name, cta: 'dna_test' })}
+                      className="btn-primary"
+                      style={{ display: 'flex', justifyContent: 'center', padding: '12px 16px', textDecoration: 'none' }}
+                    >
+                      <Icon icon={Dna} size={18} /> Test Your Future Pup's DNA
+                    </a>
+                    <p style={{ fontSize: '11px', color: 'var(--text-muted)', textAlign: 'center', fontStyle: 'italic', margin: 0 }}>
+                      Affiliate link — we may earn a small commission at no cost to you.
+                    </p>
                     <p style={{ fontSize: '13px', color: 'var(--text-muted)', textAlign: 'center', margin: 0 }}>
                       Are you a {breed.name} breeder?{' '}
-                      <Link to="/breeders" style={{ color: 'var(--cta)', textDecoration: 'none', fontWeight: 700 }}>
-                        Get featured here <Icon icon={ArrowRight} size={14} style={{ verticalAlign: '-0.15em' }} />
+                      <Link to="/breeders" style={{ color: 'var(--cta)', textDecoration: 'none', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                        Get featured here <Icon icon={ArrowRight} size={14} />
                       </Link>
                     </p>
                     <Link
@@ -182,18 +182,6 @@ export default function Results() {
                   {wildcard.why_it_fits.family}
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <a
-                    href="https://embarkvet.com?utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate"
-                    target="_blank" rel="noopener noreferrer"
-                    onClick={() => trackEvent('breeder_click', { breed: wildcard.name, cta: 'dna_test' })}
-                    className="btn-accent"
-                    style={{ display: 'flex', justifyContent: 'center', padding: '12px 16px', textDecoration: 'none' }}
-                  >
-                    <Icon icon={Dna} size={18} /> Test Your Future Pup's DNA
-                  </a>
-                  <p style={{ fontSize: '11px', color: 'var(--text-muted)', textAlign: 'center', fontStyle: 'italic', margin: 0 }}>
-                    Affiliate link — we may earn a small commission at no cost to you.
-                  </p>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
                     <a
                       href={`https://marketplace.akc.org/puppies/${wildcard.slug}?utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate`}
@@ -220,10 +208,22 @@ export default function Results() {
                       <Icon icon={ShoppingCart} size={16} /> Shop {wildcard.name} Essentials
                     </a>
                   </div>
+                  <a
+                    href="https://embarkvet.com?utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate"
+                    target="_blank" rel="noopener noreferrer"
+                    onClick={() => trackEvent('breeder_click', { breed: wildcard.name, cta: 'dna_test' })}
+                    className="btn-accent"
+                    style={{ display: 'flex', justifyContent: 'center', padding: '12px 16px', textDecoration: 'none' }}
+                  >
+                    <Icon icon={Dna} size={18} /> Test Your Future Pup's DNA
+                  </a>
+                  <p style={{ fontSize: '11px', color: 'var(--text-muted)', textAlign: 'center', fontStyle: 'italic', margin: 0 }}>
+                    Affiliate link — we may earn a small commission at no cost to you.
+                  </p>
                   <p style={{ fontSize: '13px', color: 'var(--text-muted)', textAlign: 'center', margin: 0 }}>
                     Are you a {wildcard.name} breeder?{' '}
-                    <Link to="/breeders" style={{ color: 'var(--cta)', textDecoration: 'none', fontWeight: 700 }}>
-                      Get featured here <Icon icon={ArrowRight} size={14} style={{ verticalAlign: '-0.15em' }} />
+                    <Link to="/breeders" style={{ color: 'var(--cta)', textDecoration: 'none', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                      Get featured here <Icon icon={ArrowRight} size={14} />
                     </Link>
                   </p>
                   <Link
