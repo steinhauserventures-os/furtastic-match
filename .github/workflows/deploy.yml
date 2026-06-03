@@ -47,7 +47,6 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.VPS_DEPLOY_KEY }}" | base64 -d > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -H 187.127.251.150 >> ~/.ssh/known_hosts
 
       - name: Deploy to VPS
         run: |
