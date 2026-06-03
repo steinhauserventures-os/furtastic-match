@@ -14,47 +14,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
-        env:
-          PNPM_CONFIG_MINIMUM_RELEASE_AGE: "0"
-
-      - name: Build application
+      - name: Trigger VPS deploy webhook
         run: |
-          cd artifacts/furtastic-match
-          pnpm run build
-
-      - name: Setup SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.VPS_DEPLOY_KEY }}" | base64 -d > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-
-      - name: Deploy to VPS
-        run: |
-          rsync -avz --delete \
-            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
-            artifacts/furtastic-match/dist/public/ \
-            root@187.127.251.150:/var/www/furtasticmatch.com/
-
-      - name: Cleanup
-        if: always()
-        run: rm -f ~/.ssh/deploy_key
+          curl -f -X POST https://furtasticmatch.com/deploy \
+            -H "x-deploy-secret: ${{ secrets.DEPLOY_WEBHOOK_SECRET }}" \
+            --max-time 300
