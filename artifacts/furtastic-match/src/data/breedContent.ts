@@ -871,6 +871,310 @@ export const breedContent: Record<string, BreedLongForm> = {
     ],
   },
 
+  'great-dane': {
+    metaTitle: 'Great Dane: Family Fit, Temperament & Care (2026) | FurtasticMatch',
+    metaDescription:
+      'Is a Great Dane right for your family? Honest guide to the gentle giant temperament, bloat risk, short lifespan, space requirements, and the real cost of a very large dog.',
+    intro: [
+      `The Great Dane earns its "gentle giant" reputation. A well-bred Dane is patient, affectionate, and genuinely calm in the house — which surprises people expecting a dog the size of a small pony to be high-strung. At 110 to 175 lbs and up to 34 inches at the shoulder, they're one of the largest breeds in existence, and their size is the central fact around which every other ownership consideration orbits.`,
+      `That size also sets the terms of the trade-off. Great Danes don't live long — seven to ten years on average, and some significantly less. Bloat, the breed's most dangerous health risk, can kill in hours. Food bills are substantial. Space requirements are real. For families who go in understanding all of that, a Dane is one of the most rewarding large breeds there is.`,
+    ],
+    sections: [
+      {
+        h2: 'Is a Great Dane right for your family?',
+        body: [
+          `Danes are unusually gentle for a dog of their size. They're patient with children, tend to be calm and non-reactive indoors, and bond warmly to the whole family rather than one person. They're also friendly with strangers, which makes them poor guard dogs despite the imposing appearance — most Danes greet visitors with enthusiasm rather than suspicion.`,
+          `The practical fit question is space. A Great Dane needs room — a tail at counter height clears surfaces without trying, and a dog this size in a studio apartment creates real daily friction. A house with a yard is the natural fit. They're also not ideal for households without the budget for large-breed food, large-breed vet bills, and the emotional reality of a dog that may not reach ten years old.`,
+        ],
+      },
+      {
+        h2: 'Temperament: what living with a Great Dane is actually like',
+        body: [
+          `Expect a calm, devoted, lap-optional dog that seems unaware of how large it is. Danes are affectionate to the point of wanting to sit on you, lean into you, and follow you from room to room. They're not high-energy or demanding, and their default indoor mode is relaxed and quiet. Most are friendly with other dogs and adaptable to households with other pets.`,
+          `Puppyhood is the exception. Dane puppies are clumsy, exuberant, and strong — and the window between "10-pound puppy" and "80-pound adolescent" closes fast. Early training is essential, not optional. A Dane that hasn't learned basic manners by adolescence is genuinely difficult to manage at full size. The good news: they're sensitive dogs that respond well to gentle, consistent guidance and food rewards.`,
+        ],
+      },
+      {
+        h2: 'Exercise and energy needs',
+        body: [
+          `Moderate, and lower than most people expect for a large breed. Two 30-minute walks daily plus yard time typically covers an adult Dane. They're capable of more on good days but don't have the relentless drive of a working breed. Danes are content to settle in the house once their movement needs are met.`,
+          `The critical rule is puppies: never push vigorous exercise on a Dane under 18 months. They're a giant breed with growth plates that close later than smaller dogs, and high-impact activity — running on hard surfaces, forced jogging, jumping — can cause lasting joint damage. Short walks and free-play in a yard are the correct approach through the first year and a half.`,
+        ],
+      },
+      {
+        h2: 'Grooming and shedding',
+        body: [
+          `The short coat is low-effort: a weekly wipe-down with a rubber mitt or brush, a bath every month or two, and regular nail trims. Shedding is moderate — present year-round but manageable without special tools or frequent grooming sessions.`,
+          `The one oversight owners make is underestimating how much surface area they're grooming. A 150-pound Dane sheds the same density of hair as a smaller dog times the body area — weekly brushing keeps it under control, but it's not truly a low-shed breed. Budget 15 minutes a week and you're covered for most of the year.`,
+        ],
+      },
+      {
+        h2: 'Health and lifespan — the honest version',
+        body: [
+          `Great Danes typically live 7 to 10 years, significantly shorter than most breeds of any size. The primary cause of both early death and life-limiting illness is bloat, formally called gastric dilatation-volvulus (GDV). The stomach fills with gas and twists on itself, cutting off blood flow — a surgical emergency that kills within hours if not treated. Deep-chested giant breeds like Danes are at high risk. Learning the signs (distended abdomen, unproductive retching, restlessness) and having a 24-hour emergency vet on file is not optional for this breed. Prophylactic gastropexy — a surgical procedure that tacks the stomach to prevent twisting, often done at the time of spay/neuter — is widely recommended for Danes.`,
+          `Beyond bloat, watch for dilated cardiomyopathy (DCM, an enlarged heart), hip dysplasia, wobbler syndrome (cervical vertebral instability that causes a wobbly gait), and bone cancer. A responsible breeder will screen for hips and heart. Pet insurance bought early, before any of these conditions appear, is among the best investments a Dane owner can make.`,
+        ],
+      },
+      {
+        h2: 'What a Great Dane actually costs',
+        body: [
+          `A puppy from a health-testing breeder generally runs $1,500 to $3,000. Breed-specific Great Dane rescues exist and place adults regularly — a meaningful option given the number of Danes surrendered when people underestimate the size and cost.`,
+          `Annual ongoing costs are among the highest of any breed: $2,500 to $4,500 or more. Food alone for a 150-pound dog on a quality large-breed diet runs $100 to $200 a month. Vet bills, boarding, and supplies scale with size. The real shock is usually the first large emergency — bloat surgery can reach $5,000 to $7,000. Pet insurance with a generous annual limit is close to essential for this breed.`,
+        ],
+      },
+    ],
+    comparisons: [
+      { slug: 'great-dane-vs-bernese-mountain-dog', label: 'Great Dane vs. Bernese Mountain Dog' },
+      { slug: 'great-dane-vs-bulldog', label: 'Great Dane vs. Bulldog' },
+    ],
+    faqs: [
+      {
+        q: 'Are Great Danes good apartment dogs?',
+        a: `Rarely. Their size creates real friction in small spaces — they knock things over, can't turn around easily in tight rooms, and need more floor space to rest comfortably. Houses with yards suit the breed far better.`,
+      },
+      {
+        q: 'What is bloat and why is it dangerous for Great Danes?',
+        a: `Bloat (GDV) is when the stomach fills with gas and twists, cutting off blood flow. It's a surgical emergency that kills within hours untreated. Danes are one of the highest-risk breeds. Knowing the signs and having a 24-hour vet contact is essential. Prophylactic gastropexy surgery at spay/neuter prevents the twist and is widely recommended.`,
+      },
+      {
+        q: 'How long do Great Danes live?',
+        a: `Typically 7–10 years, which is shorter than most breeds. Heart disease and bloat account for many early deaths. Choosing a health-tested line and buying pet insurance early are the most meaningful things you can do.`,
+      },
+      {
+        q: 'Are Great Danes good with kids?',
+        a: `Very patient and gentle by temperament, but their size means supervision with toddlers is essential. An enthusiastic Dane can knock a small child over without noticing. Teens and older kids are a natural fit.`,
+      },
+    ],
+  },
+
+  'basset-hound': {
+    metaTitle: 'Basset Hound: Family Fit, Temperament & Care (2026) | FurtasticMatch',
+    metaDescription:
+      'Is a Basset Hound right for your family? Honest guide to their easygoing temperament, howling habit, back health (IVDD), those ears, and what ownership actually costs.',
+    intro: [
+      `The Basset Hound was bred in France to follow scent trails at a slow, methodical pace — slow enough for hunters on foot to keep up. The long ears (which funnel scent toward the nose), the low-slung body, and the enormous paws are all tools for a working nose dog. The mournful expression is just a bonus. At 40 to 65 lbs, they're a medium-sized dog that feels larger because of the build and the personality.`,
+      `Bassets are among the most easygoing breeds available — calm, patient, rarely reactive, and almost comically unhurried in everything they do. They're also genuinely stubborn, prone to howling, and susceptible to the same spinal problems as their Dachshund relatives. Understanding both sides of that picture is where responsible ownership begins.`,
+    ],
+    sections: [
+      {
+        h2: 'Is a Basset Hound right for your family?',
+        body: [
+          `Bassets are excellent family dogs in the classic sense: tolerant with children, calm in the house, social with other dogs, and gentle enough for most first-time owners to manage. They don't need a lot of exercise, they don't guard or bark aggressively, and their default setting is relaxed. If you want a laid-back companion that's happy to join whatever pace you set, the fit is strong.`,
+          `Two caveats matter. First, the howling — Bassets have a full, resonant bay that carries. In an apartment building or close-quarters neighborhood, an under-stimulated Basset that howls when left alone becomes a neighbor problem fast. Second, training requires patience. A Basset on a scent trail is not interested in your recall command; the nose overrides the handler. A securely fenced yard and a long lead for outdoor time are practical necessities.`,
+        ],
+      },
+      {
+        h2: 'Temperament: what living with a Basset is actually like',
+        body: [
+          `Expect a calm, affectionate, and deeply food-motivated dog that is genuinely easy to live with most of the time and profoundly unmoved by urgency. Bassets operate at their own pace. They're friendly with nearly everyone — strangers, dogs, cats — and rarely aggressive or reactive. They want company and don't love being left alone, but they express boredom through howling and chewing rather than destructive high-energy behavior.`,
+          `Training works when it's food-driven and patient; it fails when it's repetitive or pressure-based. Bassets respond to the question "what's in it for me?" more honestly than most breeds. Housetraining takes longer than with biddable breeds — consistency and a predictable schedule matter more than any particular method. The payoff is a dog that's very pleasant company once the basics are established.`,
+        ],
+      },
+      {
+        h2: 'Exercise and energy needs',
+        body: [
+          `Two moderate walks daily — 30 to 45 minutes total — keeps most Bassets healthy and settled. They're not a high-energy breed; they don't need vigorous running or extended off-leash time, and many will happily slow down before you do. They do well with nose-based enrichment — sniff walks, scatter feeding, and tracking games tire a Basset out efficiently and match how their brain is wired.`,
+          `The weight management angle matters here. Bassets are prone to obesity, and excess weight directly worsens their spinal health risk. Regular walking isn't just exercise — it's structural management. Keep meals measured, treats accounted for in daily intake, and the dog moving consistently. A lean Basset has a meaningfully better spine and joint prognosis than an overweight one.`,
+        ],
+      },
+      {
+        h2: 'Grooming and shedding',
+        body: [
+          `The short coat is easy — a weekly brush and occasional bath. Shedding is moderate and consistent year-round. What requires real attention are the ears. Those long, pendulous ears trap moisture and debris underneath and are the number-one site of chronic infection in the breed. Weekly ear cleaning and drying isn't optional — it's the single maintenance step with the highest return on investment for Basset health.`,
+          `Also worth staying on top of: the deep facial wrinkle some Bassets have (similar to Bulldogs, it needs regular cleaning to prevent skin fold dermatitis), the tail, and nails. Bassets don't naturally wear down nails on soft surfaces, so monthly trims prevent the overgrowth that changes their gait and eventually stresses their joints.`,
+        ],
+      },
+      {
+        h2: 'Health and lifespan — the honest version',
+        body: [
+          `Basset Hounds typically live 10 to 12 years. The primary health concern is the same as for Dachshunds: intervertebral disc disease (IVDD). The elongated spine shared across chondrodystrophic (short-legged) breeds creates vulnerability to disc herniation that can cause pain or sudden paralysis. Weight management, ramp access to furniture, and avoiding high-impact jumping reduce risk; surgery is available for severe cases and is most successful when acted on quickly.`,
+          `Beyond IVDD: ear infections (as above — chronic and expensive without preventive maintenance), glaucoma and other eye conditions due to the drooping lower lids (ectropion), hip dysplasia, and thrombopathy (a platelet disorder that affects bleeding). Ask a breeder about eye and hip clearances on the parents. Annual vet care and a dental routine (Bassets' heavy jowls and large teeth accumulate tartar) round out the maintenance picture.`,
+        ],
+      },
+      {
+        h2: 'What a Basset Hound actually costs',
+        body: [
+          `Puppy prices run $800 to $1,800 from a reputable breeder. Bassets appear in breed-specific rescues and shelters with regularity — they're a common surrender when people underestimate the howling and the stubbornness — so adoption is a realistic option if you're open to an adult dog.`,
+          `Annual costs typically run $1,000 to $1,800: food for a mid-sized dog, routine vet care, ear supplies, and grooming basics. The wildcard is IVDD treatment — conservative management is manageable, but surgery runs $3,000 to $8,000 depending on severity. Pet insurance bought before any disc issues develop is widely recommended for this breed.`,
+        ],
+      },
+    ],
+    comparisons: [
+      { slug: 'basset-hound-vs-beagle', label: 'Basset Hound vs. Beagle' },
+      { slug: 'basset-hound-vs-dachshund', label: 'Basset Hound vs. Dachshund' },
+    ],
+    faqs: [
+      {
+        q: 'Do Basset Hounds howl a lot?',
+        a: `They can, especially when under-stimulated or left alone. The Basset bay is loud and carries. Early training, enough daily activity, and not leaving them alone for full workdays keeps howling manageable — but it's a real consideration for apartment or close-quarters living.`,
+      },
+      {
+        q: 'Are Basset Hounds easy to train?',
+        a: `Not particularly. They're independent and nose-driven — once a scent has their attention, nothing else does. Short, food-reward sessions and genuine patience work; repetitive drills and pressure don't. Recall off a scent trail is the most important and hardest behavior to build.`,
+      },
+      {
+        q: 'How serious is IVDD in Basset Hounds?',
+        a: `It's the breed's primary health risk. The elongated spine is structurally vulnerable to disc herniation, which can range from mild back pain to sudden paralysis. Managing weight, using ramps for furniture, and watching for early signs (reluctance to move, crying when touched) gives you the best outcome.`,
+      },
+      {
+        q: 'Are Basset Hounds good with kids?',
+        a: `Excellent. Patient, calm, and tolerant — one of the more reliably gentle medium breeds for family life. Their low energy and non-reactive temperament make them a good match for households with kids of most ages.`,
+      },
+    ],
+  },
+
+  'maltese': {
+    metaTitle: 'Maltese: Family Fit, Temperament & Care (2026) | FurtasticMatch',
+    metaDescription:
+      'Is a Maltese right for you? Honest guide to their affectionate temperament, demanding coat care, dental health, and whether this elegant small breed fits your life.',
+    intro: [
+      `The Maltese has been a companion dog for over two thousand years — they appear in ancient Greek and Roman art, and they've been kept as lapdogs by European nobility for centuries. Under 7 lbs, fearless in temperament, and draped in a white silky coat that reaches the floor when kept long, they're an unmistakable breed. What's less obvious from the outside is that there's a genuinely bold, playful, and occasionally obstinate dog underneath all that elegance.`,
+      `Maltese are among the longest-lived small breeds, commonly reaching 12 to 15 years, and one of the better choices for people who want a small companion with minimal shedding. The trade-off is the coat — maintaining it takes real effort, in either time or money — and a dental care routine that most owners wish they'd started earlier.`,
+    ],
+    sections: [
+      {
+        h2: 'Is a Maltese right for your family?',
+        body: [
+          `Maltese thrive as companions for adults, seniors, and households with calm, older children who know how to handle a very small dog carefully. At under 7 lbs, they're fragile in the specific way all toy breeds are — a rough fall or accidental step can cause serious injury. Households with toddlers or very young children who play hard need to manage that risk explicitly.`,
+          `For apartment dwellers, single-person households, or anyone wanting a low-exercise, low-shedding small dog that travels well and bonds deeply, the Maltese is a strong fit. They don't need a yard. They can get most of their exercise indoors. They're quiet enough for multi-unit housing if well-trained. What they can't handle is being left alone all day — separation anxiety is common in the breed and tends to run deep.`,
+        ],
+      },
+      {
+        h2: 'Temperament: what living with a Maltese is actually like',
+        body: [
+          `Expect a lively, affectionate, and alert little dog that wants to be in your company constantly and has no awareness of how small it is. Maltese are confident and sometimes fearless to a fault — they'll bark at a dog twenty times their size or investigate a new situation before a larger breed would dare. That boldness makes them effective little watchdogs and occasionally amusing companions, though the same trait can tip into bossiness without consistent training.`,
+          `They respond well to positive reinforcement and learn quickly. The common pitfall with toy breeds is inconsistent expectations — owners who let small dogs behave in ways they'd never permit in a larger dog end up with a Maltese that rules the household. A Maltese raised with clear, consistent expectations is confident and pleasant; one that isn't can become demanding and snappy with strangers.`,
+        ],
+      },
+      {
+        h2: 'Exercise and energy needs',
+        body: [
+          `Modest. Two short walks daily — 20 to 30 minutes total — plus indoor play keeps a Maltese satisfied. Much of a Maltese's daily exercise can happen inside: they're quick and playful and will run laps around an apartment with enthusiasm. Daily outdoor time still matters for mental stimulation and socialization, and skipping it regularly builds restlessness and anxiety.`,
+          `Despite small exercise needs, Maltese benefit from real training. They're intelligent and enjoy learning tricks, do well in puzzle games and hide-and-seek with toys, and the mental engagement of a short training session settles them more effectively than a walk alone. A well-occupied Maltese is a calm Maltese.`,
+        ],
+      },
+      {
+        h2: 'Grooming and shedding',
+        body: [
+          `The Maltese coat sheds very little — one of the genuine appeals for allergy-sensitive households. The trade-off is maintenance. The fine, silky hair grows continuously and mats quickly without brushing. Owners who keep the coat long need to brush daily and have the coat professionally groomed every 4 to 6 weeks. Many opt for a shorter "puppy cut" that reduces the at-home maintenance to brushing a few times a week and a professional trim every 6 to 8 weeks.`,
+          `Tear staining — the reddish-brown streaks below the eyes common in white dogs — requires daily face-wiping with a damp cloth to keep under control. It's cosmetic and manageable but takes consistent attention. Ear checks, nail trims, and dental care round out the routine. The dental piece matters more than with most breeds (see Health section below).`,
+        ],
+      },
+      {
+        h2: 'Health and lifespan — the honest version',
+        body: [
+          `Maltese typically live 12 to 15 years. As a toy breed, the defining health concerns are those common to small dogs: dental disease (the most significant, addressed below), luxating patella (slipping kneecap, which causes a characteristic skipping gait and ranges from mild to surgical), tracheal collapse (a weakening of the airway that worsens with collar pressure — harnesses are strongly recommended for this breed), and hypoglycemia in very young or very small individuals, which requires careful feeding schedules.`,
+          `Dental disease is the health issue most Maltese owners wish they'd taken more seriously from the start. Small jaws mean crowded teeth and early periodontal disease that progresses faster than in larger breeds. Daily tooth brushing — or at minimum, several times a week — dramatically reduces how often a Maltese needs anesthesia for dental cleanings, which are typically needed annually or more without preventive care. This is the single highest-return preventive investment for the breed.`,
+        ],
+      },
+      {
+        h2: 'What a Maltese actually costs',
+        body: [
+          `Puppy prices run $1,000 to $3,000 from a reputable breeder, with significant variation by line and location. The breed's popularity has attracted volume breeders — vet the source carefully, since the health and temperament of small-breed puppies from careless breeding vary widely.`,
+          `Annual ongoing costs are moderate: $800 to $1,500. Food costs are low. Professional grooming runs $60 to $100 per visit every 6 to 8 weeks. The line item most owners underestimate is dental care — professional cleanings under anesthesia, needed at least annually, run $300 to $800 depending on what's found. Pet insurance is worth pricing early, particularly for coverage of dental procedures and the orthopedic issues small breeds are prone to.`,
+        ],
+      },
+    ],
+    comparisons: [
+      { slug: 'maltese-vs-chihuahua', label: 'Maltese vs. Chihuahua' },
+      { slug: 'maltese-vs-havanese', label: 'Maltese vs. Havanese' },
+    ],
+    faqs: [
+      {
+        q: 'Are Maltese hypoallergenic?',
+        a: `They shed very little and are among the better choices for people with dog allergies. No dog is truly hypoallergenic, but the Maltese coat produces significantly less dander and shed hair than most breeds, which makes real-world reactions less frequent.`,
+      },
+      {
+        q: 'Are Maltese good with kids?',
+        a: `Better with older children who can handle a very small dog carefully. At under 7 lbs, a Maltese is easily injured by rough play or accidental falls. Households with toddlers need close supervision — the dog's size, not its temperament, is the concern.`,
+      },
+      {
+        q: 'How much grooming does a Maltese need?',
+        a: `More than most people expect. Daily brushing for long coats, or brushing a few times a week plus professional grooming every 6–8 weeks for a shorter "puppy cut." The coat mats quickly without regular maintenance, and matted Maltese often require expensive groomers to fix.`,
+      },
+      {
+        q: 'How long do Maltese live?',
+        a: `Typically 12–15 years, making them one of the longer-lived small breeds. Dental care is the biggest factor in quality of life at advanced age — start brushing early and plan for annual dental cleanings to prevent the periodontal disease that's common in the breed.`,
+      },
+    ],
+  },
+
+  'yorkshire-terrier': {
+    metaTitle: 'Yorkshire Terrier: Family Fit, Temperament & Care (2026) | FurtasticMatch',
+    metaDescription:
+      'Is a Yorkshire Terrier right for you? Honest guide to their feisty personality, coat care commitment, health risks, and what Yorkie ownership actually looks like day to day.',
+    intro: [
+      `The Yorkshire Terrier was developed in 19th-century England to hunt rats in textile mills and coal mines — a working-class origin that the breed's later lapdog reputation completely obscures. At 4 to 7 lbs, Yorkies are one of the most popular toy breeds in America, and it's not hard to see why: they're compact, low-shedding, adaptable to apartments and small spaces, and deeply attached to their people.`,
+      `What the silky coat and small size can mask is the terrier underneath. Yorkies are bold, curious, and tenacious. They investigate everything, challenge dogs far larger than themselves, and have opinions they're not shy about expressing. Getting the best out of a Yorkie means taking the dog seriously, not just enjoying the packaging.`,
+    ],
+    sections: [
+      {
+        h2: 'Is a Yorkshire Terrier right for your family?',
+        body: [
+          `Yorkies are excellent companions for adults, older children, and single-person households. Their small size makes them portable and low-cost to maintain, and their low-shedding coat is a meaningful draw for people who want a small dog without the hair. They fit apartment life well and don't require outdoor exercise that a city schedule can't accommodate.`,
+          `They're a poor fit for households with young children. At 4 to 7 lbs, they're easily injured by rough play, and many Yorkies respond to startling or rough handling by snapping — self-preservation at that size is reasonable, but it's a management reality in homes with toddlers. They also don't tolerate being ignored: a Yorkie left alone all day, with no company or stimulation, becomes anxious and vocal. They suit people who are home often and want a present, engaged companion.`,
+        ],
+      },
+      {
+        h2: 'Temperament: what living with a Yorkie is actually like',
+        body: [
+          `Expect a bold, clever, and sometimes pushy little dog that bonds intensely to its owner and regards the rest of the world with varying degrees of suspicion. Yorkies are alert to everything — sounds, movement at the window, visitors — and bark readily. In a house, that alertness is manageable. In a thin-walled apartment without training, it becomes a real problem.`,
+          `Their terrier heritage means they're independent thinkers. They learn quickly but apply what they've learned selectively, depending on whether the situation seems worth cooperating with. Positive, food-driven training works; harsh correction makes them anxious and shuts down communication. The stubbornness isn't defiance — it's a dog that needs a reason to do what you're asking, and food is usually a sufficient reason.`,
+        ],
+      },
+      {
+        h2: 'Exercise and energy needs',
+        body: [
+          `Modest but real. Two short walks and indoor play — 30 to 45 minutes total — keeps most Yorkies settled. Much of the daily exercise can happen inside, and their terrier energy translates well to chasing toys around an apartment. Daily outdoor walks still matter for mental stimulation, exposure to the world, and the socialization that prevents the fearful behavior some Yorkies develop without it.`,
+          `Training provides mental exercise that complements physical activity. Yorkies are capable of learning a large number of commands, do well in trick training, and are surprisingly competitive in agility and obedience despite their size. A mentally occupied Yorkie is calmer and more pleasant than one with unspent energy looking for an outlet.`,
+        ],
+      },
+      {
+        h2: 'Grooming and shedding',
+        body: [
+          `The Yorkie coat grows continuously and sheds very little — a genuine plus for allergy-sensitive households and anyone who doesn't want dog hair on everything. The maintenance trade-off is real: the long, silky coat mats quickly without daily brushing, and most owners either commit to that routine or keep the dog in a shorter "puppy cut" trimmed by a groomer every 6 to 8 weeks. Both are reasonable approaches; neither is low-effort.`,
+          `Professional grooming runs $50 to $90 per visit. Many Yorkie owners learn to maintain the shorter cuts at home between salon visits to reduce frequency. Regardless of coat length, the dog still needs face-wiping to manage tear staining (common in the breed), ear checks, and regular dental care. The dental piece carries outsized importance for Yorkies specifically — see the health section.`,
+        ],
+      },
+      {
+        h2: 'Health and lifespan — the honest version',
+        body: [
+          `Yorkies typically live 11 to 15 years, solid for any breed. The health conditions most specific to them: tracheal collapse (a weakening of the cartilage rings in the airway that causes a honking cough — worsened by collar pressure, which is why harnesses are strongly recommended); luxating patella (slipping kneecap, common in small breeds and ranging from asymptomatic to surgical); dental disease (the most prevalent long-term health issue in the breed); portosystemic shunt (a liver abnormality more common in Yorkies than most breeds — symptoms include stunted growth, disorientation after eating, and seizures, and it typically requires surgery); and hypoglycemia in very young or very small puppies.`,
+          `Dental disease deserves emphasis. Yorkies have the same number of teeth as a large dog in a very small jaw, leading to crowding and early tartar buildup. Without preventive care, periodontal disease develops fast and causes pain, tooth loss, and systemic inflammation by middle age. Daily tooth brushing significantly reduces how often professional cleanings under anesthesia are needed. Start early — the habit is easier to establish in puppyhood.`,
+        ],
+      },
+      {
+        h2: 'What a Yorkshire Terrier actually costs',
+        body: [
+          `Puppy prices run $1,200 to $2,500 from a reputable breeder. The breed's popularity has attracted high volumes of careless breeding — research the source carefully, and be skeptical of "teacup" Yorkies marketed as an especially small variant. Dogs under 4 lbs carry amplified health fragility and higher vet bills, not extra value.`,
+          `Annual ongoing costs are modest: $800 to $1,500. Food costs are low. The ongoing expenses to budget are professional grooming every 6 to 8 weeks ($50–$90 per visit), annual dental cleanings ($300–$700 depending on what's found), and routine vet care. Pet insurance is worth buying early, before orthopedic or tracheal issues become pre-existing conditions and excluded from coverage.`,
+        ],
+      },
+    ],
+    comparisons: [
+      { slug: 'yorkshire-terrier-vs-chihuahua', label: 'Yorkshire Terrier vs. Chihuahua' },
+      { slug: 'yorkshire-terrier-vs-maltese', label: 'Yorkshire Terrier vs. Maltese' },
+    ],
+    faqs: [
+      {
+        q: 'Are Yorkshire Terriers good apartment dogs?',
+        a: `Generally yes — compact, low-exercise, low-shedding, and adaptable to small spaces. The caveat is barking; Yorkies are alert and vocal, and that can become a neighbor issue in close quarters without consistent training and enough daily stimulation.`,
+      },
+      {
+        q: 'Do Yorkshire Terriers shed a lot?',
+        a: `Very little — their continuously-growing coat sheds minimally and is one of the better choices for people sensitive to dog hair. The trade-off is coat maintenance: daily brushing for long coats, or regular professional grooming for a shorter trim.`,
+      },
+      {
+        q: 'Are Yorkies easy to train?',
+        a: `They're intelligent and learn fast, but the terrier independence means they decide when to cooperate. Food-driven, positive training in short sessions works well. Repetitive drills and pressure make them dig in. Early, consistent training from puppyhood produces a much easier dog to live with.`,
+      },
+      {
+        q: 'What health problems do Yorkshire Terriers have?',
+        a: `The main concerns are dental disease, tracheal collapse (use a harness, not a collar), luxating patella, and portosystemic shunt. Dental care from an early age is the single most impactful preventive step for long-term health in this breed.`,
+      },
+    ],
+  },
+
   'chihuahua': {
     metaTitle: 'Chihuahua: Family Fit, Temperament & Care (2026) | FurtasticMatch',
     metaDescription:
