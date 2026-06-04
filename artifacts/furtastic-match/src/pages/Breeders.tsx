@@ -39,6 +39,7 @@ export default function Breeders() {
       breeds: formData.get('breeds'),
       city: formData.get('city'),
       state: formData.get('state'),
+      zip: formData.get('zip'),
       kennel_name: formData.get('kennel_name'),
       website: formData.get('website'),
       social: formData.get('social'),
@@ -117,17 +118,30 @@ export default function Breeders() {
                 <input name="state" type="text" required placeholder="e.g., CA, TX, NY" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
               </div>
               <div>
+                <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>ZIP Code *</label>
+                <input
+                  name="zip"
+                  type="text"
+                  required
+                  placeholder="e.g., 90210"
+                  pattern="^\d{5}(-\d{4})?$"
+                  title="Enter a valid US ZIP code"
+                  style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }}
+                />
+              </div>
+              <div>
                 <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Kennel/Business Name *</label>
                 <input name="kennel_name" type="text" required placeholder="Your kennel or business name" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
               </div>
 
-              {/* Optional Fields (3) */}
+              <div>
+                <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Website or Listing URL *</label>
+                <input name="website" type="url" required placeholder="https://yourwebsite.com or GoodDog/AKC profile link" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
+              </div>
+
+              {/* Optional Fields (2) */}
               <div style={{ borderTop: '1px solid var(--border)', paddingTop: '20px', marginTop: '8px' }}>
                 <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '16px', fontStyle: 'italic' }}>Optional Information</p>
-              </div>
-              <div>
-                <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Website</label>
-                <input name="website" type="url" placeholder="https://yourwebsite.com" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '2px solid var(--border)' }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontWeight: 700, marginBottom: '8px' }}>Social Media Profile</label>
