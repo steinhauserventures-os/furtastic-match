@@ -7,8 +7,17 @@ import {
 } from 'lucide-react';
 import Icon, { BRAND_PURPLE } from '../components/Icon';
 import CustomSlider from '../components/CustomSlider';
-import { trackEvent } from '../lib/analytics';
+import { trackEvent, capturePostHogEvent } from '../lib/analytics';
 import { runMatchingEngine, encodeResults, QuizAnswers } from '../lib/matchingEngine';
+
+/** Map the 0-100 activity slider to a human-readable lifestyle label. */
+function activityLabel(value: number): string {
+  if (value <= 20) return 'couch-potato';
+  if (value <= 40) return 'gentle-walker';
+  if (value <= 60) return 'moderately-active';
+  if (value <= 80) return 'very-active';
+  return 'trail-runner';
+}
 
 export default function Quiz() {
   const navigate = useNavigate();
@@ -54,6 +63,21 @@ export default function Quiz() {
         result.matches.map(m => m.id),
         result.wildcard?.id ?? null
       );
+
+      // Fire the detailed PostHog quiz_complete event with breed + quiz properties.
+      // This is separate from the generic trackEvent('quiz_complete') above so that
+      // we have the computed top-match breed name available here.
+      capturePostHogEvent('quiz_complete', {
+        breed: result.matches[0]?.name ?? 'unknown',
+        household_size: answers.who,
+        lifestyle: activityLabel(answers.activity),
+        timestamp: new Date().toISOString(),
+        // bonus context for segmentation
+        space: answers.space,
+        experience: answers.experience,
+        size_preference: answers.size,
+      });
+
       // Persist answers for the results page's "why this matched you" personalization.
       // sessionStorage (not the URL) — personalization is for the just-finished-quiz
       // view and is meaningless on a link shared to someone who didn't take the quiz.
