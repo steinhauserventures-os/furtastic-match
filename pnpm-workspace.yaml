@@ -33,12 +33,6 @@ minimumReleaseAgeExclude:
   # this setting guards against does not apply to our own packages.
   - '@replit/*'
   - stripe-replit-sync
-  # PostHog SDK packages — temporarily excluded because posthog-js@1.383.3 was published
-  # on 2026-06-09T17:14Z and the 24h window closes at ~2026-06-10T17:14Z.
-  # These were intentionally added in commit 5a6f31e. Remove this exclusion after 2026-06-10T17:30Z.
-  - posthog-js
-  - '@posthog/core'
-  - '@posthog/types'
 
 packages:
   - artifacts/*
