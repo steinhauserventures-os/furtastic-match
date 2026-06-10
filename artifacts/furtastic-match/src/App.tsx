@@ -13,6 +13,8 @@ import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import AffiliateDisclosure from './pages/AffiliateDisclosure';
 import AuthorProfile from './pages/AuthorProfile';
+import LearnArticle from './pages/LearnArticle';
+import LearnIndex from './pages/LearnIndex';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -33,6 +35,8 @@ export default function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/affiliate-disclosure" element={<AffiliateDisclosure />} />
+        <Route path="/learn" element={<LearnIndex />} />
+        <Route path="/learn/:slug" element={<LearnArticle />} />
         <Route path="/about/author/:slug" element={<AuthorProfile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

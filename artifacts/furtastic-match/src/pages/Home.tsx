@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Dog, Sparkles, PawPrint, Check, Zap, Target, PartyPopper, ArrowRight } from 'lucide-react';
+import { Dog, Sparkles, PawPrint, Check, Zap, Target, PartyPopper, ArrowRight, BookOpen } from 'lucide-react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import AdZone from '../components/AdZone';
@@ -8,6 +9,16 @@ import breedsData from '../data/breeds.json';
 import BreedImage from '../components/BreedImage';
 
 export default function Home() {
+  useEffect(() => {
+    document.title = 'FurtasticMatch — Find Your Perfect Dog Breed in 3 Minutes';
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', 'Free dog breed matching quiz. Answer 8 questions about your lifestyle and we\'ll match you with the right breed from 30 options. No sign-up required.');
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', 'FurtasticMatch — Find Your Perfect Dog Breed in 3 Minutes');
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', 'Free dog breed matching quiz. Answer 8 questions and find the right breed for your family.');
+  }, []);
+
   const orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -112,6 +123,32 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </section>
+
+          {/* Breed Guides */}
+          <section>
+            <div style={{ color: 'var(--teal)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '8px' }}>Breed guides</div>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '32px', marginBottom: '24px' }}>
+              Read before you decide <Icon icon={BookOpen} size={26} color={BRAND_PURPLE} style={{ verticalAlign: '-0.15em' }} />
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', marginBottom: '16px' }}>
+              {[
+                { slug: 'hypoallergenic-dog-breeds', title: 'Best Hypoallergenic Dog Breeds', desc: 'A complete guide for allergy-sensitive families — small, medium & large options.', tag: 'Breed Guide' },
+                { slug: 'golden-retriever-vs-labrador', title: 'Golden Retriever vs. Labrador', desc: 'Head-to-head comparison: temperament, grooming, health, and which is right for you.', tag: 'Comparison' },
+              ].map(a => (
+                <Link key={a.slug} to={`/learn/${a.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <div className="card" style={{ padding: '20px 24px', height: '100%', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <span style={{ background: 'var(--bg-muted)', color: 'var(--cta)', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', padding: '3px 10px', borderRadius: '8px', alignSelf: 'flex-start' }}>{a.tag}</span>
+                    <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '16px', lineHeight: 1.3 }}>{a.title}</div>
+                    <div style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.5, flex: 1 }}>{a.desc}</div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--cta)', fontWeight: 700, fontSize: '13px', marginTop: '4px' }}>Read guide <Icon icon={ArrowRight} size={14} /></div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <Link to="/learn" style={{ color: 'var(--cta)', fontWeight: 700, fontSize: '14px', textDecoration: 'none' }}>
+              Browse all breed guides →
+            </Link>
           </section>
 
           {/* Breed Chips */}
