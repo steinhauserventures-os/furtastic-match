@@ -22,6 +22,38 @@ const ARTICLES = [
     readTime: '8 min read',
     tag: 'Breed Comparison',
   },
+  {
+    slug: 'dog-breed-quiz',
+    title: 'What Dog Breed Should I Get? How a Dog Breed Quiz Gets You to an Answer',
+    description: 'Why generic breed lists don\'t work — and how a quiz built around your specific household gets you to the right breed faster.',
+    publishDate: '2026-06-11',
+    readTime: '6 min read',
+    tag: 'Quiz Guide',
+  },
+  {
+    slug: 'best-dog-breeds-for-families',
+    title: 'Best Dog Breeds for Families: 8 Breeds That Are Genuinely Great With Kids',
+    description: 'Eight family-friendly breeds with honest notes on temperament, energy, kid compatibility, and what each breed actually requires from your household.',
+    publishDate: '2026-06-11',
+    readTime: '9 min read',
+    tag: 'Breed Guide',
+  },
+  {
+    slug: 'goldendoodle-vs-labradoodle',
+    title: 'Goldendoodle vs. Labradoodle: Which Hybrid Is Right for Your Household?',
+    description: 'A side-by-side comparison of the two most popular designer breeds — covering coat types, shedding, temperament, energy, family fit, and cost.',
+    publishDate: '2026-06-11',
+    readTime: '8 min read',
+    tag: 'Breed Comparison',
+  },
+  {
+    slug: 'low-shedding-dog-breeds',
+    title: 'Low Shedding Dog Breeds: 10 Great Options Across Every Size',
+    description: 'Ten low-shedding breeds across small, medium, and large size categories — with honest notes on coat maintenance, energy, and temperament.',
+    publishDate: '2026-06-11',
+    readTime: '7 min read',
+    tag: 'Breed Guide',
+  },
 ];
 
 export default function LearnIndex() {

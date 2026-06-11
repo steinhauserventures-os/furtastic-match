@@ -9,10 +9,18 @@ import Icon, { BRAND_PURPLE } from '../components/Icon';
 
 import hypoRaw from '../content/articles/hypoallergenic-dog-breeds.md?raw';
 import labRaw from '../content/articles/golden-retriever-vs-labrador.md?raw';
+import quizRaw from '../content/articles/dog-breed-quiz.md?raw';
+import familiesRaw from '../content/articles/best-dog-breeds-for-families.md?raw';
+import doodleRaw from '../content/articles/goldendoodle-vs-labradoodle.md?raw';
+import lowSheddingRaw from '../content/articles/low-shedding-dog-breeds.md?raw';
 
 const ARTICLES: Record<string, { raw: string; publishDate: string }> = {
   'hypoallergenic-dog-breeds': { raw: hypoRaw, publishDate: '2026-06-09' },
   'golden-retriever-vs-labrador': { raw: labRaw, publishDate: '2026-06-09' },
+  'dog-breed-quiz': { raw: quizRaw, publishDate: '2026-06-11' },
+  'best-dog-breeds-for-families': { raw: familiesRaw, publishDate: '2026-06-11' },
+  'goldendoodle-vs-labradoodle': { raw: doodleRaw, publishDate: '2026-06-11' },
+  'low-shedding-dog-breeds': { raw: lowSheddingRaw, publishDate: '2026-06-11' },
 };
 
 function processInline(text: string): string {
