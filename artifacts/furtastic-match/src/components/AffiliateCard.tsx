@@ -1,5 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import Icon from './Icon';
+import { affiliateUrl } from '../utils/affiliate';
+import { capturePostHogEvent } from '../lib/analytics';
 
 interface AffiliateCardProps {
   breedName: string;
@@ -10,8 +12,9 @@ interface AffiliateCardProps {
 
 // Nexbie (Awin) custom pet portrait affiliate — placed in the reserved breed-profile
 // ad slot while AdSense is on hold. rel="nofollow sponsored" per FTC/SEO requirements.
-const NEXBIE_AFFILIATE_URL =
+const NEXBIE_BASE_URL =
   'https://www.awin1.com/cread.php?awinmid=125856&awinaffid=2897167&ued=https%3A%2F%2Fnexbie.com%2Fproducts%2Fcustom-pet-painting';
+const NEXBIE_AFFILIATE_URL = affiliateUrl(NEXBIE_BASE_URL, 'nexbie');
 
 // Copy is context-dependent: a breed-profile visitor likely owns the dog, while a
 // results visitor is still choosing one and has no pet/photo yet — so the results
@@ -31,6 +34,14 @@ const COPY = {
 
 export default function AffiliateCard({ breedName, variant = 'profile' }: AffiliateCardProps) {
   const copy = COPY[variant];
+  const handleClick = () => {
+    capturePostHogEvent('affiliate_click', {
+      program: 'nexbie_awin',
+      destination: NEXBIE_AFFILIATE_URL,
+      page: typeof window !== 'undefined' ? window.location.pathname : '',
+      variant,
+    });
+  };
   return (
     <div
       className="card"
@@ -79,6 +90,7 @@ export default function AffiliateCard({ breedName, variant = 'profile' }: Affili
         href={NEXBIE_AFFILIATE_URL}
         target="_blank"
         rel="nofollow sponsored noopener noreferrer"
+        onClick={handleClick}
         className="btn-primary"
         style={{
           padding: '14px 24px',

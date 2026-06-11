@@ -3,7 +3,8 @@ import { Medal, Zap, Dna, Award, ShoppingCart, Sparkles, Dices, PawPrint } from 
 import Icon from './Icon';
 import BreedImage from './BreedImage';
 import BreederIntentCTA from './BreederIntentCTA';
-import { trackEvent } from '../lib/analytics';
+import { trackEvent, capturePostHogEvent } from '../lib/analytics';
+import { affiliateUrl } from '../utils/affiliate';
 import { Breed, QuizAnswers, explainMatch } from '../lib/matchingEngine';
 
 interface MatchCardProps {
@@ -108,24 +109,28 @@ export default function MatchCard({
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
           <a
-            href={`https://marketplace.akc.org/puppies/${breed.slug}?utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate`}
+            href={affiliateUrl(`https://marketplace.akc.org/puppies/${breed.slug}`, 'akc')}
             target="_blank" rel="noopener noreferrer"
+            onClick={() => capturePostHogEvent('affiliate_click', { program: 'akc_marketplace', destination: `https://marketplace.akc.org/puppies/${breed.slug}`, page: typeof window !== 'undefined' ? window.location.pathname : '', breed: breed.name })}
             className="btn-outline"
             style={{ padding: '10px 8px', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}
           >
             <Icon icon={Award} size={16} /> Find AKC Breeders
           </a>
           <a
-            href={`https://www.gooddog.com/breeds/${breed.slug}?utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate`}
+            href={affiliateUrl(`https://www.gooddog.com/breeds/${breed.slug}`, 'gooddog')}
             target="_blank" rel="noopener noreferrer"
+            onClick={() => capturePostHogEvent('affiliate_click', { program: 'gooddog', destination: `https://www.gooddog.com/breeds/${breed.slug}`, page: typeof window !== 'undefined' ? window.location.pathname : '', breed: breed.name })}
+
             className="btn-outline"
             style={{ padding: '10px 8px', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}
           >
             <Icon icon={PawPrint} size={16} /> Browse on GoodDog
           </a>
           <a
-            href={`https://www.chewy.com/s?query=${encodeURIComponent(breed.name)}&utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate`}
+            href={affiliateUrl(`https://www.chewy.com/s?query=${encodeURIComponent(breed.name)}`, 'chewy')}
             target="_blank" rel="noopener noreferrer"
+            onClick={() => capturePostHogEvent('affiliate_click', { program: 'chewy', destination: `https://www.chewy.com/s?query=${encodeURIComponent(breed.name)}`, page: typeof window !== 'undefined' ? window.location.pathname : '', breed: breed.name })}
             className="btn-outline"
             style={{ padding: '10px 8px', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', gridColumn: '1 / -1' }}
           >
@@ -133,9 +138,9 @@ export default function MatchCard({
           </a>
         </div>
         <a
-          href="https://embarkvet.com?utm_source=furtasticmatch&utm_medium=results-page&utm_campaign=affiliate"
+          href={affiliateUrl('https://embarkvet.com', 'embark')}
           target="_blank" rel="noopener noreferrer"
-          onClick={() => trackEvent('breeder_click', { breed: breed.name, cta: 'dna_test' })}
+          onClick={() => { trackEvent('breeder_click', { breed: breed.name, cta: 'dna_test' }); capturePostHogEvent('affiliate_click', { program: 'embark_dna', destination: 'https://embarkvet.com', page: typeof window !== 'undefined' ? window.location.pathname : '', breed: breed.name }); }}
           className={isWildcard ? 'btn-accent' : 'btn-primary'}
           style={{ display: 'flex', justifyContent: 'center', padding: '12px 16px', textDecoration: 'none' }}
         >
