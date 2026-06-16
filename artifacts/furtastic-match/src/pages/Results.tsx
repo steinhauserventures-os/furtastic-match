@@ -172,7 +172,7 @@ export default function Results() {
           <AdZone width={300} height={250} id="ADSENSE UNIT 4" desktopOnly />
           <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '14px' }}>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '13px', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '10px' }}>
-              More vetted breeders
+              Find puppies by breed
             </div>
             {matches.slice(0, 3).map((breed, idx) => (
               <a
@@ -182,7 +182,7 @@ export default function Results() {
               >
                 <BreedImage slug={breed.slug} emoji={breed.emoji} size={36} circular />
                 <div style={{ fontSize: '12px', fontWeight: 500, color: 'var(--text-primary)' }}>{breed.name} breeders</div>
-                <span style={{ marginLeft: 'auto', fontSize: '11px', color: 'var(--cta)', fontWeight: 500, flexShrink: 0 }}>View →</span>
+                <span style={{ marginLeft: 'auto', fontSize: '11px', color: 'var(--cta)', fontWeight: 500, flexShrink: 0 }}>Browse →</span>
               </a>
             ))}
           </div>

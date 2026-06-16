@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Medal, Zap, Sparkles, Dices, Award, Dna } from 'lucide-react';
+import { Medal, Sparkles, Dices, Dna } from 'lucide-react';
 import Icon from './Icon';
 import BreedImage from './BreedImage';
 import BreederIntentCTA from './BreederIntentCTA';
@@ -34,7 +34,7 @@ export default function MatchCard({
   const reasons = explanation?.reasons ?? [];
 
   const gooddogUrl = affiliateUrl(`https://www.gooddog.com/breeds/${breed.slug}`, 'gooddog');
-  const akcUrl = affiliateUrl(`https://marketplace.akc.org/puppies/${breed.slug}`, 'akc');
+  const akcUrl = affiliateUrl(`https://www.akc.org/dog-breeds/${breed.slug}/`, 'akc');
   const embarkUrl = affiliateUrl('https://embarkvet.com', 'embark');
 
   return (
@@ -66,7 +66,7 @@ export default function MatchCard({
             {breed.name}
           </h2>
           <span style={{ background: isWildcard ? 'var(--accent)' : 'var(--cta)', color: isWildcard ? 'var(--text-primary)' : 'white', borderRadius: '20px', padding: '3px 10px', fontSize: '11px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-            <Icon icon={Zap} size={11} /> {fitPercent}% fit
+            {fitPercent}% fit
           </span>
         </div>
       </div>
@@ -132,23 +132,22 @@ export default function MatchCard({
         </a>
 
         {/* 3. Research links */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '4px', flexWrap: 'wrap' }}>
-          <span style={{ fontSize: '11px', color: 'var(--text-muted)', marginRight: 4 }}>Learn more:</span>
+        <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
           <a
             href={akcUrl}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ fontSize: '12px', color: 'var(--cta)', fontWeight: 500, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 3 }}
-            onClick={() => capturePostHogEvent('affiliate_click', { program: 'akc_marketplace', destination: akcUrl, page: typeof window !== 'undefined' ? window.location.pathname : '', breed: breed.name })}
+            style={{ fontSize: '14px', color: 'var(--cta)', fontWeight: 500, textDecoration: 'underline' }}
+            onClick={() => capturePostHogEvent('affiliate_click', { program: 'akc_breed_guide', destination: akcUrl, page: typeof window !== 'undefined' ? window.location.pathname : '', breed: breed.name })}
           >
-            <Icon icon={Award} size={12} /> AKC breed guide
+            AKC breed guide
           </a>
-          <span style={{ color: 'var(--border)' }}>·</span>
+          <span style={{ color: 'var(--text-muted)' }}>·</span>
           <Link
             to={`/breeds/${breed.slug}`}
-            style={{ fontSize: '12px', color: 'var(--cta)', fontWeight: 500, textDecoration: 'none' }}
+            style={{ fontSize: '14px', color: 'var(--cta)', fontWeight: 500, textDecoration: 'underline' }}
           >
-            Full profile
+            {breed.name} breed guide
           </Link>
         </div>
 
