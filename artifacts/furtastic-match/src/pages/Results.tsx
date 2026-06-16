@@ -8,6 +8,8 @@ import AdZone from '../components/AdZone';
 import EmailCapture from '../components/EmailCapture';
 import AffiliateCard from '../components/AffiliateCard';
 import MatchCard from '../components/MatchCard';
+import SponsorCard from '../components/SponsorCard';
+import BreedImage from '../components/BreedImage';
 import Icon from '../components/Icon';
 import { trackEvent } from '../lib/analytics';
 import { decodeResults, getBreedById, Breed, QuizAnswers } from '../lib/matchingEngine';
@@ -118,7 +120,12 @@ export default function Results() {
                   animationDelayMs={i * 400 + 100}
                   answers={answers}
                 />
-                {i === 0 && <AdZone width={300} height={250} id="ADSENSE UNIT 3" mobileOnly />}
+                {i === 0 && (
+                  <>
+                    <AdZone width={300} height={250} id="ADSENSE UNIT 3" mobileOnly />
+                    <SponsorCard topBreedSlug={breed.slug} />
+                  </>
+                )}
               </Fragment>
             ))}
 
@@ -163,6 +170,22 @@ export default function Results() {
             breed-specific BreederIntentCTA is stronger. AdZone slot retained. */}
         <div className="hidden md:flex flex-col gap-6" style={{ width: '300px', position: 'sticky', top: '100px', alignSelf: 'start' }}>
           <AdZone width={300} height={250} id="ADSENSE UNIT 4" desktopOnly />
+          <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '14px' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: '13px', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '10px' }}>
+              More vetted breeders
+            </div>
+            {matches.slice(0, 3).map((breed, idx) => (
+              <a
+                key={breed.id}
+                href={`/breeders?breed=${breed.slug}`}
+                style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 0', borderBottom: idx < 2 ? '1px solid var(--border)' : 'none', textDecoration: 'none' }}
+              >
+                <BreedImage slug={breed.slug} emoji={breed.emoji} size={36} circular />
+                <div style={{ fontSize: '12px', fontWeight: 500, color: 'var(--text-primary)' }}>{breed.name} breeders</div>
+                <span style={{ marginLeft: 'auto', fontSize: '11px', color: 'var(--cta)', fontWeight: 500, flexShrink: 0 }}>View →</span>
+              </a>
+            ))}
+          </div>
         </div>
 
       </main>

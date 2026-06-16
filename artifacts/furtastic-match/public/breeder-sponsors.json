@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": "placeholder-001",
+    "name": "Your Kennel Here",
+    "breedSlug": "golden-retriever",
+    "breedName": "Golden Retriever",
+    "location": "Your City, ST",
+    "tagline": "AKC registered · Health tested",
+    "credentials": ["AKC registered", "OFA certified"],
+    "ctaText": "View available litters",
+    "ctaUrl": "https://furtasticmatch.com/breeders?utm_source=results&utm_medium=sponsor_card&utm_campaign=placeholder",
+    "active": false
+  }
+]

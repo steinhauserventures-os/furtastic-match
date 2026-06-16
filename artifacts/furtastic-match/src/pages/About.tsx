@@ -20,7 +20,7 @@ export default function About() {
             FurtasticMatch was built by a team passionate about helping families make the right decision before bringing a dog home. We believe every family deserves a dog that truly fits their lifestyle — not just the most popular breed on Instagram.
           </p>
           <p>
-            Our quiz takes just 3 minutes and asks the questions that really matter: your activity level, living space, experience with dogs, and whether you have young children. We then match you with breeds from our database of 30 dogs, each carefully profiled for temperament, grooming needs, and family suitability.
+            Our quiz takes just 3 minutes and asks the questions that really matter: your activity level, living space, experience with dogs, and whether you have young children. We then match you with breeds from our database of 40 dogs, each carefully profiled for temperament, grooming needs, and family suitability.
           </p>
           <p id="disclosure">
             FurtasticMatch is free and completely unbiased. The quiz requires no sign-up. We participate in affiliate programs and may earn a commission if you purchase through our breeder links, at no extra cost to you.

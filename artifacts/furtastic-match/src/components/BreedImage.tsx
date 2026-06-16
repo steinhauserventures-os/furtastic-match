@@ -1,32 +1,49 @@
 import { useState } from 'react';
-import { Dog } from 'lucide-react';
-import Icon, { BRAND_PURPLE } from './Icon';
 
 interface BreedImageProps {
   slug: string;
   emoji: string;
-  emojiFontSize?: string;
-  style?: React.CSSProperties;
-  alt?: string;
+  size?: number;
+  circular?: boolean;
 }
 
-export default function BreedImage({ slug, emojiFontSize = '32px', style, alt }: BreedImageProps) {
-  const [failed, setFailed] = useState(false);
+export default function BreedImage({ slug, emoji, size = 88, circular = true }: BreedImageProps) {
+  const [imgError, setImgError] = useState(false);
 
-  // Generate alt text from slug if not provided
-  const altText = alt || slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-
-  // Fallback when the breed photo is missing: a neutral brand dog mark.
-  if (failed) {
-    return <Icon icon={Dog} size={parseInt(emojiFontSize, 10) || 32} color={BRAND_PURPLE} aria-hidden={false} aria-label={altText} />;
+  if (!imgError) {
+    return (
+      <img
+        src={`/breeds/${slug}.png`}
+        alt={slug}
+        width={size}
+        height={size}
+        onError={() => setImgError(true)}
+        style={{
+          width: size,
+          height: size,
+          borderRadius: circular ? '50%' : '12px',
+          objectFit: 'cover',
+          border: circular ? '2.5px solid #e1f5ee' : 'none',
+          flexShrink: 0,
+          display: 'block',
+        }}
+      />
+    );
   }
 
   return (
-    <img
-      src={`${import.meta.env.BASE_URL}breeds/${slug}.png`}
-      alt={altText}
-      onError={() => setFailed(true)}
-      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', ...style }}
-    />
+    <div style={{
+      width: size,
+      height: size,
+      borderRadius: circular ? '50%' : '12px',
+      background: '#e1f5ee',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: size * 0.4,
+      flexShrink: 0,
+    }}>
+      {emoji}
+    </div>
   );
 }

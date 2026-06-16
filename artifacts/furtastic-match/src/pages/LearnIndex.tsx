@@ -146,7 +146,7 @@ export default function LearnIndex() {
               Not sure which breed is right for you?
             </h3>
             <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-              Our free 3-minute quiz weighs your lifestyle, living space, and family situation to find your best match across 30 breeds.
+              Our free 3-minute quiz weighs your lifestyle, living space, and family situation to find your best match across 40 breeds.
             </p>
           </div>
           <Link to="/quiz" className="btn-primary" style={{ padding: '14px 28px', textDecoration: 'none', fontSize: '15px', whiteSpace: 'nowrap', flexShrink: 0 }}>

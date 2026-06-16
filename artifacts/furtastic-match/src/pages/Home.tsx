@@ -12,7 +12,7 @@ export default function Home() {
   useEffect(() => {
     document.title = 'FurtasticMatch — Find Your Perfect Dog Breed in 3 Minutes';
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', 'Free dog breed matching quiz. Answer 8 questions about your lifestyle and we\'ll match you with the right breed from 30 options. No sign-up required.');
+    if (metaDesc) metaDesc.setAttribute('content', 'Free dog breed matching quiz. Answer 8 questions about your lifestyle and we\'ll match you with the right breed from 40 options. No sign-up required.');
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute('content', 'FurtasticMatch — Find Your Perfect Dog Breed in 3 Minutes');
     const ogDesc = document.querySelector('meta[property="og:description"]');
@@ -74,7 +74,7 @@ export default function Home() {
           </Link>
 
           <p style={{ marginTop: '16px', fontSize: '14px', color: 'var(--text-muted)' }}>
-            <Icon icon={Sparkles} size={14} style={{ verticalAlign: '-0.125em', marginRight: '4px' }} />30 breeds · Personalized results · Free forever
+            <Icon icon={Sparkles} size={14} style={{ verticalAlign: '-0.125em', marginRight: '4px' }} />40 breeds · Personalized results · Free forever
           </p>
         </div>
       </section>
@@ -83,7 +83,7 @@ export default function Home() {
       <section style={{ background: 'var(--bg-card)', borderTop: '2px solid var(--border)', borderBottom: '2px solid var(--border)', padding: '20px 24px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', justifyContent: 'center', gap: '48px', flexWrap: 'wrap' }}>
           {[
-            { icon: Dog, n: '30', l: 'Breeds' },
+            { icon: Dog, n: '40', l: 'Breeds' },
             { icon: Check, n: '', l: 'Free. No sign-up required.' },
             { icon: Zap, n: '3 Min', l: 'Quiz' },
             { icon: Target, n: '', l: '100% Personalized' }
@@ -112,7 +112,7 @@ export default function Home() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
               {[
                 { i: 1, icon: Target, t: 'Tell us about your life', d: 'Answer 8 quick questions about your space, family, and lifestyle' },
-                { i: 2, icon: Zap, t: 'We run the match', d: 'Our algorithm scores 30 breeds against your answers in seconds' },
+                { i: 2, icon: Zap, t: 'We run the match', d: 'Our algorithm scores 40 breeds against your answers in seconds' },
                 { i: 3, icon: PartyPopper, t: 'Meet your matches', d: 'Get your top 3 matches plus a wildcard breed you might not expect' }
               ].map((s) => (
                 <div key={s.i} className="card" style={{ padding: '24px', position: 'relative' }}>
@@ -153,16 +153,16 @@ export default function Home() {
 
           {/* Breed Chips */}
           <section>
-            <div style={{ color: 'var(--teal)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '16px' }}>30 breeds in our database</div>
+            <div style={{ color: 'var(--teal)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '16px' }}>40 breeds in our database</div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '12px' }}>
-              {breedsData.slice(0, 30).map((b) => (
+              {breedsData.slice(0, 40).map((b) => (
                 <Link key={b.id} to={`/breeds/${b.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                   <div className="card" style={{ padding: '12px', display: 'flex', alignItems: 'center', gap: '8px', transition: 'transform 0.15s ease, box-shadow 0.15s ease', cursor: 'pointer' }}
                     onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-2px)'; (e.currentTarget as HTMLDivElement).style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)'; }}
                     onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = ''; (e.currentTarget as HTMLDivElement).style.boxShadow = ''; }}
                   >
                     <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: `linear-gradient(135deg, ${b.illustration_bg[0]}, ${b.illustration_bg[1]})`, flexShrink: 0, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px' }}>
-                      <BreedImage slug={b.slug} emoji={b.emoji} emojiFontSize="18px" />
+                      <BreedImage slug={b.slug} emoji={b.emoji} size={32} circular={false} />
                     </div>
                     <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '12px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{b.name}</span>
                   </div>

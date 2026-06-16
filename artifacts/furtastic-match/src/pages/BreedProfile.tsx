@@ -85,7 +85,7 @@ export default function BreedProfile() {
           
           <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
             <div style={{ width: '96px', height: '96px', borderRadius: '16px', background: `linear-gradient(135deg, ${breed.illustration_bg[0]}, ${breed.illustration_bg[1]})`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '48px', flexShrink: 0, overflow: 'hidden' }}>
-              <BreedImage slug={breed.slug} emoji={breed.emoji} emojiFontSize="48px" />
+              <BreedImage slug={breed.slug} emoji={breed.emoji} size={96} circular={false} />
             </div>
             <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(32px, 5vw, 48px)', lineHeight: 1.1 }}>
               {breed.name}

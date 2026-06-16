@@ -1,22 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=DM+Sans:wght@400;500&display=swap');
 @import "tailwindcss";
 
 :root {
-  --bg: #FFFBF0;
+  --bg: #FFFFFF;
   --bg-card: #FFFFFF;
-  --bg-muted: #FFF3D0;
-  --text-primary: #1A1040;
-  --text-secondary: #4A3F7A;
-  --text-muted: #9B8FB5;
-  --cta: #5B3FD9;
-  --cta-shadow: #3A22A8;
-  --accent: #FFBE00;
-  --teal: #3DBFB8;
-  --border: #EDE0FF;
-  --shadow: rgba(26, 16, 64, 0.10);
-  
-  --font-display: 'Baloo 2', cursive;
-  --font-body: 'Nunito', sans-serif;
+  --bg-muted: #E1F5EE;
+  --text-primary: #0a1f1c;
+  --text-secondary: #4a6460;
+  --text-muted: #6ba39c;
+  --cta: #0D9488;
+  --cta-hover: #0b8276;
+  --cta-shadow: #0F6E56;
+  --accent: #FCD34D;
+  --teal: #0D9488;
+  --border: #d4e8e4;
+  --shadow: rgba(13, 148, 136, 0.10);
+
+  --sponsor-surface: #FFFBEB;
+  --sponsor-border: #FDE68A;
+  --sponsor-chip-bg: #FCD34D;
+  --sponsor-chip-text: #92400E;
+
+  --font-display: 'Nunito', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -118,4 +124,62 @@ body {
 @media (max-width: 768px) {
   .results-grid { grid-template-columns: 1fr !important; }
   .results-grid > div { min-width: 0; overflow: hidden; }
+}
+
+.sponsor-card {
+  background: var(--sponsor-surface);
+  border: 1.5px solid var(--sponsor-border);
+  border-radius: 14px;
+  padding: 20px;
+}
+.sponsor-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--sponsor-chip-bg);
+  color: var(--sponsor-chip-text);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.btn-sponsor {
+  background: #D97706;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn-sponsor:hover { background: #b45309; }
+
+.affiliate-row {
+  background: #f0faf8;
+  border: 1px solid #b3ddd6;
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.affiliate-row-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--cta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }

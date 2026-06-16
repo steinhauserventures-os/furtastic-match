@@ -101,7 +101,7 @@ export default function Quiz() {
       <div style={{ position: 'fixed', inset: 0, background: 'var(--bg)', zIndex: 1000, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ animation: 'spin 2s linear infinite', marginBottom: '24px', display: 'flex' }}><Icon icon={PawPrint} size={64} color={BRAND_PURPLE} /></div>
         <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '32px', color: 'var(--text-primary)', marginBottom: '8px' }}>Sniffing out your matches...</h2>
-        <p style={{ color: 'var(--text-secondary)', marginBottom: '32px' }}>Scoring 30 breeds against your answers</p>
+        <p style={{ color: 'var(--text-secondary)', marginBottom: '32px' }}>Scoring 40 breeds against your answers</p>
         <div style={{ display: 'flex', gap: '12px' }}>
           {['var(--cta)', 'var(--teal)', 'var(--accent)'].map((color, i) => (
             <div key={i} style={{ width: '16px', height: '16px', borderRadius: '50%', background: color, animation: 'bounce 1s infinite', animationDelay: `${i * 150}ms` }} />

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Medal, Zap, Dna, Award, ShoppingCart, Sparkles, Dices, PawPrint } from 'lucide-react';
+import { Medal, Zap, Sparkles, Dices, Award, Dna } from 'lucide-react';
 import Icon from './Icon';
 import BreedImage from './BreedImage';
 import BreederIntentCTA from './BreederIntentCTA';
@@ -12,11 +12,8 @@ interface MatchCardProps {
   fitPercent: number;
   revealed: boolean;
   animationDelayMs: number;
-  // Wildcard cards get the accent border/badge and the btn-accent DNA CTA.
   isWildcard?: boolean;
-  // 0-based rank for the "Match #N" label and medal color (regular matches only).
   rank?: number;
-  // Quiz answers power the "why this matched you" block. Null on shared links → falls back.
   answers?: QuizAnswers | null;
 }
 
@@ -32,73 +29,60 @@ export default function MatchCard({
   answers = null,
 }: MatchCardProps) {
   const animation = revealed ? `fadeInUp 0.5s ease both ${animationDelayMs}ms` : 'none';
-  // When we have the user's answers, personalize; otherwise fall back to the family blurb.
   const explanation = answers ? explainMatch(breed, answers) : null;
   const blurb = explanation?.blurb ?? breed.why_it_fits.family;
   const reasons = explanation?.reasons ?? [];
+
+  const gooddogUrl = affiliateUrl(`https://www.gooddog.com/breeds/${breed.slug}`, 'gooddog');
+  const akcUrl = affiliateUrl(`https://marketplace.akc.org/puppies/${breed.slug}`, 'akc');
+  const embarkUrl = affiliateUrl('https://embarkvet.com', 'embark');
 
   return (
     <div
       className="card"
       style={{
-        padding: '24px',
+        padding: '20px',
         animation,
         maxWidth: '100%',
         overflow: 'hidden',
-        ...(isWildcard
-          ? { borderColor: 'var(--accent)', boxShadow: '4px 4px 0 #FFE070' }
-          : {}),
+        ...(isWildcard ? { borderColor: 'var(--accent)', boxShadow: '4px 4px 0 #FFE070' } : {}),
       }}
     >
-      {isWildcard && (
-        <div style={{ color: '#B07800', fontWeight: 800, fontSize: '14px', marginBottom: '16px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-          <Icon icon={Dices} size={16} /> Wildcard Pick
-        </div>
-      )}
-
-      <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start', marginBottom: '16px' }}>
-        <div style={{ width: '76px', height: '76px', borderRadius: '12px', background: `linear-gradient(135deg, ${breed.illustration_bg[0]}, ${breed.illustration_bg[1]})`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '32px', flexShrink: 0, overflow: 'hidden' }}>
-          <BreedImage slug={breed.slug} emoji={breed.emoji} />
-        </div>
-        <div>
+      {/* Header */}
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', marginBottom: '16px' }}>
+        <BreedImage slug={breed.slug} emoji={breed.emoji} size={88} circular />
+        <div style={{ flex: 1 }}>
           {isWildcard ? (
             <span style={{ background: '#FFF8E0', color: '#B07800', borderRadius: '4px', padding: '2px 8px', fontSize: '11px', fontWeight: 700, marginBottom: '4px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
               <Icon icon={Sparkles} size={11} /> Unexpected match
             </span>
           ) : (
-            <div style={{ fontSize: '14px', marginBottom: '4px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-              <Icon icon={Medal} size={16} color={MEDAL_COLORS[rank] ?? MEDAL_COLORS[2]} /> Match #{rank + 1}
+            <div style={{ fontSize: '13px', marginBottom: '4px', display: 'inline-flex', alignItems: 'center', gap: '5px', color: 'var(--text-muted)' }}>
+              <Icon icon={Medal} size={14} color={MEDAL_COLORS[rank] ?? MEDAL_COLORS[2]} />
+              Match #{rank + 1}
             </div>
           )}
-          <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '24px', lineHeight: 1.1, marginBottom: '8px' }}>{breed.name}</h2>
-          <span
-            style={{
-              background: isWildcard ? 'var(--accent)' : 'var(--cta)',
-              color: isWildcard ? 'var(--text-primary)' : 'white',
-              borderRadius: '20px',
-              padding: '4px 12px',
-              fontSize: '12px',
-              fontWeight: 700,
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '4px',
-            }}
-          >
-            <Icon icon={Zap} size={12} /> {fitPercent}% fit
+          <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '22px', lineHeight: 1.1, marginBottom: '8px', color: 'var(--text-primary)' }}>
+            {breed.name}
+          </h2>
+          <span style={{ background: isWildcard ? 'var(--accent)' : 'var(--cta)', color: isWildcard ? 'var(--text-primary)' : 'white', borderRadius: '20px', padding: '3px 10px', fontSize: '11px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+            <Icon icon={Zap} size={11} /> {fitPercent}% fit
           </span>
         </div>
       </div>
 
-      <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.6, marginBottom: reasons.length ? '16px' : '24px' }}>
+      {/* Blurb */}
+      <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.6, marginBottom: reasons.length ? '14px' : '18px' }}>
         {blurb}
       </p>
 
+      {/* Why this matched you */}
       {reasons.length > 0 && (
-        <div style={{ background: '#F5F0FF', borderRadius: '12px', padding: '14px 16px', marginBottom: '24px' }}>
-          <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--cta)', marginBottom: '8px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-            <Icon icon={Sparkles} size={13} /> {isWildcard ? 'Why we threw this one in' : 'Why this matched you'}
+        <div style={{ background: '#E1F5EE', borderRadius: '10px', padding: '12px 14px', marginBottom: '18px' }}>
+          <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--cta)', marginBottom: '8px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+            <Icon icon={Sparkles} size={12} /> {isWildcard ? 'Why we threw this one in' : 'Why this matched you'}
           </div>
-          <ul style={{ margin: 0, paddingLeft: '18px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+          <ul style={{ margin: 0, paddingLeft: '16px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
             {reasons.map((reason, idx) => (
               <li key={idx} style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{reason}</li>
             ))}
@@ -106,58 +90,75 @@ export default function MatchCard({
         </div>
       )}
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-          <a
-            href={affiliateUrl(`https://marketplace.akc.org/puppies/${breed.slug}`, 'akc')}
-            target="_blank" rel="noopener noreferrer"
-            onClick={() => capturePostHogEvent('affiliate_click', { program: 'akc_marketplace', destination: `https://marketplace.akc.org/puppies/${breed.slug}`, page: typeof window !== 'undefined' ? window.location.pathname : '', breed: breed.name })}
-            className="btn-outline"
-            style={{ padding: '10px 8px', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}
-          >
-            <Icon icon={Award} size={16} /> Find AKC Breeders
-          </a>
-          <a
-            href={affiliateUrl(`https://www.gooddog.com/breeds/${breed.slug}`, 'gooddog')}
-            target="_blank" rel="noopener noreferrer"
-            onClick={() => capturePostHogEvent('affiliate_click', { program: 'gooddog', destination: `https://www.gooddog.com/breeds/${breed.slug}`, page: typeof window !== 'undefined' ? window.location.pathname : '', breed: breed.name })}
+      {/* CTA stack */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', paddingTop: '14px', borderTop: '1px solid var(--border)' }}>
 
-            className="btn-outline"
-            style={{ padding: '10px 8px', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}
-          >
-            <Icon icon={PawPrint} size={16} /> Browse on GoodDog
-          </a>
-          <a
-            href={affiliateUrl(`https://www.chewy.com/s?query=${encodeURIComponent(breed.name)}`, 'chewy')}
-            target="_blank" rel="noopener noreferrer"
-            onClick={() => capturePostHogEvent('affiliate_click', { program: 'chewy', destination: `https://www.chewy.com/s?query=${encodeURIComponent(breed.name)}`, page: typeof window !== 'undefined' ? window.location.pathname : '', breed: breed.name })}
-            className="btn-outline"
-            style={{ padding: '10px 8px', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', gridColumn: '1 / -1' }}
-          >
-            <Icon icon={ShoppingCart} size={16} /> Shop {breed.name} Essentials
-          </a>
-        </div>
+        {/* 1. Primary CTA */}
         <a
-          href={affiliateUrl('https://embarkvet.com', 'embark')}
-          target="_blank" rel="noopener noreferrer"
-          onClick={() => { trackEvent('breeder_click', { breed: breed.name, cta: 'dna_test' }); capturePostHogEvent('affiliate_click', { program: 'embark_dna', destination: 'https://embarkvet.com', page: typeof window !== 'undefined' ? window.location.pathname : '', breed: breed.name }); }}
-          className={isWildcard ? 'btn-accent' : 'btn-primary'}
-          style={{ display: 'flex', justifyContent: 'center', padding: '12px 16px', textDecoration: 'none' }}
+          href={gooddogUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary"
+          style={{ display: 'flex', justifyContent: 'center', padding: '11px 16px', textDecoration: 'none', fontSize: '14px' }}
+          onClick={() => capturePostHogEvent('affiliate_click', { program: 'gooddog', destination: gooddogUrl, page: typeof window !== 'undefined' ? window.location.pathname : '', breed: breed.name })}
         >
-          <Icon icon={Dna} size={18} /> Test Your Future Pup's DNA
+          See available {breed.name} puppies →
         </a>
-        <p style={{ fontSize: '11px', color: 'var(--text-muted)', textAlign: 'center', fontStyle: 'italic', margin: 0 }}>
-          Affiliate link — we may earn a small commission at no cost to you.
-        </p>
-        <BreederIntentCTA breedName={breed.name} />
-        <Link
-          to={`/breeds/${breed.slug}`}
-          className="btn-outline"
-          style={{ padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', fontSize: '13px' }}
+
+        {/* 2. Embark affiliate row */}
+        <a
+          href={embarkUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="affiliate-row"
+          style={{ textDecoration: 'none' }}
+          onClick={() => {
+            trackEvent('breeder_click', { breed: breed.name, cta: 'dna_test' });
+            capturePostHogEvent('affiliate_click', { program: 'embark_dna', destination: embarkUrl, page: typeof window !== 'undefined' ? window.location.pathname : '', breed: breed.name });
+          }}
         >
-          Learn More About {breed.name}
-        </Link>
+          <div className="affiliate-row-icon">
+            <Icon icon={Dna} size={16} color="#fff" />
+          </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontSize: '12px', fontWeight: 500, color: '#0a3d38', lineHeight: 1.3 }}>
+              DNA-test your future pup with Embark
+            </div>
+            <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: 1 }}>
+              Health risks · breed breakdown · 230+ conditions
+            </div>
+          </div>
+          <span style={{ fontSize: '12px', color: 'var(--cta)', fontWeight: 500, flexShrink: 0 }}>Try →</span>
+        </a>
+
+        {/* 3. Research links */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '4px', flexWrap: 'wrap' }}>
+          <span style={{ fontSize: '11px', color: 'var(--text-muted)', marginRight: 4 }}>Learn more:</span>
+          <a
+            href={akcUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontSize: '12px', color: 'var(--cta)', fontWeight: 500, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 3 }}
+            onClick={() => capturePostHogEvent('affiliate_click', { program: 'akc_marketplace', destination: akcUrl, page: typeof window !== 'undefined' ? window.location.pathname : '', breed: breed.name })}
+          >
+            <Icon icon={Award} size={12} /> AKC breed guide
+          </a>
+          <span style={{ color: 'var(--border)' }}>·</span>
+          <Link
+            to={`/breeds/${breed.slug}`}
+            style={{ fontSize: '12px', color: 'var(--cta)', fontWeight: 500, textDecoration: 'none' }}
+          >
+            Full profile
+          </Link>
+        </div>
+
+        {/* 4. Breeder intent CTA */}
+        <BreederIntentCTA breedName={breed.name} />
       </div>
+
+      <p style={{ fontSize: '10px', color: 'var(--text-muted)', textAlign: 'center', fontStyle: 'italic', margin: '10px 0 0' }}>
+        Affiliate links — we may earn a small commission at no cost to you.
+      </p>
     </div>
   );
 }
