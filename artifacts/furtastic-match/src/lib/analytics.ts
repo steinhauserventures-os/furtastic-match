@@ -44,10 +44,13 @@ export function capturePostHogEvent(
 
 /**
  * Track a named event to both Google Analytics (gtag) and PostHog.
+ * Excludes localhost to prevent Chuck/developer sessions from polluting GA4.
  * All existing callers of trackEvent() automatically get PostHog coverage.
  */
 export function trackEvent(name: string, params?: Record<string, unknown>): void {
-  if (typeof gtag !== 'undefined') {
+  const host = window.location.hostname;
+  const isLocalhost = host === 'localhost' || host === '127.0.0.1';
+  if (!isLocalhost && typeof gtag !== 'undefined') {
     gtag('event', name, params);
   }
   capturePostHogEvent(name, params);

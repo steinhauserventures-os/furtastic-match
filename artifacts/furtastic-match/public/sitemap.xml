@@ -65,6 +65,50 @@
     <priority>0.4</priority>
   </url>
 
+  <!-- Learn Hub -->
+  <url>
+    <loc>https://furtasticmatch.com/learn</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Learn Articles -->
+  <url>
+    <loc>https://furtasticmatch.com/learn/best-dog-breeds-for-families</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/learn/dog-breed-quiz</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/learn/golden-retriever-vs-labrador</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/learn/goldendoodle-vs-labradoodle</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/learn/hypoallergenic-dog-breeds</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://furtasticmatch.com/learn/low-shedding-dog-breeds</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Breed Profile Pages -->
   <url>
     <loc>https://furtasticmatch.com/breeds/labrador-retriever</loc>
