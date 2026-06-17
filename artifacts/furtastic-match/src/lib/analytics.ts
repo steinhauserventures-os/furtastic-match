@@ -5,6 +5,7 @@ declare function gtag(...args: unknown[]): void;
 /**
  * Initialize PostHog. Call once at app startup (main.tsx) before React renders.
  * Key is read from VITE_POSTHOG_KEY env var. No-ops silently if key is absent.
+ * Automatically opts out on localhost to exclude developer traffic.
  */
 export function initPostHog(): void {
   const key = import.meta.env.VITE_POSTHOG_KEY as string | undefined;
@@ -15,6 +16,14 @@ export function initPostHog(): void {
     capture_pageview: true,
     capture_pageleave: true,
     autocapture: false, // keep noise low; use explicit captures
+    loaded: (ph) => {
+      // Opt out on localhost so developer/Chuck sessions don't pollute analytics.
+      // Day 1 KPI (10+ completions from non-Chuck sources) requires clean data.
+      const host = window.location.hostname;
+      if (host === 'localhost' || host === '127.0.0.1') {
+        ph.opt_out_capturing();
+      }
+    },
   });
 }
 
