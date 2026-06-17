@@ -18,7 +18,7 @@
 //   (or: pnpm run prerender)
 
 import { spawn } from "node:child_process";
-import { mkdir, writeFile, access } from "node:fs/promises";
+import { mkdir, writeFile, access, copyFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import http from "node:http";
@@ -140,8 +140,16 @@ async function main() {
     vite.kill("SIGTERM");
   }
 
-  // 4. Write snapshots. "/" overwrites the shell index.html (home gets
-  //    prerendered too); every other route gets <route>/index.html.
+  // 4a. Preserve the pristine empty-#root shell as the SPA fallback (200.html)
+  //     BEFORE we overwrite index.html with the home snapshot. nginx falls back
+  //     to /200.html for non-prerendered routes, so they hydrate cleanly via
+  //     createRoot instead of flashing the home page + throwing a hydration
+  //     mismatch. (At this point index.html is still the untouched build shell.)
+  await copyFile(path.join(DIST, "index.html"), path.join(DIST, "200.html"));
+  console.log("  wrote dist/public/200.html (SPA fallback shell)");
+
+  // 4b. Write snapshots. "/" overwrites the shell index.html (home gets
+  //     prerendered too); every other route gets <route>/index.html.
   for (const { route, html } of snapshots) {
     const outDir = route === "/" ? DIST : path.join(DIST, route);
     await mkdir(outDir, { recursive: true });
