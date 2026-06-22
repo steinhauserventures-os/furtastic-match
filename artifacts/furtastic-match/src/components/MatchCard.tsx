@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import { Medal, Sparkles, Dices, Dna } from 'lucide-react';
+import { Medal, Sparkles, Dices } from 'lucide-react';
 import Icon from './Icon';
 import BreedImage from './BreedImage';
 import BreederIntentCTA from './BreederIntentCTA';
-import { trackEvent, capturePostHogEvent } from '../lib/analytics';
+import { capturePostHogEvent } from '../lib/analytics';
 import { affiliateUrl } from '../utils/affiliate';
 import { Breed, QuizAnswers, explainMatch } from '../lib/matchingEngine';
 
@@ -35,7 +35,6 @@ export default function MatchCard({
 
   const gooddogUrl = affiliateUrl(`https://www.gooddog.com/breeds/${breed.slug}`, 'gooddog');
   const akcUrl = affiliateUrl(`https://www.akc.org/dog-breeds/${breed.slug}/`, 'akc');
-  const embarkUrl = affiliateUrl('https://embarkvet.com', 'embark');
 
   return (
     <div
@@ -93,7 +92,8 @@ export default function MatchCard({
       {/* CTA stack */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', paddingTop: '14px', borderTop: '1px solid var(--border)' }}>
 
-        {/* 1. Primary CTA */}
+        {/* 1. Primary CTA — connect buyers to vetted breeders (FM's core business).
+            Trust-first framing per DES-06: no inventory/availability language. */}
         <a
           href={gooddogUrl}
           target="_blank"
@@ -102,36 +102,11 @@ export default function MatchCard({
           style={{ display: 'flex', justifyContent: 'center', padding: '11px 16px', textDecoration: 'none', fontSize: '14px' }}
           onClick={() => capturePostHogEvent('affiliate_click', { program: 'gooddog', destination: gooddogUrl, page: typeof window !== 'undefined' ? window.location.pathname : '', breed: breed.name })}
         >
-          See available {breed.name} puppies →
+          Connect with verified {breed.name} breeders →
         </a>
 
-        {/* 2. Embark affiliate row */}
-        <a
-          href={embarkUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="affiliate-row"
-          style={{ textDecoration: 'none' }}
-          onClick={() => {
-            trackEvent('breeder_click', { breed: breed.name, cta: 'dna_test' });
-            capturePostHogEvent('affiliate_click', { program: 'embark_dna', destination: embarkUrl, page: typeof window !== 'undefined' ? window.location.pathname : '', breed: breed.name });
-          }}
-        >
-          <div className="affiliate-row-icon">
-            <Icon icon={Dna} size={16} color="#fff" />
-          </div>
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: '12px', fontWeight: 500, color: '#0a3d38', lineHeight: 1.3 }}>
-              DNA-test your future pup with Embark
-            </div>
-            <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: 1 }}>
-              Health risks · breed breakdown · 230+ conditions
-            </div>
-          </div>
-          <span style={{ fontSize: '12px', color: 'var(--cta)', fontWeight: 500, flexShrink: 0 }}>Try →</span>
-        </a>
-
-        {/* 3. Research links */}
+        {/* 2. Research links (Embark DNA + portrait affiliates moved to the
+            bottom-of-page "Gear & Resources" section — DES-06 deprioritization). */}
         <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
           <a
             href={akcUrl}
@@ -151,7 +126,7 @@ export default function MatchCard({
           </Link>
         </div>
 
-        {/* 4. Breeder intent CTA */}
+        {/* 3. Breeder intent CTA */}
         <BreederIntentCTA breedName={breed.name} />
       </div>
 

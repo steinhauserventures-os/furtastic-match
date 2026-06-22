@@ -23,12 +23,12 @@ const COPY = {
   profile: {
     heading: (breedName: string) => `Celebrate Your New ${breedName}`,
     sub: 'Turn their photo into a gallery-worthy custom pet portrait',
-    cta: 'Shop Custom Portraits',
+    cta: 'View custom portraits',
   },
   results: {
     heading: (breedName: string) => `Picture Your Future ${breedName}`,
     sub: 'When your new best friend comes home, turn their first photo into a gallery-worthy custom portrait',
-    cta: 'Browse Pet Portraits',
+    cta: 'View pet portraits',
   },
 } as const;
 

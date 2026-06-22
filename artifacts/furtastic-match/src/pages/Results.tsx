@@ -6,7 +6,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import AdZone from '../components/AdZone';
 import EmailCapture from '../components/EmailCapture';
-import AffiliateCard from '../components/AffiliateCard';
+import GearResources from '../components/GearResources';
 import MatchCard from '../components/MatchCard';
 import SponsorCard from '../components/SponsorCard';
 import BreedImage from '../components/BreedImage';
@@ -150,11 +150,7 @@ export default function Results() {
             <EmailCapture />
           </div>
 
-          <div style={{ animation: revealed ? `fadeInUp 0.5s ease both 2000ms` : 'none' }}>
-            <AffiliateCard breedName={matches[0].name} variant="results" />
-          </div>
-
-          <div style={{ animation: revealed ? `fadeInUp 0.5s ease both 2100ms` : 'none', background: 'var(--bg-card)', padding: '24px', borderRadius: '18px', border: '2px solid var(--border)' }}>
+          <div style={{ animation: revealed ? `fadeInUp 0.5s ease both 2000ms` : 'none', background: 'var(--bg-card)', padding: '24px', borderRadius: '18px', border: '2px solid var(--border)' }}>
             <div style={{ color: 'var(--text-muted)', textTransform: 'uppercase', fontSize: '11px', fontWeight: 700, marginBottom: '16px' }}>Share your results</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
               <button className="btn-primary" style={{ gridColumn: '1 / -1', padding: '12px', justifyContent: 'center' }} onClick={() => handleShare('native')}><Icon icon={Share2} size={16} /> Share Results</button>
@@ -162,6 +158,12 @@ export default function Results() {
               <button className="btn-outline" style={{ padding: '12px', fontSize: '14px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }} onClick={() => handleShare('reddit')}><FaReddit size={16} /> Reddit</button>
               <button className="btn-outline" style={{ gridColumn: '1 / -1', padding: '12px', fontSize: '14px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }} onClick={() => handleShare('copy')}><Icon icon={Link2} size={16} /> Copy Link</button>
             </div>
+          </div>
+
+          {/* Affiliate gear deliberately buried below matches, email capture, and
+              share — monetization never leads on the results page (DES-06). */}
+          <div style={{ animation: revealed ? `fadeInUp 0.5s ease both 2100ms` : 'none' }}>
+            <GearResources breedName={matches[0].name} />
           </div>
 
         </div>
@@ -172,7 +174,7 @@ export default function Results() {
           <AdZone width={300} height={250} id="ADSENSE UNIT 4" desktopOnly />
           <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '14px' }}>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '13px', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '10px' }}>
-              Find puppies by breed
+              Find verified breeders
             </div>
             {matches.slice(0, 3).map((breed, idx) => (
               <a
