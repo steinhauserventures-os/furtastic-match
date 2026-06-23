@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
@@ -8,6 +8,11 @@ import { useCanonical } from '../hooks/useCanonical';
 export default function Breeders() {
   useCanonical('https://furtasticmatch.com/breeders');
   const [submitted, setSubmitted] = useState(false);
+  useEffect(() => {
+    document.title = "Get Featured as a Breeder | FurtasticMatch";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', 'Are you a reputable breeder? Join the FurtasticMatch breeder network and get featured to thousands of families actively searching for their perfect breed.');
+  }, []);
 
   const formatPhoneNumber = (value: string) => {
     // Remove all non-digits

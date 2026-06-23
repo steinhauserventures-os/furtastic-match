@@ -175,17 +175,20 @@ export default function Results() {
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '13px', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '10px' }}>
               Find verified breeders
             </div>
-            {matches.map((breed, idx) => (
-              <a
-                key={breed.id}
-                href={`/breeders?breed=${breed.slug}`}
-                style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 0', borderBottom: idx < matches.length - 1 ? '1px solid var(--border)' : 'none', textDecoration: 'none' }}
-              >
-                <BreedImage slug={breed.slug} emoji={breed.emoji} size={36} circular />
-                <div style={{ fontSize: '12px', fontWeight: 500, color: 'var(--text-primary)' }}>{breed.name} breeders</div>
-                <span style={{ marginLeft: 'auto', fontSize: '11px', color: 'var(--cta)', fontWeight: 500, flexShrink: 0 }}>Browse →</span>
-              </a>
-            ))}
+            {(() => {
+              const sidebarBreeds = [...matches, ...(wildcard ? [wildcard] : [])];
+              return sidebarBreeds.map((breed, idx) => (
+                <a
+                  key={breed.id}
+                  href={`/breeders?breed=${breed.slug}`}
+                  style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 0', borderBottom: idx < sidebarBreeds.length - 1 ? '1px solid var(--border)' : 'none', textDecoration: 'none' }}
+                >
+                  <BreedImage slug={breed.slug} emoji={breed.emoji} size={36} circular />
+                  <div style={{ fontSize: '12px', fontWeight: 500, color: 'var(--text-primary)' }}>{breed.name} breeders</div>
+                  <span style={{ marginLeft: 'auto', fontSize: '11px', color: 'var(--cta)', fontWeight: 500, flexShrink: 0 }}>Browse →</span>
+                </a>
+              ));
+            })()}
           </div>
         </div>
 

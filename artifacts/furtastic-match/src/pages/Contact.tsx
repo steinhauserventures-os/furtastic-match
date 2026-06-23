@@ -11,6 +11,8 @@ export default function Contact() {
 
   useEffect(() => {
     document.title = "Contact FurtasticMatch | Get in Touch";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', 'Have a question, feedback, or partnership inquiry? Reach out to the FurtasticMatch team — we respond within 48 hours.');
   }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

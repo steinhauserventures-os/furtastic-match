@@ -7,6 +7,8 @@ export default function About() {
   useCanonical('https://furtasticmatch.com/about');
   useEffect(() => {
     document.title = "About FurtasticMatch | Dog Breed Matching Quiz";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', 'FurtasticMatch was built to help families find a dog that truly fits their lifestyle — not just the breed trending on Instagram. Free quiz, 40 breeds, no sign-up.');
   }, []);
 
   return (

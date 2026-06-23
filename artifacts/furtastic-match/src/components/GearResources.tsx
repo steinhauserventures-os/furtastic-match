@@ -53,7 +53,7 @@ export default function GearResources({ breedName }: GearResourcesProps) {
               Health risks · breed breakdown · 230+ conditions
             </div>
           </div>
-          <span style={{ fontSize: '12px', color: 'var(--cta)', fontWeight: 500, flexShrink: 0 }}>Learn more →</span>
+          <span style={{ fontSize: '12px', color: 'var(--cta)', fontWeight: 500, flexShrink: 0 }}>Check your dog's DNA →</span>
         </a>
 
         {/* Nexbie custom pet portrait */}
@@ -76,7 +76,7 @@ export default function GearResources({ breedName }: GearResourcesProps) {
               Turn your future pup's first photo into gallery-worthy art
             </div>
           </div>
-          <span style={{ fontSize: '12px', color: 'var(--cta)', fontWeight: 500, flexShrink: 0 }}>View →</span>
+          <span style={{ fontSize: '12px', color: 'var(--cta)', fontWeight: 500, flexShrink: 0 }}>See portrait examples →</span>
         </a>
       </div>
     </div>

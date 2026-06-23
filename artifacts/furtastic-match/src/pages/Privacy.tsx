@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import { useCanonical } from '../hooks/useCanonical';
 
 export default function Privacy() {
+  useCanonical('https://furtasticmatch.com/privacy');
   useEffect(() => {
     document.title = "Privacy Policy | FurtasticMatch";
   }, []);
