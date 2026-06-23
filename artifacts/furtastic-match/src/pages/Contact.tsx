@@ -3,8 +3,10 @@ import { ArrowRight } from 'lucide-react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import Icon from '../components/Icon';
+import { useCanonical } from '../hooks/useCanonical';
 
 export default function Contact() {
+  useCanonical('https://furtasticmatch.com/contact');
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {

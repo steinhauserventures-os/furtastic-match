@@ -3,8 +3,10 @@ import { CheckCircle2, ArrowRight } from 'lucide-react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import Icon from '../components/Icon';
+import { useCanonical } from '../hooks/useCanonical';
 
 export default function Breeders() {
+  useCanonical('https://furtasticmatch.com/breeders');
   const [submitted, setSubmitted] = useState(false);
 
   const formatPhoneNumber = (value: string) => {

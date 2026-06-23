@@ -4,6 +4,7 @@ import { BookOpen, ArrowRight, PawPrint } from 'lucide-react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import Icon, { BRAND_PURPLE } from '../components/Icon';
+import { useCanonical } from '../hooks/useCanonical';
 
 const ARTICLES = [
   {
@@ -57,6 +58,7 @@ const ARTICLES = [
 ];
 
 export default function LearnIndex() {
+  useCanonical('https://furtasticmatch.com/learn');
   useEffect(() => {
     document.title = 'Breed Guides & Articles | FurtasticMatch';
     const metaDesc = document.querySelector('meta[name="description"]');

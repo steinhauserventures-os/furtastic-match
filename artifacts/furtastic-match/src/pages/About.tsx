@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import { useCanonical } from '../hooks/useCanonical';
 
 export default function About() {
+  useCanonical('https://furtasticmatch.com/about');
   useEffect(() => {
     document.title = "About FurtasticMatch | Dog Breed Matching Quiz";
   }, []);

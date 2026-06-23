@@ -7,8 +7,10 @@ import AdZone from '../components/AdZone';
 import Icon, { BRAND_PURPLE } from '../components/Icon';
 import breedsData from '../data/breeds.json';
 import BreedImage from '../components/BreedImage';
+import { useCanonical } from '../hooks/useCanonical';
 
 export default function Home() {
+  useCanonical('https://furtasticmatch.com/');
   useEffect(() => {
     document.title = 'FurtasticMatch — Find Your Perfect Dog Breed in 3 Minutes';
     const metaDesc = document.querySelector('meta[name="description"]');

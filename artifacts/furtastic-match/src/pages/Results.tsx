@@ -150,7 +150,12 @@ export default function Results() {
             <EmailCapture />
           </div>
 
-          <div style={{ animation: revealed ? `fadeInUp 0.5s ease both 2000ms` : 'none', background: 'var(--bg-card)', padding: '24px', borderRadius: '18px', border: '2px solid var(--border)' }}>
+          {/* Gear/affiliate section — visible after email capture, before share */}
+          <div style={{ animation: revealed ? `fadeInUp 0.5s ease both 2000ms` : 'none' }}>
+            <GearResources breedName={matches[0].name} />
+          </div>
+
+          <div style={{ animation: revealed ? `fadeInUp 0.5s ease both 2100ms` : 'none', background: 'var(--bg-card)', padding: '24px', borderRadius: '18px', border: '2px solid var(--border)' }}>
             <div style={{ color: 'var(--text-muted)', textTransform: 'uppercase', fontSize: '11px', fontWeight: 700, marginBottom: '16px' }}>Share your results</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
               <button className="btn-primary" style={{ gridColumn: '1 / -1', padding: '12px', justifyContent: 'center' }} onClick={() => handleShare('native')}><Icon icon={Share2} size={16} /> Share Results</button>
@@ -158,12 +163,6 @@ export default function Results() {
               <button className="btn-outline" style={{ padding: '12px', fontSize: '14px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }} onClick={() => handleShare('reddit')}><FaReddit size={16} /> Reddit</button>
               <button className="btn-outline" style={{ gridColumn: '1 / -1', padding: '12px', fontSize: '14px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }} onClick={() => handleShare('copy')}><Icon icon={Link2} size={16} /> Copy Link</button>
             </div>
-          </div>
-
-          {/* Affiliate gear deliberately buried below matches, email capture, and
-              share — monetization never leads on the results page (DES-06). */}
-          <div style={{ animation: revealed ? `fadeInUp 0.5s ease both 2100ms` : 'none' }}>
-            <GearResources breedName={matches[0].name} />
           </div>
 
         </div>
@@ -176,11 +175,11 @@ export default function Results() {
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '13px', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '10px' }}>
               Find verified breeders
             </div>
-            {matches.slice(0, 3).map((breed, idx) => (
+            {matches.map((breed, idx) => (
               <a
                 key={breed.id}
                 href={`/breeders?breed=${breed.slug}`}
-                style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 0', borderBottom: idx < 2 ? '1px solid var(--border)' : 'none', textDecoration: 'none' }}
+                style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 0', borderBottom: idx < matches.length - 1 ? '1px solid var(--border)' : 'none', textDecoration: 'none' }}
               >
                 <BreedImage slug={breed.slug} emoji={breed.emoji} size={36} circular />
                 <div style={{ fontSize: '12px', fontWeight: 500, color: 'var(--text-primary)' }}>{breed.name} breeders</div>

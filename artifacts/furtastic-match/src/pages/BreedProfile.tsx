@@ -11,9 +11,11 @@ import Icon, { BRAND_PURPLE } from '../components/Icon';
 import { getBreedBySlug } from '../lib/matchingEngine';
 import { breedContent } from '../data/breedContent';
 import BreedImage from '../components/BreedImage';
+import { useCanonical } from '../hooks/useCanonical';
 
 export default function BreedProfile() {
   const { slug } = useParams();
+  useCanonical(slug ? `https://furtasticmatch.com/breeds/${slug}` : 'https://furtasticmatch.com/breeds');
   const breed = getBreedBySlug(slug || '');
   // Long-form SEO content for high-intent breeds (falls back to short content).
   const lf = breed ? breedContent[breed.slug] : undefined;
