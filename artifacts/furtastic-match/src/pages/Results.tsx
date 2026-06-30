@@ -124,6 +124,7 @@ export default function Results() {
                   <>
                     <AdZone width={300} height={250} id="ADSENSE UNIT 3" mobileOnly />
                     <SponsorCard topBreedSlug={breed.slug} />
+                    <GearResources breedName={breed.name} />
                   </>
                 )}
               </Fragment>
@@ -148,11 +149,6 @@ export default function Results() {
               FurtasticMatch participates in affiliate programs. We earn a commission if you make a purchase through our breeder links, including as an Amazon Associate, at no extra cost to you.
             </p>
             <EmailCapture />
-          </div>
-
-          {/* Gear/affiliate section — visible after email capture, before share */}
-          <div style={{ animation: revealed ? `fadeInUp 0.5s ease both 2000ms` : 'none' }}>
-            <GearResources breedName={matches[0].name} />
           </div>
 
           <div style={{ animation: revealed ? `fadeInUp 0.5s ease both 2100ms` : 'none', background: 'var(--bg-card)', padding: '24px', borderRadius: '18px', border: '2px solid var(--border)' }}>
@@ -180,7 +176,7 @@ export default function Results() {
               return sidebarBreeds.map((breed, idx) => (
                 <a
                   key={breed.id}
-                  href={`/breeders?breed=${breed.slug}`}
+                  href={`/breeds/${breed.slug}`}
                   style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 0', borderBottom: idx < sidebarBreeds.length - 1 ? '1px solid var(--border)' : 'none', textDecoration: 'none' }}
                 >
                   <BreedImage slug={breed.slug} emoji={breed.emoji} size={36} circular />

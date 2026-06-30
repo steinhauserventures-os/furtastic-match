@@ -1,4 +1,4 @@
-import { Dna, Palette } from 'lucide-react';
+import { ShoppingBag, Palette } from 'lucide-react';
 import Icon from './Icon';
 import { affiliateUrl } from '../utils/affiliate';
 import { trackEvent, capturePostHogEvent } from '../lib/analytics';
@@ -11,7 +11,8 @@ interface GearResourcesProps {
 const NEXBIE_BASE_URL =
   'https://www.awin1.com/cread.php?awinmid=125856&awinaffid=2897167&ued=https%3A%2F%2Fnexbie.com%2Fproducts%2Fcustom-pet-painting';
 const NEXBIE_AFFILIATE_URL = affiliateUrl(NEXBIE_BASE_URL, 'nexbie');
-const EMBARK_AFFILIATE_URL = affiliateUrl('https://embarkvet.com', 'embark');
+const AMAZON_TAG = 'furtasticmatc-20';
+const AMAZON_AFFILIATE_URL = `https://www.amazon.com/s?k=new+puppy+essentials&tag=${AMAZON_TAG}`;
 
 // "Gear & Resources" — optional affiliate extras, deliberately placed at the very
 // bottom of the results page (below breed matches, email capture, and the breeder
@@ -30,30 +31,30 @@ export default function GearResources({ breedName }: GearResourcesProps) {
       </p>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        {/* Embark DNA */}
+        {/* Amazon Associates — new puppy essentials */}
         <a
-          href={EMBARK_AFFILIATE_URL}
+          href={AMAZON_AFFILIATE_URL}
           target="_blank"
           rel="nofollow sponsored noopener noreferrer"
           className="affiliate-row"
           style={{ textDecoration: 'none' }}
           onClick={() => {
-            trackEvent('breeder_click', { breed: breedName, cta: 'dna_test' });
-            capturePostHogEvent('affiliate_click', { program: 'embark_dna', destination: EMBARK_AFFILIATE_URL, page: pagePath(), breed: breedName });
+            trackEvent('affiliate_click', { breed: breedName, cta: 'amazon_essentials' });
+            capturePostHogEvent('affiliate_click', { program: 'amazon_associates', destination: AMAZON_AFFILIATE_URL, page: pagePath(), breed: breedName });
           }}
         >
           <div className="affiliate-row-icon">
-            <Icon icon={Dna} size={16} color="#fff" />
+            <Icon icon={ShoppingBag} size={16} color="#fff" />
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ fontSize: '12px', fontWeight: 500, color: '#0a3d38', lineHeight: 1.3 }}>
-              Embark dog DNA test
+              New puppy essentials
             </div>
             <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: 1 }}>
-              Health risks · breed breakdown · 230+ conditions
+              Top-rated gear for your first dog · ships fast
             </div>
           </div>
-          <span style={{ fontSize: '12px', color: 'var(--cta)', fontWeight: 500, flexShrink: 0 }}>Check your dog's DNA →</span>
+          <span style={{ fontSize: '12px', color: 'var(--cta)', fontWeight: 500, flexShrink: 0 }}>Shop Amazon →</span>
         </a>
 
         {/* Nexbie custom pet portrait */}
