@@ -62,7 +62,6 @@ export default function EmailCapture() {
                 border: '2px solid var(--border)',
                 fontFamily: 'var(--font-body)',
                 fontSize: '16px',
-                outline: 'none',
               }}
               required
             />

@@ -7,8 +7,9 @@
   --bg-muted: #E1F5EE;
   --text-primary: #0a1f1c;
   --text-secondary: #4a6460;
-  --text-muted: #6ba39c;
-  --cta: #0D9488;
+  --text-muted: #4a6460; /* T4 (WCAG 1.4.3): darkened from #6ba39c (~2.9:1) to ~6.4:1 on white */
+  --cta: #0D9488;        /* button / icon fills */
+  --cta-text: #0F6E56;   /* T4 (WCAG 1.4.3): teal for text links — ~5.3:1 on white (--cta itself is ~3.75:1) */
   --cta-hover: #0b8276;
   --cta-shadow: #0F6E56;
   --accent: #FCD34D;
@@ -26,6 +27,15 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* T4 (WCAG 2.4.7): visible keyboard focus indicator — inputs previously used
+   outline:none with no replacement. */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--cta);
+  outline-offset: 2px;
+}
 
 body {
   font-family: var(--font-body);

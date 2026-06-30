@@ -54,7 +54,7 @@ export default function GearResources({ breedName }: GearResourcesProps) {
               Top-rated gear for your first dog · ships fast
             </div>
           </div>
-          <span style={{ fontSize: '12px', color: 'var(--cta)', fontWeight: 500, flexShrink: 0 }}>Shop Amazon →</span>
+          <span style={{ fontSize: '12px', color: 'var(--cta-text)', fontWeight: 500, flexShrink: 0 }}>Shop Amazon →</span>
         </a>
 
         {/* Nexbie custom pet portrait */}
@@ -77,7 +77,7 @@ export default function GearResources({ breedName }: GearResourcesProps) {
               Turn your future pup's first photo into gallery-worthy art
             </div>
           </div>
-          <span style={{ fontSize: '12px', color: 'var(--cta)', fontWeight: 500, flexShrink: 0 }}>See portrait examples →</span>
+          <span style={{ fontSize: '12px', color: 'var(--cta-text)', fontWeight: 500, flexShrink: 0 }}>See portrait examples →</span>
         </a>
       </div>
     </div>

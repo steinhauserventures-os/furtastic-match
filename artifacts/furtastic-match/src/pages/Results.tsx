@@ -1,6 +1,6 @@
 import { useState, useEffect, Fragment } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { PawPrint, PartyPopper, Share2, Link2 } from 'lucide-react';
+import { PartyPopper, Share2, Link2 } from 'lucide-react';
 import { FaFacebook, FaReddit } from 'react-icons/fa';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
@@ -18,7 +18,10 @@ export default function Results() {
   const [searchParams] = useSearchParams();
   const [matches, setMatches] = useState<Breed[]>([]);
   const [wildcard, setWildcard] = useState<Breed | null>(null);
-  const [revealed, setRevealed] = useState(false);
+  // T1: matches reveal immediately after the loader — no manual reveal wall.
+  // Kept as state (true) so the existing `revealed ? fadeInUp : 'none'` card
+  // stagger animations still fire from mount.
+  const [revealed] = useState(true);
   // Quiz answers (from sessionStorage) power the per-card "why this matched you" block.
   // Null on a shared link / new device — cards fall back to non-personalized copy.
   const [answers, setAnswers] = useState<QuizAnswers | null>(null);
@@ -85,18 +88,6 @@ export default function Results() {
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      
-      {!revealed && (
-        <div style={{ position: 'fixed', inset: 0, background: 'var(--cta)', zIndex: 1000, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
-          <div style={{ animation: 'scaleUp 0.5s ease-out forwards', marginBottom: '24px', display: 'flex' }}><Icon icon={PawPrint} size={64} color="white" /></div>
-          <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '42px', marginBottom: '8px', textAlign: 'center' }}>Your matches are ready!</h1>
-          <p style={{ opacity: 0.9, marginBottom: '40px', fontSize: '18px' }}>We've found the perfect dogs for your lifestyle.</p>
-          <button className="btn-accent" style={{ padding: '16px 40px', fontSize: '18px', display: 'inline-flex', alignItems: 'center', gap: '8px' }} onClick={() => setRevealed(true)}>
-            Reveal My Matches <Icon icon={PawPrint} size={20} />
-          </button>
-          <style>{`@keyframes scaleUp { from { transform: scale(0); } to { transform: scale(1); } }`}</style>
-        </div>
-      )}
 
       <Nav />
 
@@ -161,6 +152,29 @@ export default function Results() {
             </div>
           </div>
 
+          {/* T5: mobile-only breed explorer — the desktop sidebar below is
+              `hidden md:flex`, so phones (majority of quiz traffic) got no
+              breed-browse block. Mirrors the sidebar items at <768px. */}
+          <div className="md:hidden" style={{ animation: revealed ? `fadeInUp 0.5s ease both 2300ms` : 'none', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '14px' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: '13px', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '10px' }}>
+              Explore your matches
+            </div>
+            {(() => {
+              const explorerBreeds = [...matches, ...(wildcard ? [wildcard] : [])];
+              return explorerBreeds.map((breed, idx) => (
+                <a
+                  key={breed.id}
+                  href={`/breeds/${breed.slug}`}
+                  style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px 0', borderBottom: idx < explorerBreeds.length - 1 ? '1px solid var(--border)' : 'none', textDecoration: 'none' }}
+                >
+                  <BreedImage slug={breed.slug} emoji={breed.emoji} size={36} circular />
+                  <div style={{ fontSize: '13px', fontWeight: 500, color: 'var(--text-primary)' }}>{breed.name} breeders</div>
+                  <span style={{ marginLeft: 'auto', fontSize: '12px', color: 'var(--cta-text)', fontWeight: 600, flexShrink: 0 }}>Browse →</span>
+                </a>
+              ));
+            })()}
+          </div>
+
         </div>
 
         {/* Generic "Are you a breeder?" sidebar widget removed — the per-card,
@@ -181,7 +195,7 @@ export default function Results() {
                 >
                   <BreedImage slug={breed.slug} emoji={breed.emoji} size={36} circular />
                   <div style={{ fontSize: '12px', fontWeight: 500, color: 'var(--text-primary)' }}>{breed.name} breeders</div>
-                  <span style={{ marginLeft: 'auto', fontSize: '11px', color: 'var(--cta)', fontWeight: 500, flexShrink: 0 }}>Browse →</span>
+                  <span style={{ marginLeft: 'auto', fontSize: '11px', color: 'var(--cta-text)', fontWeight: 500, flexShrink: 0 }}>Browse →</span>
                 </a>
               ));
             })()}

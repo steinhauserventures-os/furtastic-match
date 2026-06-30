@@ -83,7 +83,7 @@ export default function BreederIntentCTA({ breedName }: BreederIntentCTAProps) {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Your email"
             required
-            style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '2px solid var(--border)', fontFamily: 'var(--font-body)', fontSize: '14px', outline: 'none', boxSizing: 'border-box' }}
+            style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '2px solid var(--border)', fontFamily: 'var(--font-body)', fontSize: '14px', boxSizing: 'border-box' }}
           />
           <input
             type="text"
@@ -91,7 +91,7 @@ export default function BreederIntentCTA({ breedName }: BreederIntentCTAProps) {
             onChange={(e) => setMetro(e.target.value)}
             placeholder="Your metro area (e.g. Austin, TX)"
             required
-            style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '2px solid var(--border)', fontFamily: 'var(--font-body)', fontSize: '14px', outline: 'none', boxSizing: 'border-box' }}
+            style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '2px solid var(--border)', fontFamily: 'var(--font-body)', fontSize: '14px', boxSizing: 'border-box' }}
           />
           <button type="submit" className="btn-primary" style={{ padding: '10px', fontSize: '14px', justifyContent: 'center' }}>
             Request a featured spot

@@ -78,7 +78,7 @@ export default function MatchCard({
       {/* Why this matched you */}
       {reasons.length > 0 && (
         <div style={{ background: '#E1F5EE', borderRadius: '10px', padding: '12px 14px', marginBottom: '18px' }}>
-          <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--cta)', marginBottom: '8px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+          <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--cta-text)', marginBottom: '8px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
             <Icon icon={Sparkles} size={12} /> {isWildcard ? 'Why we threw this one in' : 'Why this matched you'}
           </div>
           <ul style={{ margin: 0, paddingLeft: '16px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
@@ -112,7 +112,7 @@ export default function MatchCard({
             href={akcUrl}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ fontSize: '14px', color: 'var(--cta)', fontWeight: 500, textDecoration: 'underline' }}
+            style={{ fontSize: '14px', color: 'var(--cta-text)', fontWeight: 500, textDecoration: 'underline' }}
             onClick={() => capturePostHogEvent('affiliate_click', { program: 'akc_breed_guide', destination: akcUrl, page: typeof window !== 'undefined' ? window.location.pathname : '', breed: breed.name })}
           >
             AKC breed guide
@@ -120,17 +120,18 @@ export default function MatchCard({
           <span style={{ color: 'var(--text-muted)' }}>·</span>
           <Link
             to={`/breeds/${breed.slug}`}
-            style={{ fontSize: '14px', color: 'var(--cta)', fontWeight: 500, textDecoration: 'underline' }}
+            style={{ fontSize: '14px', color: 'var(--cta-text)', fontWeight: 500, textDecoration: 'underline' }}
           >
             {breed.name} breed guide
           </Link>
         </div>
 
-        {/* 3. Breeder intent CTA */}
-        <BreederIntentCTA breedName={breed.name} />
+        {/* 3. Breeder intent CTA — T3: one breed-specific block, on the #1
+            match only (not the wildcard, which also defaults to rank 0). */}
+        {rank === 0 && !isWildcard && <BreederIntentCTA breedName={breed.name} />}
       </div>
 
-      <p style={{ fontSize: '10px', color: 'var(--text-muted)', textAlign: 'center', fontStyle: 'italic', margin: '10px 0 0' }}>
+      <p style={{ fontSize: '12px', color: 'var(--text-muted)', textAlign: 'center', fontStyle: 'italic', margin: '10px 0 0' }}>
         Affiliate links — we may earn a small commission at no cost to you.
       </p>
     </div>
