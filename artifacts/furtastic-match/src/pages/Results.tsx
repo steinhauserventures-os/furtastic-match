@@ -169,7 +169,7 @@ export default function Results() {
           <AdZone width={300} height={250} id="ADSENSE UNIT 4" desktopOnly />
           <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '14px' }}>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '13px', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '10px' }}>
-              Find verified breeders
+              Explore your matches
             </div>
             {(() => {
               const sidebarBreeds = [...matches, ...(wildcard ? [wildcard] : [])];
