@@ -5,8 +5,9 @@ import {
   Zap, Sofa, Mountain, Home as HomeIcon, Building2, Trees, Wheat, Scissors, Frown,
   Sparkles, GraduationCap, Sprout, ThumbsUp, Trophy, Ruler, Shuffle, Baby, Meh,
 } from 'lucide-react';
-import Icon, { BRAND_PURPLE } from '../components/Icon';
+import Icon, { BRAND_ACCENT } from '../components/Icon';
 import CustomSlider from '../components/CustomSlider';
+import PawPrintMark from '../components/PawPrintMark';
 import { trackEvent, capturePostHogEvent } from '../lib/analytics';
 import { runMatchingEngine, encodeResults, QuizAnswers } from '../lib/matchingEngine';
 
@@ -99,7 +100,7 @@ export default function Quiz() {
   if (showLoading) {
     return (
       <div style={{ position: 'fixed', inset: 0, background: 'var(--bg)', zIndex: 1000, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ animation: 'spin 2s linear infinite', marginBottom: '24px', display: 'flex' }}><Icon icon={PawPrint} size={64} color={BRAND_PURPLE} /></div>
+        <div style={{ animation: 'spin 2s linear infinite', marginBottom: '24px', display: 'flex' }}><Icon icon={PawPrint} size={64} color={BRAND_ACCENT} /></div>
         <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '32px', color: 'var(--text-primary)', marginBottom: '8px' }}>Sniffing out your matches...</h2>
         <p style={{ color: 'var(--text-secondary)', marginBottom: '32px' }}>Scoring 40 breeds against your answers</p>
         <div style={{ display: 'flex', gap: '12px' }}>
@@ -127,9 +128,16 @@ export default function Quiz() {
         <div style={{ textAlign: 'right', fontSize: '13px', color: 'var(--text-muted)' }}>Question {currentQ} of 8</div>
       </div>
       
-      {/* Progress */}
-      <div style={{ width: '100%', height: '6px', background: '#EDE0FF' }}>
-        <div style={{ width: `${(currentQ / 8) * 100}%`, height: '100%', background: 'linear-gradient(90deg, var(--cta), var(--teal))', transition: 'width 0.3s ease' }} />
+      {/* Progress — one paw print per question, filled as you advance */}
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px', padding: '4px 24px 18px' }}>
+        {Array.from({ length: 8 }, (_, i) => i + 1).map(q => (
+          <PawPrintMark
+            key={q}
+            size={q === currentQ ? 18 : 13}
+            color={q <= currentQ ? 'var(--cta)' : 'var(--border)'}
+            style={{ transition: 'all 0.2s ease', flexShrink: 0 }}
+          />
+        ))}
       </div>
 
       <div style={{ flex: 1, display: 'flex', justifyContent: 'center', padding: '40px 24px' }}>
@@ -137,7 +145,7 @@ export default function Quiz() {
           
           {currentQ === 1 && (
             <div className="q-slide">
-              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={HelpCircle} size={56} color={BRAND_PURPLE} /></div>
+              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={HelpCircle} size={56} color={BRAND_ACCENT} /></div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '26px', textAlign: 'center', marginBottom: '32px' }}>Already have a breed in mind?</h2>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
@@ -153,11 +161,11 @@ export default function Quiz() {
                       padding: '16px', 
                       cursor: 'pointer', 
                       borderColor: answers.q1_mode === opt.id ? 'var(--cta)' : 'var(--border)',
-                      background: answers.q1_mode === opt.id ? '#F5F0FF' : 'var(--bg-card)'
+                      background: answers.q1_mode === opt.id ? 'var(--bg-muted)' : 'var(--bg-card)'
                     }}
                     onClick={() => setAnswers({...answers, q1_mode: opt.id as any})}
                   >
-                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}><Icon icon={opt.icon} size={20} color={BRAND_PURPLE} />{opt.label}</span>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}><Icon icon={opt.icon} size={20} color={BRAND_ACCENT} />{opt.label}</span>
                   </div>
                 ))}
               </div>
@@ -203,7 +211,7 @@ export default function Quiz() {
 
           {currentQ === 2 && (
             <div className="q-slide">
-              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={Users} size={56} color={BRAND_PURPLE} /></div>
+              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={Users} size={56} color={BRAND_ACCENT} /></div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '26px', textAlign: 'center', marginBottom: '32px' }}>Who's the dog for?</h2>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
@@ -219,11 +227,11 @@ export default function Quiz() {
                       padding: '16px', 
                       cursor: 'pointer', 
                       borderColor: answers.who === opt.id ? 'var(--cta)' : 'var(--border)',
-                      background: answers.who === opt.id ? '#F5F0FF' : 'var(--bg-card)'
+                      background: answers.who === opt.id ? 'var(--bg-muted)' : 'var(--bg-card)'
                     }}
                     onClick={() => setAnswers({...answers, who: opt.id})}
                   >
-                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}><Icon icon={opt.icon} size={20} color={BRAND_PURPLE} />{opt.label}</span>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}><Icon icon={opt.icon} size={20} color={BRAND_ACCENT} />{opt.label}</span>
                   </div>
                 ))}
               </div>
@@ -234,7 +242,7 @@ export default function Quiz() {
 
           {currentQ === 3 && (
             <div className="q-slide">
-              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={Zap} size={56} color={BRAND_PURPLE} /></div>
+              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={Zap} size={56} color={BRAND_ACCENT} /></div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '26px', textAlign: 'center', marginBottom: '32px' }}>How active is your household?</h2>
               
               <div style={{ textAlign: 'center', fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--cta)', fontSize: '18px', marginBottom: '24px', minHeight: '28px' }}>
@@ -257,7 +265,7 @@ export default function Quiz() {
 
           {currentQ === 4 && (
             <div className="q-slide">
-              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={HomeIcon} size={56} color={BRAND_PURPLE} /></div>
+              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={HomeIcon} size={56} color={BRAND_ACCENT} /></div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '26px', textAlign: 'center', marginBottom: '32px' }}>How much space do you have?</h2>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
@@ -274,11 +282,11 @@ export default function Quiz() {
                       padding: '16px', 
                       cursor: 'pointer', 
                       borderColor: answers.space === opt.id ? 'var(--cta)' : 'var(--border)',
-                      background: answers.space === opt.id ? '#F5F0FF' : 'var(--bg-card)'
+                      background: answers.space === opt.id ? 'var(--bg-muted)' : 'var(--bg-card)'
                     }}
                     onClick={() => setAnswers({...answers, space: opt.id})}
                   >
-                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}><Icon icon={opt.icon} size={20} color={BRAND_PURPLE} />{opt.label}</span>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}><Icon icon={opt.icon} size={20} color={BRAND_ACCENT} />{opt.label}</span>
                   </div>
                 ))}
               </div>
@@ -289,7 +297,7 @@ export default function Quiz() {
 
           {currentQ === 5 && (
             <div className="q-slide">
-              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={Scissors} size={56} color={BRAND_PURPLE} /></div>
+              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={Scissors} size={56} color={BRAND_ACCENT} /></div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '26px', textAlign: 'center', marginBottom: '32px' }}>How much grooming time can you give?</h2>
               
               <div style={{ textAlign: 'center', fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--cta)', fontSize: '18px', marginBottom: '24px', minHeight: '28px' }}>
@@ -312,7 +320,7 @@ export default function Quiz() {
 
           {currentQ === 6 && (
             <div className="q-slide">
-              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={GraduationCap} size={56} color={BRAND_PURPLE} /></div>
+              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={GraduationCap} size={56} color={BRAND_ACCENT} /></div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '26px', textAlign: 'center', marginBottom: '32px' }}>Any experience with dogs?</h2>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
@@ -328,11 +336,11 @@ export default function Quiz() {
                       padding: '16px', 
                       cursor: 'pointer', 
                       borderColor: answers.experience === opt.id ? 'var(--cta)' : 'var(--border)',
-                      background: answers.experience === opt.id ? '#F5F0FF' : 'var(--bg-card)'
+                      background: answers.experience === opt.id ? 'var(--bg-muted)' : 'var(--bg-card)'
                     }}
                     onClick={() => setAnswers({...answers, experience: opt.id})}
                   >
-                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}><Icon icon={opt.icon} size={20} color={BRAND_PURPLE} />{opt.label}</span>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}><Icon icon={opt.icon} size={20} color={BRAND_ACCENT} />{opt.label}</span>
                   </div>
                 ))}
               </div>
@@ -343,7 +351,7 @@ export default function Quiz() {
 
           {currentQ === 7 && (
             <div className="q-slide">
-              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={Ruler} size={56} color={BRAND_PURPLE} /></div>
+              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={Ruler} size={56} color={BRAND_ACCENT} /></div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '26px', textAlign: 'center', marginBottom: '32px' }}>What size dog fits your life?</h2>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
@@ -360,11 +368,11 @@ export default function Quiz() {
                       padding: '16px', 
                       cursor: 'pointer', 
                       borderColor: answers.size === opt.id ? 'var(--cta)' : 'var(--border)',
-                      background: answers.size === opt.id ? '#F5F0FF' : 'var(--bg-card)'
+                      background: answers.size === opt.id ? 'var(--bg-muted)' : 'var(--bg-card)'
                     }}
                     onClick={() => setAnswers({...answers, size: opt.id})}
                   >
-                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}><Icon icon={opt.icon} size={20} color={BRAND_PURPLE} />{opt.label}</span>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}><Icon icon={opt.icon} size={20} color={BRAND_ACCENT} />{opt.label}</span>
                   </div>
                 ))}
               </div>
@@ -375,7 +383,7 @@ export default function Quiz() {
 
           {currentQ === 8 && (
             <div className="q-slide">
-              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={Baby} size={56} color={BRAND_PURPLE} /></div>
+              <div style={{ textAlign: 'center', marginBottom: '16px' }}><Icon icon={Baby} size={56} color={BRAND_ACCENT} /></div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '26px', textAlign: 'center', marginBottom: '32px' }}>How important is it that your dog is great with kids?</h2>
               
               <div style={{ textAlign: 'center', fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--cta)', fontSize: '18px', marginBottom: '24px', minHeight: '28px' }}>

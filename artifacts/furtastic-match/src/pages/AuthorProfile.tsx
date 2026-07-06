@@ -50,7 +50,7 @@ export default function AuthorProfile() {
               width: '120px',
               height: '120px',
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, #3DBFB8, #6B4FBB)',
+              background: 'linear-gradient(135deg, #3DBFB8, #0F6E56)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',

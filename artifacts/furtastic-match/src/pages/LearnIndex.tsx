@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { BookOpen, ArrowRight, PawPrint } from 'lucide-react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
-import Icon, { BRAND_PURPLE } from '../components/Icon';
+import Icon, { BRAND_ACCENT } from '../components/Icon';
 import { useCanonical } from '../hooks/useCanonical';
 
 const ARTICLES = [
@@ -78,7 +78,7 @@ export default function LearnIndex() {
             Breed guides
           </div>
           <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(28px, 5vw, 40px)', lineHeight: 1.15, marginBottom: '16px' }}>
-            Research the right dog <Icon icon={BookOpen} size={32} color={BRAND_PURPLE} style={{ verticalAlign: '-0.2em' }} />
+            Research the right dog <Icon icon={BookOpen} size={32} color={BRAND_ACCENT} style={{ verticalAlign: '-0.2em' }} />
           </h1>
           <p style={{ fontSize: '17px', color: 'var(--text-secondary)', lineHeight: 1.65, maxWidth: '60ch' }}>
             In-depth guides and comparisons to help you find the right breed for your life. Research-backed, honest, no fluff.
@@ -141,7 +141,7 @@ export default function LearnIndex() {
           flexWrap: 'wrap',
         }}>
           <div style={{ display: 'flex' }}>
-            <Icon icon={PawPrint} size={48} color={BRAND_PURPLE} />
+            <Icon icon={PawPrint} size={48} color={BRAND_ACCENT} />
           </div>
           <div style={{ flex: 1, minWidth: '200px' }}>
             <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '20px', marginBottom: '6px' }}>

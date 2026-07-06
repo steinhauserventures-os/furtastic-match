@@ -4,7 +4,7 @@ import { Dog, ArrowRight } from 'lucide-react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import AdZone from '../components/AdZone';
-import Icon, { BRAND_PURPLE } from '../components/Icon';
+import Icon, { BRAND_ACCENT } from '../components/Icon';
 import { getBreedBySlug } from '../lib/matchingEngine';
 
 export default function Comparison() {
@@ -31,11 +31,11 @@ export default function Comparison() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '48px' }}>
           <div className="card" style={{ padding: '24px', textAlign: 'center' }}>
-            <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'center' }}><Icon icon={Dog} size={48} color={BRAND_PURPLE} /></div>
+            <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'center' }}><Icon icon={Dog} size={48} color={BRAND_ACCENT} /></div>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '24px' }}>{breedA.name}</h2>
           </div>
           <div className="card" style={{ padding: '24px', textAlign: 'center' }}>
-            <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'center' }}><Icon icon={Dog} size={48} color={BRAND_PURPLE} /></div>
+            <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'center' }}><Icon icon={Dog} size={48} color={BRAND_ACCENT} /></div>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '24px' }}>{breedB.name}</h2>
           </div>
         </div>

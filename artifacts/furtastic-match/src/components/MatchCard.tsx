@@ -3,6 +3,7 @@ import { Medal, Sparkles, Dices } from 'lucide-react';
 import Icon from './Icon';
 import BreedImage from './BreedImage';
 import BreederIntentCTA from './BreederIntentCTA';
+import PawPrintMark from './PawPrintMark';
 import { capturePostHogEvent } from '../lib/analytics';
 import { affiliateUrl } from '../utils/affiliate';
 import { Breed, QuizAnswers, explainMatch } from '../lib/matchingEngine';
@@ -17,7 +18,7 @@ interface MatchCardProps {
   answers?: QuizAnswers | null;
 }
 
-const MEDAL_COLORS = ['#E0A800', '#9B8FB5', '#B07800'];
+const MEDAL_COLORS = ['#E0A800', '#94A3B8', '#B07800'];
 
 export default function MatchCard({
   breed,
@@ -32,6 +33,7 @@ export default function MatchCard({
   const explanation = answers ? explainMatch(breed, answers) : null;
   const blurb = explanation?.blurb ?? breed.why_it_fits.family;
   const reasons = explanation?.reasons ?? [];
+  const isTopMatch = rank === 0 && !isWildcard;
 
   const gooddogUrl = affiliateUrl(`https://www.gooddog.com/breeds/${breed.slug}`, 'gooddog');
   const akcUrl = affiliateUrl(`https://www.akc.org/dog-breeds/${breed.slug}/`, 'akc');
@@ -40,35 +42,76 @@ export default function MatchCard({
     <div
       className="card"
       style={{
-        padding: '20px',
+        padding: isTopMatch ? 0 : '20px',
         animation,
         maxWidth: '100%',
         overflow: 'hidden',
         ...(isWildcard ? { borderColor: 'var(--accent)', boxShadow: '4px 4px 0 #FFE070' } : {}),
       }}
     >
-      {/* Header */}
-      <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', marginBottom: '16px' }}>
-        <BreedImage slug={breed.slug} emoji={breed.emoji} size={88} circular />
-        <div style={{ flex: 1 }}>
-          {isWildcard ? (
-            <span style={{ background: '#FFF8E0', color: '#B07800', borderRadius: '4px', padding: '2px 8px', fontSize: '11px', fontWeight: 700, marginBottom: '4px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-              <Icon icon={Sparkles} size={11} /> Unexpected match
-            </span>
-          ) : (
-            <div style={{ fontSize: '13px', marginBottom: '4px', display: 'inline-flex', alignItems: 'center', gap: '5px', color: 'var(--text-muted)' }}>
-              <Icon icon={Medal} size={14} color={MEDAL_COLORS[rank] ?? MEDAL_COLORS[2]} />
-              Match #{rank + 1}
-            </div>
-          )}
-          <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '22px', lineHeight: 1.1, marginBottom: '8px', color: 'var(--text-primary)' }}>
-            {breed.name}
-          </h2>
-          <span style={{ background: isWildcard ? 'var(--accent)' : 'var(--cta)', color: isWildcard ? 'var(--text-primary)' : 'white', borderRadius: '20px', padding: '3px 10px', fontSize: '11px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-            {fitPercent}% fit
-          </span>
+      {/* Top-match portrait — the reveal's centerpiece: large, on a warm
+          parchment surface with a soft evening-light shadow underneath.
+          Other ranks + the wildcard keep the compact avatar header below. */}
+      {isTopMatch && (
+        <div style={{ position: 'relative', background: 'linear-gradient(180deg, var(--parchment), var(--parchment-edge))', padding: '24px 24px 28px' }}>
+          <div
+            style={{
+              position: 'relative',
+              maxWidth: '420px',
+              margin: '0 auto',
+              aspectRatio: '1 / 1',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              boxShadow: '0 28px 34px -16px var(--parchment-shadow), 0 10px 14px -8px var(--parchment-shadow)',
+            }}
+          >
+            <BreedImage slug={breed.slug} emoji={breed.emoji} circular={false} fill />
+          </div>
+          <div style={{ position: 'absolute', bottom: '10px', right: '20px', opacity: 0.3, display: 'flex' }}>
+            <PawPrintMark size={30} color="var(--cta-text)" />
+          </div>
         </div>
-      </div>
+      )}
+
+      <div style={{ padding: isTopMatch ? '18px 20px 20px' : 0 }}>
+
+        {/* Header */}
+        {isTopMatch ? (
+          <div style={{ marginBottom: '16px' }}>
+            <div style={{ fontSize: '12px', marginBottom: '6px', display: 'inline-flex', alignItems: 'center', gap: '5px', color: 'var(--cta-text)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+              <Icon icon={Medal} size={13} color={MEDAL_COLORS[0]} />
+              Your #1 match
+            </div>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '26px', lineHeight: 1.1, marginBottom: '8px', color: 'var(--text-primary)' }}>
+              {breed.name}
+            </h2>
+            <span style={{ background: 'var(--cta)', color: 'white', borderRadius: '20px', padding: '3px 10px', fontSize: '11px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              {fitPercent}% fit
+            </span>
+          </div>
+        ) : (
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', marginBottom: '16px' }}>
+            <BreedImage slug={breed.slug} emoji={breed.emoji} size={88} circular />
+            <div style={{ flex: 1 }}>
+              {isWildcard ? (
+                <span style={{ background: '#FFF8E0', color: '#B07800', borderRadius: '4px', padding: '2px 8px', fontSize: '11px', fontWeight: 700, marginBottom: '4px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                  <Icon icon={Sparkles} size={11} /> Unexpected match
+                </span>
+              ) : (
+                <div style={{ fontSize: '13px', marginBottom: '4px', display: 'inline-flex', alignItems: 'center', gap: '5px', color: 'var(--text-muted)' }}>
+                  <Icon icon={Medal} size={14} color={MEDAL_COLORS[rank] ?? MEDAL_COLORS[2]} />
+                  Match #{rank + 1}
+                </div>
+              )}
+              <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '22px', lineHeight: 1.1, marginBottom: '8px', color: 'var(--text-primary)' }}>
+                {breed.name}
+              </h2>
+              <span style={{ background: isWildcard ? 'var(--accent)' : 'var(--cta)', color: isWildcard ? 'var(--text-primary)' : 'white', borderRadius: '20px', padding: '3px 10px', fontSize: '11px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                {fitPercent}% fit
+              </span>
+            </div>
+          </div>
+        )}
 
       {/* Blurb */}
       <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.6, marginBottom: reasons.length ? '14px' : '18px' }}>
@@ -134,6 +177,7 @@ export default function MatchCard({
       <p style={{ fontSize: '12px', color: 'var(--text-muted)', textAlign: 'center', fontStyle: 'italic', margin: '10px 0 0' }}>
         Affiliate links — we may earn a small commission at no cost to you.
       </p>
+      </div>
     </div>
   );
 }

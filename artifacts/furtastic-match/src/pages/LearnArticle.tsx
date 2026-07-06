@@ -5,7 +5,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import AdZone from '../components/AdZone';
 import AuthorByline from '../components/AuthorByline';
-import Icon, { BRAND_PURPLE } from '../components/Icon';
+import Icon, { BRAND_ACCENT } from '../components/Icon';
 
 import hypoRaw from '../content/articles/hypoallergenic-dog-breeds.md?raw';
 import labRaw from '../content/articles/golden-retriever-vs-labrador.md?raw';
@@ -225,7 +225,7 @@ export default function LearnArticle() {
         <div className="hidden md:flex flex-col gap-6" style={{ width: '300px', position: 'sticky', top: '100px', alignSelf: 'start' }}>
           <div className="card" style={{ padding: '24px' }}>
             <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '16px', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Icon icon={PawPrint} size={18} color={BRAND_PURPLE} /> Find Your Breed
+              <Icon icon={PawPrint} size={18} color={BRAND_ACCENT} /> Find Your Breed
             </div>
             <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '16px' }}>
               Not sure which breed fits your life? Our free 3-minute quiz gives you a personalized match.

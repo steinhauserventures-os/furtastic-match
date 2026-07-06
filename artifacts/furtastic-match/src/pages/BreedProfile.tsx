@@ -7,7 +7,7 @@ import AdZone from '../components/AdZone';
 import AffiliateCard from '../components/AffiliateCard';
 import EmailCapture from '../components/EmailCapture';
 import AuthorByline from '../components/AuthorByline';
-import Icon, { BRAND_PURPLE } from '../components/Icon';
+import Icon, { BRAND_ACCENT } from '../components/Icon';
 import { getBreedBySlug } from '../lib/matchingEngine';
 import { breedContent } from '../data/breedContent';
 import BreedImage from '../components/BreedImage';
@@ -116,14 +116,14 @@ export default function BreedProfile() {
               { l: 'Kid-Friendly', v: kidsLabels[breed.good_with_kids], icon: Baby }
             ].map(t => (
               <div key={t.l} className="card" style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <div style={{ display: 'flex' }}><Icon icon={t.icon} size={24} color={BRAND_PURPLE} /></div>
+                <div style={{ display: 'flex' }}><Icon icon={t.icon} size={24} color={BRAND_ACCENT} /></div>
                 <div style={{ color: 'var(--text-muted)', fontSize: '12px', textTransform: 'uppercase', fontWeight: 700 }}>{t.l}</div>
                 <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '16px' }}>{t.v}</div>
               </div>
             ))}
           </div>
 
-          <div style={{ background: '#F8F5FF', borderRadius: '16px', padding: '24px', border: '1px dashed #D4C5F9', textAlign: 'center' }}>
+          <div style={{ background: 'var(--bg-muted)', borderRadius: '16px', padding: '24px', border: '1px dashed #b3ddd6', textAlign: 'center' }}>
             <p style={{ fontSize: '12px', color: 'var(--text-muted)', fontStyle: 'italic', marginBottom: '16px' }}>
               FurtasticMatch participates in affiliate programs. We earn a commission if you make a purchase through our breeder links.
             </p>

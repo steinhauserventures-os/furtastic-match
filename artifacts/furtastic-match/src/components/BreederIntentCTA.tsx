@@ -51,7 +51,7 @@ export default function BreederIntentCTA({ breedName }: BreederIntentCTAProps) {
   }
 
   return (
-    <div style={{ border: '1px solid #E2E8F0', borderRadius: '12px', padding: '14px 16px', background: '#FBF8FF' }}>
+    <div style={{ border: '1px solid var(--border)', borderRadius: '12px', padding: '14px 16px', background: 'var(--bg-muted)' }}>
       {!expanded ? (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', textAlign: 'center' }}>
           <div style={{ fontWeight: 700, fontSize: '14px', color: 'var(--text-primary)', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>

@@ -22,6 +22,14 @@
   --sponsor-chip-bg: #FCD34D;
   --sponsor-chip-text: #92400E;
 
+  /* Warm parchment surface for portrait showcases (reveal, hero) — a
+     canvas-lit backdrop for the breed illustrations, distinct from the
+     app's white/teal working surfaces. */
+  --parchment: #F7EFDD;
+  --parchment-edge: #EFE1C4;
+  --parchment-border: #E8D9B8;
+  --parchment-shadow: rgba(120, 76, 24, 0.22);
+
   --font-display: 'Nunito', sans-serif;
   --font-body: 'DM Sans', sans-serif;
 }

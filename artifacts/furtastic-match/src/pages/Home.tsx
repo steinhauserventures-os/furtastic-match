@@ -4,7 +4,7 @@ import { Dog, Sparkles, PawPrint, Check, Zap, Target, PartyPopper, ArrowRight, B
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import AdZone from '../components/AdZone';
-import Icon, { BRAND_PURPLE } from '../components/Icon';
+import Icon, { BRAND_ACCENT } from '../components/Icon';
 import breedsData from '../data/breeds.json';
 import BreedImage from '../components/BreedImage';
 import { useCanonical } from '../hooks/useCanonical';
@@ -36,48 +36,59 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       <Nav />
       
-      {/* Hero */}
-      <section style={{ 
-        padding: '80px 24px', 
-        textAlign: 'center', 
-        position: 'relative',
-        backgroundImage: 'radial-gradient(circle, #EDE0FF 1.5px, transparent 1.5px)',
-        backgroundSize: '28px 28px'
-      }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(255,251,240,0.85)' }}></div>
-        <div style={{ position: 'relative', zIndex: 1, maxWidth: '800px', margin: '0 auto' }}>
-          <div style={{ 
-            display: 'inline-flex', 
-            alignItems: 'center', 
-            gap: '8px', 
-            padding: '6px 16px', 
-            background: '#FFF8E0', 
-            border: '2px solid #FFBE00', 
-            borderRadius: '20px',
-            color: '#B07800',
-            fontWeight: 800,
-            fontSize: '13px',
-            marginBottom: '24px'
-          }}>
-            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#FFBE00', animation: 'pulse 2s infinite' }}></div>
-            Free · 3 Minutes · No Sign-Up
-          </div>
-          
-          <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(36px, 8vw, 58px)', lineHeight: 1.1, marginBottom: '24px' }}>
-            Find Your <span style={{ position: 'relative', display: 'inline-block' }}><span style={{ position: 'absolute', bottom: '-2px', left: '-2px', right: '-2px', height: '8px', background: 'var(--accent)', opacity: 0.55, borderRadius: '3px', zIndex: 0 }}></span><span style={{ position: 'relative', zIndex: 1 }}>Perfect</span></span> Dog in 3 Minutes
-          </h1>
-          
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '18px', color: 'var(--text-secondary)', marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px auto', lineHeight: 1.6 }}>
-            Answer 8 fun questions about your lifestyle and we'll match you with the breeds that fit your family best. No fluff, no email required.
-          </p>
-          
-          <Link to="/quiz" data-testid="link-hero-quiz" className="btn-primary" style={{ padding: '16px 40px', fontSize: '17px', textDecoration: 'none' }}>
-            Find My Perfect Breed <Icon icon={Dog} size={20} />
-          </Link>
+      {/* Hero — led by the breed portraits themselves, not a badge/headline
+          template. Same warm parchment surface as the reveal; teal stays
+          scoped to the CTA. */}
+      <section style={{ background: 'linear-gradient(180deg, var(--parchment), var(--parchment-edge))', padding: '56px 24px' }}>
+        <div style={{ maxWidth: '1080px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }} className="hero-grid">
 
-          <p style={{ marginTop: '16px', fontSize: '14px', color: 'var(--text-muted)' }}>
-            <Icon icon={Sparkles} size={14} style={{ verticalAlign: '-0.125em', marginRight: '4px' }} />40 breeds · Personalized results · Free forever
-          </p>
+          <div className="hero-portraits" style={{ display: 'flex', justifyContent: 'center' }}>
+            <div style={{ position: 'relative', width: '100%', maxWidth: '380px', aspectRatio: '1 / 1' }}>
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                borderRadius: '20px',
+                overflow: 'hidden',
+                transform: 'rotate(-3deg)',
+                boxShadow: '0 26px 34px -16px var(--parchment-shadow), 0 10px 14px -8px var(--parchment-shadow)',
+              }}>
+                <BreedImage slug="golden-retriever" emoji="🐶" circular={false} fill />
+              </div>
+              <div style={{
+                position: 'absolute',
+                width: '52%',
+                aspectRatio: '1 / 1',
+                bottom: '-7%',
+                left: '-9%',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                transform: 'rotate(6deg)',
+                border: '4px solid var(--parchment)',
+                boxShadow: '0 18px 24px -12px var(--parchment-shadow)',
+              }}>
+                <BreedImage slug="pembroke-welsh-corgi" emoji="🐕" circular={false} fill />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style={{ color: 'var(--cta-text)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '14px' }}>
+              Free · 3 minutes · No sign-up
+            </div>
+            <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(32px, 5vw, 48px)', lineHeight: 1.1, marginBottom: '20px', color: 'var(--text-primary)' }}>
+              Find the dog breed that actually fits your life
+            </h1>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '18px', color: 'var(--text-secondary)', marginBottom: '32px', lineHeight: 1.6, maxWidth: '460px' }}>
+              Answer 8 quick questions about your space, family, and lifestyle — we'll match you with the breeds that fit best, out of 40 options.
+            </p>
+            <Link to="/quiz" data-testid="link-hero-quiz" className="btn-primary" style={{ padding: '16px 40px', fontSize: '17px', textDecoration: 'none' }}>
+              Find My Perfect Breed <Icon icon={Dog} size={20} />
+            </Link>
+            <p style={{ marginTop: '16px', fontSize: '14px', color: 'var(--text-muted)' }}>
+              <Icon icon={Sparkles} size={14} style={{ verticalAlign: '-0.125em', marginRight: '4px' }} />40 breeds · Personalized results · Free forever
+            </p>
+          </div>
+
         </div>
       </section>
 
@@ -91,7 +102,7 @@ export default function Home() {
             { icon: Target, n: '', l: '100% Personalized' }
           ].map((t, i) => (
             <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
-              <div style={{ display: 'flex' }}><Icon icon={t.icon} size={26} color={BRAND_PURPLE} /></div>
+              <div style={{ display: 'flex' }}><Icon icon={t.icon} size={26} color={BRAND_ACCENT} /></div>
               {t.n && <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--cta)', fontSize: '18px' }}>{t.n}</div>}
               <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>{t.l}</div>
             </div>
@@ -109,7 +120,7 @@ export default function Home() {
           {/* How It Works */}
           <section>
             <div style={{ color: 'var(--teal)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '8px' }}>How it works</div>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '32px', marginBottom: '32px' }}>Three steps to your perfect match <Icon icon={PawPrint} size={28} color={BRAND_PURPLE} style={{ verticalAlign: '-0.15em' }} /></h2>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '32px', marginBottom: '32px' }}>Three steps to your perfect match <Icon icon={PawPrint} size={28} color={BRAND_ACCENT} style={{ verticalAlign: '-0.15em' }} /></h2>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
               {[
@@ -119,7 +130,7 @@ export default function Home() {
               ].map((s) => (
                 <div key={s.i} className="card" style={{ padding: '24px', position: 'relative' }}>
                   <div style={{ width: '28px', height: '28px', background: 'var(--cta)', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px', fontWeight: 800, position: 'absolute', top: '-14px', left: '24px' }}>{s.i}</div>
-                  <div style={{ marginBottom: '16px', marginTop: '8px' }}><Icon icon={s.icon} size={32} color={BRAND_PURPLE} /></div>
+                  <div style={{ marginBottom: '16px', marginTop: '8px' }}><Icon icon={s.icon} size={32} color={BRAND_ACCENT} /></div>
                   <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '20px', marginBottom: '8px' }}>{s.t}</h3>
                   <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.5 }}>{s.d}</p>
                 </div>
@@ -131,7 +142,7 @@ export default function Home() {
           <section>
             <div style={{ color: 'var(--teal)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '8px' }}>Breed guides</div>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '32px', marginBottom: '24px' }}>
-              Read before you decide <Icon icon={BookOpen} size={26} color={BRAND_PURPLE} style={{ verticalAlign: '-0.15em' }} />
+              Read before you decide <Icon icon={BookOpen} size={26} color={BRAND_ACCENT} style={{ verticalAlign: '-0.15em' }} />
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', marginBottom: '16px' }}>
               {[
@@ -213,6 +224,8 @@ export default function Home() {
         {`
           @media (max-width: 768px) {
             .home-grid { grid-template-columns: 1fr !important; }
+            .hero-grid { grid-template-columns: 1fr !important; text-align: center; }
+            .hero-portraits { order: -1; margin-bottom: 8px; }
           }
         `}
       </style>

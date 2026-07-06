@@ -77,7 +77,7 @@ export default function CustomSlider({ value, onChange, min = 0, max = 100 }: Cu
           width: '100%',
           height: '8px',
           borderRadius: '4px',
-          background: '#EDE0FF',
+          background: 'var(--bg-muted)',
           position: 'absolute',
         }}
       />
@@ -99,7 +99,7 @@ export default function CustomSlider({ value, onChange, min = 0, max = 100 }: Cu
           border: '3px solid var(--cta)',
           position: 'absolute',
           left: `calc(${percent}% - 13px)`,
-          boxShadow: '0 2px 8px rgba(91,63,217,0.3)',
+          boxShadow: '0 2px 8px rgba(13, 148, 136, 0.3)',
           transition: isDragging ? 'none' : 'left 0.1s ease',
         }}
       />
