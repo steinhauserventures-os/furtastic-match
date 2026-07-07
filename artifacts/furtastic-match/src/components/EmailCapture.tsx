@@ -54,6 +54,7 @@ export default function EmailCapture() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email address"
+              aria-label="Email address"
               data-testid="input-email-capture"
               style={{
                 flex: 1,

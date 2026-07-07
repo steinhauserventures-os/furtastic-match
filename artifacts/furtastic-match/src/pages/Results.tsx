@@ -27,11 +27,23 @@ export default function Results() {
   const [answers, setAnswers] = useState<QuizAnswers | null>(null);
 
   useEffect(() => {
-    // Inject noindex
-    const meta = document.createElement('meta');
-    meta.name = 'robots';
-    meta.content = 'noindex';
-    document.head.appendChild(meta);
+    // Results is a personalized, query-param page (?r=...): every quiz outcome is
+    // a crawlable near-duplicate, so flag it noindex — but keep `follow` so link
+    // equity still flows to /learn, breed profiles, etc. The base shell ships
+    // `index, follow`, so update that tag in place (rather than append a second,
+    // conflicting robots meta) and restore it on unmount for SPA nav back to
+    // indexable routes.
+    const robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+    const prevRobots = robotsMeta?.content ?? null;
+    let injectedRobots: HTMLMetaElement | null = null;
+    if (robotsMeta) {
+      robotsMeta.content = 'noindex, follow';
+    } else {
+      injectedRobots = document.createElement('meta');
+      injectedRobots.name = 'robots';
+      injectedRobots.content = 'noindex, follow';
+      document.head.appendChild(injectedRobots);
+    }
 
     trackEvent('quiz_complete_view');
 
@@ -59,7 +71,12 @@ export default function Results() {
     }
 
     return () => {
-      document.head.removeChild(meta);
+      if (injectedRobots) {
+        document.head.removeChild(injectedRobots);
+      } else if (robotsMeta) {
+        if (prevRobots !== null) robotsMeta.content = prevRobots;
+        else robotsMeta.removeAttribute('content');
+      }
     };
   }, [searchParams]);
 

@@ -106,7 +106,7 @@ export default function MatchCard({
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '22px', lineHeight: 1.1, margin: '6px 0 10px', color: 'var(--text-primary)' }}>
                 {breed.name}
               </h2>
-              <span style={{ background: isWildcard ? 'var(--accent)' : 'var(--cta)', color: isWildcard ? 'var(--text-primary)' : 'white', borderRadius: '20px', padding: '3px 10px', fontSize: '11px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              <span style={{ background: isWildcard ? 'var(--accent)' : '#0F6E56', color: isWildcard ? 'var(--text-primary)' : 'white', borderRadius: '20px', padding: '3px 10px', fontSize: '11px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
                 {fitPercent}% fit
               </span>
             </div>
@@ -127,7 +127,7 @@ export default function MatchCard({
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '26px', lineHeight: 1.1, marginBottom: '8px', color: 'var(--text-primary)' }}>
               {breed.name}
             </h2>
-            <span style={{ background: 'var(--cta)', color: 'white', borderRadius: '20px', padding: '3px 10px', fontSize: '11px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+            <span style={{ background: '#0F6E56', color: 'white', borderRadius: '20px', padding: '3px 10px', fontSize: '11px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
               {fitPercent}% fit
             </span>
           </div>
