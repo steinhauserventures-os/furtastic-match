@@ -42,7 +42,7 @@ export default function MatchCard({
     <div
       className="card"
       style={{
-        padding: isTopMatch ? 0 : '20px',
+        padding: 0,
         animation,
         maxWidth: '100%',
         overflow: 'hidden',
@@ -73,10 +73,52 @@ export default function MatchCard({
         </div>
       )}
 
-      <div style={{ padding: isTopMatch ? '18px 20px 20px' : 0 }}>
+      {/* Medium tier — ranks #2/#3 and the wildcard. A scaled-down version of
+          the #1 treatment: the breed portrait on the same warm parchment
+          surface, sized between the old ~88px avatar and the #1 hero, so the
+          whole results page reads as one system rather than one finished card
+          plus placeholders. */}
+      {!isTopMatch && (
+        <div style={{ background: 'linear-gradient(180deg, var(--parchment), var(--parchment-edge))', padding: '20px' }}>
+          <div style={{ display: 'flex', gap: '18px', alignItems: 'center' }}>
+            <div style={{
+              position: 'relative',
+              width: 'clamp(120px, 34%, 190px)',
+              flexShrink: 0,
+              aspectRatio: '1 / 1',
+              borderRadius: '14px',
+              overflow: 'hidden',
+              boxShadow: '0 18px 24px -14px var(--parchment-shadow), 0 7px 10px -8px var(--parchment-shadow)',
+            }}>
+              <BreedImage slug={breed.slug} emoji={breed.emoji} circular={false} fill />
+            </div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              {isWildcard ? (
+                <span style={{ background: '#FFF8E0', color: '#B07800', borderRadius: '4px', padding: '2px 8px', fontSize: '11px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                  <Icon icon={Sparkles} size={11} /> Unexpected match
+                </span>
+              ) : (
+                <div style={{ fontSize: '13px', display: 'inline-flex', alignItems: 'center', gap: '5px', color: 'var(--cta-text)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                  <Icon icon={Medal} size={14} color={MEDAL_COLORS[rank] ?? MEDAL_COLORS[2]} />
+                  Match #{rank + 1}
+                </div>
+              )}
+              <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '22px', lineHeight: 1.1, margin: '6px 0 10px', color: 'var(--text-primary)' }}>
+                {breed.name}
+              </h2>
+              <span style={{ background: isWildcard ? 'var(--accent)' : 'var(--cta)', color: isWildcard ? 'var(--text-primary)' : 'white', borderRadius: '20px', padding: '3px 10px', fontSize: '11px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                {fitPercent}% fit
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
 
-        {/* Header */}
-        {isTopMatch ? (
+      <div style={{ padding: isTopMatch ? '18px 20px 20px' : '16px 20px 20px' }}>
+
+        {/* #1 header — medal / name / fit, below the hero portrait. Ranks #2/#3
+            and the wildcard carry their header inside the parchment block above. */}
+        {isTopMatch && (
           <div style={{ marginBottom: '16px' }}>
             <div style={{ fontSize: '12px', marginBottom: '6px', display: 'inline-flex', alignItems: 'center', gap: '5px', color: 'var(--cta-text)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
               <Icon icon={Medal} size={13} color={MEDAL_COLORS[0]} />
@@ -88,28 +130,6 @@ export default function MatchCard({
             <span style={{ background: 'var(--cta)', color: 'white', borderRadius: '20px', padding: '3px 10px', fontSize: '11px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
               {fitPercent}% fit
             </span>
-          </div>
-        ) : (
-          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', marginBottom: '16px' }}>
-            <BreedImage slug={breed.slug} emoji={breed.emoji} size={88} circular />
-            <div style={{ flex: 1 }}>
-              {isWildcard ? (
-                <span style={{ background: '#FFF8E0', color: '#B07800', borderRadius: '4px', padding: '2px 8px', fontSize: '11px', fontWeight: 700, marginBottom: '4px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                  <Icon icon={Sparkles} size={11} /> Unexpected match
-                </span>
-              ) : (
-                <div style={{ fontSize: '13px', marginBottom: '4px', display: 'inline-flex', alignItems: 'center', gap: '5px', color: 'var(--text-muted)' }}>
-                  <Icon icon={Medal} size={14} color={MEDAL_COLORS[rank] ?? MEDAL_COLORS[2]} />
-                  Match #{rank + 1}
-                </div>
-              )}
-              <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '22px', lineHeight: 1.1, marginBottom: '8px', color: 'var(--text-primary)' }}>
-                {breed.name}
-              </h2>
-              <span style={{ background: isWildcard ? 'var(--accent)' : 'var(--cta)', color: isWildcard ? 'var(--text-primary)' : 'white', borderRadius: '20px', padding: '3px 10px', fontSize: '11px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                {fitPercent}% fit
-              </span>
-            </div>
           </div>
         )}
 
@@ -124,11 +144,11 @@ export default function MatchCard({
           <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--cta-text)', marginBottom: '8px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
             <Icon icon={Sparkles} size={12} /> {isWildcard ? 'Why we threw this one in' : 'Why this matched you'}
           </div>
-          <ul style={{ margin: 0, paddingLeft: '16px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            {reasons.map((reason, idx) => (
-              <li key={idx} style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{reason}</li>
-            ))}
-          </ul>
+          {/* Warm prose, not a bulleted spec-sheet — the reasons are already
+              full sentences, so join them into one flowing note. */}
+          <p style={{ margin: 0, fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+            {reasons.join(' ')}
+          </p>
         </div>
       )}
 

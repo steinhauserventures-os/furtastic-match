@@ -177,7 +177,7 @@ export default function Home() {
                     <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: `linear-gradient(135deg, ${b.illustration_bg[0]}, ${b.illustration_bg[1]})`, flexShrink: 0, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px' }}>
                       <BreedImage slug={b.slug} emoji={b.emoji} size={32} circular={false} />
                     </div>
-                    <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '12px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{b.name}</span>
+                    <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '11.5px', lineHeight: 1.2, wordBreak: 'break-word' }}>{b.name}</span>
                   </div>
                 </Link>
               ))}
@@ -191,29 +191,31 @@ export default function Home() {
 
       </div>
 
-      {/* Bottom CTA */}
-      <section style={{ 
-        background: 'var(--cta)', 
-        color: 'white', 
-        padding: '80px 24px', 
+      {/* Bottom CTA — warm parchment surface (matching the hero), so the teal
+          btn-primary reads as the same CTA as "Find My Perfect Breed" above.
+          Teal is scoped to the button, per the redesign direction. */}
+      <section style={{
+        background: 'linear-gradient(180deg, var(--parchment), var(--parchment-edge))',
+        color: 'var(--text-primary)',
+        padding: '80px 24px',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden'
       }}>
-        <div style={{ 
-          position: 'absolute', 
-          inset: 0, 
-          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)',
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: 'radial-gradient(circle, rgba(120,76,24,0.06) 1px, transparent 1px)',
           backgroundSize: '20px 20px'
         }}></div>
         <div style={{ position: 'relative', zIndex: 1 }}>
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(28px, 5vw, 42px)', marginBottom: '16px' }}>
-            Ready to find your perfect match? <Icon icon={PawPrint} size={32} color="white" style={{ verticalAlign: '-0.15em' }} />
+            Ready to find your perfect match? <Icon icon={PawPrint} size={32} color={BRAND_ACCENT} style={{ verticalAlign: '-0.15em' }} />
           </h2>
-          <p style={{ opacity: 0.85, fontSize: '17px', marginBottom: '32px' }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '17px', marginBottom: '32px' }}>
             Takes 3 minutes. No email required. Share with the whole family.
           </p>
-          <Link to="/quiz" data-testid="link-bottom-quiz" className="btn-accent" style={{ padding: '14px 36px', fontSize: '16px', display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
+          <Link to="/quiz" data-testid="link-bottom-quiz" className="btn-primary" style={{ padding: '14px 36px', fontSize: '16px', display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
             Start the Quiz <Icon icon={ArrowRight} size={18} />
           </Link>
         </div>
