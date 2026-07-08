@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Dog, ArrowRight } from 'lucide-react';
+import { Dog, ArrowRight } from '../components/CustomIcons';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import AdZone from '../components/AdZone';

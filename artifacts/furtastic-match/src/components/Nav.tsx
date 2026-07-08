@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { PawPrint } from 'lucide-react';
+import { PawPrint } from './CustomIcons';
 import Icon, { BRAND_ACCENT } from './Icon';
 
 export default function Nav() {

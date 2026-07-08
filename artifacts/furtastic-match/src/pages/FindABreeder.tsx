@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from '../components/CustomIcons';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import Icon from '../components/Icon';

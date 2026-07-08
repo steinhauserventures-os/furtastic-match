@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, ArrowRight, PawPrint } from 'lucide-react';
+import { BookOpen, ArrowRight, PawPrint } from '../components/CustomIcons';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import Icon, { BRAND_ACCENT } from '../components/Icon';

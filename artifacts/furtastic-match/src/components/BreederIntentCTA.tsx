@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Megaphone, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Megaphone, CheckCircle2 } from './CustomIcons';
 import Icon from './Icon';
 import { trackEvent } from '../lib/analytics';
 

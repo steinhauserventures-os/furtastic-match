@@ -1,6 +1,6 @@
 import { useState, useEffect, Fragment } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { PartyPopper, Share2, Link2 } from 'lucide-react';
+import { PartyPopper, Share2, Link2 } from '../components/CustomIcons';
 import { FaFacebook, FaReddit } from 'react-icons/fa';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';

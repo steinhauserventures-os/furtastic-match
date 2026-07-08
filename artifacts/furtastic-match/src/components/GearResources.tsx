@@ -1,4 +1,4 @@
-import { ShoppingBag, Palette } from 'lucide-react';
+import { ShoppingBag, Palette } from './CustomIcons';
 import Icon from './Icon';
 import { affiliateUrl } from '../utils/affiliate';
 import { trackEvent, capturePostHogEvent } from '../lib/analytics';

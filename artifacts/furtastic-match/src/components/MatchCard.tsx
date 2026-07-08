@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Medal, Sparkles, Dices } from 'lucide-react';
+import { Medal, Sparkles } from './CustomIcons';
 import Icon from './Icon';
 import BreedImage from './BreedImage';
 import BreederIntentCTA from './BreederIntentCTA';

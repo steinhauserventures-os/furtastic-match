@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { PenLine } from 'lucide-react';
+import { PenLine } from '../components/CustomIcons';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import Icon from '../components/Icon';

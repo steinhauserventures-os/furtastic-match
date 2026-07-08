@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowRight, PawPrint, BookOpen } from 'lucide-react';
+import { ArrowRight, PawPrint, BookOpen } from '../components/CustomIcons';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import AdZone from '../components/AdZone';

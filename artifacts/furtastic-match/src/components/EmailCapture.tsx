@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, MailCheck } from 'lucide-react';
+import { Mail, MailCheck } from './CustomIcons';
 import Icon from './Icon';
 import { trackEvent } from '../lib/analytics';
 

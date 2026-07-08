@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Dog, Sparkles, PawPrint, Check, Zap, Target, PartyPopper, ArrowRight, BookOpen } from 'lucide-react';
+import { Dog, Sparkles, PawPrint, Check, Zap, Target, PartyPopper, ArrowRight, BookOpen } from '../components/CustomIcons';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import AdZone from '../components/AdZone';

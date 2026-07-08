@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from './CustomIcons';
 import Icon from './Icon';
 import { affiliateUrl } from '../utils/affiliate';
 import { capturePostHogEvent } from '../lib/analytics';

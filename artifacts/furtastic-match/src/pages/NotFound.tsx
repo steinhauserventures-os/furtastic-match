@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Dog } from 'lucide-react';
+import { Dog } from '../components/CustomIcons';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import Icon, { BRAND_ACCENT } from '../components/Icon';

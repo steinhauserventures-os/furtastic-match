@@ -4,7 +4,7 @@ import {
   PawPrint, ArrowLeft, ArrowRight, HelpCircle, Search, Dog, Scale, Users, Heart, User,
   Zap, Sofa, Mountain, Home as HomeIcon, Building2, Trees, Wheat, Scissors, Frown,
   Sparkles, GraduationCap, Sprout, ThumbsUp, Trophy, Ruler, Shuffle, Baby, Meh,
-} from 'lucide-react';
+} from '../components/CustomIcons';
 import Icon, { BRAND_ACCENT } from '../components/Icon';
 import CustomSlider from '../components/CustomSlider';
 import PawPrintMark from '../components/PawPrintMark';
