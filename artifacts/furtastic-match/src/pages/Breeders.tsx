@@ -4,6 +4,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import Icon from '../components/Icon';
 import { useCanonical } from '../hooks/useCanonical';
+import breedersHeroPuppies from '../assets/illustrations/breeders-hero-puppies.png';
 
 export default function Breeders() {
   useCanonical('https://furtasticmatch.com/breeders');
@@ -72,7 +73,22 @@ export default function Breeders() {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Nav />
-      <main style={{ flex: 1, maxWidth: '600px', margin: '0 auto', width: '100%', padding: '60px 24px' }}>
+
+      {/* Hero — wide landscape illustration on the same warm parchment surface
+          used on Home/Results, above the buyer-facing form's headline copy. */}
+      <section style={{ background: 'linear-gradient(180deg, var(--parchment), var(--parchment-edge))', padding: '48px 24px 0' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <div style={{ borderRadius: '20px', overflow: 'hidden', boxShadow: '0 26px 34px -16px var(--parchment-shadow), 0 10px 14px -8px var(--parchment-shadow)' }}>
+            <img
+              src={breedersHeroPuppies}
+              alt="Hands cradling a litter of sleeping puppies"
+              style={{ width: '100%', display: 'block', objectFit: 'cover' }}
+            />
+          </div>
+        </div>
+      </section>
+
+      <main style={{ flex: 1, maxWidth: '600px', margin: '0 auto', width: '100%', padding: '40px 24px 60px' }}>
         <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(32px, 5vw, 42px)', textAlign: 'center', marginBottom: '16px' }}>
           Reach Families Searching for Your Breed
         </h1>

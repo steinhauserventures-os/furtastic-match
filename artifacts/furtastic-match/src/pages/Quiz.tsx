@@ -10,6 +10,7 @@ import CustomSlider from '../components/CustomSlider';
 import PawPrintMark from '../components/PawPrintMark';
 import { trackEvent, capturePostHogEvent } from '../lib/analytics';
 import { runMatchingEngine, encodeResults, QuizAnswers } from '../lib/matchingEngine';
+import quizTransitionPuppy from '../assets/illustrations/quiz-transition-puppy.png';
 
 /** Map the 0-100 activity slider to a human-readable lifestyle label. */
 function activityLabel(value: number): string {
@@ -99,9 +100,22 @@ export default function Quiz() {
 
   if (showLoading) {
     return (
-      <div style={{ position: 'fixed', inset: 0, background: 'var(--bg)', zIndex: 1000, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ animation: 'spin 2s linear infinite', marginBottom: '24px', display: 'flex' }}><Icon icon={PawPrint} size={64} color={BRAND_ACCENT} /></div>
-        <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '32px', color: 'var(--text-primary)', marginBottom: '8px' }}>Sniffing out your matches...</h2>
+      <div style={{ position: 'fixed', inset: 0, background: 'var(--bg)', zIndex: 1000, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
+        <div
+          style={{
+            width: '220px',
+            maxWidth: '55vw',
+            aspectRatio: '1 / 1',
+            borderRadius: '20px',
+            overflow: 'hidden',
+            marginBottom: '28px',
+            boxShadow: '0 26px 34px -16px var(--parchment-shadow), 0 10px 14px -8px var(--parchment-shadow)',
+            animation: 'breathe 2.4s ease-in-out infinite',
+          }}
+        >
+          <img src={quizTransitionPuppy} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+        </div>
+        <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '32px', color: 'var(--text-primary)', marginBottom: '8px', textAlign: 'center' }}>Sniffing out your matches...</h2>
         <p style={{ color: 'var(--text-secondary)', marginBottom: '32px' }}>Scoring 40 breeds against your answers</p>
         <div style={{ display: 'flex', gap: '12px' }}>
           {['var(--cta)', 'var(--teal)', 'var(--accent)'].map((color, i) => (
@@ -110,7 +124,7 @@ export default function Quiz() {
         </div>
         <style>
           {`
-            @keyframes spin { 100% { transform: rotate(360deg); } }
+            @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.035); } }
             @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
           `}
         </style>

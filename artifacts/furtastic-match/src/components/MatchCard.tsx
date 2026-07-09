@@ -7,6 +7,7 @@ import PawPrintMark from './PawPrintMark';
 import { capturePostHogEvent } from '../lib/analytics';
 import { affiliateUrl } from '../utils/affiliate';
 import { Breed, QuizAnswers, explainMatch } from '../lib/matchingEngine';
+import wildcardTerrier from '../assets/illustrations/results-wildcard-terrier.png';
 
 interface MatchCardProps {
   breed: Breed;
@@ -94,9 +95,24 @@ export default function MatchCard({
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
               {isWildcard ? (
-                <span style={{ background: '#FFF8E0', color: '#B07800', borderRadius: '4px', padding: '2px 8px', fontSize: '11px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                  <Icon icon={Sparkles} size={11} /> Unexpected match
-                </span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <span style={{ background: '#FFF8E0', color: '#B07800', borderRadius: '4px', padding: '2px 8px', fontSize: '11px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                    <Icon icon={Sparkles} size={11} /> Unexpected match
+                  </span>
+                  <img
+                    src={wildcardTerrier}
+                    alt=""
+                    style={{
+                      width: '48px',
+                      height: '48px',
+                      objectFit: 'cover',
+                      borderRadius: '50%',
+                      border: '2px solid var(--accent)',
+                      boxShadow: '0 4px 8px -2px var(--parchment-shadow)',
+                      flexShrink: 0,
+                    }}
+                  />
+                </div>
               ) : (
                 <div style={{ fontSize: '13px', display: 'inline-flex', alignItems: 'center', gap: '5px', color: 'var(--cta-text)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                   <Icon icon={Medal} size={14} color={MEDAL_COLORS[rank] ?? MEDAL_COLORS[2]} />
