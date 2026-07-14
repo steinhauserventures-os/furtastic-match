@@ -112,7 +112,7 @@ export default function Results() {
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', minWidth: 0, overflow: 'hidden' }}>
           <div>
-            <div style={{ color: 'var(--teal)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '8px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}><Icon icon={PartyPopper} size={14} /> Your personalized matches</div>
+            <div style={{ color: 'var(--cta-text)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '8px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}><Icon icon={PartyPopper} size={14} /> Your personalized matches</div>
             <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '36px', marginBottom: '8px' }}>Here are your perfect breeds</h1>
             <p style={{ color: 'var(--text-secondary)', fontSize: '16px' }}>Based on your lifestyle, space, and family</p>
           </div>

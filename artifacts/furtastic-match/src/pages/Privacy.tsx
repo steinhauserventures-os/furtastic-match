@@ -27,7 +27,7 @@ export default function Privacy() {
 
           <section>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '22px', color: 'var(--text-primary)', marginBottom: '12px' }}>Analytics</h2>
-            <p>We use Google Analytics 4 (GA4) to understand how visitors use our site. GA4 collects anonymized data such as pages visited, time on page, and general geographic region. This data is aggregated and cannot be used to identify you personally. You can opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--cta)' }}>Google Analytics Opt-out Browser Add-on</a>.</p>
+            <p>We use Google Analytics 4 (GA4) to understand how visitors use our site. GA4 collects anonymized data such as pages visited, time on page, and general geographic region. This data is aggregated and cannot be used to identify you personally. You can opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--cta-text)' }}>Google Analytics Opt-out Browser Add-on</a>.</p>
           </section>
 
           <section>
@@ -47,7 +47,7 @@ export default function Privacy() {
 
           <section>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '22px', color: 'var(--text-primary)', marginBottom: '12px' }}>Advertising</h2>
-            <p>We may display advertisements through Google AdSense or similar networks. These networks may use cookies to serve ads based on your prior visits to our site or other sites. You can opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--cta)' }}>Google Ads Settings</a>.</p>
+            <p>We may display advertisements through Google AdSense or similar networks. These networks may use cookies to serve ads based on your prior visits to our site or other sites. You can opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--cta-text)' }}>Google Ads Settings</a>.</p>
           </section>
 
           <section>
@@ -62,7 +62,7 @@ export default function Privacy() {
 
           <section>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '22px', color: 'var(--text-primary)', marginBottom: '12px' }}>Contact</h2>
-            <p>If you have questions about this Privacy Policy, please <a href="https://furtasticmatch.com/contact" style={{ color: 'var(--cta)' }}>contact us</a>.</p>
+            <p>If you have questions about this Privacy Policy, please <a href="https://furtasticmatch.com/contact" style={{ color: 'var(--cta-text)' }}>contact us</a>.</p>
           </section>
         </div>
       </main>

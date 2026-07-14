@@ -155,7 +155,7 @@ export default function BreedProfile() {
                   <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '26px', fontWeight: 700, marginBottom: '14px' }}>Compare the {breed.name} with similar breeds</h2>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     {lf.comparisons.map(c => (
-                      <Link key={c.slug} to={`/compare/${c.slug}`} style={{ color: 'var(--cta)', fontWeight: 700, textDecoration: 'none', fontSize: '16px' }}>
+                      <Link key={c.slug} to={`/compare/${c.slug}`} style={{ color: 'var(--cta-text)', fontWeight: 700, textDecoration: 'none', fontSize: '16px' }}>
                         {c.label} →
                       </Link>
                     ))}

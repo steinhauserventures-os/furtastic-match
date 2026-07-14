@@ -47,7 +47,7 @@ export default function AffiliateDisclosure() {
 
           <section>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '22px', color: 'var(--text-primary)', marginBottom: '12px' }}>Questions?</h2>
-            <p>If you have questions about our affiliate relationships or how we earn revenue, please <a href="/contact" style={{ color: 'var(--cta)' }}>contact us</a>. We are committed to full transparency.</p>
+            <p>If you have questions about our affiliate relationships or how we earn revenue, please <a href="/contact" style={{ color: 'var(--cta-text)' }}>contact us</a>. We are committed to full transparency.</p>
           </section>
         </div>
       </main>

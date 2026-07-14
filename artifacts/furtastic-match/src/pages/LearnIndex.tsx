@@ -74,7 +74,7 @@ export default function LearnIndex() {
       <main style={{ flex: 1, maxWidth: '900px', margin: '0 auto', width: '100%', padding: '48px 24px' }}>
         {/* Header */}
         <div style={{ marginBottom: '48px' }}>
-          <div style={{ color: 'var(--teal)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '8px' }}>
+          <div style={{ color: 'var(--cta-text)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '8px' }}>
             Breed guides
           </div>
           <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(28px, 5vw, 40px)', lineHeight: 1.15, marginBottom: '16px' }}>
@@ -100,7 +100,7 @@ export default function LearnIndex() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <span style={{
                     background: 'var(--bg-muted)',
-                    color: 'var(--cta)',
+                    color: 'var(--cta-text)',
                     fontSize: '11px',
                     fontWeight: 800,
                     textTransform: 'uppercase',
@@ -121,7 +121,7 @@ export default function LearnIndex() {
                   {article.description}
                 </p>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--cta)', fontWeight: 700, fontSize: '14px', marginTop: '4px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--cta-text)', fontWeight: 700, fontSize: '14px', marginTop: '4px' }}>
                   Read guide <Icon icon={ArrowRight} size={16} />
                 </div>
               </div>

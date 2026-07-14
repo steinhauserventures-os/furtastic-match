@@ -80,7 +80,7 @@ export default function Terms() {
 
           <section>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '22px', color: 'var(--text-primary)', marginBottom: '12px' }}>Contact</h2>
-            <p>If you have questions about these Terms of Service, please <a href="/contact" style={{ color: 'var(--cta)' }}>contact us</a>.</p>
+            <p>If you have questions about these Terms of Service, please <a href="/contact" style={{ color: 'var(--cta-text)' }}>contact us</a>.</p>
           </section>
         </div>
       </main>

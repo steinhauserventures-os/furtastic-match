@@ -44,7 +44,7 @@ export default function BreederIntentCTA({ breedName }: BreederIntentCTAProps) {
 
   if (submitted) {
     return (
-      <div style={{ border: '2px solid var(--teal)', borderRadius: '12px', padding: '14px 16px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', color: 'var(--teal)', fontWeight: 700, fontSize: '14px', textAlign: 'center' }}>
+      <div style={{ border: '2px solid var(--teal)', borderRadius: '12px', padding: '14px 16px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', color: 'var(--cta-text)', fontWeight: 700, fontSize: '14px', textAlign: 'center' }}>
         <Icon icon={CheckCircle2} size={18} /> You're on the list — we'll reach out about featuring your {breedName} litters.
       </div>
     );

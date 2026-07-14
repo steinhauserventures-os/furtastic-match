@@ -9,7 +9,7 @@
   --text-secondary: #4a6460;
   --text-muted: #4a6460; /* T4 (WCAG 1.4.3): darkened from #6ba39c (~2.9:1) to ~6.4:1 on white */
   --cta: #0D9488;        /* button / icon fills */
-  --cta-text: #0F6E56;   /* T4 (WCAG 1.4.3): teal for text links — ~5.3:1 on white (--cta itself is ~3.75:1) */
+  --cta-text: #0F6E56;   /* T4 (WCAG 1.4.3): teal for TEXT — 6.2:1 on white, 5.5:1 on --bg-muted (--cta itself is only 3.74:1) */
   --cta-hover: #0b8276;
   --cta-shadow: #0F6E56;
   --accent: #FCD34D;

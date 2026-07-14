@@ -103,7 +103,7 @@ export default function Home() {
           ].map((t, i) => (
             <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
               <div style={{ display: 'flex' }}><Icon icon={t.icon} size={26} color={BRAND_ACCENT} /></div>
-              {t.n && <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--cta)', fontSize: '18px' }}>{t.n}</div>}
+              {t.n && <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--cta-text)', fontSize: '18px' }}>{t.n}</div>}
               <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>{t.l}</div>
             </div>
           ))}
@@ -119,7 +119,7 @@ export default function Home() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '60px' }}>
           {/* How It Works */}
           <section>
-            <div style={{ color: 'var(--teal)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '8px' }}>How it works</div>
+            <div style={{ color: 'var(--cta-text)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '8px' }}>How it works</div>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '32px', marginBottom: '32px' }}>Three steps to your perfect match <Icon icon={PawPrint} size={28} color={BRAND_ACCENT} style={{ verticalAlign: '-0.15em' }} /></h2>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
@@ -140,7 +140,7 @@ export default function Home() {
 
           {/* Breed Guides */}
           <section>
-            <div style={{ color: 'var(--teal)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '8px' }}>Breed guides</div>
+            <div style={{ color: 'var(--cta-text)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '8px' }}>Breed guides</div>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '32px', marginBottom: '24px' }}>
               Read before you decide <Icon icon={BookOpen} size={26} color={BRAND_ACCENT} style={{ verticalAlign: '-0.15em' }} />
             </h2>
@@ -151,22 +151,22 @@ export default function Home() {
               ].map(a => (
                 <Link key={a.slug} to={`/learn/${a.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                   <div className="card" style={{ padding: '20px 24px', height: '100%', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <span style={{ background: 'var(--bg-muted)', color: 'var(--cta)', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', padding: '3px 10px', borderRadius: '8px', alignSelf: 'flex-start' }}>{a.tag}</span>
+                    <span style={{ background: 'var(--bg-muted)', color: 'var(--cta-text)', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', padding: '3px 10px', borderRadius: '8px', alignSelf: 'flex-start' }}>{a.tag}</span>
                     <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '16px', lineHeight: 1.3 }}>{a.title}</div>
                     <div style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.5, flex: 1 }}>{a.desc}</div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--cta)', fontWeight: 700, fontSize: '13px', marginTop: '4px' }}>Read guide <Icon icon={ArrowRight} size={14} /></div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--cta-text)', fontWeight: 700, fontSize: '13px', marginTop: '4px' }}>Read guide <Icon icon={ArrowRight} size={14} /></div>
                   </div>
                 </Link>
               ))}
             </div>
-            <Link to="/learn" style={{ color: 'var(--cta)', fontWeight: 700, fontSize: '14px', textDecoration: 'none' }}>
+            <Link to="/learn" style={{ color: 'var(--cta-text)', fontWeight: 700, fontSize: '14px', textDecoration: 'none' }}>
               Browse all breed guides →
             </Link>
           </section>
 
           {/* Breed Chips */}
           <section>
-            <div style={{ color: 'var(--teal)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '16px' }}>40 breeds in our database</div>
+            <div style={{ color: 'var(--cta-text)', fontFamily: 'var(--font-body)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', marginBottom: '16px' }}>40 breeds in our database</div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '12px' }}>
               {breedsData.slice(0, 40).map((b) => (
                 <Link key={b.id} to={`/breeds/${b.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>

@@ -38,7 +38,7 @@ export default function EmailCapture() {
   return (
     <div className="card" style={{ padding: '24px', margin: '32px 0', textAlign: 'center' }}>
       {submitted ? (
-        <div data-testid="display-email-success" style={{ color: 'var(--teal)', fontWeight: 700, fontSize: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+        <div data-testid="display-email-success" style={{ color: 'var(--cta-text)', fontWeight: 700, fontSize: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
           <Icon icon={MailCheck} size={20} /> Sent! Check your inbox.
         </div>
       ) : (

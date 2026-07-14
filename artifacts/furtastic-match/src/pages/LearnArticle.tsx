@@ -286,7 +286,7 @@ export default function LearnArticle() {
           margin: 40px 0;
         }
         .article-body .article-link {
-          color: var(--cta);
+          color: var(--cta-text);
           font-weight: 700;
           text-decoration: none;
         }
