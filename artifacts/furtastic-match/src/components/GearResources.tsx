@@ -44,17 +44,17 @@ export default function GearResources({ breedName }: GearResourcesProps) {
           }}
         >
           <div className="affiliate-row-icon">
-            <Icon icon={ShoppingBag} size={16} color="#fff" />
+            <Icon icon={ShoppingBag} size={20} color="#fff" />
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: '12px', fontWeight: 500, color: '#0a3d38', lineHeight: 1.3 }}>
+            <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.3 }}>
               New puppy essentials
             </div>
-            <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: 1 }}>
+            <div style={{ fontSize: '13px', color: 'var(--text-secondary)', marginTop: 2 }}>
               Top-rated gear for your first dog · ships fast
             </div>
           </div>
-          <span style={{ fontSize: '12px', color: 'var(--cta-text)', fontWeight: 500, flexShrink: 0 }}>Shop Amazon →</span>
+          <span className="affiliate-row-cta">Shop Amazon →</span>
         </a>
 
         {/* Nexbie custom pet portrait */}
@@ -67,17 +67,17 @@ export default function GearResources({ breedName }: GearResourcesProps) {
           onClick={() => capturePostHogEvent('affiliate_click', { program: 'nexbie_awin', destination: NEXBIE_AFFILIATE_URL, page: pagePath(), variant: 'results' })}
         >
           <div className="affiliate-row-icon">
-            <Icon icon={Palette} size={16} color="#fff" />
+            <Icon icon={Palette} size={20} color="#fff" />
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: '12px', fontWeight: 500, color: '#0a3d38', lineHeight: 1.3 }}>
+            <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.3 }}>
               Custom pet portraits
             </div>
-            <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: 1 }}>
+            <div style={{ fontSize: '13px', color: 'var(--text-secondary)', marginTop: 2 }}>
               Turn your future pup's first photo into gallery-worthy art
             </div>
           </div>
-          <span style={{ fontSize: '12px', color: 'var(--cta-text)', fontWeight: 500, flexShrink: 0 }}>See portrait examples →</span>
+          <span className="affiliate-row-cta">See portrait examples →</span>
         </a>
       </div>
     </div>

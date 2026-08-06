@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import AdZone from '../components/AdZone';
 import EmailCapture from '../components/EmailCapture';
 import GearResources from '../components/GearResources';
+import InsuranceCTA from '../components/InsuranceCTA';
 import MatchCard from '../components/MatchCard';
 import SponsorCard from '../components/SponsorCard';
 import BreedImage from '../components/BreedImage';
@@ -132,6 +133,7 @@ export default function Results() {
                   <>
                     <AdZone width={300} height={250} id="ADSENSE UNIT 3" mobileOnly />
                     <SponsorCard topBreedSlug={breed.slug} />
+                    <InsuranceCTA breedName={breed.name} />
                     <GearResources breedName={breed.name} />
                   </>
                 )}
